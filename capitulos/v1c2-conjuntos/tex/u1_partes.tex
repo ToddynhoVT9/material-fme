@@ -1,68 +1,275 @@
 % ============================================================
 % Unidade 1 — Parte B: erros, observações, exemplos, questões, síntese, respostas
+% Fonte única: dossies/u1.md · respostas conferidas em verif/u1.py
 % ============================================================
 \ErrosComuns
-% Roteiro de 5 passos (função obrigatória; em erros simples, passos podem ser uma frase).
-% "Onde quebra" = contraexemplo CONCRETO. "Como detectar" = teste feito DEPOIS de escrever.
 
-\begin{erro}{«O erro, como frase curta»}{1-E1}
-\campo{O erro.} «O que o aluno escreve.»
-\campo{Por que parece plausível.} «O raciocínio que leva a ele.»
-\campo{Onde quebra.} «Contraexemplo concreto.»
-\campo{Como detectar.} «O teste depois de escrever.»
-\campo{Como corrigir.} «A regra certa, com remissão à construção.»
-\campo{Onde aparece.} \exref{ex:u1:nome}; \qref{u1:nome}.
+\begin{erro}{Esquecer o universo}{1-E1}
+\campo{O erro.} Resolver $x^2=2$ e responder $\{-\sqrt2,\sqrt2\}$ quando o enunciado procurava entre as frações; ou responder $\{2\}$ para $2x^2-3x-2=0$ em $\mathbb{Q}$, esquecendo a raiz $-\tfrac12$.
+\campo{Por que parece plausível.} A equação é a mesma; resolver \enquote{dá} as raízes, e o universo parece um detalhe do enunciado.
+\campo{Onde quebra.} $\{x\in\mathbb{Q}\mid x^2=2\}=\varnothing$, mas $\{x\in\mathbb{R}\mid x^2=2\}=\{-\sqrt2,\sqrt2\}$. E $\{x\in\mathbb{Z}\mid 2x+1=0\}=\varnothing$, mas em $\mathbb{Q}$ o conjunto é $\{-\tfrac12\}$.
+\campo{Como detectar.} Depois de escrever a resposta, confira cada elemento: ele pertence a $U$? E falta algum elemento de $U$ que satisfaz a condição?
+\campo{Como corrigir.} Escreva o universo na primeira linha da resolução, $\{x\in U\mid\ldots\}$, e filtre as soluções no fim (construção 1-H3).
+\campo{Onde aparece.} \exref{ex:u1:universo}; questões \ref{u1:unitarios}, \ref{u1:equacao} e \ref{u1:distancia}.
+\end{erro}
+
+\begin{erro}{Reticências sem lei clara}{1-E2}
+\campo{O erro.} Escrever $\{1,2,4,\ldots\}$ ou $\{3,5,7,\ldots\}$ e supor que todo leitor vai continuar do mesmo jeito.
+\campo{Por que parece plausível.} Quem escreveu já tinha uma lei na cabeça; para ele, \enquote{o padrão é óbvio}.
+\campo{Onde quebra.} Em $\{1,2,4,\ldots\}$, dobrando, o próximo é 8; somando 1, depois 2, depois 3, o próximo é 7. Em $\{3,5,7,\ldots\}$, os ímpares a partir de 3 contêm o 9; os primos ímpares, não.
+\campo{Como detectar.} Tente escrever duas leis diferentes que comecem com os mesmos termos. Se conseguir, a lista não fixou o conjunto.
+\campo{Como corrigir.} Liste termos suficientes para eliminar as outras leis ou, melhor, troque a lista pela propriedade (construção 1-H2).
+\campo{Onde aparece.} \exref{ex:u1:reticencias}; \qref{u1:reticencias}.
+\end{erro}
+
+\begin{erro}{Confundir $\varnothing$ com $\{0\}$ ou com $\{\varnothing\}$}{1-E3}
+\campo{O erro.} Dizer que $\{0\}$ é vazio (\enquote{só tem zero}), que $\{\varnothing\}$ é vazio, ou que $\{x\mid 0\cdot x=0\}$ é vazio.
+\campo{Por que parece plausível.} \enquote{Zero} e \enquote{vazio} lembram \enquote{nada}; e $0\cdot x=0$ \enquote{dá zero}.
+\campo{Onde quebra.} $\{0\}$ tem um elemento, o número 0; $\{\varnothing\}$ tem um elemento, o conjunto vazio. E $0\cdot x=0$ é verdadeira para \emph{todo} $x$: $\{x\in U\mid 0\cdot x=0\}=U$. Vazio é $\{x\in U\mid 0\cdot x=2\}$.
+\campo{Como detectar.} Conte os objetos entre as chaves. Para uma propriedade, pergunte: existe algum candidato que a satisfaz?
+\campo{Como corrigir.} $\varnothing$ é o único conjunto sem elementos; qualquer coisa escrita entre as chaves já é um elemento (construção 1-H4).
+\campo{Onde aparece.} \exref{ex:u1:vazio}; questões \ref{u1:quantos} e \ref{u1:vazios}.
+\end{erro}
+
+\begin{erro}{Aceitar uma descrição sem critério de pertinência}{1-E4}
+\campo{O erro.} Tratar \enquote{os números grandes}, \enquote{os bons alunos} ou \enquote{as cidades perto do mar} como conjuntos.
+\campo{Por que parece plausível.} Na conversa, todo mundo entende mais ou menos o que se quer dizer.
+\campo{Onde quebra.} O número $10^6$ é grande? E $10^3$? Cada leitor decide de um jeito, e não há como responder \enquote{$x\in A$?} para todo $x$. Já \enquote{os naturais menores que $10^{100}$} é um conjunto: enorme, mas decidido.
+\campo{Como detectar.} Escolha um candidato de fronteira e pergunte se ele pertence. Se a resposta depende de opinião, não há conjunto.
+\campo{Como corrigir.} Troque a palavra vaga por uma condição decidível: \enquote{média maior ou igual a 7}, \enquote{a menos de 50 km do litoral} (construção 1-H1 e caixa \emph{Para lembrar}).
+\campo{Onde aparece.} Exemplos \ref{ex:u1:classificar} e \ref{ex:u1:barbeiro}; \qref{u1:criterio}.
 \end{erro}
 
 % ------------------------------------------------------------
 \Observacoes
-% Camada opcional (selo + letra menor). Teste de pertença: quem pula TODAS as observações
-% perde algo necessário para usar o conceito? Se sim, o conteúdo vai para a seção dele (E-R3-3).
-% Uma observação não resolve nem antecipa nenhum N3 (E-R3-1).
 
 \begin{obs}{1-O1}
-\textbf{«Título.»} «Ampliação: curiosidade, generalização, caso-limite, conexão, exceção.»\src{fme}
+\textbf{O conjunto como objeto.} Para os pioneiros, não era óbvio que uma coleção infinita, como $\mathbb{N}$, pudesse ser tratada como uma coisa só, sobre a qual se opera, do mesmo modo que o número 3. O historiador José Ferreirós aponta essa \enquote{objetidade} como o elemento novo da teoria dos conjuntos: as ideias de coleção e de classe são muito antigas; o que mudou foi tratar o conjunto como um objeto matemático.\src{sepEarly}
+\end{obs}
+
+\begin{obs}{1-O2}
+\textbf{Não existe \enquote{o conjunto de tudo}.} O axioma de separação tem uma consequência curiosa. Dado qualquer conjunto $S$, o conjunto $\{x\in S\mid x\notin x\}$ não pode ser elemento de $S$ (é o argumento de Russell, agora sem contradição). Portanto, nenhum conjunto contém todos os objetos: Zermelo concluiu, em 1908, que o domínio de todos os objetos não é, ele próprio, um conjunto.\src{sepZermelo}\src{zermelo1908} É por isso que o universo $U$ de um problema é sempre \enquote{um universo}, escolhido para aquele assunto, e nunca \enquote{o universo de tudo}.
 \end{obs}
 
 % ------------------------------------------------------------
 \Exemplos
-% Pelo menos um por nível; juntos cobrem todo H, U e E. Cada ID declarado é TREINADO, não só citado.
-% IDs O só se o item treina a observação (E-R3-2). Primeiro argumento vazio = número automático.
-% Plano → Resolução → Comentário. N3: situação nova, que o texto não resolveu.
 
-\begin{exemplo}{}{1}{autoral}{1-H1, 1-U1, 1-E1}
-\label{ex:u1:nome}
-«Enunciado.»
-\plano «Qual ferramenta e por quê.»
-\resolucao «Resolução.»
-\comentario «O que o exemplo ensina; o erro que ele evita.»
+\begin{exemplo}{}{1}{adaptado do FME, exercícios 11 e 12}{1-H1, 1-H2, 1-U1}
+\label{ex:u1:listar}
+\begin{enumerate}[label=\alph*)]
+  \item Dê os elementos de $A=\{x\mid x\text{ é letra da palavra \emph{matemática}}\}$ e de $B=\{x\mid x\text{ é cor da bandeira brasileira}\}$.
+  \item Descreva por uma propriedade característica $C=\{0,2,4,6,8,\ldots\}$ e $D=\{0,1,2,\ldots,9\}$.
+\end{enumerate}
+\plano Em (a), percorrer os candidatos (as letras da palavra, as cores da bandeira) e guardar cada um uma vez. Em (b), achar o que os listados têm em comum e mais ninguém tem.
+\resolucao (a) $A=\{m,a,t,e,i,c\}$ e $B=\{\text{verde},\text{amarelo},\text{azul},\text{branco}\}$. (b) $C=\{x\in\mathbb{N}\mid x\text{ é par}\}$ e $D=\{x\mid x\text{ é algarismo}\}$.
+\comentario A palavra \emph{matemática} tem dez letras, mas $A$ tem seis elementos: a letra \emph{a} aparece três vezes na palavra e uma vez só no conjunto, porque o conjunto registra apenas \emph{se} a letra pertence (a Unidade~2 volta a isso). Em (b), \enquote{par} sozinho não bastaria para $C$: os pares negativos ficariam dentro; o universo $\mathbb{N}$ faz o trabalho.
+\end{exemplo}
+
+\begin{exemplo}{}{1}{autoral}{1-H1, 1-H4, 1-E3}
+\label{ex:u1:vazio}
+Quantos elementos têm $\varnothing$, $\{0\}$, $\{\varnothing\}$ e $\{x\in\mathbb{R}\mid x\neq x\}$?
+\plano Contar o que está entre as chaves; para a propriedade, procurar algum real que a satisfaça.
+\resolucao $\varnothing$ não tem elementos: 0. $\{0\}$ tem um elemento, o número 0: 1. $\{\varnothing\}$ tem um elemento, o conjunto vazio: 1. Nenhum real é diferente de si mesmo, então $\{x\in\mathbb{R}\mid x\neq x\}=\varnothing$: 0.
+\comentario Os quatro números são 0, 1, 1, 0. O erro 1-E3 está em achar que $\{0\}$ ou $\{\varnothing\}$ são vazios: os dois têm um elemento, e o fato de um conjunto poder ser elemento de outro (construção 1-H1) é o que torna $\{\varnothing\}$ diferente de $\varnothing$.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{1-H3, 1-U2, 1-E1}
+\label{ex:u1:universo}
+Determine $\{x\in U\mid x^2-2=0\}$ para $U=\mathbb{Q}$ e para $U=\mathbb{R}$; e $\{x\in U\mid 2x+1=0\}$ para $U=\mathbb{Z}$ e para $U=\mathbb{Q}$.
+\plano Resolver cada equação uma vez, como se não houvesse universo, e depois guardar só as soluções que estão em $U$.
+\resolucao As soluções de $x^2=2$ são $\sqrt2$ e $-\sqrt2$, que não são frações. Logo $\{x\in\mathbb{Q}\mid x^2-2=0\}=\varnothing$ e $\{x\in\mathbb{R}\mid x^2-2=0\}=\{-\sqrt2,\sqrt2\}$. A solução de $2x+1=0$ é $-\tfrac12$, que não é inteiro: $\{x\in\mathbb{Z}\mid 2x+1=0\}=\varnothing$ e $\{x\in\mathbb{Q}\mid 2x+1=0\}=\{-\tfrac12\}$.
+\comentario A mesma condição deu conjuntos diferentes. Por isso a construção 1-H3 manda fixar $U$ antes de resolver, e o teste do erro 1-E1 é conferir, no fim, se cada elemento pertence a $U$.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{1-H2, 1-U1, 1-E2}
+\label{ex:u1:reticencias}
+Encontre duas leis diferentes para a lista $\{1,2,4,\ldots\}$, escreva cada conjunto por uma propriedade e diga qual é o quarto elemento em cada caso.
+\plano Procurar leis que produzam 1, 2, 4 e depois se separem; escrever cada uma na forma \enquote{expressão $\mid$ condição}.
+\resolucao Primeira lei: cada termo é o dobro do anterior; o conjunto é $\{2^n\mid n\in\mathbb{N}\}=\{1,2,4,8,16,\ldots\}$, e o quarto elemento é 8. Segunda lei: soma-se 1, depois 2, depois 3, e assim por diante; o termo de ordem $n$ (contando de $n=0$) é $1+\tfrac{n(n+1)}{2}$, e o conjunto é $\{1+\tfrac{n(n+1)}{2}\mid n\in\mathbb{N}\}=\{1,2,4,7,11,\ldots\}$, com quarto elemento 7.
+\comentario Os dois conjuntos começam iguais e são diferentes: o 7 está em um e não no outro. A lista $\{1,2,4,\ldots\}$ não fixou nenhum dos dois (erro 1-E2). A propriedade fixou.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{1-H4, 1-U3, 1-E4}
+\label{ex:u1:classificar}
+Classifique como vazio, unitário, finito com mais de um elemento ou infinito, ou diga que a descrição não define conjunto:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $\{x\in\mathbb{N}\mid x<0\}$
+  \item $\{x\in\mathbb{Z}\mid x^2=9\text{ e }x>0\}$
+  \item $\{x\in\mathbb{Z}\mid 3<x<4\}$
+  \item $\{x\in\mathbb{R}\mid 3<x<4\}$
+  \item os números grandes
+\end{enumerate}
+\end{multicols}
+\plano Para cada item, ver quantos candidatos do universo satisfazem a condição; para (e), procurar um critério de pertinência.
+\resolucao (a) Nenhum natural é negativo: vazio. (b) $x^2=9$ dá $x=3$ ou $x=-3$; com $x>0$, sobra $\{3\}$: unitário. (c) Não há inteiro entre 3 e 4: vazio. (d) Há infinitos reais entre 3 e 4 ($3{,}1$; $3{,}01$; $3{,}001$; \ldots): infinito. (e) Não há como decidir se $1000$ é \enquote{grande}: não define conjunto.
+\comentario Compare (c) e (d): a mesma condição, vazio num universo e infinito no outro. Em (e), o problema não é o tamanho, e sim a falta de critério (erro 1-E4).
+\end{exemplo}
+
+\begin{exemplo}{}{3}{autoral}{1-H3, 1-E4}
+\label{ex:u1:barbeiro}
+Numa vila, há um barbeiro, homem e morador da vila, que barbeia exatamente os homens da vila que não se barbeiam a si mesmos. O barbeiro se barbeia?
+\plano Testar as duas possibilidades contra a regra que descreve o barbeiro.
+\resolucao Se o barbeiro se barbeia, ele é um homem que se barbeia; pela regra, o barbeiro \emph{não} o barbeia — isto é, ele não se barbeia. Contradição. Se ele não se barbeia, é um dos homens que não se barbeiam; pela regra, o barbeiro o barbeia — isto é, ele se barbeia. Contradição de novo. As duas possibilidades são impossíveis: \textbf{não existe} um homem da vila com essa propriedade.
+\comentario Repare no que \emph{não} é contraditório: o conjunto $\{x\in\text{Homens da vila}\mid x\text{ não se barbeia}\}$ existe e pode ser descrito sem problema. O que não existe é um morador que barbeie exatamente esse conjunto. É a mesma saída de Zermelo para o paradoxo de Russell: separar elementos dentro de um universo dado nunca é contraditório; o argumento só mostra que certo objeto não está no universo.
 \end{exemplo}
 
 % ------------------------------------------------------------
 \Questoes
-% Nível por função (N1 aplicação · N2 seleção/combinação · N3 transferência), da mais guiada para a
-% menos guiada DENTRO de cada nível. Integradora ([integradora]) só se o assunto da unidade for
-% necessário: tente resolvê-la sem ele. \label logo após o cabeçalho; \resp{...} com a resposta final.
-% Procedência no 2º argumento: [autoral] · [FME, exercício n] · [adaptada de concurso — BANCA/ÓRGÃO ANO] ·
-% [FUVEST 2019, 1ª fase, q.~12] (só com texto conferido) · [… via FME] · [histórico].
 
-\begin{questao}{1}{autoral}{1-U1, 1-E1}\label{u1:nome}
-«Enunciado.»
-\resp{«resposta final; em demonstração: "Demonstração. A prova deve mostrar que …"»}
+\begin{questao}{1}{autoral}{1-H1}\label{u1:pertence}
+Seja $A=\{1,\{2\},3\}$. Classifique em verdadeira ou falsa:
+\begin{multicols}{4}
+\begin{enumerate}[label=\alph*)]
+  \item $2\in A$
+  \item $\{2\}\in A$
+  \item $3\in A$
+  \item $\{3\}\in A$
+\end{enumerate}
+\end{multicols}
+\noindent Quantos elementos tem $A$?
+\resp{a) F;\ b) V;\ c) V;\ d) F. $A$ tem 3 elementos.}
 \end{questao}
 
+\begin{questao}{1}{autoral}{1-H4, 1-E3}\label{u1:quantos}
+Quantos elementos tem cada conjunto?
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item $\varnothing$
+  \item $\{0\}$
+  \item $\{\varnothing\}$
+  \item $\{\varnothing,\{\varnothing\}\}$
+  \item $\{0,\varnothing\}$
+\end{enumerate}
+\end{multicols}
+\resp{a) 0;\ b) 1;\ c) 1;\ d) 2;\ e) 2.}
+\end{questao}
+
+\begin{questao}{1}{autoral}{1-H2, 1-U1}\label{u1:listar}
+Dê os elementos de cada conjunto:
+\begin{enumerate}[label=\alph*)]
+  \item os divisores naturais de 12;
+  \item $\{x\in\mathbb{Z}\mid -2\le x<3\}$;
+  \item os números primos menores que 20;
+  \item as letras da palavra \emph{banana}.
+\end{enumerate}
+\resp{a) $\{1,2,3,4,6,12\}$;\ b) $\{-2,-1,0,1,2\}$;\ c) $\{2,3,5,7,11,13,17,19\}$;\ d) $\{b,a,n\}$.}
+\end{questao}
+
+\begin{questao}{1}{adaptado do FME, exercício 13}{1-H2, 1-U1}\label{u1:fme13}
+Escreva com símbolos:
+\begin{enumerate}[label=\alph*)]
+  \item o conjunto dos múltiplos inteiros de 3, entre $-10$ e $+10$;
+  \item o conjunto dos divisores inteiros de 42;
+  \item o conjunto dos múltiplos inteiros de 0;
+  \item o conjunto das frações escritas na forma $\frac{n}{d}$, com $n$ e $d$ inteiros compreendidos entre 0 e 3;
+  \item o conjunto dos nomes das capitais dos estados da região Centro-Oeste do Brasil.
+\end{enumerate}
+\resp{a) $\{-9,-6,-3,0,3,6,9\}$;\ b) $\{\pm1,\pm2,\pm3,\pm6,\pm7,\pm14,\pm21,\pm42\}$;\ c) $\{0\}$;\ d) $\{\frac11,\frac12,\frac21,\frac22\}$;\ e) $\{$Cuiabá, Campo Grande, Goiânia$\}$.}
+\end{questao}
+
+\begin{questao}{1}{adaptado do FME, exercício 14}{1-H2, 1-U1}\label{u1:fme14}
+Descreva cada conjunto por meio de uma propriedade dos seus elementos:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $A=\{+1,-1,+2,-2,+3,-3,+6,-6\}$
+  \item $B=\{0,-10,-20,-30,-40,\ldots\}$
+  \item $C=\{1,4,9,16,25,36,\ldots\}$
+  \item $D=\{\text{Lua}\}$
+\end{enumerate}
+\end{multicols}
+\resp{a) $\{x\mid x$ é divisor inteiro de $6\}$;\ b) $\{x\mid x$ é múltiplo inteiro de 10 e $x\le0\}$;\ c) $\{x\mid x$ é quadrado de um inteiro positivo$\}$;\ d) $\{x\mid x$ é satélite natural da Terra$\}$. (Outras propriedades corretas também valem.)}
+\end{questao}
+
+\begin{questao}{2}{adaptado do FME, exercício 16}{1-H4, 1-U3, 1-E3}\label{u1:vazios}
+No universo $\mathbb{Z}$, diga que um inteiro $a$ é \emph{divisível} por um inteiro $b$ (e que $b$ é \emph{divisor} de $a$) quando existe um inteiro $k$ tal que $a=b\cdot k$. Quais dos conjuntos abaixo são vazios?
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $A=\{x\mid 0\cdot x=0\}$
+  \item $B=\{x\mid x>\frac94\text{ e }x<\frac65\}$
+  \item $C=\{x\mid x\text{ é divisor de zero}\}$
+  \item $D=\{x\mid x\text{ é divisível por zero}\}$
+\end{enumerate}
+\end{multicols}
+\resp{Só $B$. ($A=\mathbb{Z}$; $C=\mathbb{Z}$, pois $0=x\cdot0$ para todo $x$; $D=\{0\}$.)}
+\end{questao}
+
+\begin{questao}{2}{adaptado do FME, exercício 15}{1-H3, 1-U3, 1-E1}\label{u1:unitarios}
+\begin{enumerate}[label=\alph*)]
+  \item No universo $\mathbb{R}$, quais dos conjuntos abaixo são unitários?
+\[
+A=\Bigl\{x\ \Big|\ x<\tfrac94\text{ e }x>\tfrac65\Bigr\}\qquad B=\{x\mid 0\cdot x=2\}
+\]
+\[
+C=\{x\mid x\text{ é inteiro e }x^2=3\}\qquad D=\{x\mid 2x+1=7\}
+\]
+  \item E se o universo for $\mathbb{Z}$?
+\end{enumerate}
+\resp{a) Só $D=\{3\}$.\ b) $A=\{2\}$ e $D=\{3\}$.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{autoral}{1-H3, 1-U2, 1-E1}\label{u1:equacao}
+Determine o conjunto das soluções de $2x^2-3x-2=0$ em $\mathbb{N}$, em $\mathbb{Z}$ e em $\mathbb{Q}$. Depois, determine o conjunto das soluções de $x^2+1=0$ em $\mathbb{R}$.
+\resp{$\{2\}$ em $\mathbb{N}$;\ $\{2\}$ em $\mathbb{Z}$;\ $\{-\frac12,2\}$ em $\mathbb{Q}$;\ $\varnothing$ para $x^2+1=0$ em $\mathbb{R}$.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{autoral}{1-H3, 1-U2, 1-E1}\label{u1:distancia}
+Seja $P$ um ponto. Descreva o conjunto dos pontos que estão à distância 1 de $P$ quando o universo é:
+\begin{enumerate}[label=\alph*)]
+  \item uma reta que passa por $P$;
+  \item um plano que contém $P$;
+  \item o espaço.
+\end{enumerate}
+\resp{a) dois pontos, um de cada lado de $P$;\ b) a circunferência de centro $P$ e raio 1;\ c) a superfície esférica de centro $P$ e raio 1.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{1-H2, 1-U1, 1-E2}\label{u1:reticencias}
+A lista $\{3,5,7,\ldots\}$ admite pelo menos duas leis de formação diferentes. Escreva duas, cada uma por meio de uma propriedade, e diga, em cada caso, se 9 pertence ao conjunto.
+\resp{Por exemplo: $\{x\in\mathbb{N}\mid x$ é ímpar e $x\ge3\}$, ao qual 9 pertence; e $\{x\in\mathbb{N}\mid x$ é primo e ímpar$\}$, ao qual 9 não pertence (depois do 7 vem o 11).}
+\end{questao}
+
+\begin{questao}{2}{autoral}{1-H1, 1-U3, 1-E4}\label{u1:criterio}
+Quais das descrições abaixo definem um conjunto? Para as que não definem, diga por quê.
+\begin{enumerate}[label=\alph*)]
+  \item os números naturais pequenos;
+  \item os números naturais menores que $10^{100}$;
+  \item os alunos da turma com média maior ou igual a 7;
+  \item os bons alunos da turma;
+  \item os estados brasileiros que fazem fronteira com o Uruguai.
+\end{enumerate}
+\resp{Definem conjunto: b, c, e (em e, o conjunto é $\{$Rio Grande do Sul$\}$). Não definem: a, d — \enquote{pequeno} e \enquote{bom} não decidem quem pertence.}
+\end{questao}
+
+\begin{questao}{3}{autoral}{1-H4, 1-U3}\label{u1:parametro}
+Para que valores reais de $k$ o conjunto $\{x\in\mathbb{R}\mid x^2-2x+k=0\}$ é vazio? Para que valores é unitário? E quando tem dois elementos?
+\resp{Vazio para $k>1$; unitário para $k=1$ (o conjunto é $\{1\}$); dois elementos para $k<1$.}
+\end{questao}
+
+\begin{questao}{3}{autoral}{1-H3, 1-U2}\label{u1:escolherU}
+Seja $A=\{x\in U\mid (2x-1)(x^2-2)=0\}$. Entre os universos $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$ e $\mathbb{R}$, escolha um para o qual $A$ seja vazio; um para o qual $A$ seja unitário; e um para o qual $A$ tenha exatamente dois elementos — se existir.
+\resp{Vazio: $\mathbb{N}$ ou $\mathbb{Z}$. Unitário: $\mathbb{Q}$ ($A=\{\frac12\}$). Exatamente dois elementos: nenhum dos quatro (em $\mathbb{R}$, $A=\{\frac12,-\sqrt2,\sqrt2\}$ tem três).}
+\end{questao}
+
+\begin{questao}{3}{autoral}{1-H1, 1-E4}\label{u1:berry}
+Considere a frase: \enquote{\emph{seja $n$ o menor número natural que não pode ser descrito com menos de vinte palavras}}. Mostre que essa frase não define um número.
+\resp{Demonstração. A prova deve mostrar que, se a frase definisse um número $n$, ela própria (que tem 14 palavras) o descreveria com menos de vinte palavras, contrariando a definição de $n$; logo a \enquote{propriedade} não tem critério de pertinência fixo.}
+\end{questao}
 
 \begin{sintese}
 \textbf{Ao fim desta unidade, você deveria saber:}
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «capacidade»
+  \item ler e escrever $x\in A$ e $x\notin A$, inclusive quando os elementos são conjuntos;
+  \item passar de uma lista para uma propriedade e de uma propriedade para uma lista;
+  \item fixar o universo antes de descrever um conjunto por propriedade;
+  \item distinguir $\varnothing$, $\{0\}$ e $\{\varnothing\}$ e reconhecer conjuntos vazios e unitários;
+  \item recusar descrições que não decidem quem pertence.
 \end{itemize}
 \smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u1}) e com a seção indicada.
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
-  \perguntasintese{O que significa «conceito»? \ondever{construção 1-H1}}
-  \perguntasintese{Como «conceito» foi construído, e por quê? \ondever{De onde vem?}}
-  \perguntasintese{Como você reconhece, num enunciado, que deve usar «conceito»? \ondever{Onde é usado?}}
-  \perguntasintese{Qual é o erro mais perigoso ao aplicar «conceito»? Como você o detecta? \ondever{Erros comuns}}
+  \perguntasintese{O que é um conjunto, se ele não tem definição? \ondever{construção 1-H1}}
+  \perguntasintese{Por que a descrição por propriedade precisa de um universo? \ondever{De onde vem?}}
+  \perguntasintese{Como você reconhece, num enunciado, que precisa fixar o universo antes de resolver? \ondever{Onde é usado?}}
+  \perguntasintese{Qual é o erro mais perigoso ao descrever um conjunto? Como você o detecta? \ondever{Erros comuns}}
 \end{enumerate}
 \end{sintese}
 

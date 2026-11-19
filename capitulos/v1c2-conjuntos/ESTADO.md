@@ -11,12 +11,12 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Montagem da U1 (só o dossiê é entrada; o PDF do FME não é necessário: os enunciados do FME usados estão transcritos em `dossies/u1.md` §6).
+Revisão da U1 (etapa 4, revisor independente) e depois calibração com o usuário.
 
 ## Unidades
 | U | título | etapa | revisão | observação |
 |---|---|---|---|---|
-| 1 | Conjunto, elemento e descrição | dossiê pronto | — | `verif/u1.py` 42 OK |
+| 1 | Conjunto, elemento e descrição | revisão | — | montada; `verif/u1.py` 44 OK; checar sem FALHAS/AVISOS |
 | 2 | Igualdade, inclusão e conjunto das partes | escopo | — | — |
 | 3 | Reunião e interseção | escopo | — | — |
 | 4 | Diferença e complementar | escopo | — | — |
@@ -41,6 +41,7 @@ Fechamento do capítulo (depois de todas `pronta`): abertura, glossário, fontes
 | D2 | 2026-11-19 | Questões seguem as metas (escolhidas pela função, cobrindo todos os U/E); o resto do FME vai para um bloco **"Mais questões de vestibular"** no fim da seção Questões, ordenado por nível, sem meta, com respostas (vale para qualquer unidade em que o FME passe da meta). Decisão local; a didática não muda | usuário |
 | D3 | 2026-11-19 | lacunas do FME como construção: complementar em U (4-H2), n(A ∪ B) (5-H1), n(A ∪ B ∪ C) (6-H3), n(𝒫(A)) = 2ⁿ (2-H4); diferença simétrica só como questão N3 da U4, definida no enunciado | usuário |
 | D4 | 2026-11-19 | resposta correta nas divergências; questões com problema de redação (13e, 14, 42b) em versão adaptada, etiqueta "[adaptado do FME, exercício n]" | usuário |
+| D6 | 2026-11-19 | usar a notação {expressão \| condição} (ex.: {2ⁿ \| n ∈ ℕ}), apresentada em 1-H2 | usuário |
 | D5 | 2026-11-19 | vestibulares do FME com etiqueta "[BANCA via FME, ano não informado]", sem procurar o ano | usuário |
 
 Decisões locais deste capítulo. Mudança na **didática** só com o usuário, como nova versão em `kit/didatica.md`.
@@ -54,3 +55,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 |---|---|---|---|
 | 2026-11-19 | 1 · escopo | esqueleto (6 unidades); leitura visual das 35 p.; inventário (22 itens de teoria, 51 exercícios, 41 vestibulares); `verif/fme.py` (98 conferências, 0 falhas, 5 divergências); IDs e metas na matriz | compila (26 p.); só FALHAS de cobertura da matriz, esperadas antes da montagem |
 | 2026-11-19 | 2 · U1 | escopo aprovado (D1–D5); dossiê da U1: história M1–M4 (SEP: Ferreirós, Irvine & Deutsch, Hallett), mapa com 4 casos, E1–E4, banco X1–X6 / P1–P14; O1/O2 trocados na matriz | `verif/u1.py` 42 OK, 0 falha; checar.py não rodado (nada de LaTeX mudou) |
+| 2026-11-19 | 3 · U1 | montagem: artigo (4 construções, 2 definições, 4 casos, 6 gatilhos), 4 erros, 2 obs., 6 exemplos (N1 2 · N2 3 · N3 1), 14 questões (N1 5 · N2 6 · N3 3; 2 integradoras); 7 fontes novas; autoconferência §7 feita (u1:parametro deixou de ser integradora: resolve-se só com o discriminante) | 0 FALHAS · 0 AVISOS (37 p.); folhas conferidas |

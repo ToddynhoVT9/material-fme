@@ -1,8 +1,7 @@
 % ============================================================
 % Unidade 1 — Conjunto, elemento e descrição   (didática v3 · kit/didatica.md §2)
 % Parte A, o "artigo": Prefácio, De onde vem?, Onde é usado?
-% IDs da unidade: ver matriz.yaml (H construção · U uso · E erro · O observação)
-% Rótulos: questões u1:nome · exemplos ex:u1:nome · remissões só com \ref / \qref / \exref
+% IDs: 1-H1..H4 · 1-U1..U3 · 1-E1..E4 · 1-O1, 1-O2 (matriz.yaml) · fonte única: dossies/u1.md
 % ============================================================
 \clearpage
 \section{Conjunto, elemento e descrição}
@@ -10,69 +9,169 @@
 % ------------------------------------------------------------
 \Prefacio
 \begin{prefacio}
-\gancho{«Uma pergunta ou situação curta que prende.»}
+\gancho{O 9 está ou não está na lista?}
 
-% Função: "por que isso merece ser estudado?" + UMA pergunta aberta explícita, que a unidade responde.
-% Em geral menos de uma página. Fora da narrativa.
-«Situação concreta que cria a pergunta.»
+Dois colegas leem no quadro: \enquote{os números $3, 5, 7, \ldots$}. Um deles jura que o 9 está ali; o outro, que não está. Os dois têm razão: o primeiro leu \enquote{os ímpares a partir de 3}; o segundo, \enquote{os primos ímpares}, e depois do 7 vem o 11. As reticências não disseram o bastante.
 
-\textbf{«A pergunta aberta da unidade, em negrito.»} É a pergunta desta unidade.
+Outra situação. \enquote{Quais números satisfazem $x^2=2$?} Se procuramos entre as frações, nenhum; se procuramos entre todos os números reais, dois: $\sqrt2$ e $-\sqrt2$. A condição é a mesma; as respostas são diferentes, porque a pergunta não disse \emph{onde} procurar.
 
-\textbf{Ao final, você será capaz de:} «3–5 capacidades verificáveis».
+Toda a matemática deste volume fala de coleções: o conjunto das soluções de uma equação, o conjunto dos pontos de uma figura, o domínio de uma função. Se a descrição de uma coleção deixa dúvida sobre quem pertence a ela, tudo o que vem depois herda a dúvida.
 
-\textbf{Pré-requisitos:} «unidades e assuntos». O essencial está na caixa abaixo.
+\textbf{Como descrever um conjunto de modo que ninguém possa discordar sobre quem está dentro e quem está fora?} É a pergunta desta unidade.
+
+\textbf{Ao final, você será capaz de:} ler e escrever $\in$ e $\notin$; passar de uma lista de elementos a uma propriedade e de uma propriedade à lista; dizer, antes de resolver, em que universo se procuram as respostas; reconhecer conjuntos vazios e unitários; recusar uma \enquote{descrição} que não decide quem pertence.
+
+\textbf{Pré-requisitos:} do Capítulo I, sentenças abertas e proposições logicamente falsas. O essencial está na caixa abaixo.
 \end{prefacio}
 
 \begin{minimo}
-% O mínimo que você precisa: só o que a unidade usa e o aluno pode ter esquecido.
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «pré-requisito 1»
+  \item \textbf{Sentença aberta.} \enquote{$x+1=4$} não é verdadeira nem falsa até que $x$ receba um valor; com $x=3$, vira uma proposição verdadeira (Cap.~I, Unidade~5).
+  \item \textbf{Contradição.} Uma sentença como \enquote{$x>0$ e $x<0$} é falsa para todo valor de $x$ (Cap.~I, Unidade~4).
+  \item \textbf{Os conjuntos numéricos, por enquanto informalmente.} $\mathbb{N}=\{0,1,2,3,\ldots\}$ (o FME inclui o 0), $\mathbb{Z}$: os inteiros; $\mathbb{Q}$: os números que se escrevem como fração de inteiros; $\mathbb{R}$: os reais, como $\sqrt2$ e $\pi$. O Capítulo III os define com cuidado.
 \end{itemize}
 \end{minimo}
 
 % ------------------------------------------------------------
 \DeOndeVem
-% Três perguntas: (1) por que alguém precisou disso? (2) como a ideia foi construída? (3) como reconstruímos hoje?
-% Origem histórica ≠ reconstrução matemática: as duas aparecem distintas; a reconstrução se sustenta sozinha.
-% Três camadas, em texto corrido e bem demarcadas: "X formulou…" / "lido hoje…" / "a convenção atual…".
-% Filtro P5 em cada trecho: melhora a compreensão? Se só deixa interessante → Observações ou fora.
-% Todo fato com \src{chave} (bibitem em fontes.tex). Nada de frequência sem fonte.
 
-\subsubsection{«O problema que pediu a ferramenta»}
-«Narrativa com fontes.»\src{fme}
+\subsubsection{Por que alguém precisou disso}
+Queremos falar de \enquote{todos os números pares} ou de \enquote{todos os pontos à mesma distância de $A$ e $B$} como de \emph{um objeto só}, sobre o qual se fazem perguntas: quantos elementos ele tem? o 8 está nele? é igual àquele outro? Para isso, o objeto precisa ficar fixado apenas por quem pertence a ele, sem discussão.
 
-\begin{construcao}[1-H1: título curto]{1-H1}
-% A reconstrução: passos numerados que chegam à ferramenta por raciocínio, não por autoridade.
+Essa maneira de pensar é mais recente do que parece. Quando Georg Cantor estudava séries trigonométricas, em 1872, passou a operar com \emph{conjuntos de pontos}: definiu, para um conjunto de pontos, o conjunto dos seus pontos-limite e começou a repetir a operação, como quem repete uma conta.\src{sepEarly} O passo decisivo foi tratar o conjunto como um objeto matemático, sobre o qual se opera tanto quanto sobre o número 3.\src{sepEarly}
+
+\begin{construcao}[1-H1: conjunto e pertinência]{1-H1}
 \begin{enumerate}[label=(\arabic*)]
-  \item «passo»
+  \item Queremos tratar uma coleção como um objeto.
+  \item A única coisa que precisamos saber sobre ela é: dado um objeto $x$, ele \textbf{pertence} à coleção ($x\in A$) ou \textbf{não pertence} ($x\notin A$) — uma das duas, e não as duas (os princípios do Capítulo I).
+  \item Então o conjunto fica determinado por quem pertence a ele. Não o definimos a partir de nada mais simples: \emph{conjunto}, \emph{elemento} e \emph{pertinência} são \textbf{noções primitivas}, aceitas sem definição.\src{fme}
+  \item Como o conjunto é um objeto, ele pode ser elemento de outro conjunto. O conjunto das seleções de um campeonato mundial de futebol tem como elementos as seleções, e cada seleção é, por sua vez, um conjunto de jogadores.\src{fme}
+\end{enumerate}
+Indicamos conjuntos por letras maiúsculas ($A$, $B$, \ldots) e elementos por minúsculas ($a$, $x$, \ldots). No \textbf{diagrama de Euler-Venn}, o conjunto é a região limitada por uma linha fechada: os pontos de dentro são os elementos.
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+\draw[acento,thick,fill=acentoclaro] (0,0) ellipse (1.6 and 0.95);
+\node at (1.55,0.95) {$A$};
+\fill (-0.6,0.25) circle (1.5pt) node[above]{$a$};
+\fill (0.5,0.35) circle (1.5pt) node[above]{$b$};
+\fill (-0.1,-0.4) circle (1.5pt) node[below]{$c$};
+\fill (2.3,-0.6) circle (1.5pt) node[right]{$d$};
+\node[right] at (3.2,0) {$a\in A,\ b\in A,\ c\in A,\ d\notin A$};
+\end{tikzpicture}
+\end{center}
+\end{construcao}
+
+\subsubsection{Duas maneiras de dizer quem pertence}
+Há duas maneiras naturais de fixar um conjunto: listar os elementos ou dar uma condição que eles, e só eles, satisfazem.
+
+\begin{construcao}[1-H2: enumeração e propriedade]{1-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{Enumeração.} Escrevemos os elementos entre chaves: o conjunto das vogais é $\{a, e, i, o, u\}$. Se o conjunto é infinito, ou finito e muito grande, escrevemos os primeiros elementos e reticências — \emph{desde que a lei de formação fique visível}: $\{1, 3, 5, 7, 9, \ldots\}$; $\{0, 1, 2, \ldots, 500\}$.\src{fme}
+  \item \textbf{Propriedade característica.} Escrevemos $A=\{x\mid x \text{ tem a propriedade } P\}$ e lemos \enquote{$A$ é o conjunto dos $x$ tais que $x$ tem a propriedade $P$}. Por exemplo, $\{x\mid x\text{ é divisor inteiro de }3\}=\{1,-1,3,-3\}$.\src{fme} Quando os elementos são valores de uma expressão, também se escreve a expressão antes da barra: $\{2^n\mid n\in\mathbb{N}\}=\{1,2,4,8,\ldots\}$ (lê-se \enquote{o conjunto dos $2^n$, com $n$ natural}).
+  \item \textbf{Passar de uma para a outra.} Da propriedade para a lista: testar candidatos. Da lista para a propriedade: achar algo que os listados têm em comum e que mais ninguém tem.
+  \item \textbf{A lista com reticências é uma propriedade disfarçada.} Quem escreve \enquote{\ldots} supõe que o leitor vai adivinhar a mesma lei. Se duas leis diferentes começam igual, a lista não fixou o conjunto (erro 1-E2).
 \end{enumerate}
 \end{construcao}
 
-\begin{definicao}[nome]
-«Enunciado formal.»
+A propriedade parece resolver tudo: diga a condição, e o conjunto está dado. A próxima história mostra que, sozinha, ela não basta.
+
+\subsubsection{Quando a propriedade sozinha falha}
+O lógico alemão Gottlob Frege tentou dar à aritmética um fundamento puramente lógico.\src{sepRussell} Uma das peças do seu sistema era a possibilidade de, a partir de qualquer conceito, passar à sua \emph{extensão} — a coleção dos objetos que caem sob aquele conceito.\src{sepZermelo}\src{frege1903} Lido hoje, é o que se chama \textbf{princípio de compreensão}: para toda condição $P(x)$, existe o conjunto $\{x\mid P(x)\}$.\src{sepRussell}
+
+Em 1901, o filósofo inglês Bertrand Russell percebeu que esse princípio leva a uma contradição, e em 16 de junho de 1902 escreveu a Frege contando o problema.\src{sepRussell}\src{vanH} Russell considerou a classe de todas as classes que não são membros de si mesmas.\src{sepRussell} (O matemático Ernst Zermelo percebera uma contradição parecida por volta da mesma época.\src{sepRussell}) Em notação moderna, é o conjunto
+\[
+R=\{x\mid x\notin x\}.
+\]
+Pergunte se $R$ pertence a $R$. Se $R\in R$, então $R$ satisfaz a condição \enquote{$x\notin x$}, isto é, $R\notin R$. Se $R\notin R$, então $R$ satisfaz a condição, e portanto $R\in R$. As duas possibilidades levam à contrária: a condição \enquote{$x\notin x$} não define conjunto nenhum. A carta chegou quando o segundo volume da obra de Frege estava indo para a gráfica; no apêndice, o próprio Frege pergunta se é sempre permitido falar da extensão de um conceito e, se não for, como reconhecer as exceções.\src{sepZermelo}
+
+A saída que a matemática adotou foi proposta por Zermelo em 1908. Ele escreveu que era preciso abandonar a suposição de que a toda noção logicamente definível corresponde um conjunto, e propôs, no lugar dela, um axioma de \emph{separação}: dado um conjunto já existente e uma propriedade sem ambiguidade, pode-se \emph{separar} dele o conjunto dos elementos que têm a propriedade.\src{sepZermelo}\src{zermelo1908} Lido hoje, o axioma garante os conjuntos da forma $\{x\in S\mid P(x)\}$. Com a condição \enquote{$x\notin x$}, o conjunto $\{x\in S\mid x\notin x\}$ só contém elementos de $S$; o argumento de Russell, refeito, mostra apenas que esse conjunto não é elemento de $S$ — nenhuma contradição.\src{sepRussell} A convenção que você vai usar em todo o curso é a forma escolar dessa ideia: ao descrever um conjunto por uma propriedade, fixe antes o conjunto de onde vêm os candidatos.\src{fme}
+
+\begin{construcao}[1-H3: o conjunto universo]{1-H3}
+\begin{enumerate}[label=(\arabic*)]
+  \item Pergunta: \emph{qual é o conjunto dos pontos $P$ que ficam à mesma distância de dois pontos dados $A$ e $B$, com $A\neq B$?}\src{fme} A resposta depende de onde os pontos podem estar:
+\begin{itemize}[leftmargin=1.2em,itemsep=0pt]
+  \item se os pontos estão na reta $AB$, o conjunto tem um único elemento: o ponto médio de $\overline{AB}$;
+  \item se estão num plano que contém $A$ e $B$, o conjunto é a mediatriz do segmento $\overline{AB}$;
+  \item se estão no espaço, é o plano mediador de $\overline{AB}$ (o plano perpendicular a $\overline{AB}$ pelo ponto médio).
+\end{itemize}
+A mesma propriedade, três conjuntos diferentes. Com números acontece o mesmo: $x^2=2$ não tem solução entre as frações e tem duas entre os reais.
+  \item Logo, a propriedade precisa vir acompanhada do conjunto de onde vêm os candidatos. Esse conjunto se chama \textbf{conjunto universo}, $U$. Escrevemos
+\[
+A=\{x\in U\mid x \text{ tem a propriedade } P\}.
+\]
+  \item Além de tirar a ambiguidade, o universo evita a contradição de Russell: separar elementos de um conjunto já dado nunca produz um \enquote{conjunto} impossível.
+  \item Convenção: ao descrever um conjunto por propriedade, \textbf{fixe o universo antes}. Para equações, ele costuma ser $\mathbb{R}$; para problemas de contagem, $\mathbb{Z}$ ou $\mathbb{N}$; em Geometria Plana, um plano.\src{fme}
+\end{enumerate}
+\end{construcao}
+
+\begin{definicao}[conjunto universo]
+O \textbf{conjunto universo} $U$ de um problema é o conjunto ao qual pertencem todos os elementos considerados nele. Descrever um conjunto por uma propriedade $P$ é escrever $\{x\in U\mid x\text{ tem }P\}$: os elementos de $U$ que satisfazem $P$, e só eles.
+\end{definicao}
+
+\subsubsection{Quantos elementos: nenhum, um, muitos}
+\begin{construcao}[1-H4: conjunto vazio e conjunto unitário]{1-H4}
+\begin{enumerate}[label=(\arabic*)]
+  \item Um conjunto pode ter um só elemento: o conjunto das soluções de $3x+1=10$ é $\{3\}$.\src{fme}
+  \item Uma propriedade que \emph{nenhum} candidato satisfaz — por exemplo, uma propriedade logicamente falsa, como \enquote{$x\neq x$} ou \enquote{$x>0$ e $x<0$} — dá um conjunto sem elemento algum.\src{fme} Como um conjunto é decidido por quem pertence, todos esses conjuntos sem elementos são o mesmo: o conjunto vazio, $\varnothing$.
+  \item Cuidado com as chaves: $\{0\}$ \emph{não} é vazio — tem um elemento, o número 0. E $\{\varnothing\}$ também não: tem um elemento, o próprio conjunto vazio. Pense numa caixa: $\varnothing$ é a caixa vazia; $\{\varnothing\}$ é uma caixa que contém uma caixa vazia.
+  \item Ser vazio também depende do universo: $\{x\in\mathbb{Z}\mid 2x+1=0\}=\varnothing$, mas $\{x\in\mathbb{Q}\mid 2x+1=0\}=\{-\tfrac12\}$.
+\end{enumerate}
+\end{construcao}
+
+\begin{definicao}[conjunto unitário e conjunto vazio]
+\textbf{Conjunto unitário} é o que possui um único elemento. \textbf{Conjunto vazio}, indicado por $\varnothing$, é o que não possui elemento algum.
 \end{definicao}
 
 \begin{paralembrar}\label{lembrar-u1}
-% Fecha o De onde vem?: 1 frase + até 3 passos. É o gabarito da síntese de domínio.
-«A frase.»
+\textbf{Um conjunto é decidido por quem pertence a ele: descreva-o por uma lista com lei visível ou por uma propriedade dentro de um universo.}
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em,itemsep=1pt]
-  \item «passo»
+  \item Fixe o universo $U$ de onde vêm os candidatos.
+  \item Escreva a condição $P(x)$ sem ambiguidade: $\{x\in U\mid P(x)\}$.
+  \item Teste: para cada candidato, dá para decidir se ele pertence? Se não dá, ainda não há conjunto.
 \end{enumerate}
 \end{paralembrar}
 
 % ------------------------------------------------------------
 \OndeEUsado
-% Função: reconhecimento. Ensina a ESCOLHER a ferramenta: enunciado → estrutura → ferramenta.
-% 2–4 casos no formato do mapa; depois a tabela de gatilhos como resumo.
-% E-R3-1: casos, "Treino:" e gatilhos NÃO trazem o caso concreto nem a solução de nenhum N3,
-% e apontam só para exemplos e questões N1/N2 (checar.py confere os \ref).
-«Uma frase de abertura: onde a ferramenta aparece.»
 
-\begin{caso}{1 · «nome do caso»}{1-U1}
-\mapa{«o que o enunciado diz: palavras e formatos»}{«a estrutura matemática a procurar»}{«a ferramenta»}
-\reconhecer «Como reconhecer a situação; um exemplo de enunciado real, com fonte e procedência.» Treino: \exref{ex:u1:nome}; \qref{u1:nome}.
+A linguagem de conjuntos aparece sempre que um enunciado pede \enquote{o conjunto de\ldots}, \enquote{as soluções de\ldots}, \enquote{os pontos tais que\ldots} — e também fora da matemática escolar, quando um programa filtra itens de uma coleção. Esta seção ensina a reconhecer o que o enunciado está pedindo. São quatro situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · \enquote{dê os elementos}, \enquote{descreva}}{1-U1}
+\mapa{\enquote{dê os elementos}, \enquote{escreva com símbolos}, \enquote{descreva por meio de uma propriedade}}
+{uma lista com lei visível, ou uma condição que os listados satisfazem e mais ninguém}
+{1-H2: testar candidatos (propriedade $\to$ lista) ou achar o que é comum (lista $\to$ propriedade)}
+\reconhecer O FME tem um exercício que pede exatamente isso: \enquote{Descreva por meio de uma propriedade característica dos elementos cada um dos conjuntos seguintes}.\src{fme} Pode haver mais de uma propriedade certa; o que importa é que ela pegue todos os listados e nenhum outro. Treino: \exref{ex:u1:listar}; questões \ref{u1:listar} e \ref{u1:fme13}.
 \end{caso}
 
+\begin{caso}{2 · \enquote{qual é o conjunto dos\ldots?}}{1-U2}
+\mapa{\enquote{qual é o conjunto dos\ldots}, \enquote{resolva}, \enquote{determine as soluções}, às vezes sem dizer onde}
+{o universo: dito no enunciado (\enquote{em $\mathbb{Z}$}, \enquote{no plano}) ou implícito no contexto}
+{1-H3: escrever $\{x\in U\mid P(x)\}$ antes de calcular}
+\reconhecer É a pergunta do FME que abriu a construção 1-H3: \enquote{Qual é o conjunto dos pontos $P$ que ficam a igual distância de dois pontos dados $A$ e $B$, sendo $A\neq B$?}\src{fme} Sem o universo, a pergunta tem três respostas. Quando o enunciado não diz o universo, procure-o no contexto: \enquote{número de alunos} está em $\mathbb{N}$; \enquote{solução real} está em $\mathbb{R}$. Treino: \exref{ex:u1:universo}; questões \ref{u1:equacao} e \ref{u1:distancia}.
+\end{caso}
+
+\begin{caso}{3 · um programa que filtra uma coleção}{1-U2}
+\mapa{código que percorre uma coleção e guarda os itens que passam num teste}
+{a coleção percorrida (o universo) e o teste (a propriedade)}
+{1-H3 escrito em código: \texttt{\{x for x in U if P(x)\}}}
+\reconhecer Na linguagem Python, um conjunto pode ser escrito quase como no caderno. O tutorial oficial traz o exemplo \texttt{\{x for x in 'abracadabra' if x not in 'abc'\}}, cujo resultado é o conjunto \texttt{\{'r', 'd'\}}.\src{pyTut} Leia: \enquote{o conjunto das letras $x$ da palavra \emph{abracadabra} tais que $x$ não é $a$, $b$ nem $c$}. O universo — a palavra percorrida — é obrigatório: o programa não tem como \enquote{procurar em tudo}. As letras repetidas entram uma vez só. Treino: \exref{ex:u1:universo}; \qref{u1:listar}.
+\end{caso}
+
+\begin{caso}{4 · \enquote{quais são vazios? quais são unitários?}}{1-U3}
+\mapa{\enquote{quais dos conjuntos abaixo são vazios / unitários / finitos?}}
+{quantos candidatos do universo satisfazem a propriedade}
+{1-H4 junto com 1-H3: contar as soluções \emph{no universo dado}}
+\reconhecer O comando aparece assim no FME: \enquote{Quais dos conjuntos abaixo são unitários?}\src{fme} Antes de contar, verifique duas coisas: em que universo se está (o mesmo intervalo pode ser vazio entre os inteiros e infinito entre os reais) e se a propriedade é falsa para todos (\enquote{$0\cdot x=2$}) ou verdadeira para todos (\enquote{$0\cdot x=0$}). Treino: \exref{ex:u1:classificar}; questões \ref{u1:vazios} e \ref{u1:unitarios}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
 \begin{gatilhos}
-«sinal no enunciado» & «ferramenta» & «raciocínio» & 1-U1 · q.~\ref{u1:nome}\\
+\enquote{dê os elementos}, \enquote{descreva} & 1-H2 & testar candidatos ou achar o que é comum & 1-U1 · q.~\ref{u1:listar}\\\fino
+conjunto-solução sem universo explícito & 1-H3 & perguntar \enquote{procurando onde?} antes de calcular & 1-U2 · q.~\ref{u1:equacao}\\\fino
+figura descrita por uma distância & 1-H3 & reta, plano ou espaço mudam a resposta & 1-U2 · q.~\ref{u1:distancia}\\\fino
+lista com reticências & 1-H2 & a lei está visível? se não, escreva a propriedade & 1-U1 · q.~\ref{u1:reticencias}\\\fino
+\enquote{vazio? unitário?} & 1-H4 & contar quantos candidatos de $U$ satisfazem $P$ & 1-U3 · q.~\ref{u1:vazios}\\\fino
+palavra vaga (\enquote{grande}, \enquote{bom}, \enquote{perto}) & 1-H1 & existe critério de pertinência? & 1-U3 · q.~\ref{u1:criterio}\\
 \end{gatilhos}
