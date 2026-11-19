@@ -82,7 +82,6 @@ unidades:
     tema: 'barbeiro: separação dentro do universo'
     cobre:
     - H3
-    - E4
   questoes_meta:
     N1: 4
     N2: 5
@@ -108,6 +107,7 @@ unidades:
     cobre:
     - H2
     - U1
+    - U2
     integradora: false
   - rotulo: u1:fme13
     nivel: 1
@@ -153,8 +153,14 @@ unidades:
     cobre:
     - H3
     - U2
-    - E1
-    integradora: true
+    integradora: false
+  - rotulo: u1:criterio
+    nivel: 2
+    fonte: autoral
+    cobre:
+    - H1
+    - E4
+    integradora: false
   - rotulo: u1:reticencias
     nivel: 2
     fonte: autoral
@@ -163,21 +169,14 @@ unidades:
     - U1
     - E2
     integradora: false
-  - rotulo: u1:criterio
-    nivel: 2
-    fonte: autoral
-    cobre:
-    - H1
-    - U3
-    - E4
-    integradora: false
   - rotulo: u1:parametro
     nivel: 3
     fonte: autoral
     cobre:
+    - H3
     - H4
     - U3
-    integradora: false
+    integradora: true
   - rotulo: u1:escolherU
     nivel: 3
     fonte: autoral
