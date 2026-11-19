@@ -1,0 +1,166 @@
+# Matriz de cobertura — Cap. II · Conjuntos
+# IDs: H construção (De onde vem?) · U contexto de uso · E erro comum · O observação (opcional)
+# Regras: kit/didatica.md §6 · conferida por kit/scripts/matriz.py (e pelo checar.py)
+# Itens casam com o LaTeX pelo `rotulo` (o \label do item). nivel: 1 | 2 | 3.
+# fonte: autoral | historico | FME | adaptado do FME | vestibular | olimpiada | concurso  (+ status)
+#
+# Formato de um exemplo e de uma questão:
+#   exemplos:
+#   - rotulo: ex:u1:nome
+#     nivel: 1
+#     fonte: autoral
+#     tema: 'o que o exemplo treina'
+#     cobre: [H1, U1, E1]
+#   questoes_pool:
+#   - rotulo: u1:nome
+#     nivel: 2
+#     fonte: 'FME, exercício 3'
+#     cobre: [U1, E1]
+#     integradora: false
+unidades:
+- n: 1
+  titulo: Conjunto, elemento e descrição
+  pergunta: Como descrever um conjunto de modo que ninguém possa discordar sobre quem está dentro e quem está fora?
+  ids:
+    H1: 'noções primitivas e pertinência: o conjunto fica determinado por quem pertence (∈, ∉); conjunto pode ser elemento'
+    H2: enumeração (finita; reticências com lei visível) e propriedade {x | P(x)}; passar de uma a outra
+    H3: 'universo: {x ∈ U | P(x)}; a resposta depende de U (mediatriz; ℤ × ℝ); por que a propriedade sozinha não basta'
+    H4: 'vazio e unitário: propriedade logicamente falsa dá ∅; ∅ ≠ {0} ≠ {∅}'
+    U1: traduzir descrição verbal ↔ notação (listar elementos; achar propriedade característica)
+    U2: 'conjunto-solução de equação/inequação como {x ∈ U | P(x)}: fixar U antes de resolver'
+    U3: classificar um conjunto (vazio, unitário, finito, infinito) pela descrição
+    E1: esquecer o universo (resolver em ℝ quando era ℤ) — "a equação é a mesma"
+    E2: reticências sem lei clara ({2, 4, …}) — "o padrão é óbvio"
+    E3: confundir ∅ com {0} ou {∅}; achar {x | 0·x = 0} vazio — "tem um zero, então é nada"
+    E4: aceitar descrição sem critério de pertinência ("os números grandes") — "todo mundo entende"
+    O1: paradoxo do barbeiro (versão popular do de Russell), se o de Russell não estiver em H3
+    O2: 'compreensão de conjuntos em programação: o universo é obrigatório'
+  exemplos: []
+  questoes_meta:
+    N1: 4
+    N2: 5
+    N3: 2
+    integradoras: 1
+  questoes_pool: []
+- n: 2
+  titulo: Igualdade, inclusão e conjunto das partes
+  pergunta: Quando dois conjuntos são o mesmo — e qual a diferença entre ser elemento e ser parte?
+  ids:
+    H1: 'igualdade pela pertinência: ordem e repetição não importam; A ≠ B quando há testemunha'
+    H2: inclusão como implicação (x ∈ A ⇒ x ∈ B); ⊂ admite igualdade; ∅ ⊂ A por vacuidade; ⊃, ⊄
+    H3: igualdade por dupla inclusão (método de prova)
+    H4: conjunto das partes e n(𝒫(A)) = 2ⁿ (cada elemento entra ou não)
+    U1: decidir ∈ ou ⊂ em sentenças V/F (chaves aninhadas)
+    U2: provar inclusão ou igualdade pelo elemento genérico
+    U3: contar subconjuntos com restrição
+    E1: trocar ∈ por ⊂ ({a} ∈ {a, b}) — "{a} está em {a, b}"
+    E2: 'inverter ∅: "∅ ∈ A sempre" / "∅ ⊂ A só às vezes" — "o vazio está em todo lugar"'
+    E3: negar A ⊂ B como B ⊂ A — "se não está contido, contém"
+    E4: provar igualdade com uma inclusão só, ou com exemplos — "verifiquei e deu"
+    E5: contar 𝒫(A) esquecendo ∅ ou o próprio A — "parte é pedaço menor"
+    O1: notação ⊆ / ⊊ em outros livros
+    O2: 'Galileu: parte infinita tão grande quanto o todo'
+    O3: 'urelementos: no FME a não é conjunto; na teoria usual tudo é conjunto'
+  exemplos: []
+  questoes_meta:
+    N1: 4
+    N2: 5
+    N3: 2
+    integradoras: 1
+  questoes_pool: []
+- n: 3
+  titulo: Reunião e interseção
+  pergunta: Como o "ou" e o "e" da lógica viram operações entre conjuntos?
+  ids:
+    H1: 'reunião como "ou" inclusivo e interseção como "e": das definições aos conectivos do Cap. I'
+    H2: propriedades herdadas da lógica (idempotente, comutativa, associativa, neutros ∅ e U)
+    H3: absorção e distributivas (pela lógica e pelas regiões)
+    H4: disjuntos; diagrama de dois conjuntos com 4 regiões
+    U1: calcular ∪ e ∩ de conjuntos dados (listas, figuras, classes)
+    U2: '"ou"/"e" numa condição → reunião/interseção de conjuntos-solução'
+    U3: descobrir conjunto desconhecido por condições de ∪ e ∩ (elemento a elemento)
+    U4: 'V/F de propriedades para conjuntos quaisquer: provar ou dar contraexemplo'
+    E1: tratar ∪ como soma (repetir elementos; contar A ∩ B duas vezes)
+    E2: A ∩ B = ∅ ⇒ A = ∅ ou B = ∅ — "como no produto de números"
+    E3: 'distribuir pela metade: A ∪ (B ∩ C) = (A ∪ B) ∩ C — "como a·(b + c)"'
+    E4: ler "ou" como exclusivo (tirar A ∩ B da reunião)
+    O1: 'dualidade: trocar ∪ ↔ ∩ e ∅ ↔ U'
+    O2: reunião e interseção de infinitos conjuntos (geometria)
+  exemplos: []
+  questoes_meta:
+    N1: 4
+    N2: 5
+    N3: 2
+    integradoras: 1
+  questoes_pool: []
+- n: 4
+  titulo: Diferença e complementar
+  pergunta: Como descrever o que fica de fora — e por que "fora" sempre depende de onde estamos?
+  ids:
+    H1: diferença A − B (x ∈ A e x ∉ B); não comutativa
+    H2: complementar de B em A (só se B ⊂ A) e complementar em U (Ā, Aᶜ, A′, ∁A)
+    H3: leis de De Morgan como negação do "e"/"ou"; A − B = A ∩ B̄
+    U1: traduzir "exceto", "não", "fora de" em diferença/complementar
+    U2: simplificar expressões com complementar (De Morgan, A − B̄ = A ∩ B)
+    U3: sombrear no diagrama expressões com − e complementar
+    U4: reconstruir conjuntos a partir de diferenças e complementares
+    E1: comutar a diferença (A − B = B − A)
+    E2: 'De Morgan errado: (A ∩ B)ᶜ = Aᶜ ∩ Bᶜ — "o complementar distribui"'
+    E3: complementar sem universo (ou ∁_A B com B ⊄ A) — "o de fora é óbvio"
+    E4: A − (B ∪ C) = (A − B) ∪ (A − C)
+    O1: notações do complementar e da diferença (A \ B, Bᶜ, ∁)
+    O2: complemento em computação (NOT, máscaras de bits) — só se ajudar
+  exemplos: []
+  questoes_meta:
+    N1: 4
+    N2: 5
+    N3: 2
+    integradoras: 1
+  questoes_pool: []
+- n: 5
+  titulo: 'Contando elementos: dois conjuntos'
+  pergunta: Como contar quem está em pelo menos um de dois grupos sem contar ninguém duas vezes?
+  ids:
+    H1: n(A ∪ B) = n(A) + n(B) − n(A ∩ B) por contagem dupla
+    H2: 'contar por regiões disjuntas: só A, só B, ambos, nenhum (tabela 2×2)'
+    H3: 'complemento na contagem: nenhum = total − n(A ∪ B); porcentagem como contagem sobre 100'
+    U1: pesquisa com dois atributos sim/não → quatro regiões
+    U2: identificar o dado que falta (total, interseção, nenhum) e isolá-lo
+    U3: subgrupos com bases diferentes → tabela de dupla entrada
+    E1: somar n(A) + n(B) sem descontar a interseção
+    E2: tomar "estudam inglês" por "só inglês"
+    E3: esquecer quem não está em nenhum (ou supor que todos estão em algum)
+    E4: somar porcentagens de bases diferentes
+    O1: contar por correspondência (Galileu, Cantor)
+    O2: inclusão–exclusão para n conjuntos
+  exemplos: []
+  questoes_meta:
+    N1: 4
+    N2: 6
+    N3: 2
+    integradoras: 1
+  questoes_pool: []
+- n: 6
+  titulo: Três conjuntos e as regiões do diagrama
+  pergunta: Com três grupos, como organizar a contagem para não se perder nas sobreposições?
+  ids:
+    H1: 'três conjuntos, oito regiões (Venn): o diagrama como tabela de todas as combinações'
+    H2: preencher de dentro para fora (três → só dois → só um → nenhum)
+    H3: n(A ∪ B ∪ C) e as contagens "exatamente k" e "pelo menos k"
+    U1: pesquisa com três atributos e dados das interseções
+    U2: dados indiretos ("não optaram por", "exatamente dois") → equações nas regiões
+    U3: 'máximo e mínimo: o que os dados obrigam'
+    U4: regiões com elementos em vez de números
+    E1: tomar "A e B" por "só A e B" (ou o contrário)
+    E2: esquecer de somar de volta n(A ∩ B ∩ C)
+    E3: preencher de fora para dentro
+    E4: confundir "exatamente dois" com "pelo menos dois"
+    O1: círculos de Euler × diagrama de Venn
+    O2: Venn para quatro ou mais conjuntos
+  exemplos: []
+  questoes_meta:
+    N1: 4
+    N2: 6
+    N3: 2
+    integradoras: 1
+  questoes_pool: []

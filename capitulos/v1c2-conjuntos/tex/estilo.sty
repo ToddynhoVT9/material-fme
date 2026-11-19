@@ -1,0 +1,190 @@
+% estilo.sty — ambientes da didática v3 (kit material-fme)
+% Mudanças em relação ao piloto (Cap. I):
+%  - cabeçalho parametrizado: \renewcommand{\cabecalhocapitulo}{Cap.~II — Conjuntos} no main.tex;
+%  - questões e exemplos aceitam \label{...} no corpo; remissões com \ref, \qref, \exref;
+%  - \resp{...} dentro da questão guarda a resposta; \Respostas imprime a lista na ordem das questões;
+%  - \ondever{seção} para o ponteiro das perguntas da síntese.
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{estilo}[2026/11/19 kit material-fme, didatica v3]
+
+% ---------- idioma, fontes, página ----------
+\RequirePackage{babel}
+\babelprovide[import,main]{brazilian}
+\RequirePackage{fontspec}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{unicode-math}
+\setmainfont{Latin Modern Roman}
+\setsansfont{Latin Modern Sans}
+\setmathfont{Latin Modern Math}
+\RequirePackage[a4paper,top=2.4cm,bottom=2.6cm,inner=2.6cm,outer=2.4cm,headsep=0.8cm]{geometry}
+\RequirePackage{microtype}
+\RequirePackage[table]{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage{booktabs,array}
+\RequirePackage{multicol}
+\RequirePackage{csquotes}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
+\RequirePackage{longtable}
+\RequirePackage{needspace}
+\RequirePackage{etoolbox}
+\RequirePackage[european]{circuitikz}
+\usetikzlibrary{arrows.meta}
+\providecommand{\nao}{{\sim}}
+\RequirePackage[hidelinks]{hyperref}
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.08}
+\setlength{\emergencystretch}{1.5em}
+
+% ---------- cores (uma cor de destaque + neutros) ----------
+\definecolor{acento}{HTML}{1F5F7A}
+\definecolor{acentoclaro}{HTML}{E8F1F5}
+\definecolor{tinta}{HTML}{222222}
+\definecolor{cinza}{HTML}{6B6B6B}
+\definecolor{cinzaclaro}{HTML}{F4F4F2}
+\definecolor{alerta}{HTML}{9A3B2E}
+\definecolor{alertaclaro}{HTML}{F8EDEA}
+\definecolor{amarelo}{HTML}{B8901A}
+\definecolor{amareloclaro}{HTML}{FFF7D9}
+\definecolor{nivel1}{HTML}{2E7D32}   % N1 verde
+\definecolor{nivel2}{HTML}{1B3A6B}   % N2 azul-escuro
+\definecolor{nivel3}{HTML}{6A1B9A}   % N3 roxo
+\color{tinta}
+
+% ---------- títulos ----------
+\titleformat{\chapter}[display]{\sffamily\bfseries\color{acento}}{\large CAPÍTULO \thechapter}{0.4em}{\Huge}
+\titlespacing*{\chapter}{0pt}{0pt}{2.2em}
+\titleformat{\section}{\sffamily\bfseries\LARGE\color{acento}}{Unidade \thesection\quad}{0pt}{}[\vspace{2pt}{\color{acento}\titlerule[0.8pt]}]
+\renewcommand{\thesection}{\arabic{section}}
+\titlespacing*{\section}{0pt}{0pt}{1.4em}
+\titleformat{\subsection}{\sffamily\bfseries\Large\color{acento}}{}{0pt}{}
+\titlespacing*{\subsection}{0pt}{1.6em}{0.7em}
+\titleformat{\subsubsection}{\sffamily\bfseries\large}{}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{1.1em}{0.4em}
+\setcounter{secnumdepth}{1}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\raggedbottom
+
+% Seções da didática (ordem fixa) — viram \subsection sem número + entrada no sumário
+% needspace: o título da seção não fica sozinho no pé da página (questão e exemplo pedem 8 linhas)
+\newcommand{\secaodidatica}[1]{\needspace{10\baselineskip}\subsection{#1}}
+\newcommand{\Prefacio}{\secaodidatica{Prefácio}}
+\newcommand{\DeOndeVem}{\secaodidatica{De onde vem?}}
+\newcommand{\OndeEUsado}{\secaodidatica{Onde é usado?}}
+\newcommand{\ErrosComuns}{\secaodidatica{Erros comuns}}
+\newcommand{\Observacoes}{\secaodidatica{Observações}}
+\newcommand{\Exemplos}{\secaodidatica{Exemplos}}
+\newcommand{\Questoes}{\secaodidatica{Questões}}
+% \Respostas: título + respostas guardadas pelas \resp{…} das questões da unidade, na ordem das questões
+\newcommand{\Respostas}{\needspace{10\baselineskip}\secaodidatica{Respostas}{\small\imprimirrespostas}}
+
+% ---------- cabeçalho ----------
+\pagestyle{fancy}
+\fancyhf{}
+\newcommand{\cabecalhocapitulo}{}
+\fancyhead[LE]{\small\sffamily\color{cinza}\cabecalhocapitulo}
+\fancyhead[RO]{\small\sffamily\color{cinza}\nouppercase{\rightmark}}
+\fancyfoot[C]{\small\sffamily\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{\markright{Unidade \thesection\ — #1}}
+
+% ---------- marcas de procedência e de cobertura ----------
+% fonte numerada (c5): \src{chave} -> [n] da lista de fontes
+\newcommand{\src}[1]{\textsuperscript{\sffamily\scriptsize\color{cinza}\cite{#1}}}
+\newcommand{\anedota}{\textsuperscript{\textcolor{alerta}{\sffamily\scriptsize[anedota]}}}
+\newcommand{\fonte}[1]{{\sffamily\small\color{cinza}[#1]}}
+\newcommand{\cobre}[2][cinza]{{\sffamily\scriptsize\color{#1}\,$\langle$#2$\rangle$}}
+\newcommand{\idH}[1]{{\sffamily\scriptsize\color{white}\,$\langle$#1$\rangle$}}
+\newcommand{\nivel}[1]{{\sffamily\bfseries\small\color{white}\colorbox{nivel#1}{\,N#1\,}}}
+\newcommand{\integradora}{{\sffamily\scriptsize\color{acento}\,\fbox{integradora}}}
+
+% ---------- caixas ----------
+\tcbset{base/.style={enhanced,breakable,boxrule=0.5pt,arc=1.5pt,left=7pt,right=7pt,top=5pt,bottom=5pt,
+  fonttitle=\sffamily\bfseries\small,before skip=0.8em,after skip=0.9em}}
+
+% prefácio sem quadro (c3)
+\newenvironment{prefacio}{\par\medskip}{\par\medskip}
+\newcommand{\gancho}[1]{{\sffamily\bfseries\Large\color{acento}#1\par}\medskip}
+\newtcolorbox{minimo}{base,colback=white,colframe=acento,
+  title={O mínimo que você precisa},coltitle=white,colbacktitle=acento}
+\newtcolorbox{definicao}[1][]{base,colback=white,colframe=acento,
+  title={Definição\if\relax\detokenize{#1}\relax\else\ — #1\fi},coltitle=white,colbacktitle=acento}
+\newtcolorbox{construcao}[2][]{base,colback=amareloclaro,colframe=amarelo,
+  title={Construção: #1\hfill\idH{#2}},coltitle=white,colbacktitle=amarelo}
+% síntese de domínio (v3 §2.8): amarela, como a Construção — o estudante faz a própria construção
+\newtcolorbox{sintese}{base,colback=amareloclaro,colframe=amarelo,boxrule=0.8pt,
+  title={Síntese de domínio},coltitle=white,colbacktitle=amarelo,before skip=1.4em,unbreakable}
+\newcommand{\perguntasintese}[1]{\item #1\par\vspace{1.6em}}
+\newtcolorbox{paralembrar}{base,colback=acentoclaro,colframe=acento,boxrule=1pt,
+  title={Para lembrar},coltitle=white,colbacktitle=acento}
+
+% erro comum: 4 campos fixos
+\newtcolorbox{erro}[2]{base,colback=alertaclaro,colframe=alerta!70,
+  title={#1\hfill\cobre[white]{#2}},coltitle=white,colbacktitle=alerta!85}
+\newcommand{\campo}[1]{\par\smallskip\noindent{\sffamily\bfseries\small\color{alerta}#1}\quad}
+
+% observação = camada opcional (v3 §2.5, A2): selo + fonte menor
+\newcommand{\opcional}{{\sffamily\scriptsize\mdseries\color{cinza}\,\fbox{aprofundamento opcional}}}
+\newtcolorbox{obs}[1]{base,colback=white,colframe=cinza!50,fontupper=\small,
+  title={Observação\quad\opcional\hfill\cobre{#1}},coltitle=tinta,colbacktitle=cinzaclaro}
+
+% exemplo: {número}{nível}{procedência}{IDs}
+% exemplo colorido por nível (c3): N1 verde, N2 azul-escuro, N3 roxo
+% primeiro argumento vazio ({}) = número automático (unidade.ordem); \label{ex:...} no corpo
+\newcounter{exemplo}[section]
+\renewcommand{\theexemplo}{\thesection.\arabic{exemplo}}
+\newtcolorbox{exemplo}[4]{base,colback=white,colframe=nivel#2,boxrule=0.8pt,
+  code={\if\relax\detokenize{#1}\relax\refstepcounter{exemplo}\edef\@numex{\theexemplo}\else\def\@numex{#1}\def\@currentlabel{#1}\fi},
+  title={Exemplo \@numex\quad\nivel{#2}\quad{\mdseries\fonte{#3}}\hfill\cobre{#4}},coltitle=tinta,colbacktitle=nivel#2!10}
+\newcommand{\plano}{\par\smallskip\noindent{\sffamily\bfseries\small\color{acento}Plano.}\ }
+\newcommand{\resolucao}{\par\smallskip\noindent{\sffamily\bfseries\small\color{acento}Resolução.}\ }
+\newcommand{\comentario}{\par\smallskip\noindent{\sffamily\bfseries\small\color{acento}Comentário.}\ }
+
+% questões: numeração reinicia em cada unidade
+\newcounter{questao}[section]
+% \label{uN:...} logo após o cabeçalho entra na linha do cabeçalho (sem espaço nem linha em branco)
+\newcommand{\@qcorpo}{\par\nopagebreak\smallskip\noindent\ignorespaces}
+\def\@qcomlabel\label#1{\label{#1}\@qcorpo}
+\newenvironment{questao}[4][]{\refstepcounter{questao}\par\medskip\needspace{8\baselineskip}\noindent
+  {\sffamily\bfseries\color{acento}\thequestao.}\ \nivel{#2}\ \fonte{#3}\if\relax\detokenize{#1}\relax\else\ \integradora\fi\cobre{#4}\@ifnextchar\label{\@qcomlabel}{\@qcorpo}}{\par}
+
+% respostas  [ n. texto ]
+\newcommand{\resposta}[2]{\noindent[\,#1.\ #2\,]\par\smallskip}
+% \resp{texto} dentro de uma questão: guarda [ n. texto ] com o número atual da questão
+\newcommand{\@listaresp}{}
+\newcommand{\resp}[1]{\ifhmode\unskip\fi\xappto\@listaresp{\noexpand\resposta{\thequestao}{\unexpanded{#1}}}\ignorespaces}
+\newcommand{\imprimirrespostas}{\@listaresp\gdef\@listaresp{}}
+% remissões por rótulo (nunca número digitado)
+\newcommand{\qref}[1]{questão~\ref{#1}}
+\newcommand{\exref}[1]{exemplo~\ref{#1}}
+% ponteiro das perguntas da síntese: \perguntasintese{Pergunta? \ondever{De onde vem?}}
+\newcommand{\ondever}[1]{\hfill\mbox{\small\color{cinza}(→ #1)}}
+
+% tabela-verdade
+\newcolumntype{C}{>{\centering\arraybackslash}p{1.6em}}
+% filete fino entre linhas (c3), mantendo os grossos do booktabs
+\newcommand{\fino}{\arrayrulecolor{black!22}\specialrule{0.3pt}{0.25em}{0.25em}\arrayrulecolor{black}}
+\newenvironment{tabelaverdade}[1]{\begin{center}\small\begin{tabular}{#1}\toprule}{\bottomrule\end{tabular}\end{center}}
+
+% gatilhos
+% tabela de gatilhos (v3 §2.3: resumo do mapa do problema; a última coluna aponta onde treinar)
+\newenvironment{gatilhos}{\begin{center}\small\renewcommand{\arraystretch}{1.15}\begin{tabular}{>{\raggedright\arraybackslash}p{4.1cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{4.9cm}>{\raggedright\arraybackslash}p{1.9cm}}\toprule
+\sffamily\bfseries Sinal no enunciado & \sffamily\bfseries Ferramenta & \sffamily\bfseries Raciocínio & \sffamily\bfseries ID · treino\\\midrule}{\bottomrule\end{tabular}\end{center}}
+% mapa do problema (v3 §2.3): enunciado → estrutura → ferramenta, + como reconhecer
+\newenvironment{caso}[2]{\begin{tcolorbox}[base,colback=white,colframe=acento!45,boxrule=0.5pt,
+  title={Caso #1\hfill\cobre{#2}},coltitle=acento,colbacktitle=acentoclaro,fonttitle=\sffamily\bfseries\small]}{\end{tcolorbox}}
+\newcommand{\mapa}[3]{\par\noindent\begin{tabular}{@{}>{\leavevmode\sffamily\small\bfseries\color{acento}}p{3.0cm}>{\raggedright\arraybackslash}p{11.6cm}@{}}
+O enunciado diz & #1\\[2pt]
+Procure & #2\\[2pt]
+Ferramenta & #3
+\end{tabular}\par\smallskip}
+\newcommand{\reconhecer}{\par\noindent{\sffamily\bfseries\small\color{acento}Como reconhecer.}\ }
+
+% glossário
+\newenvironment{glossario}{\begin{description}[style=nextline,leftmargin=1.2em,font=\sffamily\bfseries\color{acento}]}{\end{description}}
+% citação longa
+\newenvironment{citacao}{\begin{quote}\small\itshape}{\end{quote}}
+\setlist{itemsep=0.15em,topsep=0.3em}
+\endinput
