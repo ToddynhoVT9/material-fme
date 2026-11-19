@@ -1,0 +1,210 @@
+% ============================================================
+% Unidade 3 — Condicional e bicondicional  (v3 — 00-didatica-v3.md)
+% Parte A: o "artigo" — Prefácio, De onde vem?, Onde é usado?
+% IDs: 3-H1 3-H2 3-H3 · 3-U1..U5 · 3-E1..E5 · 3-O1..O4
+% ============================================================
+\providecommand{\nao}{{\sim}}
+\clearpage
+\section{Condicional e bicondicional}
+
+% ------------------------------------------------------------
+\Prefacio
+\begin{prefacio}
+\gancho{Quatro cartas. Quais você precisa virar?}
+
+Sobre a mesa há quatro cartas. Cada uma tem uma letra de um lado e um número do outro. Você vê:
+\begin{center}
+\fbox{\Large\ \textsf{A}\ }\qquad \fbox{\Large\ \textsf{K}\ }\qquad \fbox{\Large\ \textsf{4}\ }\qquad \fbox{\Large\ \textsf{7}\ }
+\end{center}
+Alguém afirma: \enquote{\emph{se uma carta tem uma vogal de um lado, então tem um número par do outro}}. Quais cartas você precisa virar, e só essas, para descobrir se a afirmação é verdadeira? Pense antes de seguir. Quando o psicólogo Peter Wason propôs o problema, nos anos 1960, menos de uma pessoa em cada dez acertou.\src{wason1968}\src{wasonWiki}
+
+O problema é difícil porque mexe com a palavra mais usada, e mais traiçoeira, da matemática: o \enquote{se}. Quase todo teorema é um \enquote{se\ldots\ então}, e quase toda demonstração precisa saber quando um \enquote{se} é falso.
+
+\textbf{Quando, exatamente, uma frase \enquote{se $p$, então $q$} é falsa, e por que isso decide quais cartas virar?} É a pergunta desta unidade. A resposta das cartas está no exemplo \ref{ex:3.6}.
+
+\textbf{Ao final, você será capaz de:} classificar condicionais e bicondicionais pela tabela; traduzir \enquote{condição suficiente}, \enquote{condição necessária} e \enquote{somente se}; distinguir recíproca, inversa e contrapositiva; descobrir os valores das partes quando se sabe que um condicional é falso; e resolver problemas de regras como os da OBMEP.
+
+\textbf{Pré-requisitos:} as Unidades 1 e 2 (negação, $\wedge$, $\vee$ e as tabelas); divisibilidade, potências e desigualdades. O essencial está na caixa abaixo.
+\end{prefacio}
+
+\begin{minimo}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Das Unidades 1 e 2.} ${\nao}p$ inverte o valor; $p\wedge q$ só é V quando ambas são V; $p\vee q$ só é F quando ambas são F. Com $n$ letras, a tabela tem $2^n$ linhas.
+  \item \textbf{Negar desigualdades.} A negação de $x>2$ é $x\le 2$; a de $x^2>4$ é $x^2\le 4$.
+  \item \textbf{Contraexemplo.} Para mostrar que \enquote{todo número com a propriedade $A$ tem a propriedade $B$} é falso, basta \emph{um} número com $A$ e sem $B$.
+  \item \textbf{Paridade.} Todo inteiro é par ($n=2k$) ou ímpar ($n=2k+1$), e nunca as duas coisas.
+\end{itemize}
+\end{minimo}
+
+% ------------------------------------------------------------
+\DeOndeVem
+
+\subsubsection{Por que alguém precisou disso}
+No fim do século IV antes de Cristo, dois filósofos da chamada \enquote{escola dialética}, Diodoro Crono e seu aluno Fílon, o Lógico, discutiam uma pergunta aparentemente simples: \emph{quando uma frase da forma \enquote{se $p$, então $q$} é verdadeira?}\src{sepDialectical} A pergunta importava porque os argumentos se apoiavam em frases desse tipo, e sem uma regra não havia como decidir se um argumento era bom. Chamamos $p$ de \textbf{antecedente} e $q$ de \textbf{consequente}. A discussão passou dos dialéticos para os estoicos e chegou até nós.
+
+\subsubsection{O critério de Fílon}
+Fílon deu a resposta mais simples possível. Um condicional só é falso quando o antecedente é verdadeiro e o consequente é falso; em todos os outros casos, é verdadeiro. Seu exemplo: num momento em que é dia e eu estou conversando, \enquote{se é dia, eu converso} é verdadeiro. Sexto Empírico, que nos transmitiu a discussão, resume: para Fílon, um condicional pode ser verdadeiro de três modos e falso de um só.\src{ls35b} Lido hoje, é o critério que dá a tabela que a matemática usa (para Fílon, a verdade era relativa a um momento; para a matemática, as frases são atemporais).
+
+Por que três modos de ser verdadeiro? A melhor maneira de entender é pensar numa \emph{promessa}.
+
+\begin{construcao}[a tabela do condicional, pela promessa]{3-H1}
+Um professor promete: \enquote{\emph{se você tirar nota máxima na prova, então ganha um ponto extra}}. Sejam $p$: \enquote{você tira nota máxima} e $q$: \enquote{você ganha o ponto}. Em qual situação o professor \emph{quebrou} a promessa?
+\begin{enumerate}[label=(\arabic*)]
+  \item Você tirou nota máxima e ganhou o ponto: promessa cumprida. \textbf{V}.
+  \item Você tirou nota máxima e \emph{não} ganhou o ponto: promessa quebrada. \textbf{F}.
+  \item Você não tirou nota máxima e ganhou o ponto mesmo assim: o professor foi generoso, mas não mentiu — a promessa não dizia nada sobre esse caso. \textbf{V}.
+  \item Você não tirou nota máxima e não ganhou o ponto: nada a reclamar. \textbf{V}.
+\end{enumerate}
+A promessa só é quebrada em um caso. Escrevendo $p\rightarrow q$ (lê-se \enquote{se $p$, então $q$}):
+\begin{tabelaverdade}{ccc}
+$p$ & $q$ & $p\rightarrow q$\\\midrule
+V & V & V\\\fino
+V & F & \textbf{F}\\\fino
+F & V & V\\\fino
+F & F & V\\
+\end{tabelaverdade}
+\textbf{Leitura 0/1:} $p\rightarrow q = 1-p+pq$. Vale 0 só quando $p=1$ e $q=0$. Comparando com a Unidade 2: $p\rightarrow q$ tem a mesma tabela que ${\nao}p\vee q$.
+\end{construcao}
+
+\begin{definicao}[condicional]
+O \textbf{condicional} $p\rightarrow q$ é falso somente quando $p$ é verdadeira e $q$ é falsa; caso contrário, $p\rightarrow q$ é verdadeiro. Lê-se \enquote{se $p$, então $q$}, \enquote{$p$ é condição suficiente para $q$} ou \enquote{$q$ é condição necessária para $p$}.
+\end{definicao}
+
+As duas últimas leituras merecem atenção, porque confundem muita gente (erro 3-E3). Se \enquote{$p\rightarrow q$} é verdadeiro, então \emph{basta} saber que $p$ vale para garantir $q$: $p$ é \emph{suficiente}. E, se $q$ falhar, $p$ não pode valer: $q$ é \emph{necessária} para $p$. \enquote{Ser múltiplo de 4 é suficiente para ser par; ser par é necessário para ser múltiplo de 4.} A forma \enquote{$p$ somente se $q$} diz o mesmo que \enquote{se $p$, então $q$}.
+
+\subsubsection{A objeção de Diodoro}
+O professor de Fílon não aceitou a regra. Para Diodoro, um condicional só é verdadeiro se \emph{nunca foi nem é possível} que o antecedente seja verdadeiro e o consequente falso.\src{ls35b} Pelo critério dele, \enquote{se é dia, eu converso} é falso — afinal, pode muito bem ser dia sem que eu esteja conversando. A diferença é de fundo: Fílon olha só para os valores das partes \emph{agora}; Diodoro exige uma ligação que valha \emph{sempre}. Os nomes são de hoje: os historiadores descrevem o critério de Fílon como uma versão do que chamamos \emph{implicação material}, e o de Diodoro como um precursor da \emph{implicação estrita}.\src{sepDialectical}
+
+Havia critérios ainda mais exigentes que o de Diodoro (observação 3-O1). A matemática escolheu o mais fraco, o de Fílon, e a mesma observação conta por quê.
+
+\subsubsection{A recíproca, a inversa e a contrapositiva}
+A partir de um condicional $p\rightarrow q$, podem-se formar outros três trocando as posições ou negando as partes:
+\begin{center}\small
+\begin{tabular}{lll}\toprule
+\textbf{nome} & \textbf{forma} & \textbf{exemplo} (para inteiros $n$)\\\midrule
+condicional & $p\rightarrow q$ & se $n$ é múltiplo de 4, então $n$ é par\\\fino
+recíproca & $q\rightarrow p$ & se $n$ é par, então $n$ é múltiplo de 4\\\fino
+inversa & ${\nao}p\rightarrow{\nao}q$ & se $n$ não é múltiplo de 4, então $n$ não é par\\\fino
+contrapositiva & ${\nao}q\rightarrow{\nao}p$ & se $n$ não é par, então $n$ não é múltiplo de 4\\\bottomrule
+\end{tabular}
+\end{center}
+O condicional é verdadeiro para todo inteiro; a recíproca e a inversa falham em $n=6$; a contrapositiva é verdadeira. Não é coincidência.
+
+\begin{construcao}[a contrapositiva]{3-H3}
+Montamos as quatro colunas na mesma tabela:
+\begin{tabelaverdade}{cccccc}
+$p$ & $q$ & $p\rightarrow q$ & ${\nao}q\rightarrow{\nao}p$ & $q\rightarrow p$ & ${\nao}p\rightarrow{\nao}q$\\\midrule
+V & V & V & V & V & V\\\fino
+V & F & \textbf{F} & \textbf{F} & V & V\\\fino
+F & V & V & V & \textbf{F} & \textbf{F}\\\fino
+F & F & V & V & V & V\\
+\end{tabelaverdade}
+\begin{enumerate}[label=(\arabic*)]
+  \item O condicional e a \textbf{contrapositiva} têm colunas iguais: dizem a mesma coisa. Faz sentido: se $p$ garante $q$, então, onde $q$ falta, $p$ não pode estar.
+  \item A \textbf{recíproca} e a \textbf{inversa} também são iguais entre si — mas diferentes do condicional. Saber que $p\rightarrow q$ é verdadeiro não diz nada sobre $q\rightarrow p$.
+\end{enumerate}
+\end{construcao}
+
+Os erros de raciocínio mais comuns com o \enquote{se} são justamente trocar o condicional pela recíproca (\enquote{se chove, a rua molha; a rua está molhada; logo, choveu}) ou pela inversa (\enquote{\ldots; não choveu; logo, a rua está seca}). Os dois têm nome na lógica tradicional: \emph{afirmar o consequente} e \emph{negar o antecedente}. O erro 3-E2 os trata em detalhe.
+
+\subsubsection{O \enquote{se, e somente se}}
+Às vezes queremos dizer que a ligação vale nos dois sentidos: $p$ garante $q$ \emph{e} $q$ garante $p$. É o caso das definições: \enquote{um triângulo é equilátero se, e somente se, tem os três lados iguais}.
+
+\begin{construcao}[a tabela do bicondicional]{3-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item Definimos $p\leftrightarrow q$ (lê-se \enquote{$p$ se, e somente se, $q$}) como \enquote{$p\rightarrow q$ e $q\rightarrow p$}.
+  \item Calculamos as duas colunas e aplicamos a tabela de $\wedge$:
+\end{enumerate}
+\begin{tabelaverdade}{ccccc}
+$p$ & $q$ & $p\rightarrow q$ & $q\rightarrow p$ & $p\leftrightarrow q$\\\midrule
+V & V & V & V & \textbf{V}\\\fino
+V & F & F & V & F\\\fino
+F & V & V & F & F\\\fino
+F & F & V & V & \textbf{V}\\
+\end{tabelaverdade}
+O bicondicional é V quando $p$ e $q$ têm o \emph{mesmo} valor — inclusive quando ambas são falsas. Por isso ele é a negação do \enquote{ou exclusivo} da Unidade 2 (observação 2-O2). Em 0/1: $p\leftrightarrow q = 1-p-q+2pq$.
+\end{construcao}
+
+\begin{definicao}[bicondicional]
+O \textbf{bicondicional} $p\leftrightarrow q$ é verdadeiro somente quando $p$ e $q$ são ambas verdadeiras ou ambas falsas; caso contrário, é falso. Lê-se \enquote{$p$ se, e somente se, $q$} ou \enquote{$p$ é condição necessária e suficiente para $q$}.
+\end{definicao}
+
+\subsubsection{Dois mil anos depois: a disputa volta}
+O critério de Fílon reaparece na lógica moderna. Russell o chamava de \enquote{implicação material} e usou-o nos \emph{Principia Mathematica} (1910, com Whitehead) para ler todo \enquote{se\ldots\ então}. A partir de 1912, o americano C.~I.~Lewis protestou: com essa regra, uma proposição falsa \enquote{implica} qualquer proposição. Ele propôs no lugar uma \enquote{implicação estrita}, em que o consequente precisa seguir-se \emph{necessariamente} do antecedente, organizada em \emph{A Survey of Symbolic Logic} (1918).\src{organonF} Lembrava, dois mil anos depois, a posição de Diodoro. Na matemática, porém, o critério de Fílon ficou.
+
+Os símbolos $\rightarrow$ e $\leftrightarrow$ têm autor e data; estão na tabela de notação da abertura do capítulo.
+
+\subsubsection{Fecho: por que as cartas são difíceis}
+Wason apresentou a tarefa das cartas em 1966. No estudo dele, menos de 10\% das pessoas encontraram a resposta certa.\src{wason1968}\src{wasonWiki} Em 1971, Wason e Shapiro repetiram a tarefa com 32 estudantes universitários, em dois grupos: na versão abstrata, só 2 dos 16 acertaram; numa versão com cidades e meios de transporte, 10 dos 16.\src{wasonShapiro} No estudo de 1971, a escolha errada mais comum foi \enquote{A e 4}.\src{wasonShapiro}
+
+Agora dá para ver por quê. A regra é um condicional, e um condicional só é falso de \emph{um} jeito: antecedente verdadeiro e consequente falso. Para testar a regra, é preciso procurar esse caso — e não confirmações. A tentação é virar as cartas que \enquote{combinam} com a regra, as que mostram o antecedente e o consequente. A contrapositiva da construção 3-H3 mostra que uma delas é inútil e que falta outra. Volte às cartas antes de olhar o exemplo \ref{ex:3.6}.
+
+\begin{paralembrar}\label{lembrar-u3}
+\textbf{$p\rightarrow q$ só é F quando $p$ é V e $q$ é F; $p\leftrightarrow q$ é V quando $p$ e $q$ têm o mesmo valor.}
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \item Pense na promessa (Fílon): só se quebra se a condição acontece e o prometido não.
+  \item $p$ é suficiente para $q$ e $q$ é necessária para $p$; o condicional equivale à contrapositiva ${\nao}q\rightarrow{\nao}p$, \emph{não} à recíproca $q\rightarrow p$.
+  \item $p\leftrightarrow q$ é \enquote{$p\rightarrow q$ e $q\rightarrow p$}; é V também quando as duas são F.
+\end{enumerate}
+\end{paralembrar}
+
+% ------------------------------------------------------------
+\OndeEUsado
+
+O condicional quase nunca aparece como \enquote{$p\rightarrow q$}: vem como teorema, como regra, como \enquote{basta que}, \enquote{só se}, \enquote{é preciso}. Esta seção ensina a reconhecê-lo. São seis situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · um \enquote{se} em V ou F}{3-U1}
+\mapa{\enquote{classifique em V ou F} frases com \enquote{se\ldots, então\ldots}; teoremas, com hipótese e tese}
+{o valor do antecedente e o do consequente}
+{a tabela de $\rightarrow$: só é F com antecedente V e consequente F}
+\reconhecer É o exercício 4 do FME.\src{fme} Os casos que mais derrubam são os de antecedente falso: \enquote{se $2+2=5$, então $7$ é par} é verdadeiro (erro 3-E1). Num teorema, a hipótese é o antecedente e a tese, o consequente; a recíproca de um teorema é outro enunciado, que precisa de outra demonstração. Cuidado com o \enquote{se} da fala: quando um pai diz \enquote{se você arrumar o quarto, pode sair}, o filho ouve um bicondicional; a lógica só registra a promessa. Treino: exemplo \ref{ex:3.1}; questões \ref{u3:q1} e \ref{u3:q2}.
+\end{caso}
+
+\begin{caso}{2 · condição suficiente, necessária, \enquote{somente se}}{3-U1}
+\mapa{\enquote{é suficiente}, \enquote{basta que}, \enquote{é necessário}, \enquote{é preciso}, \enquote{somente se}, \enquote{só se}}
+{um condicional escrito com outras palavras}
+{suficiente $=$ antecedente; necessária $=$ consequente; \enquote{$p$ somente se $q$} $= p\rightarrow q$}
+\reconhecer Questões que pedem a frase \enquote{equivalente} a um condicional podem oferecer, como distrator, a recíproca escrita com \enquote{suficiente} e \enquote{necessária} trocadas (erro 3-E3). Na dúvida, teste com números: \enquote{ser múltiplo de 4 é suficiente para ser par}. Treino: exemplo \ref{ex:3.2}; questão \ref{u3:q3}.
+\end{caso}
+
+\begin{caso}{3 · regras e restrições}{3-U2}
+\mapa{uma lista de regras \enquote{se\ldots, (não) faça\ldots}; \enquote{qual opção respeita todas as regras?}}
+{para cada opção, alguma regra com antecedente V e consequente F}
+{teste caso a caso; contrapositiva para regras com negação incômoda}
+\reconhecer A OBMEP gosta de problemas com várias regras: as instruções da mãe de César para fazer um bolo (OBMEP 2007)\src{obmep2007} ou as bebidas que Ari, Bruna e Carlos pedem no almoço.\src{simulado2017N3} Uma regra só é violada quando a condição acontece e o resultado não. Quando está escrita de modo incômodo (\enquote{se não colocar creme, não coloque leite}), a contrapositiva ajuda (\enquote{se colocar leite, coloque creme}). Treino: exemplo \ref{ex:3.5}; questão \ref{u3:q11}.
+\end{caso}
+
+\begin{caso}{4 · \enquote{sabe-se que\ldots\ é falsa}}{3-U3}
+\mapa{\enquote{a afirmação \enquote{se $p$, então $q$} é falsa}; \enquote{considerando falsa a proposição\ldots}}
+{o único caso F do condicional}
+{concluir $p$ V e $q$ F, e propagar pelas tabelas de $\wedge$, $\vee$ e ${\nao}$}
+\reconhecer Formato típico de concursos. Como o condicional só é falso de um jeito, a informação é poderosíssima: duas proposições ficam determinadas de uma vez. É o exercício 6 do FME (questão \ref{u3:q6}). Treino: exemplo \ref{ex:3.4}; questões \ref{u3:q6} e \ref{u3:q8}.
+\end{caso}
+
+\begin{caso}{5 · contrapositiva: provas e verificações}{3-U4}
+\mapa{\enquote{demonstre que se\ldots, então\ldots} com hipótese difícil de usar; \enquote{equivalente a\ldots} com várias setas; \enquote{quais casos é preciso verificar para testar uma regra?}}
+{${\nao}q\rightarrow{\nao}p$, que diz o mesmo que $p\rightarrow q$}
+{a construção 3-H3: contrapositiva sim; recíproca e inversa não}
+\reconhecer Para mostrar \enquote{se $n^2$ é par, então $n$ é par}, prova-se \enquote{se $n$ é ímpar, então $n^2$ é ímpar}: com $n=2k+1$, vem $n^2=4k^2+4k+1=2(2k^2+2k)+1$, que é ímpar. Para verificar uma regra, procure o caso F: antecedente V ou consequente F; os outros não podem desmenti-la. Treino: exemplo \ref{ex:3.5}; questões \ref{u3:q4}, \ref{u3:q7}, \ref{u3:q9} e \ref{u3:q10}.
+\end{caso}
+
+\begin{caso}{6 · definições e \enquote{se, e somente se}}{3-U5}
+\mapa{\enquote{se, e somente se}; \enquote{condição necessária e suficiente}; uma definição}
+{um bicondicional: os dois sentidos}
+{a tabela de $\leftrightarrow$: V quando os valores são iguais, inclusive F e F}
+\reconhecer Uma definição estabelece um bicondicional: \enquote{$n$ é par se, e somente se, $n=2k$ para algum inteiro $k$}. Muitos livros escrevem só \enquote{$n$ é par se $n=2k$}: em definições, o \enquote{se} vale como \enquote{se, e somente se}; em teoremas, não. Para derrubar um bicondicional geral, basta um contraexemplo em qualquer dos dois sentidos. Treino: exemplo \ref{ex:3.3}; questão \ref{u3:q5}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
+\begin{gatilhos}
+\enquote{se\ldots\ então\ldots} em V ou F & tabela de $\rightarrow$ & só é F com antecedente V e consequente F & 3-U1 · ex.~\ref{ex:3.1}\\\fino
+\enquote{suficiente}, \enquote{necessária}, \enquote{somente se} & leituras de $\rightarrow$ & suficiente = antecedente; necessária = consequente & 3-U1 · q.~\ref{u3:q3}\\\fino
+regras \enquote{se\ldots, (não) faça\ldots} & teste caso a caso & cada opção viola alguma regra? (antecedente V e consequente F) & 3-U2 · ex.~\ref{ex:3.5}\\\fino
+\enquote{a afirmação \enquote{se $p$, então $q$} é falsa} & único caso F & conclua $p$ V e $q$ F; propague & 3-U3 · q.~\ref{u3:q6}\\\fino
+regra com negação incômoda; prova difícil & contrapositiva & troque $p\rightarrow q$ por ${\nao}q\rightarrow{\nao}p$ & 3-U4 · q.~\ref{u3:q9}\\\fino
+\enquote{equivalente a\ldots} com várias setas & 3-H3 & contrapositiva sim; recíproca e inversa não & 3-U4 · q.~\ref{u3:q4}\\\fino
+\enquote{se, e somente se}, definições & tabela de $\leftrightarrow$ & V quando os valores são iguais (inclusive F e F) & 3-U5 · q.~\ref{u3:q5}\\\fino
+\enquote{quais casos verificar?} & procurar o caso F & teste o antecedente e a negação do consequente & 3-U4 · q.~\ref{u3:q10}\\
+\end{gatilhos}

@@ -1,0 +1,19 @@
+% Fontes do capítulo: uma entrada por chave \src{…}. Ordem = ordem de primeira citação (aproximada).
+% Fonte primária ao lado da secundária frágil sempre que localizada (A5, E-R3-5).
+% Formato: Autor, \emph{Obra}, local (trad./ed.). \url{…}  ·  artigos com DOI.
+\chapter*{Fontes}
+\addcontentsline{toc}{chapter}{Fontes}
+\markboth{Fontes}{Fontes}
+\small
+Os números sobrescritos no texto remetem a esta lista. As questões trazem a procedência no próprio cabeçalho. Os endereços da web foram acessados em {{MES_ANO}}, e em todas as páginas da web (Wikipédia, enciclopédias e repositórios) vale a versão dessa data. Quando a fonte acessível é secundária, a obra original vem citada ao lado, sempre que localizada.
+
+\begingroup
+\makeatletter
+% a lista entra logo abaixo do título "Fontes": sem novo capítulo nem cabeçalho "Referências"
+\renewcommand{\chapter}{\@ifstar{\@gobble}{\@gobble}}
+\renewcommand{\@mkboth}[2]{}
+\makeatother
+\begin{thebibliography}{999}\setlength{\itemsep}{0.2em}
+\bibitem{fme} G.~Iezzi et al., \emph{Fundamentos de Matemática Elementar}, vol.~{{VOLUME}}, cap.~{{CAP_ROMANO}}, \enquote{{{TITULO_CAPITULO}}}. São Paulo: Atual.
+\end{thebibliography}
+\endgroup

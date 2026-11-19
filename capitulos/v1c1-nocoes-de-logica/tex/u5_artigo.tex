@@ -1,0 +1,156 @@
+% ============================================================
+% Unidade 5 — Sentenças abertas e quantificadores  (v3 — 00-didatica-v3.md)
+% Parte A: o "artigo" — Prefácio, De onde vem?, Onde é usado?
+% IDs: 5-H1..H3 · 5-U1..U4 · 5-E1..E4 · 5-O1..O3
+% ============================================================
+\providecommand{\nao}{{\sim}}
+\clearpage
+\section{Sentenças abertas e quantificadores}
+
+% ------------------------------------------------------------
+\Prefacio
+\begin{prefacio}
+\gancho{\enquote{$x+1=7$} não é verdadeira nem falsa. Como transformá-la numa afirmação sem escolher $x$?}
+
+Na Unidade 1, frases com letras soltas, como \enquote{$3x-1=11$}, ficaram de fora: não eram proposições, porque o valor dependia de $x$. Mas a matemática está cheia delas. Toda equação, toda identidade algébrica, toda definição usa variáveis. Se a lógica não souber lidar com elas, não serve para a matemática.
+
+\textbf{Como dizer algo verdadeiro ou falso sobre $x+1=7$, sem escolher valor para $x$?} É a pergunta desta unidade. A resposta vai explicar também por que mil exemplos não provam uma afirmação geral, e um único contraexemplo a derruba.
+
+\textbf{Ao final, você será capaz de:} reconhecer sentenças abertas; transformá-las em proposições atribuindo valores ou usando $\forall$, $\exists$ e $\exists|$; escolher o quantificador certo para identidades e equações; levar em conta o domínio das variáveis; e traduzir \enquote{no máximo} e \enquote{pelo menos}.
+
+\textbf{Pré-requisitos:} as Unidades 1 a 3 (proposição; $\wedge$, $\vee$; condicional e contraexemplo); conjuntos numéricos; equações do 1º e do 2º grau. O essencial está na caixa abaixo.
+\end{prefacio}
+
+\begin{minimo}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Conjuntos numéricos.} $\mathbb{N}=\{0,1,2,\ldots\}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$; $\mathbb{R}^*$ é $\mathbb{R}$ sem o 0. \enquote{$x\in\mathbb{R}$} lê-se \enquote{$x$ é real}.
+  \item \textbf{Raiz quadrada.} $\sqrt{x^2}=|x|$: é $x$ quando $x\ge0$ e $-x$ quando $x<0$. Assim, $\sqrt{(-3)^2}=3$.
+  \item \textbf{Divisão por zero.} Uma expressão com $a$ no denominador não está definida para $a=0$.
+  \item \textbf{Equações.} $x^2-5x+4=0$ tem as raízes 1 e 4; $ax+b=0$, com $a\neq0$, tem a única raiz $-b/a$.
+  \item \textbf{Conjuntos.} O \emph{conjunto universo} $U$ é onde a variável vive. \enquote{$a\in A$}: $a$ pertence a $A$; \enquote{$a\notin A$}: não pertence. $\{x\in\mathbb{R}\mid x>1\}$ é o conjunto dos reais que cumprem a condição $x>1$; o \emph{conjunto-verdade} de uma sentença $P(x)$ é $\{x\in U\mid P(x)\text{ é V}\}$.
+  \item \textbf{Intervalos.} $-3<x\le2$ é o intervalo $]-3,\,2]$: os reais maiores que $-3$ e menores ou iguais a 2.
+\end{itemize}
+\end{minimo}
+
+% ------------------------------------------------------------
+\DeOndeVem
+
+\subsubsection{Por que alguém precisou disso}
+As palavras \enquote{todo} e \enquote{algum} estão no centro da lógica desde Aristóteles: \enquote{todo homem é mortal}, \enquote{algum animal é bípede}. Mas, como Aristóteles as usava, e por dois mil anos depois dele, elas faziam parte da frase como o sujeito e o predicado; a leitura de hoje, como operações sobre variáveis, só veio no século XIX. Mesmo Boole teve dificuldade: escrevia \enquote{todo $X$ é $Y$} como a equação $xy=x$, mas, para dizer \enquote{algum $X$ é $Y$}, precisou de um artifício — inventar uma classe auxiliar, não vazia, com os elementos comuns.\src{sepFOL} Faltava uma forma de falar de \emph{todos os casos} e de \emph{pelo menos um caso} de modo geral.
+
+\subsubsection{Frases que esperam um valor}
+Antes da solução, o problema. Expressões como $x+1=7$, $x>2$ e $x^3=2x^2$ contêm uma variável, e o valor lógico depende do valor dado a ela: $x+1=7$ é V para $x=6$ e F para qualquer outro número.\src{fme} O FME as chama de \emph{sentenças abertas}. (O livro usa também o nome \enquote{funções proporcionais}, que é um erro de impressão de \enquote{funções proposicionais} — observação 5-O1.)
+
+\begin{construcao}[da sentença aberta à proposição]{5-H1}
+Partimos de uma sentença aberta $P(x)$, como $x+1=7$. Há duas saídas:
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{Atribuir valor à variável.} $P(6)$: \enquote{$6+1=7$} (V); $P(2)$: \enquote{$2+1=7$} (F). Cada valor dá uma proposição diferente.
+  \item \textbf{Quantificar.} Sem escolher valor, perguntamos \emph{em quantos casos} $P(x)$ vale:
+  \begin{itemize}
+    \item $(\forall x)\,P(x)$ — \enquote{para todo $x$, $P(x)$}: afirma que vale em \emph{todos} os casos;
+    \item $(\exists x)\,P(x)$ — \enquote{existe $x$ tal que $P(x)$}: afirma que vale em \emph{pelo menos um} caso.
+  \end{itemize}
+\end{enumerate}
+Em ambas as saídas o resultado é uma proposição, com valor V ou F. Para $x+1=7$, com $x$ real: $(\forall x)(x+1=7)$ é F e $(\exists x)(x+1=7)$ é V.
+\end{construcao}
+
+\subsubsection{Frege e Peirce}
+A segunda saída — quantificar — foi a grande invenção. Gottlob Frege a apresentou em 1879, num livro chamado \emph{Conceitografia}. Charles S. Peirce chegou à mesma ideia de forma totalmente independente, numa nota de 1883 e num artigo de 1885, e foi ele o primeiro a usar a palavra \enquote{quantificador}.\src{sepFOL}
+
+Peirce escreveu os quantificadores com as letras gregas $\Pi$ e $\Sigma$, as mesmas do produto e da soma, de propósito: via o \enquote{para todo} como uma conjunção, talvez infinita, e o \enquote{existe} como uma disjunção.\src{sepFOL} Essa ideia é a ponte entre esta unidade e as anteriores.
+
+\begin{construcao}[$\forall$ como \enquote{e}, $\exists$ como \enquote{ou}]{5-H2}
+Num domínio finito, os quantificadores se desmontam nos conectivos da Unidade 2. Seja $A=\{1,2,3\}$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $(\forall x\in A)\,P(x)\ \Leftrightarrow\ P(1)\wedge P(2)\wedge P(3)$ — vale se valer em todos;
+  \item $(\exists x\in A)\,P(x)\ \Leftrightarrow\ P(1)\vee P(2)\vee P(3)$ — vale se valer em pelo menos um.
+\end{enumerate}
+Exemplo com $P(x)$: \enquote{$x^2<5$}. $P(1)$ e $P(2)$ são V, $P(3)$ é F. Logo $(\forall x\in A)\,P(x)$ é F (uma conjunção com uma parte F) e $(\exists x\in A)\,P(x)$ é V (uma disjunção com uma parte V).
+Num domínio infinito, como $\mathbb{N}$, a conjunção e a disjunção seriam infinitas — por isso precisamos de símbolos novos. Mas a lógica é a mesma: um único caso F derruba o $\forall$; um único caso V garante o $\exists$.
+\end{construcao}
+
+Os símbolos $\exists$ e $\forall$ têm história própria, resumida na tabela de notação da abertura.
+
+\subsubsection{Existe, e é um só}
+Às vezes queremos dizer mais do que \enquote{existe}: que existe \emph{exatamente um}. O FME usa para isso o símbolo $\exists|$, que se lê \enquote{existe um único}.\src{fme}
+
+\begin{construcao}[o \enquote{existe um único}]{5-H3}
+\enquote{$(\exists|\,x)\,P(x)$} afirma duas coisas ao mesmo tempo:
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{existência:} há pelo menos um $x$ com $P(x)$;
+  \item \textbf{unicidade:} se $P(a)$ e $P(b)$, então $a=b$ — não há dois diferentes.
+\end{enumerate}
+Exemplos, com $x$ real: $(\exists|\,x)(x+1=7)$ é V (só o 6); $(\exists|\,x)(x^3=2x^2)$ é F (há dois: 0 e 2); $(\exists|\,x)(x+2>3)$ é F (há infinitos).\src{fme} Para provar um $\exists|$, é preciso provar as duas partes; para refutá-lo, basta mostrar que não existe nenhum \emph{ou} que existem dois.
+\end{construcao}
+
+\subsubsection{Por que exemplos não bastam}
+Uma frase com $\forall$ é uma afirmação sobre infinitos casos. Verificar muitos deles não a prova; um único caso contrário — um \textbf{contraexemplo} — a derruba. A história da matemática tem dois exemplos célebres.
+
+O primeiro é de Pierre de Fermat. Ele observou que os números da forma $2^{2^n}+1$ eram primos para $n=0,1,2,3,4$ — dão 3, 5, 17, 257 e 65\,537 — e afirmou que todos eram primos. Em 1732, Leonhard Euler mostrou que o seguinte, $2^{32}+1=4\,294\,967\,297$, é divisível por 641.\src{euler1732}\src{millersville} Cinco exemplos, e a afirmação estava errada.
+
+O segundo é do próprio Euler. Em 1772, ele registrou que a expressão $41-x+x^2$ dá números primos nos quarenta primeiros casos, de $x=1$ a $x=40$. Escrita como hoje, com $n=x-1$, ela é $n^2+n+41$, prima para $n=0,1,\ldots,39$. Mas, para $n=40$, dá $1\,681=41^2$.\src{perrinEuler} Quarenta exemplos também não provam um \enquote{para todo}.
+
+\subsubsection{Fecho: e o $x+1=7$?}
+A frase do prefácio, sem valor de $x$, não é proposição. Mas \enquote{$(\exists x)(x+1=7)$} é uma proposição verdadeira, \enquote{$(\exists|\,x)(x+1=7)$} também, e \enquote{$(\forall x)(x+1=7)$} é falsa — tudo isso sem escolher valor para $x$. A diferença entre uma \emph{equação} e uma \emph{identidade} é exatamente a diferença entre $\exists$ e $\forall$: $x+1=7$ vale para algum $x$; $(a+1)^2=a^2+2a+1$ vale para todo $a$.
+
+\begin{paralembrar}\label{lembrar-u5}
+\textbf{Sentença aberta vira proposição de dois modos, dando valor à variável ou quantificando: $\forall$ = todos os casos; $\exists$ = pelo menos um; $\exists|$ = exatamente um.}
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \item $\forall$ é um \enquote{e} generalizado; $\exists$ é um \enquote{ou} generalizado (Peirce).
+  \item Um contraexemplo derruba um $\forall$; nenhuma quantidade de exemplos o prova.
+  \item O valor de uma quantificada depende do domínio (diga sempre onde a variável vive); identidade: $\forall$; equação: $\exists$ (às vezes $\exists|$).
+\end{enumerate}
+\end{paralembrar}
+
+% ------------------------------------------------------------
+\OndeEUsado
+
+Quantificadores estão escondidos em quase toda frase matemática, e os livros raramente os escrevem. Esta seção ensina a vê-los. São cinco situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · \enquote{transforme em proposição} e \enquote{todo\ldots} em V ou F}{5-U1}
+\mapa{\enquote{transforme em proposição verdadeira usando quantificadores}; \enquote{classifique em V ou F} frases com \enquote{todo}, \enquote{algum}, \enquote{existe}}
+{se a sentença vale em todos os casos do domínio, em algum ou em nenhum}
+{$\forall$ se não há caso que falhe; $\exists$ se há caso que funcione; para derrubar um $\forall$, um contraexemplo}
+\reconhecer É o exercício 8 do FME.\src{fme} Afirmações do tipo \enquote{todo número primo é ímpar} pedem um contraexemplo (o 2), e não uma lista de casos que funcionam: exemplos não provam um $\forall$ (erro 5-E3). Treino: exemplo \ref{ex:5.1}; questões \ref{u5:q1}, \ref{u5:q2} e \ref{u5:q7}.
+\end{caso}
+
+\begin{caso}{2 · identidade ou equação}{5-U2}
+\mapa{uma igualdade algébrica com letras, sem quantificador escrito}
+{o quantificador subentendido: \enquote{para todo} (identidade) ou \enquote{para quais?} (equação)}
+{testar dois ou três valores; se algum falha, não é identidade}
+\reconhecer \enquote{$(a+1)^2=a^2+2a+1$} é uma identidade: subentende-se \enquote{para todo $a$}. \enquote{$x^2-5x+4=0$} é uma equação: pergunta-se \enquote{para quais $x$?}, e \enquote{a equação tem solução} é um \enquote{existe}. O leitor precisa reconhecer o quantificador pelo contexto. Treino: exemplo \ref{ex:5.1}; questão \ref{u5:q1}.
+\end{caso}
+
+\begin{caso}{3 · domínio}{5-U3}
+\mapa{raiz, fração, logaritmo com variável; \enquote{seja $x$ um número real\ldots}; uma definição (crescente, par, divisível)}
+{onde a variável vive, e onde a expressão está definida}
+{fixar o domínio antes de quantificar; testar um negativo, o zero e uma fração}
+\reconhecer \enquote{Existe $x$ com $x^2=2$} é V em $\mathbb{R}$ e F em $\mathbb{Q}$; \enquote{$\sqrt{x^2}=x$ para todo $x$} é F em $\mathbb{R}$, mas V se $x\ge0$. As definições do ensino médio são cheias de quantificadores: uma função é crescente quando, \emph{para todos} $x_1<x_2$ do domínio, $f(x_1)<f(x_2)$; um número é par quando \emph{existe} um inteiro $k$ com $n=2k$. Errar o quantificador é errar a definição. Treino: exemplo \ref{ex:5.3}; questões \ref{u5:q3} e \ref{u5:q8}.
+\end{caso}
+
+\begin{caso}{4 · \enquote{no máximo}, \enquote{pelo menos}, \enquote{exatamente}}{5-U4}
+\mapa{\enquote{pelo menos um}, \enquote{no máximo um}, \enquote{exatamente um}, \enquote{só é possível garantir que\ldots}}
+{$\exists$; \enquote{não existem dois diferentes}; os dois juntos ($\exists|$)}
+{separar existência e unicidade; para \enquote{garantir}, testar todos os casos compatíveis com os dados}
+\reconhecer São quantificadores disfarçados de contagem. Aparecem com força quando os dados são imprecisos (um relógio que só mostra minutos, um termômetro sem casas decimais): \enquote{pode-se garantir} quer dizer \enquote{vale em todos os casos possíveis}. A questão da UF-RS sobre dois relógios é construída inteira em cima dessas expressões.\src{fme} Treino: questões \ref{u5:q4} e \ref{u5:q10}.
+\end{caso}
+
+\begin{caso}{5 · dois quantificadores na mesma frase}{5-U1}
+\mapa{\enquote{para todo\ldots\ existe\ldots}; \enquote{existe\ldots\ que serve para todos}; \enquote{todo aluno leu um livro}}
+{quem é escolhido primeiro}
+{em $\forall x\,\exists y$, o $y$ pode depender de $x$; em $\exists y\,\forall x$, um só $y$ serve para todos}
+\reconhecer O português é ambíguo na ordem: \enquote{todo aluno leu um livro} pode querer dizer que cada um leu algum livro, talvez diferentes, ou que há um livro que todos leram. Na lógica, são frases diferentes, e a segunda é muito mais forte (erro 5-E4). Treino: exemplo \ref{ex:5.5}; questão \ref{u5:q6}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
+\begin{gatilhos}
+letra sem valor na frase & sentença aberta & não é proposição; dê valor ou quantifique & 5-U1 · q.~\ref{u5:q1}\\\fino
+\enquote{transforme em proposição verdadeira} & $\forall$ ou $\exists$ & vale sempre? $\forall$. Só às vezes? $\exists$ & 5-U1 · ex.~\ref{ex:5.1}\\\fino
+identidade algébrica / equação & $\forall$ / $\exists$ & identidade vale para todo valor; equação, para alguns & 5-U2 · q.~\ref{u5:q1}\\\fino
+raiz, fração, logaritmo com variável & domínio & onde a expressão está definida? onde vale? & 5-U3 · ex.~\ref{ex:5.3}\\\fino
+\enquote{pelo menos}, \enquote{no máximo}, \enquote{exatamente} & $\exists$, \enquote{não existem dois}, $\exists|$ & separe existência e unicidade & 5-U4 · q.~\ref{u5:q4}\\\fino
+\enquote{todo\ldots} em V ou F & contraexemplo & procure um caso que falhe; exemplos não provam & 5-U1 · q.~\ref{u5:q7}\\\fino
+dois quantificadores juntos & ordem importa & $\forall x\,\exists y$ (o $y$ pode mudar) $\neq$ $\exists y\,\forall x$ (um $y$ para todos) & 5-U1 · ex.~\ref{ex:5.5}\\
+\end{gatilhos}

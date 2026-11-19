@@ -1,0 +1,20 @@
+# Matriz de cobertura — Cap. {{CAP_ROMANO}} · {{TITULO_CAPITULO}}
+# IDs: H construção (De onde vem?) · U contexto de uso · E erro comum · O observação (opcional)
+# Regras: kit/didatica.md §6 · conferida por kit/scripts/matriz.py (e pelo checar.py)
+# Itens casam com o LaTeX pelo `rotulo` (o \label do item). nivel: 1 | 2 | 3.
+# fonte: autoral | historico | FME | adaptado do FME | vestibular | olimpiada | concurso  (+ status)
+#
+# Formato de um exemplo e de uma questão:
+#   exemplos:
+#   - rotulo: ex:u1:nome
+#     nivel: 1
+#     fonte: autoral
+#     tema: 'o que o exemplo treina'
+#     cobre: [H1, U1, E1]
+#   questoes_pool:
+#   - rotulo: u1:nome
+#     nivel: 2
+#     fonte: 'FME, exercício 3'
+#     cobre: [U1, E1]
+#     integradora: false
+unidades:

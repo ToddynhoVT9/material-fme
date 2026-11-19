@@ -1,0 +1,349 @@
+% Parte B: erros, observações, exemplos, questões, respostas
+\ErrosComuns
+
+\begin{erro}{Achar que antecedente falso torna o condicional falso}{3-E1}
+\campo{O erro.} Classificar \enquote{se $3\cdot4=10$, então $1>2$} como falso \enquote{porque $3\cdot4$ não é 10}.
+\campo{Por que parece plausível.} Lê-se o condicional como se afirmasse o antecedente. No dia a dia, quem diz \enquote{se\ldots} costuma achar que a condição pode acontecer.
+\campo{Onde quebra.} No teorema \enquote{para todo inteiro $n$, se $n$ é múltiplo de 4, então $n$ é par}. Para $n=6$, o antecedente é falso. Se isso tornasse o condicional falso, o teorema seria falso, e quase nenhum teorema sobreviveria.
+\campo{Como detectar.} Antes de classificar, olhe o antecedente. Se ele é F, a resposta já está dada, e você não precisa nem ler o consequente.
+\campo{Como corrigir.} Lembre a promessa (construção 3-H1): se a condição não acontece, a promessa não é quebrada. Antecedente F: condicional V.
+\campo{Onde aparece.} Exemplo \ref{ex:3.1}; questões \ref{u3:q1}, \ref{u3:q8} e \ref{u3:q13}.
+\end{erro}
+
+\begin{erro}{Confundir recíproca ou inversa com contrapositiva}{3-E2}
+\campo{O erro.} De \enquote{se é quadrado, tem quatro ângulos retos}, concluir \enquote{se tem quatro ângulos retos, é quadrado} (recíproca) ou \enquote{se não é quadrado, não tem quatro ângulos retos} (inversa).
+\campo{Por que parece plausível.} As três frases têm as mesmas palavras; trocar a ordem ou acrescentar \enquote{não} parece inofensivo. Muitas vezes a recíproca também é verdadeira, e o estudante generaliza.
+\campo{Onde quebra.} Num retângulo que não é quadrado: tem quatro ângulos retos e não é quadrado. A recíproca e a inversa falham; a frase original, não.
+\campo{Como detectar.} Compare as posições: você trocou a ordem \emph{e} negou as duas partes? Só isso é a contrapositiva. Se fez só uma das duas coisas, procure um contraexemplo.
+\campo{Como corrigir.} Use a construção 3-H3: $p\rightarrow q$ equivale a ${\nao}q\rightarrow{\nao}p$, e só a ela.
+\campo{Onde aparece.} Exemplo \ref{ex:3.6}; questões \ref{u3:q4} e \ref{u3:q10}.
+\end{erro}
+
+\begin{erro}{Inverter \enquote{necessária}, \enquote{suficiente} e \enquote{somente se}}{3-E3}
+\campo{O erro.} Ler \enquote{ser par é condição necessária para ser múltiplo de 6} como \enquote{se é par, então é múltiplo de 6}; ler \enquote{$p$ somente se $q$} como $q\rightarrow p$.
+\campo{Por que parece plausível.} \enquote{Necessário} soa como \enquote{o que vem primeiro}, e \enquote{somente se} parece reforçar o \enquote{se}.
+\campo{Onde quebra.} Em $n=2$: é par e não é múltiplo de 6. A leitura errada produz uma frase falsa a partir de uma verdadeira.
+\campo{Como detectar.} Teste a sua tradução com um número em que a condição necessária vale e a outra não. Se a tradução fica falsa e o enunciado era verdadeiro, ela está invertida.
+\campo{Como corrigir.} A condição \emph{suficiente} fica na frente da seta; a \emph{necessária}, depois. \enquote{$p$ somente se $q$} é $p\rightarrow q$.
+\campo{Onde aparece.} Exemplo \ref{ex:3.2}; questão \ref{u3:q3}.
+\end{erro}
+
+\begin{erro}{Ler o \enquote{se, e somente se} como \enquote{e}}{3-E4}
+\campo{O erro.} Classificar como falso um bicondicional em que as duas partes são falsas, como \enquote{$5>9\leftrightarrow 2=3$}.
+\campo{Por que parece plausível.} Pensa-se que \enquote{$p$ se, e somente se, $q$} afirma $p$ e afirma $q$.
+\campo{Onde quebra.} Na definição \enquote{$n$ é primo se, e somente se, tem exatamente dois divisores naturais}. Para $n=1$, as duas partes são falsas; se o bicondicional fosse falso aí, a definição de primo estaria errada.
+\campo{Como detectar.} Olhe a linha F e F. Se você marcou F nela, leu um \enquote{e}.
+\campo{Como corrigir.} O bicondicional não afirma as partes: afirma que elas \emph{andam juntas}. Mesmo valor, V; valores diferentes, F.
+\campo{Onde aparece.} Exemplo \ref{ex:3.3}; questão \ref{u3:q5}.
+\end{erro}
+
+\begin{erro}{Exigir causalidade}{3-E5}
+\campo{O erro.} Dizer que \enquote{se 2 é par, então Natal fica no RN} \enquote{não faz sentido} ou é falso, porque uma coisa não causa a outra.
+\campo{Por que parece plausível.} Na língua, \enquote{se\ldots\ então} costuma indicar causa ou razão; os critérios antigos que pediam uma ligação entre as partes, como o da \enquote{coesão} (observação 3-O1), ainda soam naturais.
+\campo{Onde quebra.} Nos próprios teoremas: \enquote{ser múltiplo de 4} não \emph{causa} \enquote{ser par}, e \enquote{se $n$ é múltiplo de 4, então $n$ é par} é verdadeiro. A matemática não trata de causas, e sim de valores.
+\campo{Como detectar.} Se você está perguntando \enquote{por que uma coisa leva à outra?} em vez de \enquote{quais são os valores?}, saiu do conectivo $\rightarrow$.
+\campo{Como corrigir.} O conectivo $\rightarrow$ segue Fílon: só importam os valores. V e V dão V, haja ou não relação entre as partes.
+\campo{Onde aparece.} Exemplo \ref{ex:3.1}; questão \ref{u3:q1}.
+\end{erro}
+
+% ------------------------------------------------------------
+\Observacoes
+
+\begin{obs}{3-O1}
+\textbf{Por que o critério de Fílon venceu.} O critério de Fílon tem consequências estranhas: \enquote{se Natal fica em São Paulo, então a Lua é de queijo} é verdadeiro, só porque o antecedente é falso. Para Diodoro, seria falso: é \emph{possível} que o antecedente fosse verdadeiro e o consequente falso. Foi esse tipo de caso, o de antecedente falso por acaso, que incomodou Diodoro e, vinte e dois séculos depois, C.~I.~Lewis.\src{sepDialectical}\src{organonF} Por que, então, a matemática o adotou?
+
+Sexto Empírico registra, além dos de Fílon e Diodoro, dois critérios mais exigentes. Pelo da \enquote{coesão}, o condicional é correto quando a negação do consequente é incompatível com o antecedente. Pelo da \enquote{inclusão}, o consequente precisa estar contido no antecedente, e aí até \enquote{se é dia, é dia} seria falso.\src{ls35b}
+
+A primeira razão para a escolha da matemática é que o critério de Fílon é o único que depende \emph{apenas} dos valores das partes. Os de Diodoro, da coesão e da inclusão perguntam pelo que é \emph{possível} ou pelo que está \enquote{contido} numa frase — perguntas que, lidas hoje, uma tabela não responde. A segunda razão aparece nos teoremas. Quando dizemos \enquote{para todo inteiro $n$, se $n$ é múltiplo de 4, então $n$ é par}, queremos que a frase seja verdadeira para $n=6$ também, em que o antecedente é falso. Se o antecedente falso tornasse o condicional falso — ou \enquote{sem valor} —, quase nenhum teorema seria verdadeiro. A regra de Fílon é exatamente a que faz os teoremas funcionarem: um \enquote{se} geral só é desmentido por um caso em que a hipótese vale e a tese não, ou seja, por um contraexemplo.
+
+O preço são as frases estranhas com antecedente falso. A lógica as aceita como verdadeiras e \emph{inofensivas}: elas nunca permitem concluir nada falso a partir de premissas verdadeiras. Quem quiser um \enquote{se} mais forte — com necessidade, causa ou relevância — usa outras lógicas, como a implicação estrita de Lewis.\src{openlogicPar}
+\end{obs}
+
+\begin{obs}{3-O2}
+\textbf{As cartas de Wason com conteúdo social.} Mude apenas a história. Você trabalha num bar e deve fazer cumprir a regra \enquote{\emph{se uma pessoa bebe cerveja, então tem pelo menos 18 anos}}. Quatro cartões mostram, de um lado, a bebida e, do outro, a idade de quatro clientes: \enquote{cerveja}, \enquote{refrigerante}, \enquote{25 anos}, \enquote{16 anos}. Quais você vira? A maioria responde certo, e depressa: \enquote{cerveja} e \enquote{16 anos}. Em 1982 e 1983, os psicólogos Richard Griggs e James Cox mostraram que, com essa versão, a maioria dos participantes acerta.\src{griggsCox1982}\src{sussexWason}
+
+A estrutura lógica é idêntica à das letras e números: $p$ = \enquote{bebe cerveja}, $q$ = \enquote{tem 18 anos ou mais}, e as cartas a virar são $p$ e ${\nao}q$. Por que, então, a diferença? Em 1989, Leda Cosmides propôs que os seres humanos raciocinam especialmente bem quando a regra é um \enquote{contrato social} e o erro seria deixar passar um trapaceiro.\src{cosmides1989} A explicação é disputada: outros pesquisadores argumentam que o efeito vem de como o problema é entendido, e não de uma habilidade especial.\src{sperber} Para nós, fica a lição prática: diante de um condicional abstrato, traduza-o para uma regra que alguém poderia \emph{violar} e procure o violador.
+\end{obs}
+
+\begin{obs}{3-O3}
+\textbf{Corvos na lógica.} A disputa entre Fílon e Diodoro ficou famosa a ponto de virar piada: o poeta alexandrino Calímaco escreveu um epigrama em que os corvos, pousados nos telhados, perguntam uns aos outros \enquote{o que se segue de quê?}.\src{whiteCrows} Outros corvos voltaram no século XX. Em 1945, o filósofo Carl Hempel examinou a frase \enquote{todos os corvos são pretos}, que é um condicional: \enquote{se algo é corvo, então é preto}. Pela contrapositiva, ela equivale a \enquote{se algo não é preto, então não é corvo}.\src{hempel1945}\src{ravenWiki} Observar um corvo preto parece apoiar a primeira forma. Mas, então, observar uma maçã verde — algo que não é preto e não é corvo — apoiaria a segunda, e portanto a primeira. Uma maçã verde seria evidência de que os corvos são pretos?
+
+O \enquote{paradoxo dos corvos} não está na lógica: as duas formas são de fato equivalentes, como mostra a construção 3-H3. O problema está em como observações \emph{confirmam} uma lei geral, e gerou uma longa discussão sobre indução e probabilidade.\src{fitelson} Há uma leitura intuitiva: como existem muitíssimo mais coisas não pretas do que corvos, uma maçã verde confirma a lei, mas de forma quase nula. Para a matemática, que prova em vez de colecionar exemplos, a lição é outra: para refutar \enquote{todo corvo é preto}, basta um corvo branco — o caso \enquote{antecedente V, consequente F}.
+\end{obs}
+
+\begin{obs}{3-O4}
+\textbf{O \enquote{se} nos computadores.} O \texttt{if} das linguagens de programação não é o conectivo $\rightarrow$: é uma instrução de controle (\enquote{se a condição for verdadeira, execute isto}), que não tem valor verdadeiro ou falso. Mas a ideia de Fílon aparece nos testes de software: a regra \enquote{se o pedido é internacional, então a taxa é cobrada} só é violada por um pedido internacional sem taxa, e os testadores procuram exatamente esse caso, como nas cartas de Wason. Já o bicondicional entre dois valores booleanos é a igualdade: em Python, \texttt{p == q}; nos circuitos, a porta XNOR, o contrário da XOR da Unidade 2.
+\end{obs}
+
+% ------------------------------------------------------------
+\Exemplos
+
+\begin{exemplo}{3.1}{1}{adaptado do FME, item 5}{3-H1, 3-E1, 3-E5}\label{ex:3.1}
+Classifique em verdadeira ou falsa.
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item Se $3\mid 12$, então $3\mid 24$.
+  \item Se $2+2=4$, então 2 é ímpar.
+  \item Se $1>2$, então 2 é primo.
+  \item Se 7 é par, então $7=0$.
+  \item Se Natal fica no RN, então 9 é um quadrado perfeito.
+  \item Se $\sqrt2$ é racional, então $\pi=3$.
+\end{enumerate}
+\end{multicols}
+\plano Calcular o valor do antecedente e do consequente; aplicar a tabela: o único caso F é V seguido de F.
+\resolucao
+\begin{center}\small
+\begin{tabular}{lccc}\toprule
+& antecedente & consequente & $p\rightarrow q$\\\midrule
+a) & V & V ($24=3\cdot8$) & \textbf{V}\\\fino
+b) & V & F & \textbf{F}\\\fino
+c) & F & V & \textbf{V}\\\fino
+d) & F & F & \textbf{V}\\\fino
+e) & V & V ($9=3^2$) & \textbf{V}\\\fino
+f) & F & F & \textbf{V}\\\bottomrule
+\end{tabular}
+\end{center}
+\comentario Só (b) é falso. Em (c), (d) e (f), o antecedente é falso e o condicional é verdadeiro (erro 3-E1); (d) e (f) parecem absurdos, mas são inofensivos (veja a observação 3-O1). Em (e), nada liga Natal ao número 9: o condicional é verdadeiro porque as duas partes são verdadeiras (erro 3-E5).
+\end{exemplo}
+
+\begin{exemplo}{3.2}{1}{autoral}{3-U1, 3-E3}\label{ex:3.2}
+Considere, para inteiros $n$, a proposição \enquote{se $n$ é múltiplo de 4, então $n$ é par}.
+\begin{enumerate}[label=\alph*)]
+  \item Escreva-a com as palavras \enquote{suficiente}, \enquote{necessária} e \enquote{somente se}.
+  \item Decida se é verdadeira: \enquote{ser par é condição suficiente para ser múltiplo de 4}.
+  \item Para números reais $x$, \enquote{$x^2=9$} é condição necessária ou suficiente para \enquote{$x=3$}?
+\end{enumerate}
+\plano Antecedente = suficiente; consequente = necessária; \enquote{$p$ somente se $q$} = $p\rightarrow q$. Testar com números.
+\resolucao
+a) \enquote{Ser múltiplo de 4 é condição \emph{suficiente} para ser par}; \enquote{ser par é condição \emph{necessária} para ser múltiplo de 4}; \enquote{$n$ é múltiplo de 4 \emph{somente se} $n$ é par}.
+\par b) A frase diz \enquote{se $n$ é par, então $n$ é múltiplo de 4} — a recíproca. \textbf{Falsa}: $n=6$ é par e não é múltiplo de 4.
+\par c) \enquote{Se $x=3$, então $x^2=9$} é verdadeiro; logo, $x^2=9$ é \textbf{necessária} para $x=3$. Não é suficiente: $x=-3$ satisfaz $x^2=9$ sem ser 3.
+\comentario Uma condição pode ser necessária sem ser suficiente, e vice-versa. Quando é as duas coisas, temos um bicondicional — o tema do próximo exemplo.
+\end{exemplo}
+
+\begin{exemplo}{3.3}{2}{autoral}{3-H2, 3-U5, 3-E4}\label{ex:3.3}
+\begin{enumerate}[label=\alph*)]
+  \item Classifique: (i) $2\cdot6=12\leftrightarrow 2\cdot6+7=19$;\ (ii) $5>9\leftrightarrow 2=3$;\ (iii) $2\mid7\leftrightarrow 7$ é primo;\ (iv) $3^2=9\leftrightarrow 3$ é par.
+  \item Para todo inteiro $n$, vale \enquote{$n$ é par $\leftrightarrow$ $n^2$ é par}? E \enquote{$n$ é múltiplo de 6 $\leftrightarrow$ $n$ é múltiplo de 3}?
+  \item Por que a definição \enquote{um número é par se $n=2k$, com $k$ inteiro} deve ser lida como \enquote{se, e somente se}?
+\end{enumerate}
+\plano Em (a), comparar os valores. Em (b), um bicondicional geral exige os dois sentidos; um contraexemplo em qualquer sentido o derruba.
+\resolucao
+a) (i) V e V: \textbf{V}. (ii) F e F: \textbf{V}. (iii) F e V: \textbf{F}. (iv) V e F: \textbf{F}.
+\par b) Primeiro: se $n=2k$, então $n^2=2(2k^2)$ é par; e, se $n$ é ímpar, $n^2$ é ímpar (veja \enquote{Onde é usado}), logo $n^2$ par obriga $n$ par. \textbf{Vale nos dois sentidos.} Segundo: múltiplo de 6 $\rightarrow$ múltiplo de 3 vale, mas a volta falha em $n=3$. \textbf{Não vale.}
+\par c) Se a definição dissesse só \enquote{se}, ela não excluiria que outros números também fossem chamados de pares. Uma definição precisa dizer exatamente quais objetos recebem o nome: é um bicondicional.
+\comentario O item (ii) é a armadilha do erro 3-E4: duas partes falsas dão bicondicional \emph{verdadeiro}. O \enquote{se, e somente se} afirma que as partes andam juntas, não que valem.
+\end{exemplo}
+
+\begin{exemplo}{3.4}{2}{autoral}{3-U3}\label{ex:3.4}
+Sabe-se que a proposição $(p\wedge q)\rightarrow(r\vee{\nao}s)$ é \textbf{falsa}. Determine os valores de $p$, $q$, $r$, $s$ e, em seguida, classifique:\quad a) $r\rightarrow p$\quad b) $p\leftrightarrow s$\quad c) $q\rightarrow r$\quad d) ${\nao}p\vee s$.
+\plano Um condicional falso tem antecedente V e consequente F. Desmontar cada parte com as tabelas de $\wedge$ e $\vee$.
+\resolucao
+O antecedente $p\wedge q$ é V; logo, $p$ e $q$ são V. O consequente $r\vee{\nao}s$ é F; logo, $r$ é F e ${\nao}s$ é F, isto é, $s$ é V.
+\par a) F $\rightarrow$ V: \textbf{V}. b) V $\leftrightarrow$ V: \textbf{V}. c) V $\rightarrow$ F: \textbf{F}. d) F $\vee$ V: \textbf{V}.
+\comentario Saber que um condicional é \emph{verdadeiro} quase não informa (há três casos); saber que é \emph{falso} fixa tudo (há um caso só). É por isso que os concursos gostam do formato \enquote{sabe-se que a afirmação\ldots\ é falsa}.
+\end{exemplo}
+
+\begin{exemplo}{3.5}{2}{OBMEP 2007, 1ª fase, nível 2, q.~8}{3-U2, 3-U4, 3-H3}\label{ex:3.5}
+A mãe de César deu a ele as seguintes instruções para fazer um bolo:
+\begin{itemize}
+  \item se colocar ovos, não coloque creme;
+  \item se colocar leite, não coloque laranja;
+  \item se não colocar creme, não coloque leite.
+\end{itemize}
+Seguindo essas instruções, César pode fazer um bolo com:
+\begin{enumerate}[label=(\alph*)]
+  \item ovos e leite, mas sem creme.
+  \item creme, laranja e leite, mas sem ovos.
+  \item ovos e creme, mas sem laranja.
+  \item ovos e laranja, mas sem leite e sem creme.
+  \item leite e laranja, mas sem creme.
+\end{enumerate}
+\plano Reescrever a terceira regra pela contrapositiva e testar cada alternativa: uma regra é violada quando o antecedente acontece e o consequente não.
+\resolucao
+A terceira regra, ${\nao}C\rightarrow{\nao}L$, equivale a $L\rightarrow C$: \enquote{se colocar leite, coloque creme}.
+\begin{itemize}
+  \item (a) tem leite sem creme: viola a 3ª regra.
+  \item (b) tem leite e laranja: viola a 2ª.
+  \item (c) tem ovos e creme: viola a 1ª.
+  \item (e) tem leite e laranja: viola a 2ª (e a 3ª).
+  \item (d) ovos sem creme: 1ª ok; sem leite: a 2ª tem antecedente falso, e a 3ª (sem creme $\rightarrow$ sem leite) tem consequente verdadeiro, ok. \textbf{Alternativa (d).}
+\end{itemize}
+\comentario Em (d), a 2ª regra e a 3ª, escrita como \enquote{se leite, então creme}, são satisfeitas \enquote{por vacuidade}: como não há leite, nada exigem. Na forma em que a mãe a disse (\enquote{se não puser creme, não ponha leite}), a 3ª tem antecedente V e consequente V. Ser verdadeiro \enquote{por vacuidade} depende da forma em que o condicional está escrito. É o caso \enquote{antecedente F} da tabela — e mostra que o critério de Fílon é o que torna as instruções da mãe sensatas.
+\end{exemplo}
+
+\begin{exemplo}{3.6}{3}{histórico (Wason, 1966)}{3-E2, 3-U4, 3-O3}\label{ex:3.6}
+Volte às quatro cartas do prefácio: \fbox{A}\ \fbox{K}\ \fbox{4}\ \fbox{7}, com a regra \enquote{se uma carta tem vogal de um lado, então tem número par do outro}. Quais cartas é preciso virar, e só essas, para saber se a regra vale para as quatro? Justifique a escolha de cada carta.
+\plano A contrapositiva aparece aqui num uso novo: decidir o que verificar. Uma carta só desmente a regra se tiver vogal \emph{e} número ímpar (o caso F do condicional). Para cada carta visível, perguntar: o verso pode produzir esse caso?
+\resolucao
+\begin{itemize}
+  \item \textbf{A} (vogal, antecedente V): se o verso for ímpar, a regra cai. \textbf{Virar.}
+  \item \textbf{K} (consoante, antecedente F): a regra não diz nada sobre consoantes. Não virar.
+  \item \textbf{4} (par, consequente V): qualquer letra no verso deixa a regra intacta — se for vogal, ótimo; se for consoante, a regra não fala dela. Não virar.
+  \item \textbf{7} (ímpar, consequente F): se o verso for vogal, a regra cai. \textbf{Virar.} É a contrapositiva: \enquote{se é ímpar, então não é vogal}.
+\end{itemize}
+Resposta: \textbf{A e 7}.
+\comentario A escolha errada mais comum, \enquote{A e 4}, procura confirmações: vira as cartas que \enquote{combinam} com a regra e esquece a contrapositiva (erro 3-E2). Em 1971, só 2 de 16 estudantes acertaram a versão abstrata;\src{wasonShapiro} com conteúdo social, a maioria acerta (3-O2). E o 7 é a \enquote{coisa não preta} de Hempel (3-O3): virá-lo é verificar se ela esconde um corvo, isto é, uma vogal.
+\end{exemplo}
+
+% ------------------------------------------------------------
+\Questoes
+
+\begin{questao}{1}{FME, exercício 4}{3-H1, 3-H2, 3-E1, 3-E5}\label{u3:q1}
+Classifique em verdadeira ou falsa cada uma das proposições abaixo.
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $2-1=1\rightarrow 5+7=3\cdot4$
+  \item $2^2=4\leftrightarrow(-2)^2=4$
+  \item $5+7\cdot1=10\rightarrow 3\cdot3=9$
+  \item $\operatorname{mdc}(3,6)=1\leftrightarrow 4$ é número primo
+  \item $2\mid 8\rightarrow\operatorname{mmc}(2,8)=2$
+  \item $6\le2\leftrightarrow 6-2\ge0$
+  \item $\tfrac35<\tfrac27\rightarrow 3\cdot7=2\cdot5$
+\end{enumerate}
+\end{multicols}
+\resp{a) V\ \ b) V\ \ c) V\ \ d) V\ \ e) F\ \ f) F\ \ g) V}
+\end{questao}
+
+\begin{questao}{1}{FME, exercício 5}{3-H1, 3-H2}\label{u3:q2}
+Admitindo que $p$ e $q$ são verdadeiras e $r$ é falsa, determine o valor (V ou F) de cada proposição abaixo.
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $p\rightarrow r$
+  \item $p\leftrightarrow q$
+  \item $r\rightarrow p$
+  \item $(p\vee r)\leftrightarrow q$
+  \item $p\rightarrow(q\rightarrow r)$
+  \item $p\rightarrow(q\vee r)$
+  \item ${\nao}p\leftrightarrow{\nao}q$
+  \item ${\nao}p\leftrightarrow r$
+\end{enumerate}
+\end{multicols}
+\resp{a) F\ \ b) V\ \ c) V\ \ d) V\ \ e) F\ \ f) V\ \ g) V\ \ h) V}
+\end{questao}
+
+\begin{questao}{1}{autoral}{3-U1, 3-E3}\label{u3:q3}
+Para inteiros $n$, considere a proposição verdadeira \enquote{se $n$ é múltiplo de 6, então $n$ é par}. Qual alternativa diz a mesma coisa?
+\begin{enumerate}[label=(\alph*)]
+  \item Ser par é condição suficiente para ser múltiplo de 6.
+  \item Ser múltiplo de 6 é condição necessária para ser par.
+  \item Ser par é condição necessária para ser múltiplo de 6.
+  \item $n$ é par somente se $n$ é múltiplo de 6.
+  \item $n$ é múltiplo de 6 se $n$ é par.
+\end{enumerate}
+\resp{(c)}
+\end{questao}
+
+\begin{questao}{1}{autoral}{3-U4, 3-E2}\label{u3:q4}
+Considere: \enquote{se um quadrilátero é um quadrado, então ele tem quatro ângulos retos}. Escreva a recíproca, a inversa e a contrapositiva, e diga quais delas são verdadeiras para todo quadrilátero.
+\resp{Recíproca: se tem quatro ângulos retos, é quadrado (F). Inversa: se não é quadrado, não tem quatro ângulos retos (F). Contrapositiva: se não tem quatro ângulos retos, não é quadrado (V).}
+\end{questao}
+
+\begin{questao}{2}{autoral}{3-U5, 3-E4}\label{u3:q5}
+Para cada $x\in\{-2,-1,0,1,2\}$, decida o valor lógico de \enquote{$x^2=1\leftrightarrow x=1$} e de \enquote{$x^2=1\wedge x=1$}. Para quantos valores de $x$ cada uma é verdadeira? Explique a diferença. Depois, escreva a definição \enquote{um número natural é primo quando tem exatamente dois divisores naturais} como um bicondicional e dê o valor de cada parte, e do bicondicional, para o número 1.
+\resp{$\leftrightarrow$: V para $x=-2,0,1,2$ (4 valores);\ \ $\wedge$: V só para $x=1$ (1 valor);\ \ \enquote{$n$ é primo $\leftrightarrow$ $n$ tem exatamente dois divisores naturais}: para 1, as duas partes são F e o bicondicional é V.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 6}{3-U3}\label{u3:q6}
+Sendo a proposição $p\rightarrow(r\vee s)$ falsa e a proposição $(q\wedge{\nao}s)\leftrightarrow p$ verdadeira, classifique em verdadeira ou falsa as afirmações $p$, $q$, $r$ e $s$.
+\resp{$p$: V;\ \ $q$: V;\ \ $r$: F;\ \ $s$: F}
+\end{questao}
+
+\begin{questao}[integradora]{2}{autoral}{3-U1, 3-U4}\label{u3:q7}
+Para os inteiros $x$ com $-3\le x\le3$:
+\begin{enumerate}[label=\alph*)]
+  \item para quais é verdadeira a proposição \enquote{se $x^2>4$, então $x>2$}?
+  \item escreva a contrapositiva dessa proposição e verifique que ela é verdadeira para os mesmos valores;
+  \item a proposição do item (a) é verdadeira para \emph{todo} inteiro? Justifique.
+\end{enumerate}
+\resp{a) $x=-2,-1,0,1,2,3$\ \ b) \enquote{se $x\le2$, então $x^2\le4$}; mesmos valores\ \ c) Não: falha em $x=-3$.}
+\end{questao}
+
+\begin{questao}{2}{autoral, no formato de concursos}{3-U3, 3-E1}\label{u3:q8}
+Sabe-se que é \textbf{falsa} a afirmação: \enquote{Se Ana viajou, então Bruno ficou em casa ou Carla saiu}. Pode-se concluir que:
+\begin{enumerate}[label=(\alph*)]
+  \item Ana não viajou.
+  \item Ana viajou, Bruno ficou em casa e Carla não saiu.
+  \item Ana viajou, Bruno não ficou em casa e Carla não saiu.
+  \item Ana não viajou ou Bruno ficou em casa.
+  \item Nada se pode concluir sobre Bruno.
+\end{enumerate}
+\resp{(c)}
+\end{questao}
+
+\begin{questao}{2}{autoral — demonstração}{3-H3, 3-U4}\label{u3:q9}
+\begin{enumerate}[label=\alph*)]
+  \item Usando a tabela-verdade, demonstre que $p\rightarrow q$ e ${\nao}q\rightarrow{\nao}p$ têm sempre o mesmo valor, e que $p\rightarrow q$ e $q\rightarrow p$ nem sempre têm.
+  \item Use o item (a) para demonstrar que, para todo inteiro $n$, se $n^2$ é múltiplo de 3, então $n$ é múltiplo de 3. (Sugestão: um inteiro que não é múltiplo de 3 é da forma $3k+1$ ou $3k+2$.)
+\end{enumerate}
+\resp{Demonstração. A prova deve mostrar: a) que as colunas de $p\rightarrow q$ e ${\nao}q\rightarrow{\nao}p$ coincidem nas quatro linhas e que a de $q\rightarrow p$ difere em alguma; b) que, se $n=3k+1$ ou $n=3k+2$, então $n^2$ deixa resto 1 na divisão por 3 ($n^2=3(3k^2+2k)+1$ ou $3(3k^2+4k+1)+1$), logo não é múltiplo de 3 — e que isso, pela contrapositiva, prova o enunciado.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{3-U4, 3-E2}\label{u3:q10}
+Quatro cartões têm um número de um lado e uma cor do outro. Você vê: \mbox{\fbox{3}\ \fbox{8}\ \fbox{vermelho}\ \fbox{azul}}. Regra: \enquote{se um cartão tem número par, então o outro lado é vermelho}. Quais cartões é preciso virar, e só esses, para verificar a regra?
+\resp{O 8 e o azul.}
+\end{questao}
+
+\begin{questao}{2}{Simulado OBMEP 2017, nível 3, q.~14 (via FME)}{3-U2}\label{u3:q11}
+Ari, Bruna e Carlos almoçam juntos todos os dias e cada um deles pede água ou suco.
+\begin{itemize}
+  \item Se Ari pede a mesma bebida que Carlos, então Bruna pede água.
+  \item Se Ari pede uma bebida diferente da de Bruna, então Carlos pede suco.
+  \item Se Bruna pede uma bebida diferente da de Carlos, então Ari pede água.
+  \item Apenas um deles sempre pede a mesma bebida.
+\end{itemize}
+Quem pede sempre a mesma bebida e que bebida é essa?
+\begin{multicols}{3}
+\begin{enumerate}[label=(\alph*)]
+  \item Ari; água
+  \item Bruna; água
+  \item Carlos; suco
+  \item Ari; suco
+  \item Bruna; suco
+\end{enumerate}
+\end{multicols}
+\resp{(a)}
+\end{questao}
+
+\begin{questao}{3}{autoral — demonstração}{3-U4, 3-H3}\label{u3:q12}
+Para saber se 97 é primo, ninguém testa todos os divisores até 96: testam-se só os primos até $\sqrt{97}$, isto é, 2, 3, 5 e 7. Por que isso basta? A justificativa é um condicional: \enquote{se um natural $n>1$ não tem divisor primo $p$ com $p\le\sqrt n$, então $n$ é primo}.
+\begin{enumerate}[label=\alph*)]
+  \item Escreva a contrapositiva desse condicional.
+  \item Demonstre a contrapositiva. (Sugestão: se $n$ não é primo, $n=ab$ com $1<a\le b$.)
+  \item Use o teste para decidir se 97 e 91 são primos.
+\end{enumerate}
+\resp{a) \enquote{se $n>1$ não é primo, então $n$ tem um divisor primo $p\le\sqrt n$}\ \ b) Demonstração. A prova deve mostrar que, com $n=ab$ e $1<a\le b$, vale $a^2\le ab=n$, logo $a\le\sqrt n$, e que um divisor primo de $a$ é $\le a\le\sqrt n$ e divide $n$\ \ c) 97 é primo (não é divisível por 2, 3, 5 nem 7); 91 não é ($91=7\cdot13$).}
+\end{questao}
+
+\begin{questao}{3}{adaptada do Simulado OBMEP 2017, nível 2, q.~12}{3-U3, 3-E1}\label{u3:q13}
+Tia Geralda sabe que um, e só um, de seus sobrinhos — Ana, Bruno, Cecília, Daniela e Eduardo — comeu todos os biscoitos. Ela sabe também que o culpado sempre mente e que os inocentes sempre dizem a verdade. Três deles falam:
+\begin{itemize}
+  \item Bruno: \enquote{O culpado é Eduardo ou Daniela.}
+  \item Eduardo: \enquote{O culpado é uma menina.}
+  \item Daniela: \enquote{Se Bruno é culpado, então Cecília é inocente.}
+\end{itemize}
+Quem comeu os biscoitos? Mostre que a resposta é única.
+\resp{Eduardo.}
+\end{questao}
+
+\begin{sintese}
+\textbf{Ao fim desta unidade, você deveria saber:}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item dar o valor de $p\rightarrow q$ e de $p\leftrightarrow q$ em todos os casos, inclusive com antecedente falso;
+  \item traduzir \enquote{suficiente}, \enquote{necessário} e \enquote{somente se} para um condicional;
+  \item distinguir contrapositiva (equivalente) de recíproca e inversa (não equivalentes), e usar a contrapositiva numa prova.
+\end{itemize}
+\smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u3}) e com a seção indicada.
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \perguntasintese{O que significa \enquote{$p\rightarrow q$ é verdadeiro}? Em que único caso ele é falso? \hfill\mbox{\small\color{cinza}(→ Definição)}}
+  \perguntasintese{Como a promessa explica a tabela de $\rightarrow$, e por que o caso \enquote{antecedente F} tem de ser V? \hfill\mbox{\small\color{cinza}(→ De onde vem?)}}
+  \perguntasintese{Como você reconhece, num enunciado, um condicional escondido (\enquote{basta}, \enquote{só se}, \enquote{é preciso})? \hfill\mbox{\small\color{cinza}(→ Onde é usado?)}}
+  \perguntasintese{Qual é o erro mais perigoso ao trabalhar com um \enquote{se\ldots\ então}? Como você o detecta? \hfill\mbox{\small\color{cinza}(→ Erros comuns)}}
+\end{enumerate}
+\end{sintese}
+
+% ------------------------------------------------------------
+\Respostas
+{\small
+\resposta{S}{Síntese de domínio: confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u3}) e com a seção indicada em cada pergunta.}
+}

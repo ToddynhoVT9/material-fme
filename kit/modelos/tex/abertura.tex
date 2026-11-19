@@ -1,0 +1,58 @@
+% ============================================================
+% Abertura geral do capítulo — escrita no FECHAMENTO (etapa 5), quando todas as unidades existem.
+% Seções: por que este capítulo · linha do tempo · mapa das unidades · notação · como usar.
+% Referência pronta: capitulos/v1c1-nocoes-de-logica/tex/abertura.tex
+% ============================================================
+\section*{Abertura do capítulo}
+\addcontentsline{toc}{section}{Abertura do capítulo}
+\markright{Abertura do capítulo}
+
+\subsection*{Por que este capítulo}
+% 2–4 parágrafos: o que o capítulo dá ao estudante, onde ele será usado nos capítulos seguintes,
+% e a pergunta que o atravessa. Sem afirmação de frequência sem fonte (E-R3-5).
+«A escrever no fechamento.»
+
+\subsection*{Linha do tempo}
+% Só marcos contados em alguma unidade (narrativa ou observação). Cada linha com \src e a unidade.
+Os marcos abaixo são os que o capítulo usa; cada um é contado, com suas fontes, na unidade indicada.
+{\small
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{10.6cm}c}\toprule
+\textbf{quando} & \textbf{o quê} & \textbf{unid.}\\\midrule\endfirsthead
+\toprule\textbf{quando} & \textbf{o quê} & \textbf{unid.}\\\midrule\endhead
+\bottomrule\endfoot
+--- & «marco»\src{fme} & ---\\
+\end{longtable}}
+
+\subsection*{Mapa das unidades}
+% Diagrama de pré-requisitos (TikZ) + tabela "a pergunta que a unidade responde" — igual à pergunta
+% aberta de cada prefácio — e "o que você leva dela".
+«Diagrama e tabela no fechamento.»
+
+\subsection*{Tabela de notação}
+% Símbolos do capítulo: lê-se · quem introduziu · quando · unidade. Só com fonte; sem fonte, "---".
+«Tabela no fechamento.»
+
+\subsection*{Como usar este material}
+\textbf{A ordem de cada unidade.} Toda unidade segue a mesma sequência, e cada seção responde a uma pergunta: o \emph{Prefácio}, \enquote{por que isso merece ser estudado?}; \emph{De onde vem?}, \enquote{por que foi necessário, como surgiu e como o reconstruímos hoje?}; \emph{Onde é usado?}, \enquote{como reconheço uma situação em que devo usar isso?}; \emph{Erros comuns}, \enquote{onde o raciocínio costuma quebrar?}; \emph{Observações}, aprofundamentos opcionais; \emph{Exemplos} resolvidos e \emph{Questões}; a \emph{Síntese de domínio}, um teste do que você entendeu; e as \emph{Respostas}. As três primeiras seções formam um texto corrido, que pode ser lido sozinho, como um artigo. O que é fixo é a função de cada seção, não o tamanho. O glossário, no fim do capítulo, reúne os termos e símbolos de todas as unidades, para consulta.
+
+\textbf{As caixas.} \emph{O mínimo que você precisa} (moldura azul) lembra os pré-requisitos. \emph{Construção} (amarela) mostra um conceito sendo montado passo a passo. \emph{Definição} (moldura azul) dá o enunciado formal. \emph{Para lembrar} (fundo azul-claro) resume a unidade numa frase e em poucos passos. \emph{Erros} (vermelho) seguem sempre o mesmo roteiro: o erro; por que ele parece plausível; onde o raciocínio quebra, com um contraexemplo concreto; como detectá-lo depois de escrever; como corrigi-lo; e onde ele aparece nos exemplos e questões. Em \emph{Onde é usado?}, as caixas de \emph{Mapa do problema} mostram como sair do enunciado para a ferramenta. \emph{Observações} (cinza, com o selo \opcional{} e letra menor) ampliam o conceito sem serem necessárias para usá-lo. A \emph{Síntese de domínio} (amarela) fecha a unidade: você responde, com suas palavras, o que o conceito significa, como foi construído, quando usá-lo e como não errar, e confere com a caixa \emph{Para lembrar}.
+
+\textbf{Os níveis.} Exemplos e questões têm um selo de nível, que indica a \emph{função} do item, e não só a dificuldade. \nivel{1} é \emph{reconhecimento e aplicação}: a ferramenta está clara, e você a aplica. \nivel{2} é \emph{seleção e combinação}: é preciso perceber qual ferramenta usar e, às vezes, combinar mais de uma. \nivel{3} é \emph{transferência}: a ferramenta aparece numa situação diferente da que a teoria apresentou, e nenhum N3 está resolvido no texto. Dentro de cada nível, as questões vão da mais guiada para a menos guiada. As questões marcadas com \integradora{} misturam o assunto da unidade com outro, mas só entram se o assunto da unidade for necessário para resolvê-las.
+
+\textbf{As etiquetas de procedência.} Cada exemplo e cada questão indicam de onde vêm:
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item \textbf{prova com ano}, como [FUVEST 2019, 1ª fase, q.~12]: questão real, com o texto conferido na prova;
+  \item \textbf{[\ldots\ via FME]}: questão real cujo texto foi tirado do próprio FME;
+  \item \textbf{[FME, exercício $n$]}: exercício do livro-base; \textbf{[adaptado do FME, item $n$]}: exemplo da teoria do livro, reescrito para esta didática;
+  \item \textbf{[adaptada de\ldots]}: questão de vestibular ou de concurso cujo texto original não pôde ser conferido na íntegra; foi reescrita, com a resposta conferida;
+  \item \textbf{[histórico]}: problema ou experimento da história contada na unidade;
+  \item \textbf{[autoral]}: escrita para este material.
+\end{itemize}
+
+\textbf{As fontes.} Os números sobrescritos, como este\src{fme}, remetem à lista de \emph{Fontes} no fim do capítulo. Histórias cuja veracidade não se pode verificar trazem a marca\anedota.
+
+\textbf{Os identificadores.} As marcas cinza entre $\langle\ \rangle$, como \cobre{2-U3}, ligam o texto à matriz de cobertura: o número é a unidade, e a letra diz o tipo — \textbf{H} para uma construção (seção \emph{De onde vem?}), \textbf{U} para um contexto de uso, \textbf{E} para um erro comum, \textbf{O} para uma observação. Na primeira leitura, podem ser ignorados.
+
+\textbf{As respostas.} As respostas trazem só o resultado final, no formato [\,14.\ (c)\,] ou [\,28.\ $5\sqrt3$\,]. Nas questões de demonstração, a resposta diz, em uma linha, \emph{o que a prova deve mostrar}. As respostas que podem ser obtidas por cálculo foram conferidas por um programa, separado da redação.
+\clearpage

@@ -1,0 +1,198 @@
+% ============================================================
+% Unidade 2 — Conectivos ∧ e ∨  (v3 — 00-didatica-v3.md)
+% Parte A: o "artigo" — Prefácio, De onde vem?, Onde é usado?
+% IDs: 2-H1 2-H2 2-H3 · 2-U1..U5 · 2-E1..E4 · 2-O1..O5
+% ============================================================
+\providecommand{\nao}{{\sim}}
+\clearpage
+\section{Conectivos \texorpdfstring{$\wedge$}{∧} e \texorpdfstring{$\vee$}{∨}}
+
+% ------------------------------------------------------------
+\Prefacio
+\begin{prefacio}
+\gancho{\enquote{Café ou chá?} — e se a pessoa quiser os dois?}
+
+O garçom que pergunta \enquote{café ou chá?} espera uma escolha: um ou outro. Já a placa que diz \enquote{desconto para estudantes ou professores} não tira o desconto de quem é as duas coisas. A mesma palavra, \enquote{ou}, tem dois sentidos no português de todo dia, e a matemática não pode ter dois: quase toda condição que você vai escrever, de um intervalo a um sistema de equações, junta frases com \enquote{e} ou com \enquote{ou}.
+
+\textbf{Quando uma frase com \enquote{ou} é verdadeira, e quem decide isso: a língua ou a matemática?} É a pergunta desta unidade.
+
+\textbf{Ao final, você será capaz de:} reconhecer conjunções e disjunções escritas em português (inclusive com \enquote{mas}, \enquote{nem} e \enquote{porém}); calcular o valor lógico de uma composta pelas tabelas; montar a tabela-verdade completa de uma expressão com várias letras, sem esquecer linhas; e usar os conectivos em intervalos, conjuntos, circuitos e problemas de olimpíada.
+
+\textbf{Pré-requisitos:} a Unidade 1 (proposição, valor lógico, negação e sua tabela); desigualdades e intervalos na reta; divisibilidade; o princípio multiplicativo de contagem. O essencial está na caixa abaixo.
+\end{prefacio}
+
+\begin{minimo}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Da Unidade 1.} Uma proposição tem exatamente um valor, V ou F; ${\nao}p$ tem o valor oposto. Lendo V como 1 e F como 0, ${\nao}p = 1-p$.
+  \item \textbf{Intervalos.} \enquote{$-2<x\le 3$} diz duas coisas ao mesmo tempo: $x>-2$ \emph{e} $x\le 3$. O sinal $\le$ abrevia \enquote{menor \emph{ou} igual}.
+  \item \textbf{Divisibilidade e mdc.} $a\mid b$: $a$ divide $b$; $\operatorname{mdc}(4,7)=1$.
+  \item \textbf{Princípio multiplicativo.} Se uma escolha tem $m$ opções e outra, independente, tem $n$, as duas juntas têm $m\cdot n$ combinações. Três escolhas de 2 opções cada dão $2\cdot2\cdot2=8$.
+\end{itemize}
+\end{minimo}
+
+% ------------------------------------------------------------
+\DeOndeVem
+
+\subsubsection{Por que alguém precisou disso}
+Na Unidade 1, vimos que os estoicos passaram a raciocinar com \emph{proposições inteiras}. A consequência aparece agora: se as unidades do raciocínio são proposições, é natural juntar duas delas e perguntar quanto vale o resultado. E a resposta precisa ser uma regra, e não uma opinião sobre o assunto das frases; do contrário, duas pessoas dariam valores diferentes à mesma frase.
+
+\subsubsection{O \enquote{e} dos estoicos}
+Os estoicos chamavam de \emph{conjunção} um assertível formado por outros com a ajuda de \enquote{e} (ou de \enquote{tanto\ldots\ quanto\ldots}). E deram a regra do valor: a conjunção é verdadeira quando \emph{todas} as partes são verdadeiras, e falsa em qualquer outro caso.\src{bobzien} Note a ousadia da regra. Ela não pergunta se as partes têm algo a ver uma com a outra, nem quem disse a frase, nem por quê: o valor do todo depende \emph{só} dos valores das partes. Os lógicos de hoje chamam essa propriedade de \emph{verofuncionalidade}, e ela é o que permite transformar a lógica em tabelas.\src{bobzien}
+
+\begin{construcao}[a tabela da conjunção]{2-H1}
+\begin{enumerate}[label=(\arabic*)]
+  \item Dadas duas proposições $p$ e $q$, formamos $p\wedge q$ (lê-se \enquote{$p$ e $q$}).
+  \item Cada parte tem dois valores possíveis; juntas, há $2\cdot 2=4$ casos. Listamos todos.
+  \item Aplicamos a regra estoica, que tem uma razão simples: afirmar \enquote{$p$ e $q$} é afirmar cada uma, e basta uma falhar para a afirmação falhar. Logo, V só quando as duas partes são V.
+\end{enumerate}
+\begin{tabelaverdade}{ccc}
+$p$ & $q$ & $p\wedge q$\\\midrule
+V & V & V\\\fino
+V & F & F\\\fino
+F & V & F\\\fino
+F & F & F\\
+\end{tabelaverdade}
+\textbf{Leitura 0/1} (a de Boole, que veremos adiante): $p\wedge q = p\cdot q$. O produto de dois números que só valem 0 ou 1 é 1 apenas quando ambos são 1.
+\end{construcao}
+
+\subsubsection{O \enquote{ou} dos estoicos era exclusivo}
+Com o \enquote{ou}, os estoicos fizeram uma escolha diferente da nossa. A disjunção estoica típica, como eles a formularam, dizia que \emph{exatamente uma} das partes é verdadeira: \enquote{ou é dia, ou é noite}.\src{bobzien} Eles conheciam também um \enquote{ou} mais fraco, verdadeiro quando \emph{pelo menos uma} das partes é verdadeira, mas o usavam pouco.\src{britIncl}
+
+A preferência tinha razão de ser. Dois dos cinco argumentos que os estoicos tomavam como evidentes, sem necessidade de prova — os \enquote{indemonstráveis} —, eram formulados com o \enquote{ou} exclusivo. O quarto diz: \enquote{ou o primeiro, ou o segundo; ora, o primeiro; logo, não o segundo}. O quinto: \enquote{ou o primeiro, ou o segundo; ora, não o primeiro; logo, o segundo}.\src{sepAncient} O quarto só funciona se as duas partes não puderem ser verdadeiras juntas. Com o \enquote{ou} inclusivo, ele seria inválido: saber que é dia não impediria a outra parte de também valer. O quinto, ao contrário, vale com qualquer dos dois \enquote{ou}: se pelo menos uma parte é verdadeira e a primeira não é, a segunda é.
+
+\subsubsection{Boole: o \enquote{e} é produto, o \enquote{ou} é soma — de quê?}
+Como vimos na Unidade 1, George Boole escreveu a lógica como álgebra: 1 é o universo, 0 é o nada, e $1-x$ é tudo o que não é $x$. Para o \enquote{e}, a escolha era óbvia: se $x$ são as coisas vermelhas e $y$ as redondas, $xy$ são as coisas vermelhas \emph{e} redondas — a parte comum.\src{britBoole}
+
+O \enquote{ou} deu mais trabalho. Boole representou \enquote{$x$ ou $y$} por $x+y$, mas só aceitava essa soma quando as duas classes não tinham nada em comum.\src{britBoole} A razão era aritmética: se $x$ e $y$ tivessem elementos em comum, a soma contaria esses elementos duas vezes, e as leis da álgebra comum deixariam de valer. Lido hoje, o \enquote{ou} de Boole funciona como um exclusivo: ele não somava classes com parte comum (a soma ficava indefinida, e não falsa).
+
+\subsubsection{Jevons e o \enquote{ou} que ficou}
+O economista e lógico inglês William Stanley Jevons achava que Boole tinha sido levado pela vontade de imitar a álgebra dos números, e criticou em especial a preferência pelo \enquote{ou} exclusivo.\src{ieeeJevons} No livro \emph{Pure Logic}, de 1864,\src{macJevons} ele redefiniu a soma lógica como \emph{inclusiva}: \enquote{$x$ ou $y$} passou a significar tudo o que está em $x$, em $y$, ou em ambos. Nos mesmos anos, o americano Charles S. Peirce propôs a mesma mudança.\src{britBoole} Boole chegou a escrever uma resposta às críticas, sem adotar a leitura de Jevons,\src{waszek} mas morreu em 1864. A leitura inclusiva venceu: praticamente todos os lógicos depois deles a adotaram.\src{couturat}
+
+Há boas razões matemáticas para preferir a inclusiva. Com ela, \enquote{$x$ ou $x$} é apenas $x$, assim como \enquote{$x$ e $x$}; não é preciso verificar, antes de somar, se as classes se sobrepõem; e a disjunção fica perfeitamente simétrica à conjunção, como veremos nas leis de De Morgan (Unidade 6).
+
+\begin{construcao}[a tabela da disjunção inclusiva]{2-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item Dadas $p$ e $q$, formamos $p\vee q$ (lê-se \enquote{$p$ ou $q$}).
+  \item Adotamos o critério de Jevons: $p\vee q$ é V quando \emph{pelo menos uma} das partes é V; é F só quando ambas são F.
+  \item Para comparar, a última coluna mostra o \enquote{ou} exclusivo (o dos estoicos; o de Boole, lido de hoje), que indicamos por $p\veebar q$:
+\end{enumerate}
+\begin{tabelaverdade}{cccc}
+$p$ & $q$ & $p\vee q$ & $p\veebar q$\\\midrule
+V & V & \textbf{V} & \textbf{F}\\\fino
+V & F & V & V\\\fino
+F & V & V & V\\\fino
+F & F & F & F\\
+\end{tabelaverdade}
+As duas colunas diferem numa única linha: a primeira, em que ambas as partes são verdadeiras. Toda a discussão entre Boole e Jevons cabe nessa linha.
+
+\textbf{Leitura 0/1.} $p\vee q = p+q-pq$. A soma $p+q$ conta duas vezes o caso em que ambas valem 1; o termo $-pq$ corrige isso. Para o exclusivo, retira-se esse caso por inteiro: $p\veebar q = p+q-2pq$.
+\end{construcao}
+
+\begin{definicao}[conjunção e disjunção]
+Dadas as proposições $p$ e $q$:
+\begin{itemize}[leftmargin=1.2em]
+  \item a \textbf{conjunção} $p\wedge q$ (\enquote{$p$ e $q$}) é verdadeira se $p$ e $q$ são ambas verdadeiras; se ao menos uma delas for falsa, $p\wedge q$ é falsa;
+  \item a \textbf{disjunção} $p\vee q$ (\enquote{$p$ ou $q$}) é verdadeira se ao menos uma das proposições $p$ ou $q$ é verdadeira; se $p$ e $q$ são ambas falsas, $p\vee q$ é falsa.
+\end{itemize}
+Neste material, como no FME, \enquote{ou} significa sempre o \textbf{ou inclusivo}.
+\end{definicao}
+
+\subsubsection{Quantas linhas tem uma tabela?}
+Com uma letra, a tabela de ${\nao}p$ tinha 2 linhas; com duas, as tabelas de $\wedge$ e $\vee$ têm 4. O que acontece com três letras, como em $(p\wedge q)\vee{\nao}r$? Cada letra é uma escolha independente entre V e F, e o princípio multiplicativo responde.
+
+\begin{construcao}[o número de linhas]{2-H3}
+\begin{enumerate}[label=(\arabic*)]
+  \item Uma expressão com $n$ proposições simples tem, para cada uma, 2 valores possíveis.
+  \item Pelo princípio multiplicativo, o número de casos é $\underbrace{2\cdot2\cdots2}_{n}=2^n$. Logo, a tabela tem $2^n$ linhas: 2, 4, 8, 16, 32, \ldots
+  \item \textbf{Como não esquecer nenhuma:} na primeira coluna, escreva metade das linhas com V e metade com F; na segunda, alterne em blocos de um quarto; na terceira, em blocos de um oitavo; e assim por diante, até a última coluna, que alterna V, F, V, F\ldots{} Para $n=3$:
+\end{enumerate}
+\begin{tabelaverdade}{ccc}
+$p$ & $q$ & $r$\\\midrule
+V & V & V\\\fino V & V & F\\\fino V & F & V\\\fino V & F & F\\\fino
+F & V & V\\\fino F & V & F\\\fino F & F & V\\\fino F & F & F\\
+\end{tabelaverdade}
+É a mesma ordem em que se contam os números de 3 algarismos em base 2, de trás para frente (V = 1, F = 0): $111, 110, 101, \ldots, 000$.
+\end{construcao}
+
+O número de linhas cresce depressa, mas o número de \emph{expressões} diferentes que se podem escrever com as mesmas letras cresce muito mais. É essa diferença que estava em jogo entre Crisipo e Hiparco (observação 2-O1).
+
+\subsubsection{Venn: desenhar o \enquote{e} e o \enquote{ou}}
+Em julho de 1880, o lógico inglês John Venn publicou na \emph{Philosophical Magazine} um artigo sobre como representar proposições e raciocínios por diagramas.\src{venn} A ideia era desenhar uma curva fechada para cada termo e fazer as curvas se cruzarem de todas as maneiras possíveis, de modo que cada região corresponda a uma combinação de \enquote{está dentro} e \enquote{está fora}. Com dois círculos, há quatro regiões — exatamente as quatro linhas da tabela de $p$ e $q$. A conjunção é a região comum; a disjunção inclusiva é tudo o que está em pelo menos um círculo; a exclusiva é essa união sem a parte do meio.
+
+No Capítulo II, esses círculos voltam como desenhos de conjuntos, e a conjunção e a disjunção voltam como interseção e união.
+
+\subsubsection{Frege: \enquote{e} ou \enquote{mas}?}
+Em 1879, Gottlob Frege publicou a \emph{Conceitografia}, o livro que fundou a lógica moderna. Ali ele observou que \enquote{e} e \enquote{mas} dizem a mesma coisa sobre o mundo. Em textos posteriores, chamaria a diferença de \enquote{colorido}: o \enquote{mas} acrescenta uma sugestão de contraste, que não muda a verdade da frase.\src{fregeColor} \enquote{7 é primo, mas é ímpar} e \enquote{7 é primo e é ímpar} são verdadeiras exatamente nos mesmos casos. Para a lógica, \enquote{mas}, \enquote{porém}, \enquote{contudo}, \enquote{embora} e \enquote{todavia} são todos $\wedge$ (erro 2-E3).
+
+\subsubsection{Shannon: o \enquote{e} e o \enquote{ou} viram fios}
+Em 1937, Claude Shannon, então com 21 anos, escreveu no MIT uma dissertação de mestrado sobre circuitos de relés e interruptores.\src{shannonMIT} Ele percebeu que dois interruptores \emph{em série} deixam a corrente passar só se os dois estiverem fechados — é o \enquote{e}; e que dois interruptores \emph{em paralelo} deixam passar se pelo menos um estiver fechado — é o \enquote{ou} inclusivo.\src{liversidge} Com isso, a álgebra de Boole, com o \enquote{ou} de Jevons, virou uma ferramenta para projetar e simplificar circuitos (caso 4 do mapa do problema; exemplo \ref{ex:2.5}).
+
+\subsubsection{De onde vêm os símbolos}
+O símbolo $\vee$ aparece pela primeira vez nos trabalhos de Alfred North Whitehead e Bertrand Russell, por volta de 1903, e se espalhou com os \emph{Principia Mathematica} e com a adoção por David Hilbert, em 1928; a explicação comum, de que viria do latim \emph{vel}, é um mito (observação 2-O3).\src{elkindZach} O $\wedge$, o $\vee$ de cabeça para baixo, aparece com Arend Heyting em 1930.\src{miller} O $\veebar$ para o exclusivo é uma das várias notações em uso; não faz parte do FME, e aqui serve só para comparar.
+
+\subsubsection{Fecho: quem decide o \enquote{ou}?}
+A matemática, por definição: $p\vee q$ é verdadeira quando pelo menos uma das partes é verdadeira, inclusive quando as duas são. O garçom usa o \enquote{ou} exclusivo dos estoicos: espera que você escolha exatamente um. A placa de desconto usa o \enquote{ou} de Jevons: basta uma das condições, e quem cumpre as duas também ganha. A lógica matemática escolheu o segundo, e é ele que o símbolo $\vee$ indica. Quando um problema quiser o primeiro, terá de dizer isso com todas as letras — \enquote{ou\ldots\ ou\ldots, mas não ambos}, \enquote{apenas uma é verdadeira} —, e aí a ferramenta é a coluna de $\veebar$.
+
+\begin{paralembrar}\label{lembrar-u2}
+\textbf{$p\wedge q$ é V só quando as duas são V; $p\vee q$ é F só quando as duas são F.}
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \item O valor da composta depende só dos valores das partes (estoicos), não do assunto; com $n$ letras, a tabela tem $2^n$ linhas.
+  \item Em matemática, \enquote{ou} é inclusivo (Jevons); \enquote{mas}, \enquote{porém}, \enquote{embora} são $\wedge$ (Frege).
+  \item Em 0/1 (Boole): $p\wedge q = pq$ e $p\vee q = p+q-pq$.
+\end{enumerate}
+\end{paralembrar}
+
+% ------------------------------------------------------------
+\OndeEUsado
+
+Conjunção e disjunção quase nunca aparecem com esses nomes: vêm disfarçadas em intervalos, sistemas, condições e circuitos. Esta seção ensina a reconhecê-las. São cinco situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · classificar compostas}{2-U1}
+\mapa{\enquote{Classifique em V ou F}, com \enquote{e}, \enquote{ou}, \enquote{mas}, \enquote{nem}, \enquote{porém}, \enquote{embora}}
+{o valor de cada parte, e o conectivo que as liga}
+{as tabelas de $\wedge$ e $\vee$: na conjunção, uma parte F derruba tudo; na disjunção, uma parte V basta}
+\reconhecer É o formato do exercício 3 do FME.\src{fme} A dificuldade costuma estar nas partes (potências de base negativa, divisibilidade, mdc), e não no conectivo. Dois disfarces: a conjunção escrita com \enquote{mas}, \enquote{porém}, \enquote{embora} ou \enquote{nem\ldots\ nem}; e as partes sem relação de assunto, que se classificam do mesmo jeito. Treino: exemplos \ref{ex:2.1} e \ref{ex:2.2}; questões \ref{u2:q1}, \ref{u2:q2} e \ref{u2:q3}.
+\end{caso}
+
+\begin{caso}{2 · condições que valem ao mesmo tempo}{2-U2}
+\mapa{\enquote{$a<x\le b$}; \enquote{$\le$} ou \enquote{$\ge$}; um sistema de equações; várias condições sobre as mesmas pessoas ou números (\enquote{\ldots\ é mais velho que\ldots\ e mais novo que\ldots})}
+{uma conjunção, às vezes com uma disjunção dentro}
+{desmontar em condições simples; eliminar todo caso que viole \emph{alguma} delas, porque a conjunção só é V quando todas são V}
+\reconhecer \enquote{$-2<x\le3$} é $x>-2\wedge x\le3$, e o próprio $\le$ é uma disjunção: \enquote{$x\le3$} é $x<3\vee x=3$. O FME usa esse exemplo para apresentar o $\vee$: \enquote{$3\le3$} é verdadeira porque uma das partes, $3=3$, é verdadeira.\src{fme} Um sistema de equações pede a primeira \emph{e} a segunda; já \enquote{as soluções de $x^2=4$} são $x=2\vee x=-2$, e a regra do produto nulo, $ab=0 \iff a=0\vee b=0$, é um \enquote{ou} inclusivo. Em olimpíadas, a conjunção vem como uma lista de condições (OBMEP 2009, q.~4; aqui, questão \ref{u2:q7}).\src{obmep2009} Treino: exemplo \ref{ex:2.2}; questões \ref{u2:q4}, \ref{u2:q6} e \ref{u2:q7}.
+\end{caso}
+
+\begin{caso}{3 · \enquote{apenas uma é verdadeira}}{2-U3}
+\mapa{\enquote{apenas uma das afirmações é verdadeira}; \enquote{ou\ldots\ ou\ldots, mas não ambos}}
+{exatamente uma: a disjunção estoica, e não o $\vee$}
+{supor cada afirmação como a única V; as outras ficam negadas}
+\reconhecer O enunciado precisa dizer, com todas as letras, que não valem duas; sem isso, o \enquote{ou} é inclusivo. Com três ou mais afirmações, \enquote{exatamente uma} \emph{não} é encadear o $\veebar$: $(p\veebar q)\veebar r$ também é V quando as três são V (observação 2-O2). Na OBMEP, o formato aparece com afirmações que são intervalos (OBMEP 2005).\src{obmep2005} Treino: exemplo \ref{ex:2.4}; questões \ref{u2:q8} e \ref{u2:q10}.
+\end{caso}
+
+\begin{caso}{4 · circuitos e código}{2-U4}
+\mapa{interruptores, lâmpadas, portas lógicas; \texttt{and}/\texttt{or}, \texttt{\&\&}/\texttt{||}}
+{série ou paralelo; condição que tem de valer junto ou basta uma}
+{o dicionário de Shannon: série $=\wedge$, paralelo $=\vee$; escrever a expressão e montar a tabela}
+\reconhecer A pergunta pode ir nos dois sentidos: dado o circuito, quando a lâmpada acende? Ou: dada a condição, desenhe o circuito. Em código, \texttt{and} e \texttt{or} são sempre o $\wedge$ e o $\vee$ inclusivo (observação 2-O5). Treino: questão \ref{u2:q10}.
+\end{caso}
+
+\begin{caso}{5 · conjuntos}{2-U5}
+\mapa{$A\cap B$, $A\cup B$; \enquote{pertence a ambos}; \enquote{pertence a pelo menos um}}
+{$x\in A\wedge x\in B$ (interseção) ou $x\in A\vee x\in B$ (união)}
+{traduzir o pertencer e usar as tabelas; nas pontas dos intervalos, testar $<$ e $\le$}
+\reconhecer No Capítulo II, $A\cap B=\{x\mid x\in A\wedge x\in B\}$ e $A\cup B=\{x\mid x\in A\vee x\in B\}$: toda propriedade de $\cap$ e $\cup$ é uma propriedade de $\wedge$ e $\vee$. Que a união use o \enquote{ou} inclusivo é a escolha de Jevons: um elemento que está nos dois conjuntos está na união. Treino: exemplo \ref{ex:2.2}; questão \ref{u2:q4}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
+\begin{gatilhos}
+\enquote{classifique em V ou F} com \enquote{e} / \enquote{ou} & tabelas de $\wedge$ e $\vee$ & calcule cada parte; $\wedge$: uma F derruba; $\vee$: uma V basta & 2-U1 · ex.~\ref{ex:2.1}\\\fino
+\enquote{mas}, \enquote{porém}, \enquote{embora}, \enquote{nem} & conjunção & \enquote{mas} $=\wedge$; \enquote{nem $p$ nem $q$} $={\nao}p\wedge{\nao}q$ & 2-U1 · ex.~\ref{ex:2.2}\\\fino
+partes sem relação de assunto & verofuncio\-nalidade & o valor só depende dos valores; não julgue o sentido & 2-U1 · q.~\ref{u2:q3}\\\fino
+\enquote{$a<x\le b$}, \enquote{$\le$}, \enquote{$\ge$} & $\wedge$ e $\vee$ escondidos & desmonte em duas condições; teste as pontas & 2-U2 · q.~\ref{u2:q6}\\\fino
+várias condições que valem \enquote{ao mesmo tempo} & grande conjunção & liste os casos; elimine os que violam qualquer condição & 2-U2 · q.~\ref{u2:q7}\\\fino
+\enquote{apenas uma é verdadeira}, \enquote{ou\ldots\ ou\ldots, mas não ambos} & disjunção exclusiva ($\veebar$) & suponha cada uma como a única V; negue as outras & 2-U3 · ex.~\ref{ex:2.4}\\\fino
+interruptores, portas, \texttt{and}/\texttt{or}, \texttt{\&\&}/\texttt{||} & série $=\wedge$, paralelo $=\vee$ & escreva a expressão; faça a tabela; conte os casos & 2-U4 · q.~\ref{u2:q10}\\\fino
+$A\cap B$, $A\cup B$, \enquote{pertence a ambos / a algum} & $\cap$ corresponde a $\wedge$, $\cup$ a $\vee$ & traduza o pertencer e use as tabelas & 2-U5 · q.~\ref{u2:q4}\\\fino
+\enquote{monte a tabela-verdade} & $2^n$ linhas & conte as letras; preencha em blocos de metade, quarto\ldots & 2-H3 · q.~\ref{u2:q5}\\
+\end{gatilhos}

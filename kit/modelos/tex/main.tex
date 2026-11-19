@@ -1,0 +1,32 @@
+\documentclass[11pt,twoside,openany]{book}
+\usepackage{estilo}
+\renewcommand{\cabecalhocapitulo}{Cap.~{{CAP_ROMANO}} — {{TITULO_CAPITULO}}}
+
+\title{{{TITULO_CAPITULO}}}
+\begin{document}
+\frontmatter
+\begin{titlepage}
+  \centering\sffamily
+  \vspace*{5cm}
+  {\color{cinza}\large Fundamentos de Matemática Elementar · vol.~{{VOLUME}}\par}
+  \vspace{1.2em}
+  {\color{acento}\Huge\bfseries Capítulo {{CAP_ROMANO}}\par\vspace{0.3em}{{TITULO_CAPITULO}}\par}
+  \vspace{2em}
+  {\large Material didático\par}
+  \vfill
+  {\small\color{cinza}Didática v3 · {{DATA}}\par}
+\end{titlepage}
+\tableofcontents
+
+\mainmatter
+\setcounter{chapter}{{{CAP_ANTERIOR}}}
+\chapter{{{TITULO_CAPITULO}}}
+\input{abertura}
+% %% UNIDADES (esqueleto.py acrescenta aqui) %%
+% %% FIM UNIDADES %%
+\clearpage
+\input{glossario}
+
+\backmatter
+\input{fontes}
+\end{document}

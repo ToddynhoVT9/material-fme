@@ -1,0 +1,14 @@
+- n: {{N}}
+  titulo: '{{TITULO}}'
+  pergunta: '[pergunta aberta do prefácio]'
+  ids:
+    H1: '[construção]'
+    U1: '[contexto de uso]'
+    E1: '[erro comum]'
+  exemplos: []
+  questoes_meta:
+    N1: 4
+    N2: 5
+    N3: 2
+    integradoras: 1
+  questoes_pool: []

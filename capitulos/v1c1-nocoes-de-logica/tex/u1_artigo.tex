@@ -1,0 +1,165 @@
+% ============================================================
+% Unidade 1 — Proposição e negação  (v3 — 00-didatica-v3.md)
+% Parte A: o "artigo" — Prefácio, De onde vem?, Onde é usado?
+% IDs: 1-H1 1-H2 · 1-U1 1-U2 1-U3 · 1-E1..E4 · 1-O1..O5
+% ============================================================
+\providecommand{\nao}{{\sim}}
+\section{Proposição e negação}
+
+% ------------------------------------------------------------
+\Prefacio
+\begin{prefacio}
+\gancho{Toda frase é verdadeira ou falsa?}
+
+A matemática é feita de afirmações encadeadas: uma demonstração passa de uma afirmação verdadeira para outra até chegar ao teorema. Se um elo da corrente não puder ser verdadeiro nem falso, a corrente não se fecha. Por isso, antes de qualquer conta, é preciso saber quais frases a matemática pode usar, e o que significa negar uma delas.
+
+Algumas frases ficam de fora sem discussão: \enquote{feche a porta} não é verdadeira nem falsa. Outras são mais traiçoeiras. A frase \enquote{esta frase é falsa} é uma afirmação, como \enquote{7 é primo}. Mas tente dizer se ela é verdadeira ou falsa.
+
+\textbf{O que, exatamente, essa frase tem de errado?} É a pergunta que esta unidade responde.
+
+\textbf{Ao final, você será capaz de:} decidir se uma frase é ou não uma proposição, justificando pelo critério; escrever a negação de uma proposição sem cair na armadilha do \enquote{contrário}; e resolver problemas de quem diz a verdade e quem mente, raciocinando por casos.
+
+\textbf{Pré-requisitos:} os símbolos $=,\ \neq,\ <,\ \le,\ >,\ \ge$; a ideia de conjunto numérico; operações com inteiros, frações, potências e raízes. O essencial está na caixa abaixo.
+\end{prefacio}
+
+\begin{minimo}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Conjuntos numéricos.} $\mathbb{N}$ (naturais), $\mathbb{Z}$ (inteiros), $\mathbb{Q}$ (racionais: quocientes de inteiros), $\mathbb{R}$ (reais). Escrevemos $2 \in \mathbb{Z}$ (\enquote{2 pertence a $\mathbb{Z}$}) e $\sqrt{2} \notin \mathbb{Q}$ (\enquote{não pertence}). Os livros divergem sobre incluir o 0 em $\mathbb{N}$; nada nesta unidade depende disso.
+  \item \textbf{Divisibilidade.} $a \mid b$ (\enquote{$a$ divide $b$}) significa que existe um inteiro $k$ com $b = a\cdot k$. Assim, $3 \mid 12$, mas $3 \nmid 11$.
+  \item \textbf{mdc e mmc.} $\operatorname{mdc}(12,18)=6$ é o maior divisor comum; $\operatorname{mmc}(4,6)=12$ é o menor múltiplo comum positivo.
+  \item \textbf{Potências e raízes.} $(-2)^4=16$ e $(-2)^3=-8$: expoente par apaga o sinal, ímpar o mantém. O símbolo $\sqrt{a}$ indica a raiz \emph{não negativa}: $\sqrt{49}=7$, e não $\pm 7$.
+\end{itemize}
+\end{minimo}
+
+% ------------------------------------------------------------
+\DeOndeVem
+
+\subsubsection{Por que alguém precisou disso}
+Na Atenas dos séculos V e IV antes de Cristo, decisões eram tomadas em assembleia e disputas, resolvidas diante de júris; quem falava melhor costumava vencer. Uma pergunta se tornou inevitável: \emph{o que separa um raciocínio correto de um discurso apenas persuasivo?} Para responder, era preciso começar pelo material de que todo discurso é feito, as frases, e descobrir quais delas podem ser examinadas como verdadeiras ou falsas. A resposta foi construída em três etapas, e cada uma nos deixa um filtro.
+
+\subsubsection{Platão: como é possível falar o falso?}
+Antes de saber o que é uma frase verdadeira, Platão tropeçou num enigma: como é possível uma frase \emph{falsa}? Se dizer algo falso é \enquote{dizer o que não é}, e o que não é não existe, então a frase falsa estaria dizendo\ldots{} nada? No diálogo \emph{Sofista}, a resposta vem com dois exemplos: \enquote{Teeteto está sentado} e \enquote{Teeteto voa}.\src{platoSoph} As duas frases falam da mesma pessoa; a primeira diz as coisas como elas são, a segunda diz coisas diferentes das que são. Uma é verdadeira, a outra é falsa, e ambas são discursos legítimos: o discurso mais simples é a combinação de um \emph{nome} com um \emph{verbo}.
+
+Duas coisas ficam daqui. \emph{Ser falsa} não impede uma frase de dizer alguma coisa. E, para dizer alguma coisa, a frase precisa juntar um sujeito e algo que se afirma sobre ele. Esse é o primeiro filtro: \emph{a frase precisa ser uma oração}. Platão tratava o \enquote{não} como algo que se prende ao predicado (\enquote{Teeteto \emph{não} está sentado}), e não à frase inteira.\src{sepAncient} Esse detalhe vai mudar com os estoicos.
+
+\subsubsection{Aristóteles: a frase que afirma ou nega}
+No tratado \emph{Da Interpretação}, Aristóteles faz a distinção que dá início a esta unidade. Toda frase significa alguma coisa; mas só são \emph{proposições} as frases em que há verdade ou falsidade. Uma prece é uma frase, mas não é verdadeira nem falsa, e por isso fica fora da lógica.\src{aristInt} Segundo filtro: \emph{a frase precisa ser declarativa}. Perguntas, ordens, pedidos e exclamações têm sentido, mas não afirmam nem negam coisa alguma.
+
+Aristóteles também pensou nos pares de frases. \enquote{Sócrates está sentado} e \enquote{Sócrates não está sentado} formam um par \emph{contraditório}: as duas dividem entre si o verdadeiro e o falso, de modo que sempre exatamente uma é verdadeira. Já \enquote{ele é feliz} e \enquote{ele é triste} são apenas \emph{contrárias}: não podem ser ambas verdadeiras, mas podem ser ambas falsas.\src{sepContr} Essa diferença é a origem de um dos erros mais frequentes desta unidade (erro 1-E3).
+
+\subsubsection{Exatamente um valor: o que Aristóteles disse e o que fazemos hoje}
+Falta o terceiro filtro, e aqui convém separar três coisas.
+
+\emph{O que Aristóteles formulou.} No livro IV da \emph{Metafísica}, ele apresenta o princípio que considera o mais certo de todos: é impossível que a mesma coisa, ao mesmo tempo e sob o mesmo aspecto, pertença e não pertença ao mesmo objeto. Esse princípio não se demonstra, diz ele; quem o nega, para negá-lo com sentido, já o usa.\src{sepContr}\src{wedin} Ao lado dele, formula outro: de um mesmo sujeito, ou se afirma ou se nega o predicado; não há meio-termo.\src{sepContr} São afirmações sobre coisas e predicados, sobre afirmar e negar.
+
+\emph{Como os lemos hoje.} Transpostos para frases, os dois viram o \textbf{princípio da não contradição} (nenhuma proposição é verdadeira e falsa ao mesmo tempo) e o \textbf{princípio do terceiro excluído} (\enquote{$p$ ou não $p$} é sempre verdadeira).
+
+\emph{O que a lógica clássica convenciona.} A matemática escolar vai um passo além e adota a \textbf{bivalência}: toda proposição tem um, e só um, de dois valores, V ou F. Os dois princípios combinam com essa escolha, mas ela não é uma simples consequência deles, e o próprio Aristóteles parece ter hesitado diante de frases sobre o futuro (observação 1-O2).\src{futcont}\src{sepFut} É uma decisão: a que torna possível o cálculo que você vai aprender. Eis o terceiro filtro.
+
+\begin{construcao}[o que é uma proposição]{1-H1}
+Partimos de uma frase qualquer e aplicamos os três filtros, nesta ordem:
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{É oração?} (Platão) Junta um sujeito e algo dito sobre ele. \enquote{Três vezes cinco mais um} não passa: é só uma expressão, não diz nada.
+  \item \textbf{É declarativa?} (Aristóteles, \emph{Da Interpretação}) Não é pergunta, ordem, desejo nem exclamação. \enquote{A raiz de 2 é racional?} não passa.
+  \item \textbf{Tem um, e somente um, valor lógico?} (a bivalência da lógica clássica) Uma proposição é V ou F, nunca ambos, nunca nenhum. \enquote{$3x-1=11$} não passa: o valor depende de $x$.
+\end{enumerate}
+\end{construcao}
+
+\begin{definicao}[proposição]
+Chama-se \textbf{proposição} (ou \textbf{sentença}) toda oração declarativa que pode ser classificada em verdadeira (V) ou em falsa (F), com um, e somente um, desses valores.
+\end{definicao}
+
+Note o que a definição \emph{não} exige: não exige que a proposição seja verdadeira, nem que alguém saiba qual é o seu valor. \enquote{$5-4=3$} é uma proposição, falsa. Platão já tinha mostrado por quê: o falso também diz alguma coisa.
+
+\subsubsection{O Mentiroso}
+Na época de Aristóteles, Eubulides, da escola de Mégara, propôs o Mentiroso, um argumento que embaraçava qualquer teoria.\src{megarians} Não sabemos como ele o redigiu; na forma que se costuma usar hoje, alguém diz: \enquote{o que estou dizendo agora é falso}. Se a frase é verdadeira, o que ela diz vale, logo é falsa. Se é falsa, o que ela diz não vale, logo é verdadeira.\src{oupEub} O Mentiroso passa nos dois primeiros filtros, mas não consegue receber um valor sem contradição: fica de fora pelo terceiro (observação 1-O1).
+
+\subsubsection{Os estoicos e a negação que vem na frente}
+Os estoicos, a escola de Zenão de Cítio e de Crisipo, raciocinavam com \emph{proposições inteiras}, que chamavam de \emph{axíoma}, ou \enquote{assertível}: aquilo que é dito e pode ser afirmado ou negado.\src{bobzien} Ao tratar a negação, fizeram algo novo: colocaram a partícula negativa \emph{antes da proposição inteira}. Em vez de \enquote{não está sentado}, diziam algo como \enquote{\emph{não}: é dia}. A negação estoica é \emph{externa}: age sobre a frase toda, e não só sobre o predicado.\src{stoicNeg}
+
+É exatamente o que fazemos hoje. Quando escrevemos $\nao p$, dizemos \enquote{não: $p$}. Os estoicos também classificaram a \emph{dupla negação}, \enquote{não: não é dia}, que equivale a dizer que é dia.\src{dlDouble}
+
+\begin{construcao}[a negação]{1-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item Dada uma proposição $p$, formamos $\nao p$ (lê-se \enquote{não $p$}), negando $p$ inteira, à maneira estoica.
+  \item Para que $\nao p$ também seja proposição, precisa ter exatamente um valor. A lógica clássica \emph{postula} o mais simples compatível com a bivalência: $\nao p$ é V quando $p$ é F, e é F quando $p$ é V.
+  \item Como $p$ tem só dois casos possíveis, a regra cabe numa tabela de duas linhas, a \textbf{tabela-verdade} de $\nao p$:
+\end{enumerate}
+\begin{tabelaverdade}{CC}
+$p$ & $\nao p$\\\midrule
+V & F\\\fino
+F & V\\
+\end{tabelaverdade}
+Consequência imediata, como notaram os estoicos: negar duas vezes devolve o valor original. $\nao(\nao p)$ tem sempre o mesmo valor de $p$.
+\end{construcao}
+
+\subsubsection{Dois mil anos depois: a negação vira conta}
+No século XIX, o matemático inglês George Boole propôs escrever o raciocínio como álgebra, em \emph{The Mathematical Analysis of Logic} (1847) e \emph{The Laws of Thought} (1854).\src{maaBoole} Na álgebra de Boole, o número 1 representa o \enquote{universo}, e o 0, o \enquote{nada}. Se $x$ representa uma classe de coisas (\enquote{as coisas vermelhas}), então $1-x$ representa tudo o que \emph{não} é $x$. E como \enquote{vermelho e vermelho} é apenas \enquote{vermelho}, Boole chegou a uma lei que a álgebra comum não tem: $x^2=x$. Dela, dizia, decorre o princípio da não contradição.\src{beziau}
+
+Boole pensava em \emph{classes}. A leitura moderna troca as classes por \emph{valores}: 1 para V e 0 para F. Com isso, a construção da negação vira uma conta de uma linha.
+
+\begin{construcao}[a negação como conta (leitura moderna de Boole)]{1-H2}
+Seja $p\in\{0,1\}$ (0 = F, 1 = V). Defina $\nao p = 1-p$.
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{A tabela sai sozinha:} se $p=1$, então $\nao p = 0$; \quad se $p=0$, então $\nao p = 1$.
+  \item \textbf{Dupla negação:} $\nao(\nao p) = 1-(1-p) = p$.
+  \item \textbf{Não contradição:} como $p$ só vale 0 ou 1, vale $p^2=p$, isto é, $p(1-p)=0$. O produto \enquote{$p$ e $\nao p$} é sempre 0: nunca são ambas verdadeiras.
+  \item \textbf{Terceiro excluído:} $p + (1-p) = 1$. Exatamente uma das duas vale 1.
+\end{enumerate}
+\end{construcao}
+
+Os dois princípios aparecem aqui como contas, mas só porque \emph{decidimos} que os únicos valores possíveis são 0 e 1. A conta não prova os princípios; mostra que eles já estão embutidos na escolha de dois valores, a bivalência.
+
+\subsubsection{De onde vêm os símbolos}
+O til ($\sim$) para a negação foi usado por Giuseppe Peano em 1897; o símbolo $\neg$, comum em livros de computação, aparece com Arend Heyting em 1930.\src{miller} Este material segue o FME e usa $\nao$.
+
+\subsubsection{Fecho: o que \enquote{esta frase é falsa} tem de errado?}
+Agora a pergunta do prefácio tem resposta. \enquote{Feche a porta} cai no segundo filtro: não é declarativa. \enquote{Esta frase é falsa} passa nos dois primeiros, é uma oração e é declarativa, e só cai no terceiro: qualquer valor que se tente dar a ela produz o valor oposto. Não lhe falta sentido; falta-lhe um valor. E é exatamente um valor que a matemática exige de cada elo da corrente.
+
+\begin{paralembrar}\label{lembrar-u1}
+\textbf{Proposição é frase declarativa com exatamente um valor (V ou F); negar é trocar esse valor: $\nao p = 1-p$.}
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \item Filtre: é oração (Platão)? É declarativa (Aristóteles)? Tem um, e só um, valor (bivalência)?
+  \item Para negar, ponha o \enquote{não} na frente da proposição inteira (estoicos) e inverta o valor.
+  \item Duas negações se anulam: $\nao(\nao p) = 1-(1-p) = p$ (Boole).
+\end{enumerate}
+\end{paralembrar}
+
+% ------------------------------------------------------------
+\OndeEUsado
+
+Esta seção não ensina nada novo sobre proposições: ensina a reconhecer, num enunciado, que a pergunta é sobre elas, e o que fazer. Nesta unidade, isso acontece em três situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · classificar frases}{1-U1}
+\mapa{\enquote{Quais das sentenças abaixo são proposições?}; \enquote{classifique as frases}; \enquote{qual destas não é proposição?}}
+{as frases que passam nos três filtros, e, entre elas, as verdadeiras}
+{os três filtros (construção 1-H1), um por vez}
+\reconhecer A questão não pede cálculo: testa a \emph{definição}. As armadilhas são quase sempre as mesmas quatro: uma expressão sem verbo (\enquote{$3\cdot5+1$}); uma pergunta ou ordem; uma frase com variável sem valor (\enquote{$3x-1=11$}); e, a mais traiçoeira, uma proposição \emph{falsa}, que muitos descartam por engano. O primeiro exercício do FME tem exatamente esse formato.\src{fme} Treino: exemplo \ref{ex:1.1}; questões \ref{u1:q1}, \ref{u1:q3} e \ref{u1:q6}.
+\end{caso}
+
+\begin{caso}{2 · negar uma relação}{1-U2}
+\mapa{\enquote{Qual é a negação de\ldots?}; \enquote{não é verdade que\ldots}; \enquote{assinale a frase equivalente a negar\ldots}}
+{a frase que tem \emph{sempre} o valor oposto ao da original}
+{a tabela de $\nao$ e a troca de relações: $=$ por $\neq$, $<$ por $\ge$, $\in$ por $\notin$, $\mid$ por $\nmid$; o teste da terceira via (erro 1-E3)}
+\reconhecer A palavra \enquote{negação} quase sempre aparece; quando não aparece, o sinal é um \enquote{não é verdade que} ou um pedido de \enquote{frase falsa exatamente quando a outra é verdadeira}. Negar relações é o tijolo de todas as negações do capítulo: pedir a negação de uma frase é formato comum nas provas que cobram lógica, como na FATEC (exemplos \ref{ex:6.1} e \ref{ex:6.2}),\src{fatec2015}\src{fatec2019} e há questões que dependem de não perder o caso da igualdade (exemplo \ref{ex:6.3}). Se o enunciado traz \enquote{ninguém}, \enquote{nunca}, \enquote{nada} junto com \enquote{não}, conte as negações pelo sentido, não pelas palavras (observação 1-O3). Treino: exemplos \ref{ex:1.2} e \ref{ex:1.3}; questões \ref{u1:q2}, \ref{u1:q4}, \ref{u1:q5} e \ref{u1:q7}.
+\end{caso}
+
+\begin{caso}{3 · quem diz a verdade e quem mente}{1-U3}
+\mapa{personagens que \enquote{sempre dizem a verdade} e outros que \enquote{sempre mentem}; \enquote{quantos dizem a verdade?}; \enquote{quem é quem?}}
+{cada personagem é exatamente de um tipo; o que um mentiroso diz tem negação verdadeira}
+{casos + negação: supor o tipo de um personagem, propagar, procurar contradição}
+\reconhecer O enunciado é uma história, não uma conta, e quase sempre de olimpíada: a questão dos tamanduás e das preguiças da OBMEP é um exemplo,\src{obmep2010} e, segundo um trabalho de mestrado (PROFMAT), desde 2007 a 1ª fase da OBMEP traz ao menos uma questão de raciocínio lógico.\src{educapes} Esses enigmas descendem dos \enquote{cavaleiros e valetes} de Raymond Smullyan (1978).\src{smullyan1978}\src{smullyan} Não há fórmula: o método funciona porque cada personagem é exatamente de um tipo, a bivalência aplicada a pessoas. Treino: exemplo \ref{ex:1.4}; questões \ref{u1:q9} e \ref{u1:q10}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
+\begin{gatilhos}
+\enquote{Quais são proposições?} & os três filtros & oração? declarativa? exatamente um valor? & 1-U1 · ex.~\ref{ex:1.1}\\\fino
+frase com letra ($x$, $n$) sem valor atribuído & sentença aberta & não é proposição até atribuir valor (ou quantificar, Unid.~5) & 1-U1 · q.~\ref{u1:q6}\\\fino
+\enquote{Qual a negação de\ldots} com $=,<,\in,\mid$ & tabela de $\nao$ & $=$ vira $\neq$;\ \ $<$ vira $\ge$;\ \ $\in$ vira $\notin$;\ \ $\mid$ vira $\nmid$ & 1-U2 · ex.~\ref{ex:1.2}\\\fino
+\enquote{o contrário de\ldots} & teste da terceira via & existe caso em que as duas são falsas? então não é negação & 1-U2 · ex.~\ref{ex:1.3}\\\fino
+\enquote{nunca}, \enquote{ninguém}, \enquote{nada} junto com \enquote{não} & concordância negativa & conte a negação pelo sentido: é uma só & 1-U2 · ex.~\ref{ex:1.3}\\\fino
+personagens que \enquote{sempre mentem} / \enquote{sempre dizem a verdade} & negação + casos & supor um tipo, propagar, achar contradição & 1-U3 · ex.~\ref{ex:1.4}\\\fino
+\enquote{suponha que não\ldots} numa demonstração & redução ao absurdo & negar a tese, chegar a $q$ e $\nao q$, concluir a tese & 6-U4 · q.~\ref{u6:q12} (Unid.~6)\\
+\end{gatilhos}

@@ -1,0 +1,8 @@
+# auxiliares do LaTeX (o PDF final fica em saida/)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+capitulos/*/tex/main.pdf
+__pycache__/

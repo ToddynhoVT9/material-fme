@@ -1,0 +1,352 @@
+% Parte B: erros, observações, exemplos, questões, respostas
+\ErrosComuns
+
+\begin{erro}{Achar que proposição falsa não é proposição}{1-E1}
+\campo{O erro.} Diante de \enquote{$5-4=3$}, o estudante responde \enquote{não é proposição, porque está errado}.
+\campo{Por que parece plausível.} Na fala cotidiana, \enquote{isso não é uma afirmação válida} costuma significar \enquote{isso é falso}. O estudante confunde \emph{ter} um valor lógico com \emph{ser verdadeira}.
+\campo{Onde quebra.} Se só as frases verdadeiras fossem proposições, a negação de uma proposição verdadeira nunca seria proposição: não daria para negar \enquote{$5-4=1$}. E \enquote{todo par maior que 2 é soma de dois primos}, cujo valor ninguém conhece, não poderia ser classificada de jeito nenhum.
+\campo{Como detectar.} Pergunte-se: a minha resposta mudaria se a frase fosse corrigida (\enquote{$5-4=1$})? Se muda de \enquote{não é proposição} para \enquote{é proposição}, você julgou o valor, e não o critério.
+\campo{Como corrigir.} Troque a pergunta \enquote{é verdade?} por \enquote{dá para dizer se é V ou F?}. Se dá, mesmo que a resposta seja F ou que ninguém saiba ainda, é proposição.
+\campo{Onde aparece.} Exemplo \ref{ex:1.1}; questões \ref{u1:q1} e \ref{u1:q3}.
+\end{erro}
+
+\begin{erro}{Negar \enquote{maior que} com \enquote{menor que}}{1-E2}
+\campo{O erro.} Negar $x>3$ escrevendo $x<3$.
+\campo{Por que parece plausível.} \enquote{O contrário de maior é menor}: a desigualdade parece ter dois lados, e negar seria trocar de lado.
+\campo{Onde quebra.} Em $x=3$. Esse valor não satisfaz $x>3$ nem $x<3$: as duas frases são falsas ao mesmo tempo, e uma proposição e sua negação nunca têm o mesmo valor.
+\campo{Como detectar.} Teste o valor de fronteira: ele precisa satisfazer \emph{exatamente uma} das duas frases, a original ou a negação. Se não satisfaz nenhuma, a negação está errada.
+\campo{Como corrigir.} A negação ocupa todo o resto da reta, fronteira incluída: ${\nao}(x>3)$ é $x\le 3$. Estrita vira não estrita, e vice-versa.
+\campo{Onde aparece.} Exemplo \ref{ex:1.2}; questões \ref{u1:q2} e \ref{u1:q4}. Volta na Unidade 6 (6-E5).
+\end{erro}
+
+\begin{erro}{Negar com o \enquote{contrário}}{1-E3}
+\campo{O erro.} Negar \enquote{João é alto} com \enquote{João é baixo}; negar \enquote{o triângulo é acutângulo} com \enquote{o triângulo é obtusângulo}.
+\campo{Por que parece plausível.} Na língua, \enquote{o contrário} de alto é baixo, e o par parece esgotar as opções.
+\campo{Onde quebra.} Uma pessoa de altura mediana não é alta nem baixa; um triângulo retângulo não é acutângulo nem obtusângulo. Nesses casos, as duas frases são falsas juntas, e $p$ e $\nao p$ nunca são falsas juntas.
+\campo{Como detectar.} \emph{Teste da terceira via}: procure uma situação que torne as duas frases falsas (ou as duas verdadeiras). Se existir, a segunda frase não é a negação da primeira.
+\campo{Como corrigir.} Negue a frase inteira: \enquote{João \emph{não} é alto}, \enquote{o triângulo \emph{não} é acutângulo}. O \enquote{contrário} só serve quando as duas opções esgotam os casos, como par e ímpar.
+\campo{Onde aparece.} Exemplo \ref{ex:1.3}; questão \ref{u1:q7}. Volta com força na Unidade 6 (\enquote{todo}/\enquote{nenhum}).
+\end{erro}
+
+\begin{erro}{Tratar sentença aberta como proposição}{1-E4}
+\campo{O erro.} Classificar \enquote{$3x-1=11$} como proposição \enquote{verdadeira, porque $x=4$ resolve}.
+\campo{Por que parece plausível.} A frase tem a cara de uma equação que \enquote{dá certo}: existe um valor que a torna verdadeira, e o estudante responde por ele.
+\campo{Onde quebra.} Em $x=5$, a mesma frase é falsa. Uma frase que é V para um valor de $x$ e F para outro não tem \emph{um} valor: falha no terceiro filtro.
+\campo{Como detectar.} Procure letras livres, variáveis sem valor atribuído. Se houver, troque a letra por dois números diferentes: se o valor da frase muda, ela ainda não é proposição.
+\campo{Como corrigir.} Uma sentença aberta vira proposição quando se atribui valor à variável (\enquote{para $x=4$, $3x-1=11$}) ou quando se usa um quantificador (Unidade 5).
+\campo{Onde aparece.} Exemplo \ref{ex:1.1}; questões \ref{u1:q3} e \ref{u1:q6}.
+\end{erro}
+
+% ------------------------------------------------------------
+\Observacoes
+
+\begin{obs}{1-O1}
+\textbf{O Mentiroso, de Mégara até hoje.} Diógenes Laércio atribui a Eubulides sete argumentos: o Mentiroso, o Disfarçado, a Electra, o Encoberto, o Monte, o Chifrudo e o Careca.\src{megarians} Na forma moderna, o Mentiroso cabe numa linha: \enquote{esta frase é falsa}.\src{oupEub} Os historiadores não sabem se a versão de Eubulides já era autorreferente como as modernas,\src{megarians} e ainda hoje não há consenso sobre como resolver o paradoxo.\src{oupEub}
+
+O que a definição de proposição faz é uma escolha prudente: em vez de resolver o paradoxo, ela o deixa de fora. Isso não é trapaça: a matemática escolar não precisa de frases que negam a si mesmas.
+\end{obs}
+
+\begin{obs}{1-O2}
+\textbf{Exatamente um valor: uma escolha, e não uma lei.} A bivalência foi discutida desde o início.
+\begin{itemize}[leftmargin=1.2em,itemsep=1pt]
+  \item \emph{A batalha naval.} No capítulo 9 de \emph{Da Interpretação}, Aristóteles considera \enquote{amanhã haverá uma batalha naval}. Se já é verdadeira hoje, a batalha está decidida; se já é falsa, é impossível. Muitos leitores entenderam que ele abria uma exceção para frases sobre o futuro; outros discordam dessa leitura.\src{futcont}\src{sepFut} Os estoicos insistiram que toda proposição é V ou F, mesmo as sobre o futuro, e aceitaram que o futuro estaria determinado.\src{sepFut}
+  \item \emph{O relógio.} Para os estoicos, um assertível como \enquote{é dia} mudava de valor ao longo do dia.\src{bobzien}
+  \item \emph{Brouwer e Łukasiewicz.} Em 1908, L.~E.~J. Brouwer recusou o terceiro excluído para coleções infinitas, e dessa recusa nasceu o \emph{intuicionismo}.\src{moscho} (Heyting, que introduziu o símbolo $\neg$, foi aluno dele.\src{sepBrouwer}) Em 1918, Jan Łukasiewicz, em Varsóvia, voltou à batalha naval de Aristóteles e anunciou uma lógica com \emph{três} valores, desenvolvida em 1920.\src{wolenski}\src{openlogic}
+\end{itemize}
+Nada disso desmente a lógica deste capítulo: mostra que ela é uma escolha, a da lógica clássica. A matemática escolar evita as dificuldades usando frases \emph{atemporais} e com fronteira nítida: \enquote{7 é primo} valia antes de existir alguém para dizê-la. Frases com \enquote{hoje}, \enquote{aqui}, \enquote{eu} ou \enquote{amanhã} só viram proposições quando se fixam o momento, o lugar ou a pessoa: \enquote{às 12h de 1º/1/2026, em Natal, é dia}.
+\end{obs}
+
+\begin{obs}{1-O3}
+\textbf{O português não é lógica: a concordância negativa.} Na lógica, cada $\nao$ inverte o valor, e dois se anulam. No português, várias palavras negativas podem formar uma negação só: \enquote{não vi ninguém}, \enquote{nunca disse nada a ninguém}.\src{correio} Os linguistas classificam as línguas em dois grupos: as de \emph{dupla negação}, em que duas negativas se cancelam (como no inglês padrão), e as de \emph{concordância negativa}, como o português e o italiano.\src{matos} Há ainda uma regra de posição: quando a palavra negativa vem antes do verbo, ela basta sozinha (\enquote{ninguém apareceu}); quando vem depois, pede o \enquote{não} antes do verbo (\enquote{não apareceu ninguém}).\src{correio} Ao transformar uma frase em símbolos, leia o sentido: \enquote{não vi ninguém} é $\nao$(\enquote{vi alguém}), com uma única negação.
+\end{obs}
+
+\begin{obs}{1-O4}
+\textbf{O Monte e as palavras vagas.} Outro argumento de Eubulides, o Monte (\emph{sorites}), ataca o terceiro filtro por um caminho diferente.\src{megarians} Um grão de areia não é um monte; acrescentar um grão a algo que não é monte não o transforma em monte; e, no entanto, com grãos suficientes, há um monte.\src{oupEub} O problema está nas palavras \emph{vagas} (\enquote{monte}, \enquote{careca}, \enquote{alto}), que têm casos de fronteira sem resposta clara. A matemática foge da dificuldade usando só predicados com fronteira nítida, como \enquote{$n$ é par} ou \enquote{$x>0$}. Quando uma questão usa palavras vagas, ela costuma estar testando outra coisa: a diferença entre \emph{contrário} e \emph{negação} (erro 1-E3).
+\end{obs}
+
+\begin{obs}{1-O5}
+\textbf{A negação nos computadores.} Os valores 0 e 1 de Boole são os \emph{bits} de qualquer computador, e a operação $1-x$ é a porta lógica NOT, que inverte um sinal elétrico; a ligação entre a álgebra de Boole e os circuitos foi feita por Claude Shannon em 1937 (Unidade 2).\src{shannonMIT} Em programação, a negação é \texttt{not x} (Python) ou \texttt{!x} (JavaScript, C, Java). Programadores de JavaScript usam até a dupla negação \texttt{!!x}, que converte qualquer valor no booleano correspondente: o \enquote{não: não} dos estoicos, dentro de um navegador.
+\end{obs}
+
+\Exemplos
+
+\begin{exemplo}{1.1}{1}{adaptado do FME, item 1}{1-H1, 1-U1, 1-E1, 1-E4}\label{ex:1.1}
+Quais das frases abaixo são proposições? Para as que forem, diga se são verdadeiras ou falsas.
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item Onze é um número primo.
+  \item $2+3\cdot 4$
+  \item Qual é o maior número primo?
+  \item $3x-1=11$
+  \item O número 1 é primo.
+  \item Estude lógica!
+\end{enumerate}
+\end{multicols}
+\plano Passar cada frase pelos três filtros da construção 1-H1, nesta ordem.
+\resolucao
+a) Oração, declarativa, valor definido: \textbf{proposição verdadeira}.
+b) Não tem verbo: é uma expressão (vale 14), não afirma nada. \textbf{Não é proposição.}
+c) Interrogativa. \textbf{Não é proposição.}
+d) Tem a variável $x$ sem valor: é V para $x=4$ e F para os demais. \textbf{Não é proposição} (é sentença aberta).
+e) Oração declarativa com valor definido: 1 não é primo (um primo tem exatamente dois divisores positivos). \textbf{Proposição falsa.}
+f) Imperativa. \textbf{Não é proposição.}
+\comentario Os itens (d) e (e) são as duas armadilhas da unidade: (d) parece verdadeira porque \enquote{tem solução}, e (e) parece não ser proposição porque é falsa. O filtro resolve as duas sem discussão.
+\end{exemplo}
+
+\begin{exemplo}{1.2}{1}{autoral}{1-H2, 1-U2, 1-E2}\label{ex:1.2}
+Escreva a negação de cada proposição e dê o valor lógico de $p$ e de $\nao p$.
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $8 \neq 2^3$
+  \item $-1 > -2$
+  \item $\sqrt{2} \in \mathbb{Q}$
+  \item $4 \mid 18$
+  \item $\pi < 3{,}14$
+\end{enumerate}
+\end{multicols}
+\plano Trocar cada relação pela que \emph{completa} as possibilidades (gatilho \enquote{Qual a negação de\ldots}), e só depois decidir os valores.
+\resolucao
+\begin{center}\small
+\begin{tabular}{lllcc}\toprule
+& proposição $p$ & negação $\nao p$ & valor de $p$ & valor de $\nao p$\\\midrule
+a) & $8\neq 2^3$ & $8 = 2^3$ & F & V\\\fino
+b) & $-1>-2$ & $-1 \le -2$ & V & F\\\fino
+c) & $\sqrt2\in\mathbb{Q}$ & $\sqrt2\notin\mathbb{Q}$ & F & V\\\fino
+d) & $4\mid 18$ & $4\nmid 18$ & F & V\\\fino
+e) & $\pi<3{,}14$ & $\pi \ge 3{,}14$ & F & V\\\bottomrule
+\end{tabular}
+\end{center}
+Em (e), $\pi = 3{,}14159\ldots$, que é maior que $3{,}14$; logo $p$ é F.
+\comentario Em (b) e (e), a negação de uma desigualdade estrita é \emph{não estrita}: $>$ vira $\le$, $<$ vira $\ge$. Em todas as linhas, $p$ e $\nao p$ têm valores opostos — como exige a tabela de $\nao$.
+\end{exemplo}
+
+\begin{exemplo}{1.3}{2}{autoral}{1-E3, 1-H2, 1-O3}\label{ex:1.3}
+Em cada par, a segunda frase é a negação da primeira?
+\begin{enumerate}[label=(\roman*)]
+  \item \enquote{o inteiro $n$ é par} \quad e \quad \enquote{o inteiro $n$ é ímpar};
+  \item \enquote{o real $x$ é positivo ($x>0$)} \quad e \quad \enquote{o real $x$ é negativo ($x<0$)};
+  \item \enquote{o triângulo $T$ é acutângulo} \quad e \quad \enquote{o triângulo $T$ é obtusângulo};
+  \item \enquote{$a=b$} \quad e \quad \enquote{$a\neq b$};
+  \item \enquote{vi alguém na sala} \quad e \quad \enquote{não vi ninguém na sala}.
+\end{enumerate}
+\plano Aplicar o \emph{teste da terceira via}: procurar um caso em que as duas frases tenham o mesmo valor.
+\resolucao
+(i) Todo inteiro é par ou ímpar, e nenhum é as duas coisas: exatamente uma das frases é V. \textbf{É negação.}
+(ii) Para $x=0$, as duas são falsas. \textbf{Não é negação}; a negação de $x>0$ é $x\le 0$.
+(iii) Um triângulo retângulo não é nem acutângulo nem obtusângulo: as duas são falsas. \textbf{Não é negação.}
+(iv) Exatamente uma das duas é V, para quaisquer $a$ e $b$. \textbf{É negação.}
+(v) Se vi alguém, a segunda é falsa; se não vi ninguém, a primeira é falsa; nunca as duas têm o mesmo valor. \textbf{É negação} — e com uma única negação lógica, apesar das duas palavras negativas (\enquote{não} e \enquote{ninguém}): é a concordância negativa do português (1-O3).
+\comentario O \enquote{contrário} às vezes coincide com a negação, como em (i) — mas só quando as duas opções esgotam os casos. A tabela de $\nao$ (1-H2) exige isso: $p$ e $\nao p$ nunca têm o mesmo valor. Os pares de (ii) e (iii) falham porque existe um terceiro caso ($x=0$; o triângulo retângulo). Na Unidade 6, este teste é o que separa \enquote{nenhum} (contrário) de \enquote{algum\ldots\ não} (negação).
+\end{exemplo}
+
+\begin{exemplo}{1.4}{2}{autoral, estrutura de Smullyan}{1-U3}\label{ex:1.4}
+Numa ilha vivem cavaleiros, que sempre dizem a verdade, e valetes, que sempre mentem. Você encontra dois moradores, $A$ e $B$.
+$A$ diz: \enquote{$B$ é valete.} \quad $B$ diz: \enquote{Nós dois somos valetes.}
+Quem é o quê?
+\plano Gatilho \enquote{sempre mentem / sempre dizem a verdade}: supor o tipo de um personagem, propagar com a negação, procurar contradição.
+\resolucao
+\emph{Suponha que $B$ é cavaleiro.} Então o que ele diz é verdade: os dois são valetes — inclusive ele. Contradição. Logo \textbf{$B$ é valete}.
+Como $B$ mente, a frase \enquote{nós dois somos valetes} é falsa; então não são ambos valetes. Como $B$ é valete, \textbf{$A$ é cavaleiro}.
+Conferindo: $A$, cavaleiro, diz \enquote{$B$ é valete} — verdade. Consistente.
+\comentario A frase de $B$ é do tipo que nenhum morador consegue dizer de forma consistente sendo cavaleiro, e isso dá o ponto de partida. Os princípios de não contradição e do terceiro excluído são o que autoriza o método: cada morador é \emph{exatamente} um dos dois tipos.
+\end{exemplo}
+
+\begin{exemplo}{1.5}{2}{histórico}{1-H1, 1-E1, 1-O1, 1-O2}\label{ex:1.5}
+Classifique cada frase como proposição ou não, justificando com o critério e com a origem histórica do problema.
+\begin{enumerate}[label=\alph*)]
+  \item \enquote{Que os deuses nos sejam favoráveis.}
+  \item \enquote{Esta frase é falsa.}
+  \item \enquote{É dia.}
+  \item \enquote{Todo número par maior que 2 é a soma de dois números primos.}
+\end{enumerate}
+\plano Passar pelos três filtros; nos casos de fronteira, perguntar qual parte do critério falha e por quê.
+\resolucao
+a) É uma prece, o exemplo do próprio Aristóteles: tem sentido, mas não é declarativa. \textbf{Não é proposição.}
+b) É declarativa, mas não pode receber um valor sem contradição (1-O1). Falha no terceiro filtro: \textbf{não é proposição}.
+c) É declarativa, mas, como notaram os estoicos, seu valor muda com o tempo (1-O2). \textbf{Só vira proposição} quando se fixa o momento: \enquote{às 12h do dia 1º/1/2026, em Natal, é dia}.
+d) É a conjectura de Goldbach. Em 2014, uma verificação por computador confirmou que ela vale para todos os pares até $4\cdot10^{18}$,\src{goldbach} mas ninguém a provou nem a refutou. Ainda assim, é \textbf{proposição}: é declarativa e tem exatamente um valor; só que ninguém sabe qual.
+\comentario O item (d) mostra o que a definição exige de fato. Ser proposição não é \emph{conhecer} o valor, é \emph{ter} um valor. Esse é o erro 1-E1 levado ao limite: se até uma afirmação cujo valor ninguém conhece é proposição, uma afirmação sabidamente falsa certamente é.
+\end{exemplo}
+
+\begin{exemplo}{1.6}{3}{autoral, na estrutura dos enigmas de R.~Smullyan}{1-H1, 1-U3, 1-O1}\label{ex:1.6}
+Na ilha dos cavaleiros (sempre dizem a verdade) e dos valetes (sempre mentem), um visitante ouve um morador dizer: \enquote{Eu sou valete.}
+\begin{enumerate}[label=\alph*)]
+  \item Mostre que nenhum morador da ilha pode dizer essa frase.
+  \item E \enquote{Eu sou cavaleiro}? Quem pode dizê-la, e o que o visitante aprende ao ouvi-la?
+  \item Com que frase desta unidade o \enquote{Eu sou valete} se parece? Por que, na ilha, ele produz uma contradição, e, fora dela, uma frase que não é proposição?
+\end{enumerate}
+\plano A situação é nova, mas a ferramenta é a do caso 3 do mapa: supor o tipo de quem fala e propagar. O item (c) leva o resultado de volta ao terceiro filtro.
+\resolucao
+a) Se quem fala é cavaleiro, a frase é verdadeira: ele é valete. Contradição. Se é valete, a frase é falsa: ele não é valete, é cavaleiro. Contradição. Como todo morador é de um dos dois tipos, \textbf{nenhum pode dizer a frase}: o visitante ouviu mal, ou quem falou não é da ilha.
+b) Um cavaleiro pode dizê-la (é verdade); um valete também (é mentira). \textbf{Qualquer morador pode dizê-la}, e o visitante \textbf{não aprende nada}.
+c) É o Mentiroso, \enquote{esta frase é falsa}, dito em primeira pessoa: a frase afirma a falsidade de quem a diz. Na ilha, sabemos de antemão que cada morador é exatamente de um tipo; a contradição, então, prova que a situação não acontece. Fora da ilha, nada garante um valor para \enquote{esta frase é falsa}: qualquer valor que se tente dar a ela produz o oposto, e ela falha no terceiro filtro.
+\comentario O método do caso 3 é o mesmo; o que muda é para onde ele leva. Num enigma, uma contradição elimina uma hipótese. Aqui, elimina todas, e isso mostra algo sobre a frase, não sobre o morador. É o mesmo diagnóstico que a definição de proposição faz para o Mentiroso (1-O1).
+\end{exemplo}
+
+
+% ------------------------------------------------------------
+\Questoes
+
+\begin{questao}{1}{FME, exercício 1}{1-U1, 1-E1}\label{u1:q1}
+Quais das sentenças abaixo são proposições? No caso das proposições, quais são verdadeiras?
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $5\cdot 4=20$
+  \item $5-4=3$
+  \item $2+7\cdot 3=5\cdot 4+3$
+  \item $5(3+1)=5\cdot 3+5\cdot 1$
+  \item $1+3\neq 1+6$
+  \item $(-2)^5 \ge (-2)^3$
+  \item $3+4>0$
+  \item $11-4\cdot 2$
+\end{enumerate}
+\end{multicols}
+\resp{São proposições: a, b, c, d, e, f, g. Verdadeiras: a, c, d, e, g.}
+\end{questao}
+
+\begin{questao}{1}{FME, exercício 2}{1-U2, 1-E2}\label{u1:q2}
+Qual é a negação de cada uma das seguintes proposições? Que negações são verdadeiras?
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $3\cdot 7=21$
+  \item $3\cdot(11-7)\neq 5$
+  \item $3\cdot 2+1>4$
+  \item $5\cdot 7-2\le 5\cdot 6$
+  \item $\left(\tfrac12\right)^7<\left(\tfrac12\right)^3$
+  \item $\sqrt2<1$
+  \item $-(-4)\ge 7$
+  \item $3\mid 7$
+\end{enumerate}
+\end{multicols}
+\resp{a) $3\cdot7\neq21$ (F)\ \ b) $3(11-7)=5$ (F)\ \ c) $3\cdot2+1\le4$ (F)\ \ d) $5\cdot7-2>5\cdot6$ (V)\ \ e) $(\frac12)^7\ge(\frac12)^3$ (F)\ \ f) $\sqrt2\ge1$ (V)\ \ g) $-(-4)<7$ (V)\ \ h) $3\nmid7$ (V)}
+\end{questao}
+
+\begin{questao}{1}{autoral}{1-U1, 1-E1, 1-E4}\label{u1:q3}
+Quais das frases são proposições?
+\begin{enumerate}[label=\alph*)]
+  \item Feche a porta.
+  \item O Brasil tem 26 estados e um Distrito Federal.
+  \item Que horas são?
+  \item $x+3=10$
+  \item Para $x=7$, tem-se $x+3=10$.
+  \item O número $2^{100}+1$ é primo.
+  \item $3<2$
+\end{enumerate}
+\resp{b, e, f, g}
+\end{questao}
+
+\begin{questao}{1}{autoral}{1-H2, 1-U2, 1-E2}\label{u1:q4}
+Escreva a negação de cada proposição e dê o valor lógico da negação.
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $12$ é múltiplo de $5$.
+  \item $\sqrt{49}=7$
+  \item $-3\in\mathbb{N}$
+  \item $2^5>5^2$
+  \item $6\mid 42$
+\end{enumerate}
+\end{multicols}
+\resp{a) 12 não é múltiplo de 5 (V)\ \ b) $\sqrt{49}\neq7$ (F)\ \ c) $-3\notin\mathbb{N}$ (V)\ \ d) $2^5\le5^2$ (F)\ \ e) $6\nmid42$ (F)}
+\end{questao}
+
+\begin{questao}[integradora]{1}{autoral}{1-U2, 1-H2}\label{u1:q5}
+Para cada proposição $p$, escreva $\nao p$ e dê o seu valor lógico.
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $\operatorname{mdc}(12,18)=6$
+  \item $2^{10}>10^3$
+  \item $7\mid 91$
+  \item $(-2)^4<(-2)^3$
+  \item $\operatorname{mmc}(4,6)=24$
+  \item $\sqrt{0{,}09}=0{,}3$
+\end{enumerate}
+\end{multicols}
+\resp{a) $\operatorname{mdc}(12,18)\neq6$ (F)\ \ b) $2^{10}\le10^3$ (F)\ \ c) $7\nmid91$ (F)\ \ d) $(-2)^4\ge(-2)^3$ (V)\ \ e) $\operatorname{mmc}(4,6)\neq24$ (V)\ \ f) $\sqrt{0{,}09}\neq0{,}3$ (F)}
+\end{questao}
+
+\begin{questao}{2}{autoral}{1-U1, 1-E4}\label{u1:q6}
+Considere a frase $s(x)$: \enquote{$x^2=2x$}. Diga se cada item é proposição e, quando for, dê o seu valor lógico.
+\quad a) $s(x)$ \quad b) $s(0)$ \quad c) $s(2)$ \quad d) $s(3)$
+\resp{a) não é proposição\ \ b) V\ \ c) V\ \ d) F}
+\end{questao}
+
+\begin{questao}{2}{autoral}{1-E3}\label{u1:q7}
+Seja $n$ um número inteiro. Qual das frases abaixo \textbf{não} é uma negação de \enquote{$n$ é positivo}?
+\begin{enumerate}[label=(\alph*)]
+  \item $n$ não é positivo.
+  \item $n\le 0$.
+  \item $n$ é negativo.
+  \item Não é verdade que $n>0$.
+  \item $n$ é zero ou negativo.
+\end{enumerate}
+\resp{(c)}
+\end{questao}
+
+\begin{questao}{2}{autoral — demonstração}{1-H1, 1-H2}\label{u1:q8}
+Usando apenas a definição de proposição e a tabela de $\nao$ (sem exemplos numéricos), demonstre que:
+\begin{enumerate}[label=\alph*)]
+  \item para toda proposição $p$, $\nao(\nao p)$ tem o mesmo valor lógico de $p$;
+  \item não existe proposição $p$ tal que $p$ e $\nao p$ sejam ambas verdadeiras, nem ambas falsas.
+\end{enumerate}
+\resp{Demonstração. A prova deve mostrar: a) que, nos dois casos possíveis de $p$ (V e F), $\nao(\nao p)$ assume o valor de $p$; b) que, em cada linha da tabela, $p$ e $\nao p$ têm valores diferentes — logo nunca ambas V nem ambas F.}
+\end{questao}
+
+\begin{questao}{2}{OBMEP, 1ª fase, nível 2 — via FME (ano não informado no livro; 2010 segundo a Olimpédia)}{1-U3}\label{u1:q9}
+Adriano, Bruno, Carlos e Daniel participam de uma brincadeira na qual cada um é um tamanduá ou uma preguiça. Tamanduás sempre dizem a verdade e preguiças sempre mentem.
+\begin{itemize}
+  \item Adriano diz: \enquote{Bruno é uma preguiça.}
+  \item Bruno diz: \enquote{Carlos é um tamanduá.}
+  \item Carlos diz: \enquote{Daniel e Adriano são diferentes tipos de animais.}
+  \item Daniel diz: \enquote{Adriano é uma preguiça.}
+\end{itemize}
+Quantos dos quatro amigos são tamanduás?\quad
+(a) 0\quad (b) 1\quad (c) 2\quad (d) 3\quad (e) 4
+\resp{(d)}
+\end{questao}
+
+\begin{questao}{2}{autoral, na estrutura dos enigmas de R.~Smullyan}{1-U3, 1-H2}\label{u1:q10}
+Na ilha dos cavaleiros (sempre dizem a verdade) e dos valetes (sempre mentem), três moradores falam:
+$A$: \enquote{$B$ é valete.}\quad $B$: \enquote{$C$ é valete.}\quad $C$: \enquote{$A$ e $B$ são valetes.}
+Determine quem é cavaleiro e quem é valete, e mostre que a solução é única.
+\resp{$B$ é cavaleiro; $A$ e $C$ são valetes.}
+\end{questao}
+
+\begin{questao}{3}{autoral, na estrutura dos enigmas de R.~Smullyan}{1-U3, 1-H2}\label{u1:q11}
+Na ilha dos cavaleiros (sempre dizem a verdade) e dos valetes (sempre mentem), você chega a uma bifurcação: um dos caminhos leva à aldeia, o outro não. Há ali um morador, que você não sabe se é cavaleiro ou valete, e ele só responde \enquote{sim} ou \enquote{não}. Mostre que a pergunta
+\begin{center}\enquote{Se eu lhe perguntasse se o caminho da esquerda leva à aldeia, você responderia \emph{sim}?}\end{center}
+revela o caminho certo, qualquer que seja o tipo do morador.
+\resp{Demonstração. A prova deve mostrar, por casos, que a resposta é \emph{sim} exatamente quando o caminho da esquerda leva à aldeia: o cavaleiro relata a resposta verdadeira; o valete, perguntado diretamente, negaria o fato, e ao relatar essa resposta mente de novo, negando a negação (dupla negação, ${\nao}({\nao}p)=p$).}
+\end{questao}
+
+\begin{questao}{3}{autoral}{1-H1, 1-U1, 1-O1}\label{u1:q12}
+Diga se cada item é proposição e, quando for, dê o seu valor lógico.
+\begin{enumerate}[label=\alph*)]
+  \item \enquote{Esta frase tem seis palavras.}
+  \item \enquote{Esta frase tem cinco palavras.}
+  \item Um cartão tem uma frase de cada lado. Na frente: \enquote{A frase do verso é verdadeira.} No verso: \enquote{A frase da frente é falsa.}
+\end{enumerate}
+Por fim, responda: uma frase falar de si mesma basta para deixá-la fora da definição de proposição?
+\resp{a) proposição, F (a frase tem cinco palavras)\ \ b) proposição, V\ \ c) nenhuma das duas é proposição: as quatro atribuições de valor levam a contradição\ \ Não: o que exclui uma frase é não poder receber exatamente um valor.}
+\end{questao}
+
+\begin{sintese}
+\textbf{Ao fim desta unidade, você deveria saber:}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item decidir se uma frase é proposição, pelos três filtros (oração, declarativa, exatamente um valor);
+  \item escrever a negação de uma proposição e dar o seu valor, inclusive em igualdades, desigualdades e pertinência;
+  \item explicar por que uma frase falsa continua sendo proposição e por que \enquote{$x+1=7$} não é.
+\end{itemize}
+\smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u1}) e com a seção indicada.
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \perguntasintese{O que significa dizer que uma frase \enquote{é uma proposição}? \hfill\mbox{\small\color{cinza}(→ Definição)}}
+  \perguntasintese{Como se chegou à ideia de que toda proposição tem exatamente um valor, e por que ela é uma escolha? \hfill\mbox{\small\color{cinza}(→ De onde vem?)}}
+  \perguntasintese{Num enunciado, que sinais indicam que é preciso classificar frases ou negar uma proposição? \hfill\mbox{\small\color{cinza}(→ Onde é usado?)}}
+  \perguntasintese{Qual é o erro mais perigoso ao classificar ou negar uma frase? Como você o detecta depois de escrever? \hfill\mbox{\small\color{cinza}(→ Erros comuns)}}
+\end{enumerate}
+\end{sintese}
+
+% ------------------------------------------------------------
+\Respostas
+{\small
+\resposta{S}{Síntese de domínio: confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u1}) e com a seção indicada em cada pergunta.}
+}

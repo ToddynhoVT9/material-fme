@@ -1,0 +1,276 @@
+% Parte B: erros, observações, exemplos, questões, respostas
+\ErrosComuns
+
+\begin{erro}{Confundir $\rightarrow$ com $\Rightarrow$}{4-E1}
+\campo{O erro.} Escrever \enquote{$2\mid4\Rightarrow3\mid5$} como se fosse uma proposição falsa.
+\campo{Por que parece plausível.} As duas setas se leem \enquote{se\ldots\ então} e parecem a mesma coisa com traço diferente.
+\campo{Onde quebra.} \enquote{$2\mid4\Rightarrow3\mid5$} afirma que $3\mid5$ \emph{decorre} de $2\mid4$, o que é falso: a afirmação está errada, não é uma proposição \enquote{com valor F}. Já \enquote{$2\mid4\rightarrow3\mid5$} é uma proposição legítima, que por acaso é F.
+\campo{Como detectar.} Pergunte-se: estou falando da situação de agora ou de \emph{todas} as situações? Se a frase pode ser V numa linha e F noutra, a seta é $\rightarrow$.
+\campo{Como corrigir.} $p\rightarrow q$ é uma proposição; $p\Rightarrow q$ diz que $p\rightarrow q$ é verdadeiro sempre (tautologia, ou teorema).
+\campo{Onde aparece.} Exemplo \ref{ex:4.4}; questão \ref{u4:q3}.
+\end{erro}
+
+\begin{erro}{Esquecer a contingência}{4-E2}
+\campo{O erro.} Concluir que uma proposição é contradição porque \enquote{não é tautologia}.
+\campo{Por que parece plausível.} Pensa-se em dois rótulos, \enquote{sempre V} e \enquote{sempre F}, como se fossem opostos que esgotam os casos.
+\campo{Onde quebra.} Em $p\rightarrow{\nao}p$: é F quando $p$ é V e V quando $p$ é F. Não é tautologia nem contradição. A maioria das proposições está nesse meio.
+\campo{Como detectar.} Antes de rotular, procure \emph{uma} linha V e \emph{uma} linha F na última coluna. Se achar as duas, é contingência.
+\campo{Como corrigir.} Três possibilidades: só V, só F, misto. \enquote{Tautologia} e \enquote{contradição} são contrárias, não contraditórias (Unidade 1): podem ser ambas falsas.
+\campo{Onde aparece.} Exemplo \ref{ex:4.1}; questão \ref{u4:q1}.
+\end{erro}
+
+\begin{erro}{Julgar a equivalência pela semelhança das frases}{4-E3}
+\campo{O erro.} Tomar \enquote{não é verdade que chove e faz frio} como equivalente a \enquote{não chove e não faz frio}; ou tomar a recíproca como equivalente.
+\campo{Por que parece plausível.} Julga-se a equivalência pelo \enquote{jeito} da frase. Frases com as mesmas palavras parecem dizer o mesmo.
+\campo{Onde quebra.} Num dia em que chove e não faz frio: \enquote{não é verdade que chove e faz frio} é V, e \enquote{não chove e não faz frio} é F.
+\campo{Como detectar.} Procure uma linha em que uma é V e a outra é F. Uma basta para derrubar a equivalência.
+\campo{Como corrigir.} Equivalência é coluna igual, linha a linha (construção 4-H3), e não semelhança de frase.
+\campo{Onde aparece.} Exemplo \ref{ex:4.2}; questão \ref{u4:q2}.
+\end{erro}
+
+\begin{erro}{Perder casos na tabela}{4-E4}
+\campo{O erro.} Verificar uma equivalência só em algumas linhas, por exemplo só nas linhas em que $p$ é V, e concluir que vale sempre.
+\campo{Por que parece plausível.} As linhas \enquote{óbvias} parecem bastar, e a tabela com 8 ou 16 linhas dá trabalho.
+\campo{Onde quebra.} $p\rightarrow(q\rightarrow r)$ e $(p\rightarrow q)\rightarrow r$ coincidem nas quatro linhas com $p$ V, e diferem em duas das linhas com $p$ F (questão \ref{u4:q6}).
+\campo{Como detectar.} Conte as linhas que você conferiu e compare com $2^n$. Se faltou alguma, a conclusão \enquote{vale sempre} não está provada.
+\campo{Como corrigir.} Para refutar, basta uma linha; para confirmar, são precisas todas, ou uma prova pelas leis de Boole.
+\campo{Onde aparece.} Exemplo \ref{ex:4.1}; questão \ref{u4:q6}.
+\end{erro}
+
+% ------------------------------------------------------------
+\Observacoes
+
+\begin{obs}{4-O1}
+\textbf{A tautologia não diz nada — e por isso serve.} A seção \emph{De onde vem?} contou por que, para Wittgenstein, a tautologia \enquote{não diz nada}. Há um modo simples de sentir isso. Uma informação é útil quando elimina possibilidades: \enquote{amanhã chove} elimina os dias secos. \enquote{Amanhã chove ou não chove} não elimina nenhum. Mas uma tautologia como $[(p\rightarrow q)\wedge p]\rightarrow q$, embora não elimine nada sobre o mundo, nos diz algo sobre as \emph{frases}: que de \enquote{se $p$, então $q$} e de \enquote{$p$} sempre se pode passar a \enquote{$q$}. Ela não é informação; é regra.
+
+Na conversa, \enquote{isso é uma tautologia} costuma ser crítica: diz-se de uma frase que repete o óbvio (\enquote{o que tiver de ser, será}). O sentido lógico é aparentado: a tautologia é verdadeira sem informar.
+\end{obs}
+
+\begin{obs}{4-O2}
+\textbf{Quem inventou a tabela-verdade?} Os candidatos são muitos, e a resposta depende do que se considera \enquote{inventar}. Lido hoje, o \emph{método} — calcular o valor de uma composta a partir dos valores das partes — já aparece nas definições estoicas dos conectivos (Unidade 2), embora o condicional de Crisipo não fosse definido só pelos valores.\src{sepAncient} A \emph{tabela} como desenho em linhas e colunas aparece em manuscritos de Peirce: há indícios em 1883 e uma matriz completa da implicação num texto de 1893, que só os historiadores leram muito depois.\src{anellis} No verso de uma transcrição de uma palestra de Russell, datada de 1912, há tabelas na letra dele e na de Wittgenstein; o papel foi encontrado em 1997.\src{truthTableWiki} E, em 1921, Wittgenstein (no \emph{Tractatus}) e Post (num artigo de revista) publicaram o método de forma independente, e foi essa publicação que o espalhou.\src{truthTableWiki}
+
+A lição é comum na história da matemática: uma ideia raramente tem um único dono. Ela costuma aparecer em vários lugares quando o terreno está pronto — e o crédito vai, em geral, para quem a publica de modo que outros consigam usar.
+\end{obs}
+
+\begin{obs}{4-O3}
+\textbf{A tabela que não cabe no universo.} Para decidir se uma fórmula é tautologia, a tabela sempre funciona — mas o número de linhas dobra a cada letra nova. Com 10 letras, são 1\,024 linhas; com 50, mais de um quatrilhão; com 300, mais linhas do que se estima haver átomos no universo observável. Fórmulas com milhares de letras aparecem de verdade, em verificação de circuitos e de programas.
+
+Existe um método sempre rápido? Ninguém sabe. Em 1971, Stephen Cook publicou o artigo que fundou a teoria da NP-completude,\src{cook1971} e o problema de saber se uma fórmula pode ser tornada verdadeira (o problema SAT) foi o primeiro a ser provado NP-completo. Encontrar um algoritmo rápido para ele, ou provar que não existe, é equivalente ao problema \enquote{P versus NP}, um dos grandes problemas em aberto da matemática.\src{satWiki} (Decidir se uma fórmula é tautologia é o problema \enquote{espelho}: $A$ é tautologia exatamente quando ${\nao}A$ não pode ser tornada verdadeira.) Na prática, programas especializados resolvem muitos casos grandes com rapidez,\src{satWiki} mas a pergunta teórica continua aberta — e começa numa tabela-verdade.
+\end{obs}
+
+\begin{obs}{4-O4}
+\textbf{Uma só operação basta.} No artigo de 1913 em que parece ter sugerido o nome \enquote{álgebra de Boole},\src{sheffer1913}\src{booleAlgWiki}\src{shefferWiki} Henry Sheffer mostrou que todas as operações podem ser definidas a partir de uma só: ele usou o \enquote{nem\ldots\ nem}. O \enquote{não ambos}, com o mesmo papel, aparece com Jean Nicod, em 1917.\src{nicod1917}\src{shefferStroke} Por exemplo, ${\nao}p$ é \enquote{nem $p$ nem $p$}. Na Unidade 6, você verá por que isso permite construir qualquer circuito com um único tipo de porta.
+\end{obs}
+
+% ------------------------------------------------------------
+\Exemplos
+
+\begin{exemplo}{4.1}{1}{autoral}{4-H1, 4-U1, 4-E2, 4-E4}\label{ex:4.1}
+Classifique cada proposição como tautologia, contradição ou contingência.\quad
+\mbox{a) $p\vee{\nao}p$}\hspace{1em plus 3em}\mbox{b) $(p\rightarrow q)\wedge(p\wedge{\nao}q)$}\hspace{1em plus 3em}\mbox{c) $(p\vee q)\rightarrow p$}
+\plano Montar a tabela completa (2 letras: 4 linhas) e olhar só a última coluna.
+\resolucao
+a) A tabela da construção 4-H1 dá V, V: \textbf{tautologia}.
+\begin{tabelaverdade}{cccccc}
+$p$ & $q$ & $p\rightarrow q$ & $p\wedge{\nao}q$ & b) & c) $(p\vee q)\rightarrow p$\\\midrule
+V & V & V & F & F & V\\\fino
+V & F & F & V & F & V\\\fino
+F & V & V & F & F & \textbf{F}\\\fino
+F & F & V & F & F & V\\
+\end{tabelaverdade}
+b) Só F: \textbf{contradição}. Faz sentido: $p\wedge{\nao}q$ é exatamente o caso que torna $p\rightarrow q$ falso; as duas nunca valem juntas.
+\par c) Uma linha F (a terceira) e três V: \textbf{contingência}.
+\comentario O item (c) é o que derruba quem esquece a terceira opção (erro 4-E2) — ou quem verifica só as duas primeiras linhas, todas V, e para por aí (erro 4-E4). O item (a) é a previsão do tempo do prefácio: verdadeira sempre, e por isso sem informação (4-O1).
+\end{exemplo}
+
+\begin{exemplo}{4.2}{1}{FATEC 2013}{4-H3, 4-U2, 4-E3}\label{ex:4.2}
+Na lógica, tem-se que a proposição \enquote{se ocorre $P$, então ocorre $Q$} é equivalente à proposição \enquote{se não ocorre $Q$, então não ocorre $P$}. Assim sendo, \enquote{se $x<3$, então $y=-4$} é equivalente a:\src{fatec2013}
+\begin{enumerate}[label=(\Alph*)]
+  \item Se $x>3$, então $y\neq-4$.
+  \item Se $x\ge3$, então $y\neq4$.
+  \item Se $y\neq4$, então $x\ge3$.
+  \item Se $y\neq-4$, então $x>3$.
+  \item Se $y\neq-4$, então $x\ge3$.
+\end{enumerate}
+\plano Aplicar a contrapositiva: negar as duas partes e trocar a ordem. Cuidado com a negação de \enquote{$<$}.
+\resolucao
+$P$: $x<3$; $Q$: $y=-4$. A contrapositiva é ${\nao}Q\rightarrow{\nao}P$. Temos ${\nao}Q$: $y\neq-4$ e ${\nao}P$: $x\ge3$ (a negação de $<$ inclui a igualdade, como na Unidade 1). Logo: \enquote{se $y\neq-4$, então $x\ge3$}. \textbf{Alternativa (E).}
+\par Por que a regra do enunciado vale (construção 4-H3): nas linhas $(P,Q)$ = VV, VF, FV, FF, a coluna de $P\rightarrow Q$ é V, F, V, V, e a de ${\nao}Q\rightarrow{\nao}P$ também é V, F, V, V. Mesma coluna, linha a linha: as duas são equivalentes.
+\comentario Os distratores testam três erros: (A) e (B) são inversas mal negadas; (C) troca $-4$ por $4$; (D) esquece a igualdade ao negar $x<3$. Há ainda uma terceira forma equivalente, que a questão não pediu: pela construção 4-H3, \enquote{$x\ge3$ ou $y=-4$}.
+\end{exemplo}
+
+\begin{exemplo}{4.3}{2}{autoral}{4-H4, 4-U4}\label{ex:4.3}
+Simplifique, usando as leis da álgebra de Boole (FME, exercício 7), e confira por tabela ou pela álgebra 0/1.\quad
+a) $(p\wedge q)\vee(p\wedge{\nao}q)$\quad b) ${\nao}({\nao}p)\wedge(p\vee q)$\quad c) o circuito \enquote{$a$ e $b$ em série, em paralelo com $a$ e não-$b$ em série}.
+\plano Procurar um fator comum (distributiva), uma dupla negação e uma absorção.
+\resolucao
+a) Distributiva ao contrário: $p\wedge(q\vee{\nao}q)$. Como $q\vee{\nao}q$ é tautologia, e \enquote{$p$ e (algo sempre V)} equivale a $p$, o \textbf{resultado é $p$}.
+\par b) Dupla negação: $p\wedge(p\vee q)$. Absorção (construção 4-H4): \textbf{$p$}.
+\par c) O circuito é $(a\wedge b)\vee(a\wedge{\nao}b)$, o mesmo do item (a): equivale a \textbf{$a$ sozinho}. Quatro contatos viram um.
+\comentario Conferência 0/1 do item (a): $pq+p(1-q)-pq\cdot p(1-q)=pq+p-pq-0=p$, pois $q(1-q)=0$. A simplificação não muda o \emph{valor} da expressão em nenhum caso — é isso que garante que o circuito simplificado acende exatamente nas mesmas situações que o original.
+\end{exemplo}
+
+\begin{exemplo}{4.4}{2}{autoral}{4-H2, 4-U3, 4-E1}\label{ex:4.4}
+Para inteiros $n$:
+\begin{enumerate}[label=\alph*)]
+  \item É correto escrever \enquote{$n$ é múltiplo de 4 $\Rightarrow$ $n$ é par}? E \enquote{$n$ é par $\Rightarrow$ $n$ é múltiplo de 4}?
+  \item É correto escrever \enquote{$n$ é par $\Leftrightarrow$ $n^2$ é par}?
+  \item Qual é o valor lógico de \enquote{$2\mid4\rightarrow3\mid5$}? Faz sentido escrever \enquote{$2\mid4\Rightarrow3\mid5$}?
+\end{enumerate}
+\plano $\Rightarrow$ exige que o condicional valha para todo $n$; $\Leftrightarrow$ exige os dois sentidos. Para negar, um contraexemplo.
+\resolucao
+a) Se $n=4k$, então $n=2(2k)$ é par: \textbf{sim}. O recíproco falha em $n=6$: \textbf{não}.
+\par b) Ida: $n=2k\Rightarrow n^2=2(2k^2)$. Volta: pela contrapositiva, se $n$ é ímpar, $n^2$ é ímpar (Unidade 3). Valem os dois sentidos: \textbf{sim, é uma equivalência} — um teorema cujo recíproco é verdadeiro.
+\par c) V $\rightarrow$ F: o condicional é \textbf{F}. Por isso \enquote{$2\mid4\Rightarrow3\mid5$} \textbf{não faz sentido}: a seta dupla afirma que o condicional é verdadeiro, e ele não é.
+\comentario Em (a) e (b), o $\Rightarrow$ fala de \emph{todos} os inteiros: é um teorema. Em (c), as duas proposições são fixas, e o $\rightarrow$ apenas forma uma nova proposição, que pode ser falsa. Essa é a fronteira entre conectivo e relação (erro 4-E1).
+\end{exemplo}
+
+\begin{exemplo}{4.5}{3}{histórico (L.~Carroll, \emph{Symbolic Logic}, 1896)}{4-U5}\label{ex:4.5}
+O primeiro dos sorites propostos como exercício no livro de Lewis Carroll (Livro VIII, cap.~I, §9, n.º~1) tem três premissas:\src{carroll1896}
+\begin{citacao}
+(1) Babies are illogical; (2) Nobody is despised who can manage a crocodile; (3) Illogical persons are despised.
+\end{citacao}
+Isto é: (1) bebês são ilógicos; (2) ninguém que sabe lidar com um crocodilo é desprezado; (3) pessoas ilógicas são desprezadas. Que conclusão envolvendo bebês e crocodilos se pode tirar? Mostre que o argumento é válido.
+\plano Uma situação nova: premissas sem sentido, em que só a forma pode guiar. A ferramenta é encadear condicionais, usando a contrapositiva onde a seta estiver ao contrário. O encadeamento funciona porque, se $p\rightarrow q$ e $q\rightarrow r$ valem, numa linha em que $p$ é V a primeira força $q$ V, e a segunda força $r$ V; não há linha com $p$ V e $r$ F. Para um indivíduo qualquer, usar as letras $b$: \enquote{é bebê}, $l$: \enquote{é lógico}, $d$: \enquote{é desprezado}, $c$: \enquote{sabe lidar com crocodilos}. Traduzir as premissas em condicionais e encadeá-las.
+\resolucao
+Premissas: (1) $b\rightarrow{\nao}l$;\ (2) $c\rightarrow{\nao}d$;\ (3) ${\nao}l\rightarrow d$.
+A premissa (2) equivale à contrapositiva $d\rightarrow{\nao}c$. Encadeando (1), (3) e (2'):
+\[b\ \Rightarrow\ {\nao}l\ \Rightarrow\ d\ \Rightarrow\ {\nao}c.\]
+\textbf{Conclusão: bebês não sabem lidar com crocodilos}, $b\rightarrow{\nao}c$ — a resposta do próprio Carroll.
+\par Validade: é preciso mostrar que $[(b\rightarrow{\nao}l)\wedge(c\rightarrow{\nao}d)\wedge({\nao}l\rightarrow d)]\rightarrow(b\rightarrow{\nao}c)$ é tautologia. Pela tabela, são $2^4=16$ linhas. Atalho: as únicas linhas que tornariam a conclusão falsa são as quatro com $b$ V e $c$ V; nelas, (1) força $l$ F, (3) força $d$ V e (2) exige $d$ F — contradição. Nenhuma linha tem premissas V e conclusão F.
+\comentario As premissas são absurdas de propósito: Carroll queria que o leitor confiasse na forma, não no bom senso. O atalho (procurar a linha que derrubaria a conclusão) é o que se faz quando a tabela fica grande: Carroll tem sorites com dez premissas, que exigiriam tabelas de milhares de linhas — o começo do problema da observação 4-O3.
+\end{exemplo}
+
+% ------------------------------------------------------------
+\Questoes
+
+\begin{questao}{1}{autoral; item a) adaptado de concurso — CEBRASPE 2023, órgão não registrado}{4-H1, 4-U1, 4-E2}\label{u4:q1}
+Classifique em tautologia, contradição ou contingência:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $[(p\rightarrow q)\wedge p]\rightarrow q$
+  \item $p\wedge{\nao}p$
+  \item $p\rightarrow(p\wedge q)$
+  \item $(p\rightarrow q)\leftrightarrow({\nao}q\rightarrow{\nao}p)$
+\end{enumerate}
+\end{multicols}
+\resp{a) tautologia\ \ b) contradição\ \ c) contingência\ \ d) tautologia}
+\end{questao}
+
+\begin{questao}{1}{autoral}{4-U2, 4-E3}\label{u4:q2}
+Em quais pares as duas frases são logicamente equivalentes?
+\begin{enumerate}[label=(\roman*)]
+  \item \enquote{Se chove, a rua molha} \ e\ \enquote{Se a rua não molha, não chove}.
+  \item \enquote{Se chove, a rua molha} \ e\ \enquote{Não chove ou a rua molha}.
+  \item \enquote{Não é verdade que chove e faz frio} \ e\ \enquote{Não chove e não faz frio}.
+  \item \enquote{Se chove, a rua molha} \ e\ \enquote{Se a rua molha, chove}.
+\end{enumerate}
+\resp{(i) e (ii)}
+\end{questao}
+
+\begin{questao}{1}{autoral}{4-H2, 4-E1}\label{u4:q3}
+Diga se cada implicação é correta:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $p\wedge q\Rightarrow p$
+  \item $p\Rightarrow p\vee q$
+  \item $p\vee q\Rightarrow p$
+  \item $(p\rightarrow q)\wedge{\nao}q\Rightarrow{\nao}p$
+  \item $2\mid4\Rightarrow3\mid5$
+\end{enumerate}
+\end{multicols}
+\resp{a) sim\ \ b) sim\ \ c) não\ \ d) sim\ \ e) não}
+\end{questao}
+
+\begin{questao}{1}{FME, exercício 7 (seleção)}{4-U1, 4-H4}\label{u4:q4}
+Verifique, por meio das tabelas-verdade, a validade das equivalências abaixo.
+\begin{enumerate}[label=\alph*)]
+  \item $p\wedge(q\vee r)\Leftrightarrow(p\wedge q)\vee(p\wedge r)$ \quad e \quad $p\vee(q\wedge r)\Leftrightarrow(p\vee q)\wedge(p\vee r)$
+  \item $p\wedge(p\vee q)\Leftrightarrow p$ \quad e \quad $p\vee(p\wedge q)\Leftrightarrow p$
+  \item ${\nao}(p\wedge q)\Leftrightarrow{\nao}p\vee{\nao}q$ \quad e \quad ${\nao}(p\vee q)\Leftrightarrow{\nao}p\wedge{\nao}q$
+\end{enumerate}
+\resp{Todas as seis equivalências são válidas (colunas iguais nas 8 ou 4 linhas).}
+\end{questao}
+
+\begin{questao}{2}{autoral — demonstração}{4-H4, 4-H3}\label{u4:q5}
+Usando a leitura 0/1 (${\nao}p=1-p$, $p\wedge q=pq$, $p\vee q=p+q-pq$ e $p^2=p$), demonstre a lei distributiva $p\vee(q\wedge r)\Leftrightarrow(p\vee q)\wedge(p\vee r)$.
+\resp{Demonstração. A prova deve mostrar que $(p+q-pq)(p+r-pr)$, desenvolvido com $p^2=p$, dá $p+qr-pqr$, que é a leitura 0/1 de $p\vee(q\wedge r)$.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{4-U1, 4-E4}\label{u4:q6}
+Um estudante comparou $p\rightarrow(q\rightarrow r)$ e $(p\rightarrow q)\rightarrow r$ só nas quatro linhas em que $p$ é V, viu valores iguais e concluiu que as duas são equivalentes. Ele está certo? Se não, indique todas as linhas em que elas diferem.
+\resp{Não. Diferem nas linhas (F, V, F) e (F, F, F), em que $p\rightarrow(q\rightarrow r)$ é V e $(p\rightarrow q)\rightarrow r$ é F.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{autoral}{4-U4, 4-H4}\label{u4:q7}
+Determine os números reais $x$ para os quais é verdadeira a proposição
+\[(x^5+x-1>0\ \wedge\ x^2-5x+6<0)\ \vee\ (x^5+x-1\le0\ \wedge\ x^2-5x+6<0).\]
+Justifique com uma lei de Boole cada passo lógico da simplificação.
+\resp{$2<x<3$. Sendo $q$: $x^5+x-1>0$ e $r$: $x^2-5x+6<0$, a proposição é $(q\wedge r)\vee({\nao}q\wedge r)$; pela distributiva, equivale a $(q\vee{\nao}q)\wedge r$, isto é, a $r$, pois $q\vee{\nao}q$ é tautologia. E $x^2-5x+6<0\Leftrightarrow2<x<3$.}
+\end{questao}
+
+\begin{questao}{2}{adaptada de PUC-GO 2010}{4-U5}\label{u4:q8}
+Considere verdadeiras as premissas \enquote{nenhum vegetariano é carnívoro} e \enquote{todo felino é carnívoro}. Pode-se concluir corretamente que:
+\begin{enumerate}[label=(\alph*)]
+  \item nenhum felino é vegetariano.
+  \item algum felino é vegetariano.
+  \item todo carnívoro é felino.
+  \item nenhum carnívoro é felino.
+  \item todo vegetariano é felino.
+\end{enumerate}
+\resp{(a)}
+\end{questao}
+
+\begin{questao}{2}{autoral}{4-U5, 4-H2, 4-U3}\label{u4:q9}
+\begin{enumerate}[label=\alph*)]
+  \item Mostre, pela tabela-verdade, que $(p\rightarrow q)\wedge(q\rightarrow r)\Rightarrow(p\rightarrow r)$.
+  \item Use o item (a) para provar que, para todo inteiro $n$, \enquote{$12\mid n\Rightarrow 2\mid n$}, passando por $4\mid n$.
+  \item O recíproco de (b) é verdadeiro? O resultado de (b) é uma equivalência?
+\end{enumerate}
+\resp{a) a última coluna é toda V\ \ b) $12\mid n\Rightarrow4\mid n$ e $4\mid n\Rightarrow2\mid n$\ \ c) não (falha em $n=2$); não é equivalência.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{4-U4, 4-H4}\label{u4:q10}
+Um circuito acende uma lâmpada exatamente quando $(a\wedge b)\vee(a\wedge{\nao}b)\vee({\nao}a\wedge b)$ é verdadeira. Simplifique a expressão pelas leis de Boole e descreva o circuito equivalente com o menor número de contatos. Confira pela tabela.
+\resp{$a\vee b$: dois contatos em paralelo.}
+\end{questao}
+
+\begin{questao}[integradora]{3}{autoral}{4-U3, 4-H2, 4-H3}\label{u4:q11}
+Um estudante resolveu $\sqrt{x+2}=x$ assim: elevou os dois lados ao quadrado, obteve $x+2=x^2$, resolveu e respondeu \enquote{$x=2$ ou $x=-1$}.
+\begin{enumerate}[label=\alph*)]
+  \item Verifique cada valor na equação original.
+  \item Escreva cada passo da resolução como uma relação entre equações e diga se ela é $\Leftrightarrow$ ou só $\Rightarrow$.
+  \item Explique, com essas setas, por que a resolução produziu um valor a mais, e por que ela nunca poderia ter \emph{perdido} uma solução.
+\end{enumerate}
+\resp{a) $x=2$ serve ($\sqrt4=2$); $x=-1$ não ($\sqrt1=1\neq-1$)\ \ b) $\sqrt{x+2}=x\ \Rightarrow\ x+2=x^2$ (só $\Rightarrow$); $x+2=x^2\Leftrightarrow x^2-x-2=0\Leftrightarrow(x=2\vee x=-1)$\ \ c) a cadeia garante só \enquote{solução da original $\Rightarrow$ $x=2$ ou $x=-1$}: toda solução está na lista (nada se perde), mas nem todo valor da lista é solução. Resposta: $x=2$.}
+\end{questao}
+
+\begin{questao}{3}{autoral}{4-U5, 4-H2, 4-H1}\label{u4:q12}
+\begin{enumerate}[label=\alph*)]
+  \item Mostre que, para qualquer proposição $q$, $(p\wedge{\nao}p)\Rightarrow q$.
+  \item Um colega conclui: \enquote{então, com uma premissa contraditória, a matemática prova qualquer coisa, e nada do que ela prova é confiável}. Explique o que há de certo e o que há de errado nessa conclusão, usando a definição de argumento válido.
+\end{enumerate}
+\resp{a) a coluna de $(p\wedge{\nao}p)\rightarrow q$ é toda V, porque o antecedente é sempre F\ \ b) certo: o argumento é válido; errado: validade só garante a conclusão quando todas as premissas são V, e premissas contraditórias nunca são todas V. Uma demonstração parte de premissas verdadeiras.}
+\end{questao}
+
+\begin{sintese}
+\textbf{Ao fim desta unidade, você deveria saber:}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item classificar uma fórmula em tautologia, contradição ou contingência;
+  \item decidir se uma proposição implica ou é equivalente a outra, por tabela ou pela álgebra 0/1;
+  \item simplificar expressões com as leis de Boole e testar a validade de um argumento.
+\end{itemize}
+\smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u4}) e com a seção indicada.
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \perguntasintese{O que significa \enquote{$p\Rightarrow q$}, e como isso difere de \enquote{$p\rightarrow q$}? \hfill\mbox{\small\color{cinza}(→ construção 4-H2)}}
+  \perguntasintese{Como a tabela-verdade se tornou um método de decidir se uma fórmula é sempre verdadeira? \hfill\mbox{\small\color{cinza}(→ De onde vem?)}}
+  \perguntasintese{Como você reconhece que uma questão pede tautologia, equivalência ou validade de argumento? \hfill\mbox{\small\color{cinza}(→ Onde é usado?)}}
+  \perguntasintese{Qual é o erro mais perigoso ao classificar ou comparar fórmulas? Como você o detecta? \hfill\mbox{\small\color{cinza}(→ Erros comuns)}}
+\end{enumerate}
+\end{sintese}
+
+% ------------------------------------------------------------
+\Respostas
+{\small
+\resposta{S}{Síntese de domínio: confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u4}) e com a seção indicada em cada pergunta.}
+}

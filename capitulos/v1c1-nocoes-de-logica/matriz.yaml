@@ -1,0 +1,726 @@
+# Matriz de cobertura — Cap. I · versão q6/v7 (Unidade 6: banco fechado; FATEC 2015 corrigida · Unidade 5: banco fechado · Unidade 4: +4-O3, banco fechado · Unidade 3: +3-O3, banco fechado · Unidade 1 recalibrada: +1-O3, +1-O4 · Unidade 2: +2-O4, banco fechado)
+# IDs: <unidade>-<tipo><n>  ·  H = construção/resultado de "De onde vem"
+#      U = contexto de uso (gatilho) · E = erro comum · O = observação
+# Regras (w3): todo ID coberto por ≥1 exemplo; todo U e E coberto por ≥1 questão;
+#              cada unidade com exemplo N1, N2 e N3. Falhou → revisão manual.
+#        R6 (q4/D2): ≥ questoes_meta.integradoras questões com integradora: true (exemplo integrador não conta).
+# fonte: autoral | historico | FME | OBMEP | vestibular | concurso  (+ status de verificação)
+
+unidades:
+- n: 1
+  titulo: Proposição e negação
+  ids:
+    H1: as três características da proposição (frase declarativa + princípios de não contradição e terceiro excluído)
+    H2: negação como operação que inverte o valor; tabela de ~p
+    U1: decidir se uma frase é proposição
+    U2: negar relações (=, <, ∈, |)
+    U3: problemas de veracidade (quem mente / quem diz a verdade)
+    E1: achar que proposição falsa não é proposição
+    E2: negar ">" com "<" (esquecer a igualdade)
+    E3: negar com o contrário em vez do contraditório
+    E4: tratar sentença aberta como proposição
+    O1: paradoxo do mentiroso (Eubulides)
+    O2: bivalência como escolha — batalha naval, 'é dia', Brouwer, Łukasiewicz
+    O3: 'concordância negativa: o português não é lógica'
+    O4: o Monte (sorites) e as palavras vagas
+    O5: a negação nos computadores (NOT, !!x)
+  exemplos:
+  - id: 1.1
+    nivel: 1
+    fonte: FME adaptado
+    tema: classificar frases
+    cobre:
+    - H1
+    - U1
+    - E1
+    - E4
+  - id: 1.2
+    nivel: 1
+    fonte: autoral
+    tema: negar relações
+    cobre:
+    - H2
+    - U2
+    - E2
+  - id: 1.3
+    nivel: 2
+    fonte: autoral
+    tema: contrário x contraditório; concordância negativa
+    cobre:
+    - E3
+    - H2
+    - O3
+  - id: 1.4
+    nivel: 2
+    fonte: autoral (estrutura de Smullyan)
+    tema: cavaleiros e valetes
+    cobre:
+    - U3
+  - id: 1.5
+    nivel: 2
+    fonte: historico
+    tema: a prece de Aristóteles, o mentiroso e o 'é dia'
+    cobre:
+    - H1
+    - E1
+    - O1
+    - O2
+  - id: 1.6
+    nivel: 3
+    fonte: autoral (estrutura de Smullyan)
+    tema: transferência — 'eu sou valete' e o Mentiroso
+    cobre:
+    - H1
+    - U3
+    - O1
+  questoes_meta:
+    N1: 5
+    N2: 5
+    N3: 2
+    integradoras: 1
+  questoes_pool:
+  - ref: Q1 FME ex. 1
+    rotulo: u1:q1
+    nivel: 1
+    cobre: [U1, E1]
+  - ref: Q2 FME ex. 2
+    rotulo: u1:q2
+    nivel: 1
+    cobre: [U2, E2]
+  - ref: Q3 autoral
+    rotulo: u1:q3
+    nivel: 1
+    cobre: [U1, E1, E4]
+  - ref: Q4 autoral
+    rotulo: u1:q4
+    nivel: 1
+    cobre: [H2, U2, E2]
+  - ref: 'Q5 autoral (integradora: aritmética)'
+    rotulo: u1:q5
+    nivel: 1
+    cobre: [U2, H2]
+    integradora: true
+  - ref: Q6 autoral (s(x))
+    rotulo: u1:q6
+    nivel: 2
+    cobre: [U1, E4]
+  - ref: Q7 autoral
+    rotulo: u1:q7
+    nivel: 2
+    cobre: [E3]
+  - ref: 'Q8 autoral — demonstração guiada (v3 — N2, a técnica está no texto)'
+    rotulo: u1:q8
+    nivel: 2
+    cobre: [H1, H2]
+  - ref: Q9 OBMEP 2010 1ª fase N2 q18 (via FME; ano por fontes secundárias)
+    rotulo: u1:q9
+    nivel: 2
+    cobre: [U3]
+  - ref: 'Q10 autoral (estrutura Smullyan; v3 — N2, mesmo método do ex. 1.4)'
+    rotulo: u1:q10
+    nivel: 2
+    cobre: [U3, H2]
+  - ref: Q11 autoral (estrutura Smullyan) — transferência da dupla negação
+    rotulo: u1:q11
+    nivel: 3
+    cobre: [U3, H2]
+  - ref: Q12 autoral — transferência do terceiro filtro (autorreferência)
+    rotulo: u1:q12
+    nivel: 3
+    cobre: [H1, U1, O1]
+- n: 2
+  titulo: Conectivos ∧ e ∨
+  ids:
+    H1: tabela da conjunção
+    H2: tabela da disjunção inclusiva (vs. a exclusiva histórica)
+    H3: n proposições → 2^n linhas
+    U1: classificar proposições compostas
+    U2: condições simultâneas (∧)
+    U3: '"apenas uma é verdadeira" (disjunção exclusiva)'
+    U4: circuitos e código (série/paralelo, &&/||)
+    U5: ponte com conjuntos (∩, ∪)
+    E1: ler o "ou" como exclusivo
+    E2: exigir relação de sentido entre as partes
+    E3: não reconhecer "mas", "nem", "porém"
+    E4: tabela com linhas faltando
+    O1: Crisipo x Hiparco — contar conjunções
+    O2: a disjunção exclusiva ⊻ e sua ligação com ↔
+    O3: 'o mito do "vel × aut": a origem real do símbolo ∨ (Russell/Whitehead, c. 1903)'
+    O4: 'nem todo "e" liga duas proposições (predicados coletivos)'
+    O5: do piano lógico ao processador (Jevons, convenção de Shannon, curto-circuito)
+  exemplos:
+  - id: 2.1
+    nivel: 1
+    fonte: FME adaptado
+    tema: classificar compostas
+    cobre:
+    - H1
+    - H2
+    - U1
+    - E2
+  - id: 2.2
+    nivel: 1
+    fonte: autoral
+    tema: traduzir frases (mas, nem, ou) e intervalos
+    cobre:
+    - E1
+    - E3
+    - U2
+    - U5
+    - O4
+  - id: 2.3
+    nivel: 2
+    fonte: autoral
+    tema: tabela de 3 variáveis e contagem de linhas
+    cobre:
+    - H3
+    - E4
+  - id: 2.4
+    nivel: 2
+    fonte: OBMEP 2005, 1ª fase, N3 q20 (texto original; o FME traz versão com alternativas invertidas)
+    tema: as bolas na caixa (V5)
+    cobre:
+    - U3
+    - O2
+  - id: 2.5
+    nivel: 3
+    fonte: histórico-aplicado (Shannon 1937)
+    tema: circuito de interruptores
+    cobre:
+    - U4
+    - H1
+    - H2
+  questoes_meta:
+    N1: 4
+    N2: 6
+    N3: 2
+    integradoras: 1
+  questoes_pool:
+  - ref: Q1 FME ex. 3
+    rotulo: u2:q1
+    nivel: 1
+    cobre: [U1]
+  - ref: Q2 autoral (mas, nem, porém)
+    rotulo: u2:q2
+    nivel: 1
+    cobre: [U1, E3]
+  - ref: Q3 autoral (ou inclusivo; partes sem relação)
+    rotulo: u2:q3
+    nivel: 1
+    cobre: [H2, E1, E2]
+  - ref: Q4 autoral (conjuntos e intervalos)
+    rotulo: u2:q4
+    nivel: 1
+    cobre: [U2, U5]
+  - ref: Q5 autoral (tabela incompleta)
+    rotulo: u2:q5
+    nivel: 2
+    cobre: [H3, E4]
+  - ref: 'Q6 autoral (integradora: inequações e potências)'
+    rotulo: u2:q6
+    nivel: 2
+    cobre: [U2]
+    integradora: true
+  - ref: Q7 OBMEP 2009 1ª fase N3 q4 (FME V3)
+    rotulo: u2:q7
+    nivel: 2
+    cobre: [U2]
+  - ref: Q8 autoral (apenas uma é verdadeira)
+    rotulo: u2:q8
+    nivel: 2
+    cobre: [U3]
+  - ref: 'Q9 autoral — demonstração 0/1 (v3 — N2, as leituras 0/1 estão no texto)'
+    rotulo: u2:q9
+    nivel: 2
+    cobre: [H1, H2, O2]
+  - ref: 'Q10 autoral — circuito "exatamente um" (v3 — N2, mesmo método do ex. 2.5c)'
+    rotulo: u2:q10
+    nivel: 2
+    cobre: [U4, U3, H3]
+  - ref: Q11 autoral — as 16 colunas e a forma normal disjuntiva (transferência)
+    rotulo: u2:q11
+    nivel: 3
+    cobre: [H1, H2, H3, O1]
+  - ref: Q12 autoral — demonstração, disjunção de n letras em 0/1 (transferência)
+    rotulo: u2:q12
+    nivel: 3
+    cobre: [H2, H3]
+- n: 3
+  titulo: Condicional e bicondicional
+  ids:
+    H1: tabela do → (critério de Fílon) construída pela "promessa"
+    H2: tabela do ↔
+    H3: p → q equivale a ~q → ~p (contrapositiva)
+    U1: teoremas; condição suficiente/necessária
+    U2: problemas de regras (OBMEP)
+    U3: condicional falso força p V e q F
+    U4: usar a contrapositiva
+    U5: bicondicional em definições
+    E1: achar que antecedente falso torna o condicional falso
+    E2: confundir recíproca/inversa com contrapositiva
+    E3: inverter necessária/suficiente/"somente se"
+    E4: ler ↔ como "e"
+    E5: exigir causalidade
+    O1: por que a convenção de Fílon venceu (implicação material)
+    O2: Wason com conteúdo social
+    O3: corvos na lógica — Calímaco e Hempel (contrapositiva e confirmação)
+    O4: o 'se' nos computadores (if, testes, XNOR)
+  exemplos:
+  - id: 3.1
+    nivel: 1
+    fonte: FME adaptado
+    tema: classificar condicionais
+    cobre:
+    - H1
+    - E1
+    - E5
+  - id: 3.2
+    nivel: 1
+    fonte: autoral
+    tema: 'suficiente / necessária / somente se'
+    cobre:
+    - U1
+    - E3
+  - id: 3.3
+    nivel: 2
+    fonte: autoral
+    tema: bicondicionais com equações
+    cobre:
+    - H2
+    - U5
+    - E4
+  - id: 3.4
+    nivel: 2
+    fonte: autoral
+    tema: descobrir valores a partir de condicional falso
+    cobre:
+    - U3
+  - id: 3.5
+    nivel: 2
+    fonte: OBMEP 2007, 1ª fase, N2 q8
+    tema: o bolo de César (V6)
+    cobre:
+    - U2
+    - U4
+    - H3
+  - id: 3.6
+    nivel: 3
+    fonte: histórico (Wason 1966/68)
+    tema: as quatro cartas
+    cobre:
+    - E2
+    - U4
+    - O3
+  questoes_meta:
+    N1: 4
+    N2: 7
+    N3: 2
+    integradoras: 1
+  questoes_pool:
+  - ref: Q1 FME ex. 4
+    rotulo: u3:q1
+    nivel: 1
+    cobre: [H1, H2, E1, E5]
+  - ref: Q2 FME ex. 5
+    rotulo: u3:q2
+    nivel: 1
+    cobre: [H1, H2]
+  - ref: Q3 autoral (suficiente/necessária)
+    rotulo: u3:q3
+    nivel: 1
+    cobre: [U1, E3]
+  - ref: Q4 autoral (recíproca, inversa, contrapositiva)
+    rotulo: u3:q4
+    nivel: 1
+    cobre: [U4, E2]
+  - ref: Q5 autoral (bicondicional × conjunção)
+    rotulo: u3:q5
+    nivel: 2
+    cobre: [U5, E4]
+  - ref: Q6 FME ex. 6
+    rotulo: u3:q6
+    nivel: 2
+    cobre: [U3]
+  - ref: 'Q7 autoral (integradora: potências e inequações)'
+    rotulo: u3:q7
+    nivel: 2
+    cobre: [U1, U4]
+    integradora: true
+  - ref: Q8 autoral (formato de concurso, condicional falso)
+    rotulo: u3:q8
+    nivel: 2
+    cobre: [U3, E1]
+  - ref: 'Q9 autoral — demonstração (v3 — N2, mesma técnica do texto, mod 3)'
+    rotulo: u3:q9
+    nivel: 2
+    cobre: [H3, U4]
+  - ref: Q10 autoral (cartas numéricas)
+    rotulo: u3:q10
+    nivel: 2
+    cobre: [U4, E2]
+  - ref: 'Q11 Simulado OBMEP 2017 N3 q14 (FME V4; v3 — N2, mesmo método do ex. 3.5)'
+    rotulo: u3:q11
+    nivel: 2
+    cobre: [U2]
+  - ref: Q12 autoral — demonstração, teste de primalidade pela contrapositiva (transferência)
+    rotulo: u3:q12
+    nivel: 3
+    cobre: [U4, H3]
+  - ref: Q13 adaptada do Simulado OBMEP 2017 N2 q12 (Tia Geralda) — transferência (mentirosos da Unid. 1 + condicional falso)
+    rotulo: u3:q13
+    nivel: 3
+    cobre: [U3, E1]
+- n: 4
+  titulo: Tautologia, contradição, implicação e equivalência
+  ids:
+    H1: tautologia, contradição e contingência pela tabela
+    H2: p ⇒ q quando p → q é tautologia
+    H3: p ⇔ q quando p ↔ q é tautologia
+    H4: leis da álgebra de Boole (ex. 7 do FME)
+    U1: classificar ou verificar por tabela completa (tautologia? equivalência?)
+    U2: reconhecer "é equivalente a" (contrapositiva, ~p ∨ q)
+    U3: teorema, recíproco e equivalência
+    U4: simplificar expressões
+    U5: validar argumentos
+    E1: confundir → com ⇒
+    E2: esquecer a contingência
+    E3: julgar a equivalência pela semelhança das frases
+    E4: ordem das linhas / casos perdidos
+    O1: a tautologia "não diz nada" (Wittgenstein, 4.46)
+    O2: quem inventou a tabela-verdade (Peirce, Wittgenstein, Post)
+    O3: 'a explosão das tabelas: 2^n linhas e o problema SAT (Cook, 1971)'
+    O4: uma só operação basta (Sheffer 1913, Nicod 1917)
+  exemplos:
+  - id: 4.1
+    nivel: 1
+    fonte: autoral
+    tema: classificar três fórmulas
+    cobre:
+    - H1
+    - U1
+    - E2
+    - E4
+  - id: 4.2
+    nivel: 1
+    fonte: vestibular FATEC 2013 (fase única)
+    tema: 'contrapositiva de "se x < 3, então y = −4" (comentário: p → q ⇔ ~p ∨ q)'
+    cobre:
+    - H3
+    - U2
+    - E3
+  - id: 4.3
+    nivel: 2
+    fonte: autoral
+    tema: simplificar com as leis
+    cobre:
+    - H4
+    - U4
+  - id: 4.4
+    nivel: 2
+    fonte: autoral
+    tema: n par ⇒ n² par; recíproco; ⇔
+    cobre:
+    - H2
+    - U3
+    - E1
+  - id: 4.5
+    nivel: 3
+    fonte: histórico (Carroll 1896, domínio público)
+    tema: um sorites
+    cobre:
+    - U5
+  questoes_meta:
+    N1: 4
+    N2: 6
+    N3: 2
+    integradoras: 2
+  questoes_pool:
+  - ref: Q1 autoral + item adaptado de concurso CEBRASPE 2023 (órgão não registrado)
+    rotulo: u4:q1
+    nivel: 1
+    cobre: [H1, U1, E2]
+  - ref: Q2 autoral (equivalências em português)
+    rotulo: u4:q2
+    nivel: 1
+    cobre: [U2, E3]
+  - ref: Q3 autoral (implicações)
+    rotulo: u4:q3
+    nivel: 1
+    cobre: [H2, E1]
+  - ref: 'Q4 FME ex. 7 (seleção; v3 R3 — N1: ferramenta dada)'
+    rotulo: u4:q4
+    nivel: 1
+    cobre: [U1, H4]
+  - ref: 'Q5 autoral — demonstração 0/1 da distributiva (v3 — N2, técnica de 4-H4)'
+    rotulo: u4:q5
+    nivel: 2
+    cobre: [H4, H3]
+  - ref: Q6 autoral (casos perdidos)
+    rotulo: u4:q6
+    nivel: 2
+    cobre: [U1, E4]
+  - ref: 'Q7 autoral (integradora v3 R3 — a distributiva elimina a quíntica; resta a inequação do 2º grau)'
+    rotulo: u4:q7
+    nivel: 2
+    cobre: [U4, H4]
+    integradora: true
+  - ref: Q8 adaptada de PUC-GO 2010 (silogismo)
+    rotulo: u4:q8
+    nivel: 2
+    cobre: [U5]
+  - ref: 'Q9 autoral (transitividade; teorema e recíproco; v3 — N2)'
+    rotulo: u4:q9
+    nivel: 2
+    cobre: [U5, H2, U3]
+  - ref: 'Q10 autoral (simplificar circuito; v3 — N2, método do ex. 4.3)'
+    rotulo: u4:q10
+    nivel: 2
+    cobre: [U4, H4]
+  - ref: 'Q11 autoral (integradora — equação irracional, passo só ⇒; transferência)'
+    rotulo: u4:q11
+    nivel: 3
+    cobre: [U3, H2, H3]
+    integradora: true
+  - ref: Q12 autoral — premissa contraditória e validade (transferência)
+    rotulo: u4:q12
+    nivel: 3
+    cobre: [U5, H2, H1]
+- n: 5
+  titulo: Sentenças abertas e quantificadores
+  ids:
+    H1: sentença aberta e as duas formas de virar proposição
+    H2: ∀ como "e" generalizado, ∃ como "ou" generalizado (Peirce)
+    H3: o quantificador "existe um único"
+    U1: quantificar sentenças abertas
+    U2: identidade (∀) x equação (∃)
+    U3: domínio e definições
+    U4: '"no máximo" / "pelo menos"'
+    E1: ignorar o domínio
+    E2: confundir "existe" com "existe um único"
+    E3: provar ∀ com exemplos / recusar contraexemplo
+    E4: trocar a ordem dos quantificadores
+    O1: '"funções proporcionais" — erro tipográfico do FME'
+    O2: notação ∃| (FME) x ∃! (usual)
+    O3: quantificadores nos computadores (all/any, consultas, testes)
+  exemplos:
+  - id: 5.1
+    nivel: 1
+    fonte: FME adaptado
+    tema: quantificar sentenças
+    cobre:
+    - H1
+    - U1
+    - U2
+  - id: 5.2
+    nivel: 1
+    fonte: autoral
+    tema: existe x existe um único
+    cobre:
+    - H3
+    - E2
+  - id: 5.3
+    nivel: 2
+    fonte: autoral
+    tema: √(x²) = x e (a² − a)/a = a − 1
+    cobre:
+    - E1
+    - U3
+  - id: 5.4
+    nivel: 2
+    fonte: histórico (Fermat; Euler 1732 e 1772 — confirmado no q3)
+    tema: contraexemplo
+    cobre:
+    - E3
+  - id: 5.5
+    nivel: 2
+    fonte: autoral
+    tema: ∀x ∃y × ∃y ∀x
+    cobre:
+    - E4
+    - H2
+  - id: 5.6
+    nivel: 3
+    fonte: vestibular UF-RS — via FME (ano não informado)
+    tema: os dois relógios
+    cobre:
+    - U4
+  questoes_meta:
+    N1: 4
+    N2: 6
+    N3: 2
+    integradoras: 1
+  questoes_pool:
+  - ref: Q1 FME ex. 8
+    rotulo: u5:q1
+    nivel: 1
+    cobre: [U1, U2, E1]
+  - ref: Q2 autoral (classificar quantificadas)
+    rotulo: u5:q2
+    nivel: 1
+    cobre: [U1, H1]
+  - ref: Q3 autoral (existe um único e domínio)
+    rotulo: u5:q3
+    nivel: 1
+    cobre: [E2, U3, H3]
+  - ref: Q4 autoral (no máximo / pelo menos)
+    rotulo: u5:q4
+    nivel: 1
+    cobre: [U4]
+  - ref: Q5 autoral (∀ e ∃ em domínio finito)
+    rotulo: u5:q5
+    nivel: 2
+    cobre: [H2, U1]
+  - ref: Q6 autoral (ordem dos quantificadores)
+    rotulo: u5:q6
+    nivel: 2
+    cobre: [E4]
+  - ref: Q7 autoral (contraexemplos)
+    rotulo: u5:q7
+    nivel: 2
+    cobre: [E3]
+  - ref: 'Q8 autoral (integradora: inequação do 2º grau e domínios)'
+    rotulo: u5:q8
+    nivel: 2
+    cobre: [E1, U3, U1]
+    integradora: true
+  - ref: 'Q9 autoral — demonstração, existe um único em ax+b=0 (v3 — N2, raiz está no texto)'
+    rotulo: u5:q9
+    nivel: 2
+    cobre: [H3, U1]
+  - ref: 'Q10 autoral (termômetro; v3 — N2, método do ex. 5.6)'
+    rotulo: u5:q10
+    nivel: 2
+    cobre: [U4, E3]
+  - ref: Q11 autoral — demonstração, ∃| em x³+x=2 (transferência)
+    rotulo: u5:q11
+    nivel: 3
+    cobre: [H3, U1]
+  - ref: 'Q12 autoral — máximo × limitada superiormente; item d) troca a ordem (transferência)'
+    rotulo: u5:q12
+    nivel: 3
+    cobre: [U1, U3, E4]
+- n: 6
+  titulo: Negação de proposições
+  ids:
+    H1: leis de De Morgan pela tabela
+    H2: ~(p → q) ⇔ p ∧ ~q
+    H3: negação de quantificadores como De Morgan generalizado
+    H4: quadrado das oposições (contraditórias x contrárias)
+    U1: negar compostas
+    U2: negar quantificadas
+    U3: negar condicional
+    U4: contraexemplo e redução ao absurdo
+    U5: código e buscas
+    E1: negar "todo" com "nenhum"
+    E2: manter o conectivo ao negar (negar ∧ mantendo ∧, ou ∨ mantendo ∨)
+    E3: negar p → q como ~p → ~q ou p → ~q
+    E4: '"alguns são" → "alguns não são"'
+    E5: desigualdade sem trocar estrita/não estrita
+    O1: negação do ↔ (lacuna do FME)
+    O2: '"quebre a barra, troque o sinal"'
+  exemplos:
+  - id: 6.1
+    nivel: 1
+    fonte: vestibular FATEC 1º sem/2015, q11 (enunciado reconstruído)
+    tema: negar "Maria não faz Polímeros ou Júlia faz Silvicultura"
+    cobre:
+    - H1
+    - U1
+    - E2
+  - id: 6.2
+    nivel: 1
+    fonte: vestibular FATEC 1º sem/2019, q11
+    tema: negar "todas as vagas deste vestibular são de ensino superior"
+    cobre:
+    - H4
+    - U2
+    - E1
+    - E4
+  - id: 6.3
+    nivel: 2
+    fonte: 'autoral + adaptado de FATEC 2011 (integrador: inequações)'
+    tema: negar e classificar; negar −3 < x ≤ 2
+    cobre:
+    - H2
+    - U1
+    - U3
+    - E3
+    - E5
+    integrador: true
+  - id: 6.4
+    nivel: 2
+    fonte: autoral
+    tema: negar ↔; condição de um if
+    cobre:
+    - H2
+    - U5
+  - id: 6.5
+    nivel: 3
+    fonte: autoral
+    tema: '"f é crescente" — negar a definição e achar contraexemplo'
+    cobre:
+    - H3
+    - U4
+  questoes_meta:
+    N1: 4
+    N2: 8
+    N3: 2
+    integradoras: 1
+  questoes_pool:
+  - ref: Q1 adaptada de concurso — VUNESP/PC-SP 2018
+    rotulo: u6:q1
+    nivel: 1
+    cobre: [U1, E2]
+  - ref: Q2 adaptada de concurso — FGV/TJ-SC 2018
+    rotulo: u6:q2
+    nivel: 1
+    cobre: [U2, E1]
+  - ref: Q3 a) adaptada de concurso — VUNESP 2013; b) autoral
+    rotulo: u6:q3
+    nivel: 1
+    cobre: [U2, H4, E4]
+  - ref: Q4 autoral (desigualdades e intervalos)
+    rotulo: u6:q4
+    nivel: 1
+    cobre: [U1, E5]
+  - ref: Q5 autoral (o professor e o condicional)
+    rotulo: u6:q5
+    nivel: 2
+    cobre: [U3, E3]
+  - ref: Q6 adaptada de FATEC 2017
+    rotulo: u6:q6
+    nivel: 2
+    cobre: [U2, H4]
+  - ref: 'Q7 FATEC 2º sem./2014, q12 + item autoral: negar a afirmação (v3 R3)'
+    rotulo: u6:q7
+    nivel: 2
+    cobre: [U2]
+  - ref: Q8 FME ex. 9 e 10
+    rotulo: u6:q8
+    nivel: 2
+    cobre: [U1, U2, U3, E3, E5]
+  - ref: 'Q9 autoral (buscas, código, De Morgan com 3 letras; v3 — N2)'
+    rotulo: u6:q9
+    nivel: 2
+    cobre: [U5, H1]
+  - ref: 'Q10 autoral (integradora: inequação do 2º grau)'
+    rotulo: u6:q10
+    nivel: 2
+    cobre: [U2, E5, U4]
+    integradora: true
+  - ref: 'Q11 autoral (limitada superiormente; v3 — N2, método do ex. 6.5)'
+    rotulo: u6:q11
+    nivel: 2
+    cobre: [H3, U4, U2]
+  - ref: 'Q12 autoral — absurdo, √2 irracional (v3 — N2, anunciada e esboçada no texto)'
+    rotulo: u6:q12
+    nivel: 2
+    cobre: [U4]
+  - ref: Q13 autoral (estrutura Smullyan) — negação de quantificadas na ilha (transferência)
+    rotulo: u6:q13
+    nivel: 3
+    cobre: [U2, H3]
+  - ref: Q14 autoral — absurdo, infinitos primos (transferência)
+    rotulo: u6:q14
+    nivel: 3
+    cobre: [U4, H3]

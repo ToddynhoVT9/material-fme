@@ -1,0 +1,314 @@
+% Parte B: erros, observações, exemplos, questões, respostas
+\ErrosComuns
+
+\begin{erro}{Ignorar o domínio}{5-E1}
+\campo{O erro.} Dizer que \enquote{$\sqrt{x^2}=x$} vale para todo $x$; ou que \enquote{$\frac{a^2-a}{a}=a-1$} vale para todo $a$.
+\campo{Por que parece plausível.} As contas \enquote{dão certo} com os números que vêm à cabeça, quase sempre positivos e diferentes de zero.
+\campo{Onde quebra.} Em $x=-3$: $\sqrt{(-3)^2}=3\neq-3$. Em $a=0$: $\frac{a^2-a}{a}$ nem existe.
+\campo{Como detectar.} Antes de escrever $\forall$, teste três valores \enquote{incômodos}: um negativo, o zero e uma fração. E pergunte onde a expressão está definida.
+\campo{Como corrigir.} Diga sempre o domínio: $(\forall x\ge0)(\sqrt{x^2}=x)$ é V; $(\forall a\neq0)\big(\frac{a^2-a}{a}=a-1\big)$ também.
+\campo{Onde aparece.} Exemplo \ref{ex:5.3}; questões \ref{u5:q1} e \ref{u5:q8}.
+\end{erro}
+
+\begin{erro}{Confundir \enquote{existe} com \enquote{existe um único}}{5-E2}
+\campo{O erro.} Classificar \enquote{$(\exists x)(x^3=2x^2)$} como falsa porque \enquote{há duas soluções}; ou \enquote{$(\exists|\,x)(x^2=4)$} como verdadeira porque \enquote{existe o 2}.
+\campo{Por que parece plausível.} Na fala, \enquote{existe um} soa como \enquote{existe exatamente um}.
+\campo{Onde quebra.} Em $x^2=4$, o $-2$ também serve: a unicidade falha, e $(\exists|\,x)(x^2=4)$ é F em $\mathbb{R}$. Já $(\exists x)(x^3=2x^2)$ é V justamente porque há solução (há até duas).
+\campo{Como detectar.} Depois de achar um valor, procure um segundo. Se o enunciado diz $\exists|$, a busca do segundo faz parte da resposta.
+\campo{Como corrigir.} $\exists$ = pelo menos um (dois, três, infinitos: tudo serve). $\exists|$ = existência \emph{e} unicidade (construção 5-H3).
+\campo{Onde aparece.} Exemplo \ref{ex:5.2}; questão \ref{u5:q3}.
+\end{erro}
+
+\begin{erro}{Provar um \enquote{para todo} com exemplos (ou recusar o contraexemplo)}{5-E3}
+\campo{O erro.} Testar $n^2+n+41$ para $n=1,2,\ldots,10$, ver que sempre dá primo e concluir que dá primo para todo $n$. Ou, diante de um contraexemplo, dizer que \enquote{é só uma exceção}.
+\campo{Por que parece plausível.} Na vida, muitos exemplos convencem.
+\campo{Onde quebra.} Em $n=40$: $40^2+40+41=1681=41^2$. Quarenta casos seguidos funcionaram, e a afirmação é falsa.
+\campo{Como detectar.} Olhe o seu argumento: ele usa números escolhidos, ou um $x$ \emph{qualquer}? Se só usa números escolhidos, você mostrou um $\exists$, não um $\forall$.
+\campo{Como corrigir.} Um $\forall$ é uma conjunção infinita (construção 5-H2): para provar, argumente para um $x$ qualquer; para refutar, um caso basta, e não existe \enquote{exceção} a um \enquote{para todo}.
+\campo{Onde aparece.} Exemplo \ref{ex:5.4}; questões \ref{u5:q7} e \ref{u5:q10}.
+\end{erro}
+
+\begin{erro}{Trocar a ordem dos quantificadores}{5-E4}
+\campo{O erro.} Tratar \enquote{para todo $x$ existe $y$ com $y>x$} e \enquote{existe $y$ tal que, para todo $x$, $y>x$} como a mesma frase.
+\campo{Por que parece plausível.} As duas têm os mesmos símbolos; em português, a ordem muitas vezes fica ambígua.
+\campo{Onde quebra.} Nos inteiros, a primeira é V (para cada $x$, serve $y=x+1$); a segunda é F (nenhum inteiro é maior que todos, inclusive que ele mesmo).
+\campo{Como detectar.} Pergunte: o $y$ pode depender do $x$? Se na sua leitura pode, o $\forall$ vem primeiro.
+\campo{Como corrigir.} Leia da esquerda para a direita: quem aparece primeiro é escolhido primeiro. $\exists y\,\forall x$ é muito mais forte que $\forall x\,\exists y$.
+\campo{Onde aparece.} Exemplo \ref{ex:5.5}; questão \ref{u5:q6}.
+\end{erro}
+
+% ------------------------------------------------------------
+\Observacoes
+
+\begin{obs}{5-O1}
+\textbf{\enquote{Funções proporcionais}: um erro de impressão com história.} O FME diz que as orações com variáveis \enquote{são chamadas funções proporcionais ou sentenças abertas}.\src{fme} O termo correto é \emph{funções proposicionais}: uma função cujos valores não são números, mas proposições. A cada $x$, a sentença $P(x)$ associa a proposição $P(x)$, que é V ou F. O nome mostra bem a ideia: a sentença aberta é uma \enquote{máquina} que recebe um valor e devolve uma proposição.
+
+Pensar assim ajuda a não errar: \enquote{$x^2=4$} não é verdadeira nem falsa, assim como \enquote{$f(x)=x^2$} não é um número. Só \enquote{$f(3)=9$} é um número; só \enquote{$3^2=4$} é uma proposição (falsa). E os quantificadores são o equivalente lógico de perguntar \enquote{para quais entradas a máquina devolve V?}: todas ($\forall$), alguma ($\exists$) ou exatamente uma ($\exists|$).
+\end{obs}
+
+\begin{obs}{5-O2}
+\textbf{$\exists|$ ou $\exists!$?} O FME usa $\exists|$ para \enquote{existe um único}.\src{fme} Hoje, na maior parte dos livros universitários e em artigos, o símbolo usual é $\exists!$ (\enquote{existe um e só um}). Os dois querem dizer a mesma coisa, e você vai encontrar ambos. O importante é o conteúdo: \enquote{existe um único $x$ com $P(x)$} pode ser escrito só com os símbolos que já temos, como
+\[(\exists x)\big[P(x)\wedge(\forall y)(P(y)\rightarrow y=x)\big],\]
+isto é: existe um $x$ que satisfaz $P$, e todo $y$ que satisfaz $P$ é esse mesmo $x$. É a construção 5-H3 escrita por extenso — e mostra que \enquote{único} é uma afirmação de \emph{condicional}: se outro também satisfaz, então é o mesmo.
+\end{obs}
+
+\begin{obs}{5-O3}
+\textbf{Quantificadores nos computadores.} Em programação, os quantificadores sobre listas finitas são funções prontas: em Python, \texttt{all(...)} é o $\forall$ e \texttt{any(...)} é o $\exists$, exatamente a leitura de Peirce, uma conjunção e uma disjunção sobre todos os elementos. Uma consulta a um banco de dados que pergunta \enquote{há algum cliente com saldo negativo?} é um $\exists$. E testar software é, no fundo, procurar um contraexemplo para \enquote{para toda entrada, o programa responde certo}.
+\end{obs}
+
+% ------------------------------------------------------------
+\Exemplos
+
+\begin{exemplo}{5.1}{1}{adaptado do FME, itens 11 a 13}{5-H1, 5-U1, 5-U2}\label{ex:5.1}
+Para $x$, $a$ e $y$ reais, escreva cada sentença aberta com o quantificador que a torna verdadeira, e diga o valor da proposição com o outro quantificador.\quad
+a) $x+1=7$\quad b) $x>2$\quad c) $x^3=2x^2$\quad d) $(a+1)^2=a^2+2a+1$\quad e) $y^2+1>0$
+\plano Testar: há algum valor que torna a sentença falsa? Se não há, $\forall$. Se há, mas também há algum que a torna verdadeira, $\exists$.
+\resolucao
+\begin{center}\small
+\begin{tabular}{lll}\toprule
+& verdadeira com & a outra\\\midrule
+a) & $(\exists x)(x+1=7)$ — o 6 & $(\forall x)$: F (falha em $x=0$)\\\fino
+b) & $(\exists x)(x>2)$ — o 3 & $(\forall x)$: F (falha em $x=0$)\\\fino
+c) & $(\exists x)(x^3=2x^2)$ — o 0 e o 2 & $(\forall x)$: F (falha em $x=1$)\\\fino
+d) & $(\forall a)\,[(a+1)^2=a^2+2a+1]$ & $(\exists a)$: também V\\\fino
+e) & $(\forall y)(y^2+1>0)$ & $(\exists y)$: também V\\\bottomrule
+\end{tabular}
+\end{center}
+\comentario Em (d) e (e), o $\exists$ também é V: se vale para todos, vale para algum (num domínio não vazio). Por isso, quando uma sentença vale sempre, a resposta mais informativa é $\forall$. O item (d) é uma \emph{identidade}; (a) e (c) são \emph{equações}. Cada linha da resolução trata a sentença como uma máquina que recebe $x$ e devolve V ou F: é a \emph{função proposicional} da observação 5-O1.
+\end{exemplo}
+
+\begin{exemplo}{5.2}{1}{autoral}{5-H3, 5-E2}\label{ex:5.2}
+Com $x$ real, classifique em V ou F:\quad
+a) $(\exists|\,x)(x+1=7)$\quad b) $(\exists x)(x^3=2x^2)$ e $(\exists|\,x)(x^3=2x^2)$\quad c) $(\exists x)(x+2>3)$ e $(\exists|\,x)(x+2>3)$\quad d) $(\exists x)(x^2=-1)$
+\plano Para $\exists|$: existe algum? É único? Para $\exists$: basta um.
+\resolucao
+a) Só $x=6$: \textbf{V}.
+\par b) $x^3=2x^2\Leftrightarrow x^2(x-2)=0\Leftrightarrow x=0$ ou $x=2$. Existe: \textbf{V}. Único: \textbf{F} (são dois).
+\par c) Todo $x>1$ serve. Existe: \textbf{V}. Único: \textbf{F}.
+\par d) Nenhum real tem quadrado negativo: \textbf{F}.
+\comentario Em (b) e (c), a mesma sentença dá V com $\exists$ e F com $\exists|$ — o erro 5-E2 está exatamente em não ver essa diferença. Em livros universitários, $\exists|$ aparece como $\exists!$ (5-O2).
+\end{exemplo}
+
+\begin{exemplo}{5.3}{2}{autoral}{5-E1, 5-U3}\label{ex:5.3}
+\begin{enumerate}[label=\alph*)]
+  \item $(\forall x\in\mathbb{R})\big(\sqrt{x^2}=x\big)$ é V ou F? E $(\forall x\ge0)\big(\sqrt{x^2}=x\big)$?
+  \item Em que domínio $(\forall a)\big(\frac{a^2-a}{a}=a-1\big)$ é verdadeira?
+  \item $(\exists x)(x^2=2)$ é V ou F com $x\in\mathbb{Q}$? E com $x\in\mathbb{R}$?
+\end{enumerate}
+\plano Testar valores \enquote{incômodos}: negativos, zero, irracionais.
+\resolucao
+a) Em $\mathbb{R}$: \textbf{F}, pois $\sqrt{(-3)^2}=3\neq-3$. Em $x\ge0$: \textbf{V}, pois $\sqrt{x^2}=|x|=x$.
+\par b) Para $a\neq0$, $\frac{a^2-a}{a}=\frac{a(a-1)}{a}=a-1$. Em $a=0$, a expressão não está definida. Verdadeira em $\mathbb{R}^*$ (reais não nulos).
+\par c) Em $\mathbb{Q}$: \textbf{F} ($\sqrt2$ é irracional). Em $\mathbb{R}$: \textbf{V} ($x=\sqrt2$).
+\comentario A mesma sentença pode ser V ou F conforme o domínio: o domínio faz parte da afirmação (erro 5-E1). Guarde isso para a questão \ref{u5:q1}, em que o FME pede o quantificador certo para $\sqrt{x^2}=x$.
+\end{exemplo}
+
+\begin{exemplo}{5.4}{2}{histórico (Fermat, Euler 1732 e 1772)}{5-E3}\label{ex:5.4}
+\begin{enumerate}[label=\alph*)]
+  \item Verifique que $2^{2^n}+1$ é primo para $n=0,1,2,3,4$. A afirmação \enquote{$(\forall n\in\mathbb{N})$, $2^{2^n}+1$ é primo} está provada?
+  \item Verifique que $n^2+n+41$ é primo para $n=0,1,2,3$. O que acontece em $n=40$?
+\end{enumerate}
+\plano Calcular os casos e, depois, procurar o contraexemplo que a história registrou.
+\resolucao
+a) $n=0,\ldots,4$ dão 3, 5, 17, 257 e 65\,537, todos primos. Mas isso \textbf{não prova} o $\forall$: em 1732, Euler mostrou que $2^{32}+1=4\,294\,967\,297=641\cdot6\,700\,417$.\src{euler1732} \textbf{A afirmação é falsa.}
+\par b) $n=0,1,2,3$ dão 41, 43, 47, 53 — primos; e assim continua até $n=39$. Em $n=40$: $40^2+40+41=1600+81=1681=41^2$, \textbf{composto}.\src{perrinEuler} Dá até para prever esse contraexemplo: $40^2+40+41=40\cdot41+41=41\cdot41$.
+\comentario Fermat tinha cinco exemplos; Euler, quarenta. Nenhum dos dois bastou. Um $\forall$ só se prova com um argumento que valha para um $n$ qualquer; um único contraexemplo o derruba, e não há \enquote{exceção} que o salve (erro 5-E3).
+\end{exemplo}
+
+\begin{exemplo}{5.5}{2}{autoral}{5-E4, 5-H2}\label{ex:5.5}
+\begin{enumerate}[label=\alph*)]
+  \item Com $x$ e $y$ inteiros, classifique: (i) $(\forall x)(\exists y)(y>x)$;\ (ii) $(\exists y)(\forall x)(y>x)$.
+  \item Seja $A=\{1,2,3\}$. Escreva $(\forall x\in A)(x^2<10)$ e $(\exists x\in A)(x>2)$ com $\wedge$ e $\vee$ e classifique.
+\end{enumerate}
+\plano Em (a), ler a ordem: quem é escolhido primeiro? Em (b), usar a construção 5-H2.
+\resolucao
+a) (i) Dado qualquer $x$, basta tomar $y=x+1$: \textbf{V}. (ii) Diz que há um inteiro maior que \emph{todos} os inteiros — inclusive maior que si mesmo e que $y+1$. \textbf{F}.
+\par b) $(1^2<10)\wedge(2^2<10)\wedge(3^2<10)$: V $\wedge$ V $\wedge$ V = \textbf{V}. $(1>2)\vee(2>2)\vee(3>2)$: F $\vee$ F $\vee$ V = \textbf{V}.
+\comentario Em (i), o $y$ pode mudar conforme o $x$; em (ii), um único $y$ teria de servir para todos. Trocar a ordem transformou uma verdade óbvia numa falsidade (erro 5-E4). Em português, \enquote{todo número tem um número maior} e \enquote{há um número maior que todos} parecem parentes, mas dizem coisas opostas.
+\end{exemplo}
+
+\begin{exemplo}{5.6}{3}{UF-RS — via FME (ano não informado)}{5-U4}\label{ex:5.6}
+Manuel, Joaquim e Antônio olham, num certo instante, para dois relógios, A e B, que só indicam horas e minutos. Naquele instante, A e B indicam, respectivamente, 11h51min e 11h53min. Diante dessa situação, segue-se o seguinte diálogo entre os amigos:
+\par\enquote{Nessas condições, a dedução lógica é que a defasagem entre A e B é de 120 segundos.}, exclama Manuel.
+\par\enquote{Não! Só podemos garantir que a defasagem entre A e B é de, no máximo, 120 segundos!}, contesta Joaquim.
+\par\enquote{Vocês dois estão enganados. Com esses dados, só é possível concluir que a defasagem entre A e B é de, pelo menos, 120 segundos!}, afirma Antônio.
+\par Sobre as conclusões dos três patrícios, avalie qual das afirmativas a seguir é verdadeira.
+\begin{enumerate}[label=\Roman*.]
+  \item Só Manuel está certo.
+  \item Só Joaquim está certo.
+  \item Só Antônio está certo.
+  \item Os três estão certos.
+  \item Os três estão errados.
+  \item Não é possível decidir se algum nem qual dos três está certo.
+\end{enumerate}
+Justifique sua escolha.
+\plano A situação é nova: dados imprecisos. \enquote{Pode-se garantir} significa \enquote{vale em todos os casos compatíveis com os dados}. Um relógio que mostra só minutos mostra 11h51min durante um minuto inteiro. Descobrir o intervalo de defasagens possíveis e testar cada afirmação como um \enquote{para todos os casos possíveis}.
+\resolucao
+O relógio A mostra 11h51min de 11h51min00s até um instante antes de 11h52min00s; o B mostra 11h53min de 11h53min00s até um instante antes de 11h54min00s. A defasagem real fica estritamente entre 60 s (A quase em 11h52, B em 11h53 exatas) e 180 s (A em 11h51 exatas, B quase em 11h54).
+\begin{itemize}
+  \item Manuel afirma \enquote{em todos os casos, 120 s}: falso — pode ser 61 s ou 179 s.
+  \item Joaquim afirma \enquote{em todos os casos, no máximo 120 s}: falso — pode ser 179 s.
+  \item Antônio afirma \enquote{em todos os casos, pelo menos 120 s}: falso — pode ser 61 s.
+\end{itemize}
+\textbf{Afirmativa (V), a quinta: os três estão errados.} (É também a resposta do FME.)
+\comentario Cada amigo faz uma afirmação \enquote{para todo caso compatível com os dados}, e cada uma cai com um contraexemplo. O que se pode garantir é: a defasagem é de \emph{mais de 60 e menos de 180} segundos. \enquote{No máximo} e \enquote{pelo menos} são quantificadores disfarçados — e a pegadinha está em esquecer que o relógio arredonda para baixo.
+\end{exemplo}
+
+% ------------------------------------------------------------
+\Questoes
+
+\begin{questao}{1}{FME, exercício 8}{5-U1, 5-U2, 5-E1}\label{u5:q1}
+Transforme as seguintes sentenças abertas em proposições verdadeiras usando quantificadores:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $x^2-5x+4=0$
+  \item $(a+1)(a-1)=a^2-1$
+  \item $\frac{y}{3}+\frac{y}{4}\neq\frac{y}{7}$
+  \item $\sqrt{m^2}+9\neq m+3$
+  \item $-(-x)=x$
+  \item $5a+4\le11$
+  \item $\sqrt{x^2}=x$
+  \item $\frac{a^2-a}{a}=a-1$
+\end{enumerate}
+\end{multicols}
+\resp{a) $(\exists x)$\ \ b) $(\forall a)$\ \ c) $(\exists y)$\ \ d) $(\forall m)$\ \ e) $(\forall x)$\ \ f) $(\exists a)$\ \ g) $(\exists x)$\ \ h) $(\exists a)$}
+\end{questao}
+
+\begin{questao}{1}{autoral}{5-U1, 5-H1}\label{u5:q2}
+Classifique em V ou F:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $(\forall x\in\mathbb{R})(x^2\ge0)$
+  \item $(\exists x\in\mathbb{R})(x^2<0)$
+  \item $(\exists|\,x\in\mathbb{N})(x+3=5)$
+  \item $(\forall n\in\mathbb{N})(n+1>n)$
+  \item $(\exists x\in\mathbb{Z})(2x=5)$
+\end{enumerate}
+\end{multicols}
+\resp{a) V\ \ b) F\ \ c) V\ \ d) V\ \ e) F}
+\end{questao}
+
+\begin{questao}{1}{autoral}{5-E2, 5-U3, 5-H3}\label{u5:q3}
+Classifique em V ou F e justifique:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $(\exists x\in\mathbb{R})(x^2=4)$
+  \item $(\exists|\,x\in\mathbb{R})(x^2=4)$
+  \item $(\exists|\,x\in\mathbb{N})(x^2=4)$
+  \item $(\exists x\in\mathbb{R})(x^2=-4)$
+\end{enumerate}
+\end{multicols}
+\resp{a) V (2 e $-2$)\ \ b) F (há dois)\ \ c) V (só o 2)\ \ d) F}
+\end{questao}
+
+\begin{questao}{1}{autoral}{5-U4}\label{u5:q4}
+Sobre a equação $x^2-5x+6=0$, com $x$ real, classifique:
+\begin{enumerate}[label=\alph*)]
+  \item \enquote{Ela tem pelo menos uma raiz inteira.}
+  \item \enquote{Ela tem no máximo uma raiz positiva.}
+  \item \enquote{Ela tem exatamente duas raízes.}
+\end{enumerate}
+\resp{a) V\ \ b) F (2 e 3)\ \ c) V}
+\end{questao}
+
+\begin{questao}{2}{autoral}{5-H2, 5-U1}\label{u5:q5}
+Seja $A=\{1,2,3,4\}$. Escreva cada proposição com $\wedge$ ou $\vee$ e classifique:
+\begin{enumerate}[label=\alph*)]
+  \item $(\forall x\in A)(x^2<10)$
+  \item $(\exists x\in A)(x>3\ \wedge\ x$ é ímpar$)$
+  \item $(\exists x\in A)(x>2\ \wedge\ x$ é ímpar$)$
+\end{enumerate}
+\resp{a) $1<10\wedge4<10\wedge9<10\wedge16<10$: F\ \ b) disjunção de quatro F: F\ \ c) V (o 3)}
+\end{questao}
+
+\begin{questao}{2}{autoral}{5-E4}\label{u5:q6}
+Classifique em V ou F:
+\begin{enumerate}[label=\alph*)]
+  \item $(\forall x\in\mathbb{N})(\exists y\in\mathbb{N})(y=x+1)$
+  \item $(\exists y\in\mathbb{N})(\forall x\in\mathbb{N})(y=x+1)$
+  \item $(\forall x\in\mathbb{R})(\exists y\in\mathbb{R})(x+y=0)$
+  \item $(\exists y\in\mathbb{R})(\forall x\in\mathbb{R})(x\cdot y=0)$
+\end{enumerate}
+\resp{a) V\ \ b) F\ \ c) V\ \ d) V ($y=0$)}
+\end{questao}
+
+\begin{questao}{2}{autoral}{5-E3}\label{u5:q7}
+Mostre, com um contraexemplo, que cada afirmação é falsa:
+\begin{enumerate}[label=\alph*)]
+  \item \enquote{Para todo $n\in\mathbb{N}$, $n^2-n+41$ é primo.}
+  \item \enquote{Para todo primo $p$, $2^p-1$ é primo.} (Teste os primos em ordem.)
+  \item \enquote{Todo número primo é ímpar.}
+\end{enumerate}
+\resp{a) $n=41$: $41^2$\ \ b) $p=11$: $2^{11}-1=2047=23\cdot89$\ \ c) o 2}
+\end{questao}
+
+\begin{questao}[integradora]{2}{autoral}{5-E1, 5-U3, 5-U1}\label{u5:q8}
+Considere a proposição $(\forall x\in D)(x^2>x)$. Diga se ela é verdadeira para cada domínio $D$:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $D=\{2,3,4\}$
+  \item $D=\mathbb{N}$
+  \item $D=\{x\in\mathbb{R}\mid x>1\}$
+  \item $D=\{x\in\mathbb{R}\mid x<0\}$
+  \item $D=\{x\in\mathbb{R}\mid 0\le x\le1\}$
+\end{enumerate}
+\end{multicols}
+\emph{Sugestão:} resolva antes a inequação $x^2>x$ em $\mathbb{R}$.
+\resp{a) V\ \ b) F (falha em 0 e 1)\ \ c) V\ \ d) V\ \ e) F}
+\end{questao}
+
+\begin{questao}{2}{autoral — demonstração}{5-H3, 5-U1}\label{u5:q9}
+Sejam $a$ e $b$ números reais com $a\neq0$. Demonstre que $(\exists|\,x\in\mathbb{R})(ax+b=0)$, provando separadamente a existência e a unicidade.
+\resp{Demonstração. A prova deve mostrar: existência — $x=-b/a$ satisfaz a equação; unicidade — se $ax_1+b=0$ e $ax_2+b=0$, então $a(x_1-x_2)=0$ e, como $a\neq0$, $x_1=x_2$.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{5-U4, 5-E3}\label{u5:q10}
+Um termômetro digital mostra só a parte inteira da temperatura (21,8 °C aparece como 21 °C). Às 8 h ele marcou 21 °C e às 9 h, 24 °C. Sobre o aumento real da temperatura nesse intervalo, pode-se afirmar com certeza que foi:
+\begin{enumerate}[label=(\alph*)]
+  \item exatamente 3 °C.
+  \item no máximo 3 °C.
+  \item pelo menos 3 °C.
+  \item maior que 2 °C e menor que 4 °C.
+  \item maior que 3 °C.
+\end{enumerate}
+Justifique a escolha e dê um contraexemplo para cada alternativa errada.
+\resp{(d)}
+\end{questao}
+
+\begin{questao}{3}{autoral — demonstração}{5-H3, 5-U1}\label{u5:q11}
+Demonstre que $(\exists|\,x\in\mathbb{R})(x^3+x=2)$. (Para a unicidade, compare $a^3+a$ com $b^3+b$ quando $a<b$.)
+\resp{Demonstração. A prova deve mostrar a existência ($x=1$: $1+1=2$) e a unicidade: se $a<b$, então $a^3<b^3$ e $a^3+a<b^3+b$, logo dois valores diferentes não podem dar o mesmo resultado.}
+\end{questao}
+
+\begin{questao}{3}{autoral}{5-U1, 5-U3, 5-E4}\label{u5:q12}
+Uma função $f:\mathbb{R}\to\mathbb{R}$ \emph{tem valor máximo} quando existe um ponto em que ela atinge um valor maior ou igual a todos os outros; e é \emph{limitada superiormente} quando existe um número que nenhum valor dela ultrapassa.
+\begin{enumerate}[label=\alph*)]
+  \item Escreva as duas definições com quantificadores.
+  \item Mostre que $f(x)=-x^2$ tem as duas propriedades.
+  \item Mostre que $g(x)=\dfrac{x^2}{x^2+1}$ é limitada superiormente, mas não tem valor máximo.
+  \item Troque a ordem dos quantificadores da definição de limitada: o que diz $(\forall x\in\mathbb{R})(\exists M\in\mathbb{R})(f(x)\le M)$? Que funções a satisfazem?
+\end{enumerate}
+\resp{a) máximo: $(\exists a\in\mathbb{R})(\forall x\in\mathbb{R})(f(x)\le f(a))$; limitada: $(\exists M\in\mathbb{R})(\forall x\in\mathbb{R})(f(x)\le M)$\ \ b) $a=0$ e $M=0$, pois $-x^2\le0$\ \ c) $M=1$; não tem máximo\ \ d) toda função (basta $M=f(x)$).}
+\end{questao}
+
+\begin{sintese}
+\textbf{Ao fim desta unidade, você deveria saber:}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item transformar uma sentença aberta em proposição, dando valor à variável ou quantificando;
+  \item escolher entre $\forall$, $\exists$ e $\exists|$, dizendo sempre o domínio;
+  \item derrubar um $\forall$ com um contraexemplo e ler corretamente frases com dois quantificadores.
+\end{itemize}
+\smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u5}) e com a seção indicada.
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \perguntasintese{O que significam $(\forall x)(P(x))$, $(\exists x)(P(x))$ e $(\exists|x)(P(x))$? \hfill\mbox{\small\color{cinza}(→ construções 5-H1 e 5-H3)}}
+  \perguntasintese{Como Frege e Peirce chegaram aos quantificadores, e por que eles se parecem com \enquote{e} e \enquote{ou}? \hfill\mbox{\small\color{cinza}(→ De onde vem?)}}
+  \perguntasintese{Num enunciado, que palavras indicam $\forall$ ou $\exists$, e como você sabe qual é o domínio? \hfill\mbox{\small\color{cinza}(→ Onde é usado?)}}
+  \perguntasintese{Qual é o erro mais perigoso ao quantificar uma frase? Como você o detecta? \hfill\mbox{\small\color{cinza}(→ Erros comuns)}}
+\end{enumerate}
+\end{sintese}
+
+% ------------------------------------------------------------
+\Respostas
+{\small
+\resposta{S}{Síntese de domínio: confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u5}) e com a seção indicada em cada pergunta.}
+}

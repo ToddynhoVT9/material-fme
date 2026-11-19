@@ -1,0 +1,197 @@
+% ============================================================
+% Unidade 4 — Tautologia, contradição, implicação e equivalência  (v3 — 00-didatica-v3.md)
+% Parte A: o "artigo" — Prefácio, De onde vem?, Onde é usado?
+% IDs: 4-H1..H4 · 4-U1..U5 · 4-E1..E4 · 4-O1..O4
+% ============================================================
+\providecommand{\nao}{{\sim}}
+\clearpage
+\section[Tautologia, contradição, implicação e equivalência]{Tautologia, contradição,\newline implicação e equivalência}
+
+% ------------------------------------------------------------
+\Prefacio
+\begin{prefacio}
+\gancho{\enquote{Amanhã chove ou não chove.} Sempre verdade — e não diz nada.}
+
+A previsão do tempo mais segura do mundo é esta: \enquote{amanhã chove ou não chove}. Ela nunca erra. E, justamente por isso, é inútil: quem a ouve não sabe se deve levar guarda-chuva. Há frases que são verdadeiras não por causa do mundo, mas por causa da própria forma, e frases que são falsas pela forma, como \enquote{chove e não chove}.
+
+\textbf{Para que a matemática quer frases que não dizem nada?} É a pergunta desta unidade, e a resposta vai mostrar que são elas que sustentam toda demonstração.
+
+\textbf{Ao final, você será capaz de:} classificar uma proposição composta como tautologia, contradição ou contingência; decidir se uma proposição implica outra ou é equivalente a ela; usar as leis da álgebra de Boole para simplificar expressões; e verificar se um argumento é válido.
+
+\textbf{Pré-requisitos:} as Unidades 1 a 3 (os cinco conectivos e suas tabelas; a contrapositiva) e a construção de tabelas com três letras. O essencial está na caixa abaixo.
+\end{prefacio}
+
+\begin{minimo}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{As cinco tabelas.} ${\nao}p$ inverte; $p\wedge q$ só V com V e V; $p\vee q$ só F com F e F; $p\rightarrow q$ só F com V e F; $p\leftrightarrow q$ V quando os valores são iguais.
+  \item \textbf{Montar tabelas.} Com $n$ letras, $2^n$ linhas, na ordem da construção 2-H3.
+  \item \textbf{Leitura 0/1.} ${\nao}p=1-p$, $p\wedge q=pq$, $p\vee q=p+q-pq$, e $p^2=p$ para $p\in\{0,1\}$.
+  \item \textbf{Contrapositiva.} $p\rightarrow q$ e ${\nao}q\rightarrow{\nao}p$ têm a mesma tabela (construção 3-H3).
+\end{itemize}
+\end{minimo}
+
+% ------------------------------------------------------------
+\DeOndeVem
+
+\subsubsection{Por que alguém precisou disso}
+Desde a Unidade 1, usamos tabelas para calcular o valor de uma frase composta a partir das partes. Mas uma demonstração precisa de mais do que valores de hoje: precisa de passagens que valham \emph{em qualquer situação}, de modo que, partindo de frases verdadeiras, nunca se chegue a uma falsa. A tabela-verdade, publicada como método em 1921 por Ludwig Wittgenstein e, de forma independente, por Emil Post,\src{truthTableWiki} é a ferramenta que permite reconhecer essas passagens: basta olhar \emph{todas} as linhas. (Quem chegou antes a ela é outra história; veja a observação 4-O2.)
+
+\subsubsection{Wittgenstein e as frases que não dizem nada}
+Foi Wittgenstein quem deu à tabela um papel filosófico. No \emph{Tractatus}, ele observa que uma proposição composta pode ter, na última coluna, três tipos de resultado. Se ela é verdadeira em \emph{todas} as possibilidades, é uma \textbf{tautologia}; se é falsa em todas, uma \textbf{contradição}.\src{wittTract}\src{wittND} E ele tira daí uma conclusão filosófica: tautologias e contradições não dizem nada sobre o mundo. Saber que chove ou não chove, escreve ele, não informa nada sobre o tempo.\src{wittTract}\src{sparkTract}
+
+\begin{construcao}[tautologia, contradição e contingência]{4-H1}
+\begin{enumerate}[label=(\arabic*)]
+  \item Monte a tabela completa da proposição, com todas as $2^n$ linhas.
+  \item Olhe só para a última coluna. Há três possibilidades:
+\end{enumerate}
+\begin{tabelaverdade}{cccc}
+$p$ & $p\vee{\nao}p$ & $p\wedge{\nao}p$ & $p\rightarrow{\nao}p$\\\midrule
+V & V & F & F\\\fino
+F & V & F & V\\\midrule
+& \textbf{tautologia} & \textbf{contradição} & \textbf{contingência}\\
+\end{tabelaverdade}
+\begin{itemize}
+  \item só V: \textbf{tautologia} (ou proposição logicamente verdadeira) — verdadeira pela forma;
+  \item só F: \textbf{contradição} (ou proposição logicamente falsa) — falsa pela forma;
+  \item V e F: \textbf{contingência} — o valor depende dos valores das partes, isto é, do mundo.
+\end{itemize}
+O FME usa os dois primeiros nomes; \enquote{contingência} é o termo usual na literatura de lógica para o terceiro caso, que é o da maioria das proposições.
+\end{construcao}
+
+\begin{definicao}[tautologia e contradição]
+Uma proposição composta é uma \textbf{tautologia} quando tem valor V independentemente dos valores lógicos das proposições que a formam; é uma \textbf{contradição} (proposição logicamente falsa) quando tem valor F independentemente desses valores. Nos demais casos, é uma \textbf{contingência}.
+\end{definicao}
+
+A tautologia \enquote{não diz nada} sobre o mundo — mas diz muito sobre a \emph{forma}. E é aí que ela se torna útil.
+
+\subsubsection{Do conectivo à relação: \enquote{implica}}
+Na Unidade 3, $p\rightarrow q$ era uma \emph{proposição}, que pode ser V ou F. Mas, quando dizemos \enquote{de $p$ se conclui $q$}, queremos algo mais forte: que $q$ seja verdadeira \emph{sempre} que $p$ for — em qualquer situação, não só na de hoje. Isso não é mais uma proposição sobre o mundo; é uma \emph{relação} entre duas proposições.
+
+\begin{construcao}[a relação de implicação]{4-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item Dizemos que $p$ \textbf{implica} $q$, e escrevemos $p\Rightarrow q$, quando, em todas as situações possíveis, nunca ocorre $p$ V com $q$ F. Se $p$ e $q$ são fórmulas, \enquote{todas as situações} são todas as linhas da tabela das letras que aparecem nelas; se são frases com uma variável, como num teorema, são todos os valores da variável.
+  \item Para proposições compostas, isso significa: $p\Rightarrow q$ quando o condicional $p\rightarrow q$ é uma \textbf{tautologia}.
+  \item Exemplo: $[(p\rightarrow q)\wedge p]\Rightarrow q$. Montamos a tabela do condicional entre elas:
+\end{enumerate}
+\begin{tabelaverdade}{ccccc}
+$p$ & $q$ & $p\rightarrow q$ & $(p\rightarrow q)\wedge p$ & $[(p\rightarrow q)\wedge p]\rightarrow q$\\\midrule
+V & V & V & V & V\\\fino
+V & F & F & F & V\\\fino
+F & V & V & F & V\\\fino
+F & F & V & F & V\\
+\end{tabelaverdade}
+A última coluna é toda V: a implicação vale. Essa regra — \enquote{se $p$, então $q$; ora, $p$; logo, $q$} — é o primeiro dos indemonstráveis dos estoicos\src{sepAncient} e o que os lógicos medievais chamaram de \emph{modus ponens}.
+\end{construcao}
+
+Repare na diferença de papéis: $\rightarrow$ \emph{forma} uma proposição; $\Rightarrow$ \emph{afirma} uma relação entre proposições. Escrever \enquote{$2\mid4\Rightarrow 3\mid5$} é um erro, porque $2\mid4$ é V e $3\mid5$ é F (erro 4-E1). Já \enquote{$2\mid4\rightarrow3\mid5$} é uma proposição perfeitamente legítima — falsa. O FME resume o papel da implicação numa frase: todo teorema é uma implicação da forma \emph{hipótese $\Rightarrow$ tese}, e demonstrar um teorema é mostrar que não ocorre a hipótese verdadeira com a tese falsa.\src{fme}
+
+\subsubsection{Equivalência: duas frases, uma tabela}
+\begin{construcao}[a relação de equivalência]{4-H3}
+\begin{enumerate}[label=(\arabic*)]
+  \item Dizemos que $p$ é \textbf{equivalente} a $q$, e escrevemos $p\Leftrightarrow q$, quando $p$ e $q$ têm tabelas-verdade iguais.
+  \item Para proposições compostas, isso significa: $p\Leftrightarrow q$ quando o bicondicional $p\leftrightarrow q$ é uma tautologia.
+  \item Exemplo: $(p\rightarrow q)\Leftrightarrow({\nao}p\vee q)$:
+\end{enumerate}
+\begin{tabelaverdade}{cccccc}
+$p$ & $q$ & $p\rightarrow q$ & ${\nao}p$ & ${\nao}p\vee q$ & $(p\rightarrow q)\leftrightarrow({\nao}p\vee q)$\\\midrule
+V & V & V & F & V & V\\\fino
+V & F & F & F & F & V\\\fino
+F & V & V & V & V & V\\\fino
+F & F & V & V & V & V\\
+\end{tabelaverdade}
+As colunas de $p\rightarrow q$ e de ${\nao}p\vee q$ coincidem: \enquote{se chove, a rua molha} equivale a \enquote{não chove, ou a rua molha}. Pelo mesmo método, a construção 3-H3 já mostrou que $(p\rightarrow q)\Leftrightarrow({\nao}q\rightarrow{\nao}p)$.
+\end{construcao}
+
+Equivalência e implicação se ligam como os conectivos: $p\Leftrightarrow q$ significa $p\Rightarrow q$ e $q\Rightarrow p$. O FME traduz isso para teoremas: um teorema cujo recíproco também é verdadeiro é uma equivalência, \emph{hipótese $\Leftrightarrow$ tese}.\src{fme}
+
+\subsubsection{Argumentos válidos}
+Com a implicação, ganhamos um teste para argumentos. Um argumento com premissas $P_1, P_2, \ldots, P_k$ e conclusão $C$ é \textbf{válido} quando $(P_1\wedge P_2\wedge\cdots\wedge P_k)\Rightarrow C$, isto é, quando não existe nenhuma situação em que todas as premissas sejam verdadeiras e a conclusão falsa. Validade é uma questão de \emph{forma}: um argumento válido pode ter premissas falsas (e conclusão falsa); o que ele garante é que, \emph{se} as premissas forem verdadeiras, a conclusão também será.
+
+Lewis Carroll explorou isso com humor. Em 1896, publicou um livro sério de lógica, \emph{Symbolic Logic}, recheado de exercícios absurdos de propósito: as premissas falam de bebês, crocodilos e gatinhos, para que o leitor não possa se apoiar no bom senso e precise confiar na forma.\src{carroll1896} O exemplo \ref{ex:4.5} resolve o primeiro dos sorites propostos como exercício no livro.
+
+\subsubsection{As leis da álgebra de Boole}
+Equivalências também servem para \emph{trocar} uma expressão por outra mais simples. O exercício 7 do FME lista as principais: comutativas, associativas, distributivas, idempotência ($p\wedge p\Leftrightarrow p$), absorção, dupla negação e as leis de De Morgan.\src{fme} Algumas já estavam, em outra roupagem, no livro de Boole de 1854: a idempotência é a sua lei $x^2=x$.\src{maaBoole} (Sobre o nome \enquote{álgebra de Boole} e a descoberta de que uma só operação basta, veja a observação 4-O4.)
+
+\begin{construcao}[uma lei por dois caminhos: a absorção]{4-H4}
+Queremos mostrar que $p\wedge(p\vee q)\Leftrightarrow p$.
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{Pela tabela:}
+\end{enumerate}
+\begin{tabelaverdade}{cccc}
+$p$ & $q$ & $p\vee q$ & $p\wedge(p\vee q)$\\\midrule
+V & V & V & V\\\fino
+V & F & V & V\\\fino
+F & V & V & F\\\fino
+F & F & F & F\\
+\end{tabelaverdade}
+\begin{enumerate}[label=(\arabic*),start=2]
+  \item \textbf{Pela álgebra 0/1:} $p\wedge(p\vee q)=p\,(p+q-pq)=p^2+pq-p^2q=p+pq-pq=p$, usando $p^2=p$.
+\end{enumerate}
+A última coluna repete a de $p$. Intuição: se $p$ vale, $p\vee q$ também vale, e a conjunção não acrescenta nada; se $p$ não vale, a conjunção cai.
+\end{construcao}
+
+Foi exatamente esse tipo de conta que Claude Shannon usou, em 1937, para simplificar circuitos de relés: escrever o circuito como expressão, aplicar as leis e montar um circuito equivalente com menos peças.\src{shannonMIT}
+
+\subsubsection{Fecho: para que serve o que não diz nada}
+A previsão \enquote{chove ou não chove} não serve para decidir sobre o guarda-chuva. Mas tautologias como $[(p\rightarrow q)\wedge p]\rightarrow q$ servem para algo mais importante: são as \emph{regras} que nos deixam passar de uma frase verdadeira a outra, sem olhar para o mundo. Toda demonstração da matemática é uma corrente de implicações, e cada elo é garantido por uma tautologia. As frases que \enquote{não dizem nada} são as que permitem dizer tudo o resto com segurança.
+
+\begin{paralembrar}\label{lembrar-u4}
+\textbf{$p\Rightarrow q$ quando $p\rightarrow q$ é tautologia (só V); $p\Leftrightarrow q$ quando $p\leftrightarrow q$ é tautologia.}
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \item Tautologia: só V; contradição: só F; contingência: V e F. Equivalentes têm a mesma tabela.
+  \item $\rightarrow$ e $\leftrightarrow$ formam proposições; $\Rightarrow$ e $\Leftrightarrow$ afirmam relações entre elas. Um argumento é válido quando (premissas) $\Rightarrow$ (conclusão).
+  \item As leis de Boole simplificam expressões; cada uma se prova por tabela ou pela álgebra 0/1.
+\end{enumerate}
+\end{paralembrar}
+
+% ------------------------------------------------------------
+\OndeEUsado
+
+Implicação e equivalência são o vocabulário com que a matemática fala de si mesma. Esta seção ensina a reconhecer quando uma questão pede uma delas, e qual ferramenta usar. São cinco situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · \enquote{é tautologia?}}{4-U1}
+\mapa{\enquote{classifique em tautologia, contradição ou contingência}; \enquote{logicamente verdadeira/falsa}; \enquote{é sempre verdadeira?}}
+{a última coluna da tabela completa}
+{a construção 4-H1: só V, só F ou misto}
+\reconhecer Aparece em concursos, com uma fórmula dada. O cuidado é não esquecer linhas (erro 4-E4) nem a terceira opção (erro 4-E2). Para \emph{refutar} que algo é tautologia, uma linha F basta; para \emph{confirmar}, são precisas todas. Treino: exemplo \ref{ex:4.1}; questões \ref{u4:q1} e \ref{u4:q6}.
+\end{caso}
+
+\begin{caso}{2 · \enquote{é equivalente a\ldots}}{4-U2}
+\mapa{\enquote{é equivalente a}; \enquote{tem o mesmo significado lógico}; \enquote{assinale a frase equivalente}}
+{duas frases com a mesma coluna, linha a linha}
+{a construção 4-H3; para o condicional, as duas equivalências: ${\nao}q\rightarrow{\nao}p$ e ${\nao}p\vee q$}
+\reconhecer A FATEC, em 2013, pediu a frase equivalente a \enquote{se $x<3$, então $y=-4$} (exemplo \ref{ex:4.2}).\src{fatec2013} Os distratores costumam ser a recíproca e a inversa, ou frases que \enquote{soam} parecidas sem ter a mesma tabela (erro 4-E3). Treino: exemplo \ref{ex:4.2}; questões \ref{u4:q2} e \ref{u4:q4}.
+\end{caso}
+
+\begin{caso}{3 · teorema e recíproco}{4-U3}
+\mapa{\enquote{a recíproca é verdadeira?}; \enquote{se, e somente se}; um teorema a reescrever como equivalência}
+{se a seta vale num sentido só ($\Rightarrow$) ou nos dois ($\Leftrightarrow$)}
+{testar o recíproco: se ele também vale, a relação é $\Leftrightarrow$}
+\reconhecer Todo teorema é uma implicação, hipótese $\Rightarrow$ tese.\src{fme} Quando o recíproco também vale, vira equivalência: \enquote{$n$ é par $\Leftrightarrow$ $n^2$ é par}. Treino: exemplo \ref{ex:4.4}; questão \ref{u4:q9}.
+\end{caso}
+
+\begin{caso}{4 · simplificar}{4-U4}
+\mapa{\enquote{a expressão\ldots\ equivale a}; uma expressão longa com a mesma letra repetida; um circuito ou uma condição de programa a reduzir}
+{um fator comum, uma dupla negação, um $q\vee{\nao}q$}
+{as leis de Boole (construção 4-H4): distributiva, absorção, idempotência, De Morgan}
+\reconhecer A tabela sempre funciona, mas as leis poupam trabalho e mostram o porquê. É o que se faz em circuitos (Shannon) e em código: \texttt{(a and b) or (a and not b)} é só \texttt{a}. Treino: exemplo \ref{ex:4.3}; questões \ref{u4:q7} e \ref{u4:q10}.
+\end{caso}
+
+\begin{caso}{5 · argumentos}{4-U5}
+\mapa{\enquote{a partir das premissas, pode-se concluir que\ldots}; \enquote{o argumento é válido?}}
+{(premissas) $\Rightarrow$ (conclusão): nenhuma linha com todas as premissas V e a conclusão F}
+{traduzir em letras; encadear implicações, usando a contrapositiva; ou procurar a linha que derrubaria a conclusão}
+\reconhecer Aparece em vestibulares (a questão \ref{u4:q8}, da PUC-GO) e em concursos. O conteúdo das premissas não importa, só a forma: um argumento válido pode ter premissas falsas. Para encadear: de $p\Rightarrow q$ e $q\Rightarrow r$ vem $p\Rightarrow r$ (questão \ref{u4:q9}). Treino: questões \ref{u4:q8} e \ref{u4:q9}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
+\begin{gatilhos}
+\enquote{é tautologia?}, \enquote{logicamente verdadeira/falsa} & 4-H1 & tabela completa; olhe só a última coluna & 4-U1 · ex.~\ref{ex:4.1}\\\fino
+\enquote{é equivalente a\ldots} & 4-H3 & mesma coluna? Lembre: $p\rightarrow q\Leftrightarrow{\nao}q\rightarrow{\nao}p\Leftrightarrow{\nao}p\vee q$ & 4-U2 · ex.~\ref{ex:4.2}\\\fino
+\enquote{implica}, \enquote{decorre}, \enquote{pode-se concluir} & 4-H2 & procure uma linha com o lado esquerdo V e o direito F & 4-U5 · q.~\ref{u4:q8}\\\fino
+teorema e recíproco & $\Rightarrow$ e $\Leftrightarrow$ & recíproco verdadeiro? então equivalência & 4-U3 · ex.~\ref{ex:4.4}\\\fino
+expressão longa com $p$ repetido & leis de Boole & distributiva, absorção, $q\vee{\nao}q$ = tautologia & 4-U4 · ex.~\ref{ex:4.3}\\\fino
+premissas encadeáveis (\enquote{todo A é B}, \enquote{todo B é C}\ldots) & validade pela forma & traduza em letras; encadeie com a contrapositiva & 4-U5 · q.~\ref{u4:q9}\\
+\end{gatilhos}

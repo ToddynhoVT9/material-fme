@@ -1,0 +1,191 @@
+% ============================================================
+% Unidade 6 — Negação de proposições  (v3 — 00-didatica-v3.md)
+% Parte A: o "artigo" — Prefácio, De onde vem?, Onde é usado?
+% IDs: 6-H1..H4 · 6-U1..U5 · 6-E1..E5 · 6-O1..O2
+% ============================================================
+\providecommand{\nao}{{\sim}}
+\clearpage
+\section{Negação de proposições}
+
+% ------------------------------------------------------------
+\Prefacio
+\begin{prefacio}
+\gancho{Qual é a negação de \enquote{todo aluno da turma passou}? \enquote{Nenhum aluno passou}? Não.}
+
+Se um professor diz \enquote{todo aluno da turma passou} e você quer desmenti-lo, não precisa provar que \emph{ninguém} passou. Basta mostrar \emph{um} aluno reprovado. \enquote{Nenhum aluno passou} é uma frase muito mais forte que a negação — e as duas podem ser falsas ao mesmo tempo, se metade da turma passou. Negar corretamente é uma habilidade que a matemática usa o tempo todo: para achar contraexemplos, para provar por absurdo, para escrever a condição contrária de um programa.
+
+\textbf{O que basta para desmentir uma frase, e como escrever, sem errar, a frase que a desmente?} É a pergunta desta unidade, que fecha o capítulo usando tudo o que veio antes.
+
+\textbf{Ao final, você será capaz de:} negar conjunções, disjunções, condicionais e bicondicionais; negar frases com \enquote{todo}, \enquote{algum} e \enquote{nenhum}; negar desigualdades e intervalos sem errar o sinal; e usar a negação para construir contraexemplos e provas por absurdo.
+
+\textbf{Pré-requisitos:} todas as unidades anteriores, em especial as tabelas (Unidades 2 e 3), a equivalência (Unidade 4) e os quantificadores (Unidade 5). O essencial está na caixa abaixo.
+\end{prefacio}
+
+\begin{minimo}
+\begin{itemize}[leftmargin=1.2em]
+  \item \textbf{Negação simples (Unidade 1).} ${\nao}p$ tem o valor oposto de $p$. A negação de $a<b$ é $a\ge b$; a de $a\le b$ é $a>b$.
+  \item \textbf{Equivalência (Unidade 4).} Duas proposições são equivalentes quando têm a mesma tabela.
+  \item \textbf{Condicional (Unidade 3).} $p\rightarrow q$ só é F quando $p$ é V e $q$ é F.
+  \item \textbf{Quantificadores (Unidade 5).} $\forall$ é um \enquote{e} generalizado; $\exists$ é um \enquote{ou} generalizado.
+\end{itemize}
+\end{minimo}
+
+% ------------------------------------------------------------
+\DeOndeVem
+
+\subsubsection{Por que alguém precisou disso: contrário não é contraditório}
+Para refutar uma afirmação, é preciso saber exatamente o que a contradiz; uma frase \enquote{oposta} demais pode ser falsa junto com ela. No tratado \emph{Da Interpretação}, Aristóteles distinguiu dois modos de duas frases se oporem. Algumas são \textbf{contraditórias}: uma é exatamente a negação da outra, como \enquote{todo homem é branco} e \enquote{nem todo homem é branco}, ou \enquote{nenhum homem é branco} e \enquote{algum homem é branco}. Outras são apenas \textbf{contrárias}: não podem ser verdadeiras juntas, mas podem ser falsas juntas, como \enquote{todo homem é justo} e \enquote{nenhum homem é justo}.\src{aristInt7} Se há homens justos e homens injustos, as duas contrárias são falsas; já entre contraditórias, uma é sempre V e a outra sempre F.
+
+Aristóteles fez a distinção, mas não desenhou nenhum diagrama. O \emph{quadrado das oposições}, com que as relações são ensinadas até hoje, é posterior: o diagrama já aparece num texto do século II d.C. e chega à Idade Média por Boécio, por volta de 500.\src{sepSquare}
+
+\begin{construcao}[o quadrado das oposições]{6-H4}
+As quatro formas de frase com \enquote{todo} e \enquote{algum} recebem nomes de letras:\src{sepSquare}
+\begin{center}\small
+\begin{tabular}{cll}\toprule
+\textbf{letra} & \textbf{forma} & \textbf{exemplo}\\\midrule
+A & todo $S$ é $P$ & todo aluno passou\\\fino
+E & nenhum $S$ é $P$ & nenhum aluno passou\\\fino
+I & algum $S$ é $P$ & algum aluno passou\\\fino
+O & algum $S$ não é $P$ & algum aluno não passou\\\bottomrule
+\end{tabular}
+\end{center}
+As relações:
+\begin{itemize}
+  \item A e O são \textbf{contraditórias}; E e I também: uma é a negação da outra.
+  \item A e E são \textbf{contrárias}: nunca ambas V, mas podem ser ambas F.
+  \item I e O são \textbf{subcontrárias}: nunca ambas F, mas podem ser ambas V.
+\end{itemize}
+As relações de contrárias e de subcontrárias supõem que exista algum $S$ (se não há nenhum aluno, \enquote{todo aluno passou} e \enquote{nenhum aluno passou} são, na lógica moderna, ambas V). As contraditórias valem sempre, e são elas que dão a negação.
+\textbf{Regra prática:} a negação de uma frase é a sua \emph{contraditória}, a do canto oposto na diagonal: ${\nao}$A = O e ${\nao}$E = I. A contrária (o canto ao lado) é uma frase mais forte, não a negação.
+\end{construcao}
+
+\subsubsection{Negar \enquote{e} e \enquote{ou}: as leis de De Morgan}
+As regras para negar uma conjunção e uma disjunção levam o nome do lógico inglês Augustus De Morgan (1806--1871), que as enunciou na lógica formal do século XIX; a observação é mais antiga, e no século XIV Guilherme de Ockham já escrevia por extenso as frases que resultam delas.\src{deMorganWiki}
+
+\begin{construcao}[as leis de De Morgan]{6-H1}
+Montamos, na mesma tabela, ${\nao}(p\wedge q)$ e ${\nao}p\vee{\nao}q$; depois, ${\nao}(p\vee q)$ e ${\nao}p\wedge{\nao}q$:
+\begin{tabelaverdade}{cccccc}
+$p$ & $q$ & ${\nao}(p\wedge q)$ & ${\nao}p\vee{\nao}q$ & ${\nao}(p\vee q)$ & ${\nao}p\wedge{\nao}q$\\\midrule
+V & V & F & F & F & F\\\fino
+V & F & V & V & F & F\\\fino
+F & V & V & V & F & F\\\fino
+F & F & V & V & V & V\\
+\end{tabelaverdade}
+As colunas coincidem duas a duas:
+\[{\nao}(p\wedge q)\Leftrightarrow{\nao}p\vee{\nao}q\qquad\qquad{\nao}(p\vee q)\Leftrightarrow{\nao}p\wedge{\nao}q.\]
+\textbf{Em palavras:} para negar um \enquote{e}, negue as partes e troque por \enquote{ou}; para negar um \enquote{ou}, negue as partes e troque por \enquote{e}. A troca do conectivo é obrigatória (erro 6-E2).
+\end{construcao}
+
+A intuição está no dia a dia. \enquote{Fui ao cinema e ao teatro} é falsa se faltou \emph{qualquer um} dos dois: não fui ao cinema \emph{ou} não fui ao teatro. \enquote{Fui ao cinema ou ao teatro} é falsa só se faltaram \emph{os dois}: não fui ao cinema \emph{e} não fui ao teatro.
+
+\subsubsection{Negar o \enquote{se\ldots\ então}}
+Para o condicional, a resposta vem direto do critério de Fílon (Unidade 3): $p\rightarrow q$ só é falso em um caso, e a negação descreve exatamente esse caso.
+
+\begin{construcao}[a negação do condicional]{6-H2}
+\begin{tabelaverdade}{ccccc}
+$p$ & $q$ & $p\rightarrow q$ & ${\nao}(p\rightarrow q)$ & $p\wedge{\nao}q$\\\midrule
+V & V & V & F & F\\\fino
+V & F & F & \textbf{V} & \textbf{V}\\\fino
+F & V & V & F & F\\\fino
+F & F & V & F & F\\
+\end{tabelaverdade}
+Logo, ${\nao}(p\rightarrow q)\Leftrightarrow p\wedge{\nao}q$. A negação de um condicional \textbf{não é outro condicional}: é uma conjunção, que afirma o antecedente e nega o consequente. Outro caminho, pela Unidade 4: $p\rightarrow q\Leftrightarrow{\nao}p\vee q$; por De Morgan, ${\nao}({\nao}p\vee q)\Leftrightarrow p\wedge{\nao}q$.
+\end{construcao}
+
+O bicondicional se nega pelo mesmo caminho. Como $p\leftrightarrow q$ é $(p\rightarrow q)\wedge(q\rightarrow p)$, De Morgan e a construção 6-H2 dão
+\[{\nao}(p\leftrightarrow q)\ \Leftrightarrow\ (p\wedge{\nao}q)\vee(q\wedge{\nao}p):\]
+uma das duas vale sem a outra. A tabela confirma: $p\leftrightarrow q$ é V quando os valores são iguais, e a negação, quando são diferentes.
+
+\enquote{Se chover, eu levo guarda-chuva} é desmentida por um dia em que choveu e eu não levei. Não é desmentida por \enquote{se não chover, não levo} nem por \enquote{se chover, não levo} (erro 6-E3).
+
+\subsubsection{Negar \enquote{todo} e \enquote{existe}}
+Na Unidade 5, vimos que Peirce lia o \enquote{para todo} como uma conjunção, talvez infinita, e o \enquote{existe} como uma disjunção.\src{sepFOL} Com isso, a negação dos quantificadores é De Morgan outra vez.
+
+\begin{construcao}[negação de quantificadores]{6-H3}
+Num domínio $\{a_1,a_2,a_3,\ldots\}$:
+\begin{enumerate}[label=(\arabic*)]
+  \item $(\forall x)P(x)$ é $P(a_1)\wedge P(a_2)\wedge P(a_3)\wedge\cdots$. Por De Morgan, sua negação é ${\nao}P(a_1)\vee{\nao}P(a_2)\vee\cdots$, isto é, $(\exists x)\,{\nao}P(x)$.
+  \item $(\exists x)P(x)$ é $P(a_1)\vee P(a_2)\vee\cdots$. Sua negação é ${\nao}P(a_1)\wedge{\nao}P(a_2)\wedge\cdots$, isto é, $(\forall x)\,{\nao}P(x)$.
+\end{enumerate}
+\[{\nao}(\forall x)P(x)\Leftrightarrow(\exists x)\,{\nao}P(x)\qquad\qquad{\nao}(\exists x)P(x)\Leftrightarrow(\forall x)\,{\nao}P(x).\]
+É a regra do FME: troca-se o quantificador e nega-se a sentença.\src{fme} E é a contradição de Aristóteles (o par A–O do quadrado tradicional) em notação moderna: \enquote{todo $S$ é $P$} (A) tem como negação \enquote{existe $S$ que não é $P$} (O).
+\end{construcao}
+
+\subsubsection{Negar para provar: o absurdo}
+Saber negar abre um método de demonstração. Para provar uma afirmação, supõe-se a sua negação e chega-se a uma contradição; como a negação levou a algo impossível, ela é falsa, e a afirmação é verdadeira. Aristóteles já descrevia esse método nos \emph{Primeiros Analíticos}, com um exemplo célebre: a diagonal do quadrado é incomensurável com o lado, porque, se fosse comensurável, números ímpares seriam iguais a pares.\src{aristPriorAn} O argumento costuma ser atribuído aos pitagóricos e corresponde à prova moderna de que $\sqrt2$ é irracional.\src{corry} A questão \ref{u6:q12} pede que você a escreva.
+
+O contraexemplo, que usamos desde a Unidade 3, é a negação em ação: para derrubar \enquote{$(\forall x)P(x)$}, mostra-se um caso da negação \enquote{$(\exists x)\,{\nao}P(x)$}.
+
+\subsubsection{Fecho: e a turma?}
+A negação de \enquote{todo aluno da turma passou} é \enquote{algum aluno da turma não passou} — a contraditória, o canto O do quadrado. \enquote{Nenhum aluno passou} é a contrária: pode ser falsa junto com a original. A diferença parece sutil, mas é a mesma que separa um contraexemplo (um caso) de uma refutação total (todos os casos), e é por isso que ela aparece em tantas questões de negação.
+
+\begin{paralembrar}\label{lembrar-u6}
+\textbf{Negar: ${\nao}(p\wedge q)\Leftrightarrow{\nao}p\vee{\nao}q$;\ ${\nao}(p\vee q)\Leftrightarrow{\nao}p\wedge{\nao}q$;\ ${\nao}(p\rightarrow q)\Leftrightarrow p\wedge{\nao}q$;\ ${\nao}\forall\Leftrightarrow\exists{\nao}$;\ ${\nao}\exists\Leftrightarrow\forall{\nao}$.}
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \item Ao negar, troque $\wedge$ por $\vee$ e $\forall$ por $\exists$ (e vice-versa) — e negue as partes.
+  \item A negação de \enquote{todo} é \enquote{algum\ldots\ não}, não \enquote{nenhum}; a de um condicional é uma conjunção: o antecedente acontece e o consequente não.
+  \item Ao negar desigualdades, troque estrita por não estrita: ${\nao}(x<a)$ é $x\ge a$.
+\end{enumerate}
+\end{paralembrar}
+
+% ------------------------------------------------------------
+\OndeEUsado
+
+A negação liga a lógica à prática da demonstração e aparece com frequência nas questões de lógica de vestibular e de concurso reunidas para este material. Esta seção ensina a reconhecer o que negar e como. São seis situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · negar uma composta}{6-U1}
+\mapa{\enquote{a negação de \enquote{$p$ e $q$}} ou de \enquote{$p$ ou $q$}; \enquote{não é verdade que\ldots\ e\ldots}}
+{a frase que é V exatamente quando a original é F}
+{De Morgan (construção 6-H1): negue as partes e troque o conectivo}
+\reconhecer Nas questões de lógica da FATEC reunidas para este material, pedir \enquote{a negação de\ldots} foi o formato mais frequente; um exemplo é \enquote{Maria não faz Polímeros ou Júlia faz Silvicultura} (exemplo \ref{ex:6.1}).\src{fatec2015} O distrator típico nega as partes e mantém o conectivo (erro 6-E2). Treino: exemplo \ref{ex:6.1}; questões \ref{u6:q1} e \ref{u6:q8}.
+\end{caso}
+
+\begin{caso}{2 · negar \enquote{todo}, \enquote{algum}, \enquote{nenhum}}{6-U2}
+\mapa{\enquote{todos}, \enquote{nenhum}, \enquote{algum}, \enquote{existe} na frase a negar}
+{a contraditória: o canto oposto na diagonal do quadrado}
+{${\nao}\forall\Leftrightarrow\exists{\nao}$ e ${\nao}\exists\Leftrightarrow\forall{\nao}$ (construção 6-H3)}
+\reconhecer \enquote{Todas as vagas deste vestibular são de ensino superior} (FATEC 2019, exemplo \ref{ex:6.2}).\src{fatec2019} O distrator típico é a contrária, com \enquote{nenhuma} (erro 6-E1). O português ajuda pouco: \enquote{nem todo aluno passou} é a negação certa de \enquote{todo aluno passou}, mas \enquote{todo aluno não passou} é ambígua. Na dúvida, reescreva com \enquote{existe\ldots\ que não} ou \enquote{não é verdade que}. Treino: exemplo \ref{ex:6.2}; questões \ref{u6:q2}, \ref{u6:q3}, \ref{u6:q6} e \ref{u6:q7}.
+\end{caso}
+
+\begin{caso}{3 · negar um \enquote{se\ldots\ então}}{6-U3}
+\mapa{\enquote{a negação de \enquote{se $p$, então $q$}}; \enquote{qual situação mostra que a afirmação é falsa?}}
+{o único caso em que o condicional é F}
+{${\nao}(p\rightarrow q)\Leftrightarrow p\wedge{\nao}q$ (construção 6-H2): uma conjunção, não outro condicional}
+\reconhecer O distrator típico é outro condicional, a inversa ou \enquote{se $p$, então não $q$} (erro 6-E3). Leia o enunciado com cuidado: às vezes ele pede a \emph{equivalente}, e não a negação, como na FATEC de 2014 sobre os irmãos de Pedro (questão \ref{u6:q7}).\src{fatec2014s2} Treino: exemplo \ref{ex:6.3}; questões \ref{u6:q5} e \ref{u6:q8}.
+\end{caso}
+
+\begin{caso}{4 · desigualdades e intervalos}{6-U1}
+\mapa{\enquote{$x<a$}, \enquote{$a<x\le b$}, \enquote{o complementar do intervalo}}
+{todo o resto da reta, fronteiras incluídas}
+{De Morgan + troca de estrita por não estrita}
+\reconhecer ${\nao}(-3<x\le2)$ é $x\le-3\vee x>2$: o \enquote{e} escondido no intervalo vira \enquote{ou}, e cada desigualdade troca de tipo. Teste sempre os pontos de fronteira (erro 6-E5). Treino: exemplo \ref{ex:6.3}; questões \ref{u6:q4} e \ref{u6:q10}.
+\end{caso}
+
+\begin{caso}{5 · contraexemplo, absurdo e definições negadas}{6-U4}
+\mapa{\enquote{mostre que é falso que todo\ldots}; \enquote{prove que não existe\ldots}, \enquote{prove que é irracional}; \enquote{mostre que $f$ não é crescente (limitada, injetora\ldots)}}
+{a negação da afirmação, para testemunhá-la ou para supô-la}
+{para refutar um $\forall$, exiba um caso de $\exists{\nao}$; para provar por absurdo, suponha a negação e chegue a uma contradição; para mostrar que algo não cumpre uma definição, negue a definição de fora para dentro}
+\reconhecer Toda refutação de um \enquote{para todo} é uma negação: \enquote{todo primo é ímpar} cai com o 2. Para provar $p\rightarrow q$ por absurdo, supõe-se $p\wedge{\nao}q$. E as definições do ensino médio e superior (função crescente, sequência limitada) são frases com quantificadores: saber o que é \emph{não} cumpri-las é negar essas frases. Treino: questões \ref{u6:q11} e \ref{u6:q12}.
+\end{caso}
+
+\begin{caso}{6 · código e buscas}{6-U5}
+\mapa{o \texttt{else} de um \texttt{if}; \texttt{NOT} numa busca; uma barra sobre uma expressão}
+{a condição contrária, escrita sem o \texttt{not} na frente}
+{De Morgan em código: \texttt{not (a and b)} = \texttt{(not a) or (not b)}}
+\reconhecer Programadores negam condições o tempo todo: o \texttt{else} de \texttt{if (x > 0 \&\& y > 0)} roda quando \texttt{x <= 0 || y <= 0}. Os buscadores obedecem às mesmas leis: \texttt{NOT (gatos AND cachorros)} devolve os mesmos documentos que \texttt{(NOT gatos) OR (NOT cachorros)}.\src{deMorganWiki} Na engenharia, a negação se escreve com uma barra sobre a expressão, o \enquote{e} com $\cdot$ e o \enquote{ou} com $+$; De Morgan fica $\overline{A\cdot B}=\overline{A}+\overline{B}$ e $\overline{A+B}=\overline{A}\cdot\overline{B}$ (veja a observação 6-O2). Treino: exemplo \ref{ex:6.4}; questão \ref{u6:q9}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
+\begin{gatilhos}
+\enquote{a negação de \enquote{$p$ e $q$}} & De Morgan & ${\nao}p$ ou ${\nao}q$ (troque o conectivo) & 6-U1 · ex.~\ref{ex:6.1}\\\fino
+\enquote{a negação de \enquote{$p$ ou $q$}} & De Morgan & ${\nao}p$ e ${\nao}q$ & 6-U1 · q.~\ref{u6:q8}\\\fino
+\enquote{a negação de \enquote{se $p$, então $q$}} & 6-H2 & $p$ e ${\nao}q$ — uma conjunção, não um condicional & 6-U3 · q.~\ref{u6:q5}\\\fino
+\enquote{todo}, \enquote{todos} & ${\nao}\forall\Leftrightarrow\exists{\nao}$ & \enquote{algum\ldots\ não}, \enquote{existe\ldots\ que não} & 6-U2 · ex.~\ref{ex:6.2}\\\fino
+\enquote{nenhum} & ${\nao}\forall{\nao}\Leftrightarrow\exists$ & \enquote{algum\ldots\ é}, \enquote{existe\ldots\ que é} & 6-U2 · q.~\ref{u6:q2}\\\fino
+\enquote{algum}, \enquote{existe} & ${\nao}\exists\Leftrightarrow\forall{\nao}$ & \enquote{nenhum}, \enquote{todo\ldots\ não} & 6-U2 · q.~\ref{u6:q3}\\\fino
+desigualdade, intervalo & De Morgan + sinal & $<$ vira $\ge$;\ \ $\le$ vira $>$;\ \ \enquote{e} vira \enquote{ou} & 6-U1 · q.~\ref{u6:q4}\\\fino
+\enquote{prove que não existe\ldots}, \enquote{prove que é irracional} & absurdo & suponha a negação; chegue a uma contradição & 6-U4 · q.~\ref{u6:q12}\\\fino
+\texttt{else}, \texttt{NOT}, condição contrária & De Morgan no código & \texttt{not (a and b)} = \texttt{(not a) or (not b)} & 6-U5 · ex.~\ref{ex:6.4}\\
+\end{gatilhos}

@@ -1,0 +1,122 @@
+% ============================================================
+% Abertura geral do capítulo (q2 §3) — produzida por último (q5 §4)
+% ============================================================
+\section*{Abertura do capítulo}
+\addcontentsline{toc}{section}{Abertura do capítulo}
+\markright{Abertura do capítulo}
+
+\subsection*{Por que começar por lógica}
+A matemática é feita de duas coisas: \emph{afirmações} e \emph{passagens} entre afirmações. \enquote{Todo número par maior que 2 é soma de dois primos} é uma afirmação; \enquote{se $n$ é múltiplo de 4, então $n$ é par} é uma passagem — de uma afirmação para outra, com a garantia de que a segunda vale sempre que a primeira valer. Teoremas, definições, equações, demonstrações e contraexemplos são, todos, combinações dessas duas peças.
+
+Este capítulo é a gramática dessas peças. Ele não ensina nenhum conteúdo novo de números, funções ou figuras; ensina a \emph{ler} e a \emph{escrever} o que se diz sobre eles. Por isso vem primeiro no primeiro volume do FME: tudo o que vier depois — conjuntos, funções, sequências, limites — usa o \enquote{e}, o \enquote{ou}, o \enquote{se\ldots\ então}, o \enquote{para todo} e o \enquote{existe} exatamente como eles são definidos aqui.
+
+A história também é contada aqui, e não por enfeite. Cada símbolo e cada regra deste capítulo foram uma resposta a uma pergunta que alguém fez de verdade: quando uma frase é verdadeira? quando o \enquote{ou} inclui os dois casos? quando um \enquote{se} é falso? Saber a pergunta é o caminho mais curto para entender — e para não esquecer — a resposta.
+
+\subsection*{Linha do tempo}
+Os marcos abaixo são os que o capítulo usa; cada um é contado, com suas fontes, na unidade indicada.
+{\small
+\renewcommand{\arraystretch}{1.12}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{10.6cm}c}\toprule
+\textbf{quando} & \textbf{o quê} & \textbf{unid.}\\\midrule\endfirsthead
+\toprule\textbf{quando} & \textbf{o quê} & \textbf{unid.}\\\midrule\endhead
+\bottomrule\endfoot
+séc.~IV a.C. & Platão, no \emph{Sofista}: a frase falsa também diz algo; o discurso mais simples junta nome e verbo.\src{platoSoph} & 1\\\fino
+séc.~IV a.C. & Aristóteles define a frase que afirma ou nega, formula a não contradição e distingue contrárias de contraditórias.\src{aristInt}\src{aristInt7} & 1, 6\\\fino
+c.~300 a.C. & Diodoro e Fílon discutem quando um \enquote{se\ldots\ então} é verdadeiro; vence, muito depois, o critério de Fílon.\src{sepDialectical} & 3\\\fino
+séc.~III a.C. & Crisipo e os estoicos: conectivos verofuncionais, \enquote{ou} exclusivo, os indemonstráveis; a negação posta antes da frase inteira.\src{bobzien} & 1, 2\\\fino
+séc.~II a.C. & Hiparco conta quantas compostas cabem em dez proposições.\src{plutarchNum} & 2\\\fino
+séc.~XIV & Ockham escreve por extenso as frases que resultam das regras para negar \enquote{e} e \enquote{ou}.\src{deMorganWiki} & 6\\\fino
+1732 & Euler mostra que $2^{32}+1$ é divisível por 641: um contraexemplo derruba uma afirmação de Fermat.\src{euler1732} & 5\\\fino
+1847 & Boole publica a lógica como álgebra.\src{britBoole} & 1, 2\\\fino
+1864 & Jevons, em \emph{Pure Logic}, torna inclusivo o \enquote{ou} da álgebra de Boole.\src{macJevons}\src{ieeeJevons} & 2\\\fino
+1870 & Jevons apresenta à Royal Society o \enquote{piano lógico}.\src{jevons1870} & 2\\\fino
+1879 & Frege, \emph{Conceitografia}: \enquote{mas} e \enquote{e} têm o mesmo conteúdo; nasce a quantificação.\src{fregeColor}\src{sepFOL} & 2, 5\\\fino
+1880 & Venn publica seus diagramas.\src{venn} & 2\\\fino
+1883--1885 & Peirce cria, independentemente, os quantificadores e lhes dá o nome.\src{sepFOL} & 5\\\fino
+1896 & Lewis Carroll, \emph{Symbolic Logic}: argumentos absurdos de propósito.\src{carroll1896} & 4\\\fino
+c.~1903 & Whitehead e Russell introduzem o símbolo $\vee$.\src{elkindZach} & 2\\\fino
+1912--1918 & C.~I.~Lewis critica a implicação material e propõe a implicação estrita.\src{organonF} & 3\\\fino
+1921 & Wittgenstein e Post publicam o método das tabelas-verdade.\src{truthTableWiki} & 4\\\fino
+1937 & Shannon: o \enquote{e} é a ligação em série; o \enquote{ou}, em paralelo.\src{shannonMIT} & 2, 4\\\fino
+1966 & Wason propõe a tarefa das quatro cartas.\src{wasonWiki} & 3\\\fino
+1971 & Cook funda a teoria da NP-completude, a partir do problema de satisfazer fórmulas.\src{cook1971} & 4\\
+\end{longtable}}
+
+\subsection*{Mapa das unidades}
+As seis unidades formam uma escada que se divide e volta a se juntar. A Unidade 1 dá o material (proposição e negação); as Unidades 2 e 3 dão as ferramentas para combinar proposições. Daí o caminho se abre em dois ramos: a Unidade 4 diz quando duas combinações são \enquote{a mesma}, e a Unidade 5 abre a lógica para frases com variáveis. A Unidade 6 junta os dois ramos para responder a uma das perguntas mais comuns nas provas que cobram lógica: como negar.
+\begin{center}
+\begin{tikzpicture}[
+  u/.style={draw=acento, line width=0.8pt, rounded corners=3pt, fill=acentoclaro,
+            minimum width=2.9cm, minimum height=1.05cm, align=center, font=\sffamily\small},
+  seta/.style={-{Stealth[length=2.2mm]}, line width=0.7pt, color=acento!80!black}]
+  \node[u] (u1) at (0,0)    {\textbf{1} Proposição\\e negação};
+  \node[u] (u2) at (3.6,0)  {\textbf{2} Conectivos\\$\wedge$ e $\vee$};
+  \node[u] (u3) at (7.2,0)  {\textbf{3} Condicional e\\bicondicional};
+  \node[u] (u4) at (10.8,0) {\textbf{4} Tautologia,\\implicação, equiv.};
+  \node[u] (u5) at (7.2,-2.2) {\textbf{5} Sentenças abertas\\e quantificadores};
+  \node[u] (u6) at (10.8,-2.2) {\textbf{6} Negação de\\proposições};
+  \draw[seta] (u1) -- (u2);
+  \draw[seta] (u2) -- (u3);
+  \draw[seta] (u3) -- (u4);
+  \draw[seta] (u3) -- (u5);
+  \draw[seta] (u4) -- (u6);
+  \draw[seta] (u5) -- (u6);
+\end{tikzpicture}
+\end{center}
+{\small\noindent Cada seta se lê \enquote{é pré-requisito de}. Uma unidade usa também tudo o que vem antes dela no caminho: a Unidade 5 usa as Unidades 1 a 3; a Unidade 6 usa todas as anteriores.}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{c>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{7.2cm}}\toprule
+& \textbf{a pergunta que a unidade responde} & \textbf{o que você leva dela}\\\midrule
+1 & O que é uma frase \enquote{com valor}? & proposição, V/F, negação, os dois princípios\\\fino
+2 & Quando um \enquote{ou} (ou um \enquote{e}) é verdadeiro? & $\wedge$, $\vee$ (inclusivo), tabelas com $2^n$ linhas\\\fino
+3 & Quando um \enquote{se} é falso? & $\rightarrow$, $\leftrightarrow$, suficiente/necessária, contrapositiva\\\fino
+4 & Para que servem frases que não dizem nada? & tautologia, $\Rightarrow$, $\Leftrightarrow$, leis de Boole, validade\\\fino
+5 & E as frases com $x$? & sentença aberta, $\forall$, $\exists$, $\exists|$, domínio, contraexemplo\\\fino
+6 & Como negar qualquer frase? & De Morgan, ${\nao}(p\rightarrow q)$, ${\nao}\forall$ e ${\nao}\exists$, absurdo\\\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Tabela de notação}
+\begin{center}\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{c>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{5.0cm}cc}\toprule
+\textbf{símbolo} & \textbf{lê-se} & \textbf{quem introduziu} & \textbf{quando} & \textbf{unid.}\\\midrule
+${\nao}$ & não & Peano & 1897 & 1\\\fino
+$\neg$ & não (comum em computação) & Heyting & 1930 & 1\\\fino
+$\wedge$ & e & Heyting & 1930 & 2\\\fino
+$\vee$ & ou (inclusivo) & Whitehead e Russell & c.~1903 & 2\\\fino
+$\rightarrow$ & se\ldots, então\ldots & Hilbert & 1922 & 3\\\fino
+$\leftrightarrow$ & \ldots se, e somente se,\ldots & Becker & 1933 & 3\\\fino
+$\Rightarrow$,\ $\Leftrightarrow$ & implica; é equivalente a & grupo Bourbaki & 1954 & 4\\\fino
+$\exists$ & existe & Peano (para classes); Russell (como quantificador) & 1897 & 5\\\fino
+$\forall$ & para todo & Gentzen & 1935 & 5\\\fino
+$\exists|$\ \ ($\exists!$) & existe um único & notação do FME; $\exists!$ é a usual & --- & 5\\\bottomrule
+\end{tabular}
+\end{center}
+{\small\noindent Fontes da tabela: Miller (MacTutor)\src{miller} e, para $\vee$, Elkind e Zach.\src{elkindZach} A origem de $\exists!$ não foi documentada nesta pesquisa.}
+
+\subsection*{Como usar este material}
+\textbf{A ordem de cada unidade.} Toda unidade segue a mesma sequência, e cada seção responde a uma pergunta: o \emph{Prefácio}, \enquote{por que isso merece ser estudado?}; \emph{De onde vem?}, \enquote{por que foi necessário, como surgiu e como o reconstruímos hoje?}; \emph{Onde é usado?}, \enquote{como reconheço uma situação em que devo usar isso?}; \emph{Erros comuns}, \enquote{onde o raciocínio costuma quebrar?}; \emph{Observações}, aprofundamentos opcionais; \emph{Exemplos} resolvidos e \emph{Questões}; a \emph{Síntese de domínio}, um teste do que você entendeu; e as \emph{Respostas}. As três primeiras seções formam um texto corrido, que pode ser lido sozinho, como um artigo. O que é fixo é a função de cada seção, não o tamanho: uma unidade com uma história rica tem um \enquote{De onde vem?} longo; outra, mais técnica, um curto. O glossário, no fim do capítulo, reúne os termos e símbolos de todas as unidades, para consulta.
+
+\textbf{As caixas.} \emph{O mínimo que você precisa} (moldura azul) lembra os pré-requisitos. \emph{Construção} (amarela) mostra um conceito sendo montado passo a passo. \emph{Definição} (moldura azul) dá o enunciado formal. \emph{Para lembrar} (fundo azul-claro) resume a unidade numa frase e em poucos passos. \emph{Erros} (vermelho) seguem sempre o mesmo roteiro: o erro; por que ele parece plausível; onde o raciocínio quebra, com um contraexemplo concreto; como detectá-lo depois de escrever; como corrigi-lo; e onde ele aparece nos exemplos e questões. Em \emph{Onde é usado?}, as caixas de \emph{Mapa do problema} (moldura azul) mostram como sair do enunciado para a ferramenta: o que o enunciado diz, o que procurar, qual ferramenta usar e como reconhecer a situação. \emph{Observações} (cinza, com o selo \opcional{} e letra menor) ampliam o conceito sem serem necessárias para usá-lo: quem quer o essencial pode pulá-las. A \emph{Síntese de domínio} (amarela, como a Construção) fecha a unidade: você responde, com suas palavras, o que o conceito significa, como foi construído, quando usá-lo e como não errar, e confere com a caixa \emph{Para lembrar}.
+
+\textbf{Os níveis.} Exemplos e questões têm um selo de nível, que indica a \emph{função} do item, e não só a dificuldade. \nivel{1} é \emph{reconhecimento e aplicação}: a ferramenta está clara, e você a aplica. \nivel{2} é \emph{seleção e combinação}: é preciso perceber qual ferramenta usar e, às vezes, combinar mais de uma. \nivel{3} é \emph{transferência}: a ferramenta aparece numa situação diferente da que a teoria apresentou, e nenhum N3 está resolvido no texto. Dentro de cada nível, as questões vão da mais guiada para a menos guiada. As questões marcadas com \integradora{} misturam lógica com outro assunto do ensino médio (inequações, potências, divisibilidade), mas só entram se o assunto da unidade for necessário para resolvê-las. Uma sugestão de uso: leia o artigo, estude os exemplos na ordem, resolva as questões por nível, voltando aos erros comuns quando errar, e feche com a síntese de domínio.
+
+\textbf{As etiquetas de procedência.} Cada exemplo e cada questão indicam de onde vêm:
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item \textbf{prova com ano}, como [FATEC 1º sem./2019, q.~11] ou [OBMEP 2009, 1ª fase, nível 3, q.~4]: questão real, com o texto conferido na prova;
+  \item \textbf{[\ldots\ via FME]}: questão real cujo texto foi tirado do próprio FME; quando o livro não dá o ano, ele foi identificado por outras fontes, ou a etiqueta diz \enquote{ano não informado};
+  \item \textbf{[FME, exercício $n$]}: exercício do livro-base, com o número que tem lá; \textbf{[adaptado do FME, item $n$]}: exemplo da teoria do livro, reescrito para a didática deste material;
+  \item \textbf{[adaptada de\ldots]}: questão de vestibular ou de concurso (indicado pela banca e pelo órgão, como VUNESP/PC-SP) cujo texto original não pôde ser conferido na íntegra; foi reescrita, com a resposta conferida;
+  \item \textbf{[histórico]}: problema ou experimento da história contada na unidade (Carroll, Wason, Shannon, Euler);
+  \item \textbf{[autoral]}: escrita para este material; \enquote{estrutura de\ldots} ou \enquote{formato de\ldots} indica o modelo seguido.
+\end{itemize}
+
+\textbf{As fontes.} Os números sobrescritos, como este\src{fme}, remetem à lista de \emph{Fontes} no fim do capítulo. Histórias ilustrativas cuja veracidade não se pode verificar trazem a marca\anedota. Relatos de autores antigos aparecem como tais (\enquote{segundo Plutarco\ldots}, \enquote{diz-se que\ldots}).
+
+\textbf{Os identificadores.} As marcas cinza entre $\langle\ \rangle$, como \cobre{2-U3}, ligam o texto à matriz de cobertura do material: o número é a unidade, e a letra diz o tipo — \textbf{H} para uma construção (seção \emph{De onde vem?}), \textbf{U} para um contexto de uso, \textbf{E} para um erro comum, \textbf{O} para uma observação. Um exemplo ou questão marcado com \cobre{3-E2} treina o erro 3-E2. Na primeira leitura, eles podem ser ignorados; servem para quem quer saber o que cada exercício treina.
+
+\textbf{As respostas.} As respostas trazem só o resultado final, no formato [\,14.\ (c)\,] ou [\,28.\ $5\sqrt3$\,], para que você confira sem ver a resolução. Nas questões de demonstração, a resposta diz, em uma linha, \emph{o que a prova deve mostrar}. As respostas que podem ser obtidas por cálculo ou por tabela-verdade foram conferidas por um programa, separado da redação.
+\clearpage

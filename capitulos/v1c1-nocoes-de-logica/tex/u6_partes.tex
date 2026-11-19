@@ -1,0 +1,307 @@
+% Parte B: erros, observações, exemplos, questões, respostas
+\ErrosComuns
+
+\begin{erro}{Negar \enquote{todo} com \enquote{nenhum}}{6-E1}
+\campo{O erro.} Dizer que a negação de \enquote{todo aluno passou} é \enquote{nenhum aluno passou}.
+\campo{Por que parece plausível.} \enquote{Nenhum} soa como o \enquote{oposto} de \enquote{todo}. Na conversa, quem discorda costuma exagerar.
+\campo{Onde quebra.} Numa turma em que metade passou: \enquote{todo aluno passou} é F e \enquote{nenhum aluno passou} também é F. Uma frase e sua negação nunca são falsas juntas.
+\campo{Como detectar.} Procure uma situação que torne as duas frases falsas (o teste da terceira via da Unidade 1). Se existir, você escreveu a contrária.
+\campo{Como corrigir.} Pergunte o que \emph{basta} para desmentir a frase. Um aluno reprovado basta: \enquote{algum aluno não passou}, a contraditória, na diagonal do quadrado.
+\campo{Onde aparece.} Exemplo \ref{ex:6.2}; questão \ref{u6:q2}.
+\end{erro}
+
+\begin{erro}{Manter o conectivo ao negar}{6-E2}
+\campo{O erro.} Negar \enquote{Ana estuda e Beto não trabalha} como \enquote{Ana não estuda e Beto trabalha}; ou negar um \enquote{ou} mantendo o \enquote{ou}.
+\campo{Por que parece plausível.} Nega-se cada pedaço, e a estrutura parece poder ficar como está.
+\campo{Onde quebra.} Se Ana estuda e Beto trabalha, a frase original é F (a segunda parte falha), e a \enquote{negação} proposta também é F (a primeira parte falha). Negação e original nunca têm o mesmo valor.
+\campo{Como detectar.} Escolha uma situação em que a original é F e confira: a sua negação tem de ser V ali.
+\campo{Como corrigir.} De Morgan: \enquote{e} vira \enquote{ou}, \enquote{ou} vira \enquote{e}, e as partes são negadas.
+\campo{Onde aparece.} Exemplo \ref{ex:6.1}; questão \ref{u6:q1}.
+\end{erro}
+
+\begin{erro}{Negar o condicional com outro condicional}{6-E3}
+\campo{O erro.} Responder que a negação de \enquote{se $p$, então $q$} é \enquote{se ${\nao}p$, então ${\nao}q$} ou \enquote{se $p$, então ${\nao}q$}.
+\campo{Por que parece plausível.} Parece natural colocar o \enquote{não} dentro do mesmo molde.
+\campo{Onde quebra.} Com $p$ e $q$ falsas, \enquote{se $p$, então $q$} é V, e \enquote{se ${\nao}p$, então ${\nao}q$} também é V. Com $p$ falsa, \enquote{se $p$, então ${\nao}q$} é V, junto com a original. Um condicional e sua negação nunca são verdadeiros juntos.
+\campo{Como detectar.} Teste a linha em que $p$ é F: lá a original é V, e a negação tem de ser F. Um condicional com antecedente $p$ é V nessa linha, então não pode ser a negação.
+\campo{Como corrigir.} O condicional só é falso num caso, $p$ V e $q$ F, e a negação descreve esse caso: $p\wedge{\nao}q$ (construção 6-H2).
+\campo{Onde aparece.} Exemplo \ref{ex:6.3}; questões \ref{u6:q5} e \ref{u6:q8}.
+\end{erro}
+
+\begin{erro}{Negar \enquote{alguns são} com \enquote{alguns não são}}{6-E4}
+\campo{O erro.} Dizer que a negação de \enquote{alguns alunos são canhotos} é \enquote{alguns alunos não são canhotos}.
+\campo{Por que parece plausível.} Aplica-se o \enquote{não} só ao verbo, sem mexer no quantificador.
+\campo{Onde quebra.} Numa turma com canhotos e destros, as duas frases são verdadeiras (I e O do quadrado, subcontrárias).
+\campo{Como detectar.} Procure uma situação em que as duas sejam verdadeiras. Se existir, não é negação.
+\campo{Como corrigir.} A negação de \enquote{existe} é \enquote{para todo\ldots\ não}: \enquote{nenhum aluno é canhoto}.
+\campo{Onde aparece.} Exemplo \ref{ex:6.2}; questão \ref{u6:q3}.
+\end{erro}
+
+\begin{erro}{Negar desigualdades sem trocar estrita e não estrita}{6-E5}
+\campo{O erro.} Negar $x<3$ como $x>3$; negar $-3<x\le2$ como $x<-3$ ou $x>2$.
+\campo{Por que parece plausível.} Pensa-se no \enquote{contrário} geométrico, o outro lado da reta.
+\campo{Onde quebra.} Em $x=3$: não satisfaz $x<3$ nem $x>3$. Em $x=-3$: não está em $-3<x\le2$ nem em $x<-3$ ou $x>2$.
+\campo{Como detectar.} Teste os pontos de fronteira: cada um precisa estar em exatamente uma das duas frases.
+\campo{Como corrigir.} A negação cobre todo o resto da reta: ${\nao}(x<a)$ é $x\ge a$; ${\nao}(x\le a)$ é $x>a$.
+\campo{Onde aparece.} Exemplo \ref{ex:6.3}; questões \ref{u6:q4}, \ref{u6:q8} e \ref{u6:q10}.
+\end{erro}
+
+% ------------------------------------------------------------
+\Observacoes
+
+\begin{obs}{6-O1}
+\textbf{O bicondicional negado é o \enquote{ou exclusivo}.} O FME ensina a negar $\wedge$, $\vee$, $\rightarrow$ e os quantificadores, mas não o $\leftrightarrow$.\src{fme} A negação, vista em \emph{De onde vem?}, é V exatamente quando $p$ e $q$ têm valores diferentes, e isso é o \enquote{ou exclusivo} da Unidade 2 (observação 2-O2): \enquote{ou $p$, ou $q$, mas não ambos}. Há ainda uma forma curiosa: ${\nao}(p\leftrightarrow q)\Leftrightarrow p\leftrightarrow{\nao}q$. Basta negar um dos lados para negar o todo.
+\end{obs}
+
+\begin{obs}{6-O2}
+\textbf{\enquote{Quebre a barra, troque o sinal}.} Na notação da barra (caso 6 de \emph{Onde é usado?}), o mnemônico \enquote{quebre a barra, troque o sinal} resume a operação: a barra comprida sobre a expressão inteira se parte em barras curtas sobre cada letra, e o sinal do meio se troca.\src{deMorganWiki} Com ele, um engenheiro converte um circuito de portas AND em portas OR (e inversores) — e é por isso que todo circuito digital pode ser feito com um único tipo de porta, a NAND (\enquote{não ambos}). Na álgebra, a ideia de que uma só operação basta é de Sheffer e Nicod (observação 4-O4).
+\end{obs}
+
+% ------------------------------------------------------------
+\Exemplos
+
+\begin{exemplo}{6.1}{1}{FATEC 1º sem./2015, q.~11 (enunciado reconstruído)}{6-H1, 6-U1, 6-E2}\label{ex:6.1}
+Considere o exemplo: a negação da proposição \enquote{O cachorro é um animal ou a alface é um vegetal} é \enquote{O cachorro não é um animal e a alface não é um vegetal}. Assinale a alternativa que apresenta a negação da proposição \enquote{Maria não faz o curso de Polímeros ou Júlia faz o curso de Silvicultura}.\src{fatec2015}
+\begin{enumerate}[label=(\alph*)]
+  \item Maria faz o curso de Polímeros e Júlia faz o curso de Silvicultura.
+  \item Maria faz o curso de Polímeros e Júlia não faz o curso de Silvicultura.
+  \item Maria faz o curso de Polímeros ou Júlia não faz o curso de Silvicultura.
+  \item Maria não faz o curso de Polímeros e Júlia não faz o curso de Silvicultura.
+  \item Maria não faz o curso de Polímeros ou Júlia não faz o curso de Silvicultura.
+\end{enumerate}
+\plano Simbolizar ($M$: Maria faz Polímeros; $J$: Júlia faz Silvicultura) e aplicar De Morgan.
+\resolucao
+A frase é ${\nao}M\vee J$. Sua negação é ${\nao}({\nao}M\vee J)\Leftrightarrow{\nao}{\nao}M\wedge{\nao}J\Leftrightarrow M\wedge{\nao}J$: \enquote{Maria faz Polímeros e Júlia não faz Silvicultura}. \textbf{Alternativa (b).}
+\comentario A alternativa (c) nega as duas partes mas mantém o \enquote{ou} (erro 6-E2). O exemplo do cachorro, as alternativas e o gabarito são os da prova; a frase de Maria e Júlia está em imagem e foi reconstruída a partir da resolução do Curso Objetivo, que a nega pela regra do \enquote{ou}.\src{fatec2015}
+\end{exemplo}
+
+\begin{exemplo}{6.2}{1}{FATEC 1º sem./2019, q.~11}{6-H4, 6-U2, 6-E1, 6-E4}\label{ex:6.2}
+São proposições equivalentes para a negação da proposição \enquote{todo homem ama lógica}: \enquote{pelo menos um homem não ama lógica}; \enquote{algum homem não ama lógica}; \enquote{existe um homem que não ama lógica}. Assim, a forma correta de negar a proposição \enquote{todas as vagas deste vestibular são de ensino superior} é\src{fatec2019}
+\begin{enumerate}[label=(\alph*)]
+  \item \enquote{algumas vagas deste vestibular são de ensino superior}.
+  \item \enquote{existem vagas deste vestibular que não são de ensino superior}.
+  \item \enquote{nenhuma das vagas deste vestibular é de ensino superior}.
+  \item \enquote{pelo menos uma vaga deste vestibular é de ensino superior}.
+  \item \enquote{todas as vagas deste vestibular não são de ensino superior}.
+\end{enumerate}
+\plano Identificar a forma (A, \enquote{todo $S$ é $P$}) e procurar a contraditória (O, \enquote{algum $S$ não é $P$}).
+\resolucao
+${\nao}(\forall x)P(x)\Leftrightarrow(\exists x)\,{\nao}P(x)$: \enquote{existem vagas que não são de ensino superior}. \textbf{Alternativa (b).}
+\comentario (c) é a contrária E (erro 6-E1); (e), na leitura mais comum, também (a frase é ambígua; veja o caso 2); (a) e (d) são a subalterna I, que pode ser verdadeira junto com a original. O próprio enunciado ensina o método, e ainda assim a questão separa quem aplica a regra de quem nega \enquote{pelo som}. E se fosse preciso negar a alternativa (a), \enquote{algumas vagas são de ensino superior}? A tentação é \enquote{algumas vagas não são} (erro 6-E4), mas I e O podem ser verdadeiras juntas. A negação de \enquote{existe} é um \enquote{nenhum}: \enquote{nenhuma vaga deste vestibular é de ensino superior}.
+\end{exemplo}
+
+\begin{exemplo}{6.3}{2}{autoral + adaptado de FATEC 2011}{6-H2, 6-U1, 6-U3, 6-E3, 6-E5}\label{ex:6.3}
+\begin{enumerate}[label=\alph*)]
+  \item Negue cada proposição e classifique a original e a negação: (i) se 2 é primo, então 2 é ímpar; (ii) se $4<3$, então 4 é primo; (iii) se 9 é quadrado perfeito, então 9 é ímpar.
+  \item \emph{(adaptado de FATEC 2011)} Escreva a negação de \enquote{$-3<x\le2$}.
+\end{enumerate}
+\plano Em (a), usar ${\nao}(p\rightarrow q)\Leftrightarrow p\wedge{\nao}q$. Em (b), escrever o intervalo como conjunção e aplicar De Morgan.
+\resolucao
+a) (i) Original: V $\rightarrow$ F = \textbf{F}. Negação: \enquote{2 é primo e 2 não é ímpar}: \textbf{V}.
+(ii) Original: F $\rightarrow$ F = \textbf{V}. Negação: \enquote{$4<3$ e 4 não é primo}: \textbf{F}.
+(iii) Original: V $\rightarrow$ V = \textbf{V}. Negação: \enquote{9 é quadrado perfeito e 9 não é ímpar}: \textbf{F}.
+\par b) $-3<x\le2$ é $x>-3\wedge x\le2$. A negação é ${\nao}(x>-3)\vee{\nao}(x\le2)$, isto é, $x\le-3\ \vee\ x>2$.
+\comentario Em (a), a original e a negação têm sempre valores opostos — é a conferência obrigatória. Escrever \enquote{se 2 é primo, então 2 não é ímpar} seria o erro 6-E3: essa frase é V, como a negação, mas por acaso; em (ii), o mesmo molde daria \enquote{se $4<3$, então 4 não é primo}, V, junto com a original V. Em (b), os erros comuns são manter o \enquote{e} ou esquecer de trocar $<$ por $\le$ (erro 6-E5).
+\end{exemplo}
+
+\begin{exemplo}{6.4}{2}{autoral}{6-H2, 6-U5}\label{ex:6.4}
+\begin{enumerate}[label=\alph*)]
+  \item Negue \enquote{um número inteiro é par se, e somente se, seu quadrado é par} e diga qual das duas é verdadeira.
+  \item Um programa executa um bloco quando \texttt{x > 0 and y > 0}. Escreva, sem usar \texttt{not}, a condição do \texttt{else}.
+  \item Escreva a negação de $\overline{A}+B$ na notação da barra.
+\end{enumerate}
+\plano Usar a negação do bicondicional (seção \emph{De onde vem?}, depois da construção 6-H2) e De Morgan para (b) e (c), com a notação da barra do caso 6.
+\resolucao
+a) Negação: \enquote{existe um inteiro que é par e cujo quadrado não é par, ou que não é par e cujo quadrado é par}. A original é V (exemplo \ref{ex:4.4}); a negação é F.
+\par b) \texttt{not (x > 0 and y > 0)} = \texttt{x <= 0 or y <= 0}.
+\par c) $\overline{\overline{A}+B}=\overline{\overline{A}}\cdot\overline{B}=A\cdot\overline{B}$ — quebre a barra, troque o sinal, e a dupla barra se cancela.
+\comentario Em (a), o \enquote{para todo} implícito também é negado: vira \enquote{existe}, e o bicondicional vira \enquote{um sem o outro}. O item (c) é a negação do condicional em roupa de engenharia: $\overline{A}+B$ é ${\nao}A\vee B$, isto é, $A\rightarrow B$; a negação, $A\cdot\overline{B}$, é $A\wedge{\nao}B$ (construção 6-H2).
+\end{exemplo}
+
+\begin{exemplo}{6.5}{3}{autoral}{6-H3, 6-U4}\label{ex:6.5}
+Uma função $f$ é \emph{crescente} num conjunto $D$ quando, para quaisquer $x_1,x_2\in D$ com $x_1<x_2$, vale $f(x_1)<f(x_2)$.
+\begin{enumerate}[label=\alph*)]
+  \item Escreva a definição com quantificadores e escreva sua negação.
+  \item Use a negação para mostrar que $f(x)=x^2$ não é crescente em $\mathbb{R}$.
+  \item Por que o mesmo argumento não funciona em $D=\{x\in\mathbb{R}\mid x\ge0\}$?
+\end{enumerate}
+\plano A definição é nova; as regras, não. Negar de fora para dentro: os quantificadores trocam; o condicional vira conjunção; a desigualdade troca de estrita para não estrita.
+\resolucao
+a) Definição: $(\forall x_1)(\forall x_2)\big[x_1<x_2\rightarrow f(x_1)<f(x_2)\big]$.
+Negação: $(\exists x_1)(\exists x_2)\big[x_1<x_2\ \wedge\ f(x_1)\ge f(x_2)\big]$ — \enquote{existem dois pontos, o primeiro menor, com imagem maior ou igual}.
+\par b) Basta um par: $x_1=-2$, $x_2=1$. Temos $-2<1$ e $f(-2)=4\ge1=f(1)$. A negação é V; logo, $f$ \textbf{não é crescente} em $\mathbb{R}$.
+\par c) Em $x\ge0$, se $0\le x_1<x_2$, então $x_1^2<x_2^2$ ($x_1^2\le x_1x_2$, multiplicando por $x_1\ge0$, e $x_1x_2<x_2^2$, multiplicando por $x_2>0$). Não existe par que testemunhe a negação: lá, $f$ é crescente.
+\comentario A negação foi construída por três regras do capítulo, em sequência: ${\nao}\forall\Leftrightarrow\exists{\nao}$ (6-H3), ${\nao}(p\rightarrow q)\Leftrightarrow p\wedge{\nao}q$ (6-H2) e ${\nao}(a<b)\Leftrightarrow a\ge b$ (6-E5). Esse é o trabalho diário de quem estuda funções, limites e sequências no ensino superior: entender uma definição é saber também o que significa \emph{não} cumpri-la.
+\end{exemplo}
+
+% ------------------------------------------------------------
+\Questoes
+
+\begin{questao}{1}{adaptada de concurso — VUNESP/PC-SP 2018}{6-U1, 6-E2}\label{u6:q1}
+A negação de \enquote{Marluce é a secretária e Rogério não é o presidente} é:
+\begin{enumerate}[label=(\alph*)]
+  \item Marluce não é a secretária e Rogério é o presidente.
+  \item Marluce não é a secretária e Rogério não é o presidente.
+  \item Marluce não é a secretária ou Rogério é o presidente.
+  \item Marluce é a secretária ou Rogério é o presidente.
+  \item Se Marluce é a secretária, então Rogério não é o presidente.
+\end{enumerate}
+\resp{(c)}
+\end{questao}
+
+\begin{questao}{1}{adaptada de concurso — FGV/TJ-SC 2018}{6-U2, 6-E1}\label{u6:q2}
+A negação de \enquote{nenhum médico é cego} é:
+\begin{enumerate}[label=(\alph*)]
+  \item há pelo menos um médico cego.
+  \item todo médico é cego.
+  \item nenhum cego é médico.
+  \item algum médico não é cego.
+  \item todo cego é médico.
+\end{enumerate}
+\resp{(a)}
+\end{questao}
+
+\begin{questao}{1}{a) adaptada de concurso — VUNESP 2013; b) autoral}{6-U2, 6-H4, 6-E4}\label{u6:q3}
+\begin{enumerate}[label=\alph*)]
+  \item Qual é a contraditória de \enquote{todo homem é mortal}? E qual é a contrária?
+  \item Qual é a negação de \enquote{alguns alunos são canhotos}? Por que \enquote{alguns alunos não são canhotos} não serve?
+\end{enumerate}
+\resp{a) Contraditória: \enquote{algum homem não é mortal}; contrária: \enquote{nenhum homem é mortal}\ \ b) \enquote{nenhum aluno é canhoto}; as duas frases podem ser verdadeiras juntas.}
+\end{questao}
+
+\begin{questao}{1}{autoral}{6-U1, 6-E5}\label{u6:q4}
+Escreva a negação de cada sentença, sem usar o símbolo ${\nao}$ nem a palavra \enquote{não}:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $x\ge5$
+  \item $-1\le x<3$
+  \item $x\le0$ ou $x>4$
+\end{enumerate}
+\end{multicols}
+\resp{a) $x<5$\ \ b) $x<-1$ ou $x\ge3$\ \ c) $0<x\le4$}
+\end{questao}
+
+\begin{questao}{2}{autoral}{6-U3, 6-E3}\label{u6:q5}
+Um professor afirmou: \enquote{Se o aluno estudou, então passou.} Qual das situações abaixo mostra que ele estava errado? Escreva a negação da afirmação e justifique.
+\begin{enumerate}[label=(\alph*)]
+  \item Um aluno não estudou e não passou.
+  \item Um aluno não estudou e passou.
+  \item Um aluno estudou e passou.
+  \item Um aluno estudou e não passou.
+\end{enumerate}
+\resp{(d); negação: \enquote{algum aluno estudou e não passou}.}
+\end{questao}
+
+\begin{questao}{2}{adaptada de FATEC 2017}{6-U2, 6-H4}\label{u6:q6}
+\emph{Nefelibata} é quem vive \enquote{nas nuvens}, alheio à realidade; \emph{pragmático} é quem se guia pelo lado prático das coisas. A negação de \enquote{nenhum nefelibata é pragmático} é:
+\begin{enumerate}[label=(\alph*)]
+  \item todo nefelibata é pragmático.
+  \item nenhum pragmático é nefelibata.
+  \item algum nefelibata é pragmático.
+  \item algum nefelibata não é pragmático.
+  \item todo pragmático é nefelibata.
+\end{enumerate}
+\resp{(c)}
+\end{questao}
+
+\begin{questao}{2}{FATEC 2º sem./2014, q.~12}{6-U2}\label{u6:q7}
+Considere verdadeira a seguinte afirmação: \enquote{Todos os irmãos de Pedro estudam na Fatec.} Assim sendo, pode-se concluir corretamente que\src{fatec2014s2}
+\begin{enumerate}[label=(\alph*)]
+  \item se Marcelo estuda na Fatec, então ele é irmão de Pedro.
+  \item se Társio é irmão de Pedro, então ele não estuda na Fatec.
+  \item se Júlio não estuda na Fatec, então ele é irmão de Pedro.
+  \item se Sérgio não é irmão de Pedro, então ele não estuda na Fatec.
+  \item se Roberto não estuda na Fatec, então ele não é irmão de Pedro.
+\end{enumerate}
+Depois, escreva a negação da afirmação sobre os irmãos de Pedro e descreva uma situação que a tornaria verdadeira.
+\resp{(e); negação: \enquote{algum irmão de Pedro não estuda na Fatec} (por exemplo, um irmão que estuda em outra escola).}
+\end{questao}
+
+\begin{questao}{2}{FME, exercícios 9 e 10}{6-U1, 6-U2, 6-U3, 6-E3, 6-E5}\label{u6:q8}
+Diga qual é a negação de cada proposição abaixo e classifique cada negação em V ou F.
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $\operatorname{mdc}(2,3)=1$ ou $\operatorname{mmc}(2,3)\neq6$
+  \item $\frac35=\frac6{10}$ ou $3\cdot10\neq6\cdot5$
+  \item $\frac37\ge1$ e $-3\ge-7$
+  \item $2^2=4\rightarrow\sqrt4=2$
+  \item $(-3)^2=9\rightarrow\sqrt9\neq-3$
+  \item $2\le5\rightarrow3^2\le5^2$
+  \item $(\forall x)(x>2\rightarrow3^x>3^2)$
+  \item $(\exists x)(\sqrt x<0)$
+  \item Todo número inteiro primo é ímpar.
+  \item Todo triângulo isósceles é equilátero.
+  \item Existe um losango que não é quadrado.
+  \item Existe um número cuja raiz quadrada é zero.
+  \item Todo triângulo que tem três ângulos congruentes tem três lados congruentes.
+\end{enumerate}
+\end{multicols}
+\resp{Negações: a) $\operatorname{mdc}(2,3)\neq1$ e $\operatorname{mmc}(2,3)=6$ (F)\ \ b) $\frac35\neq\frac6{10}$ e $3\cdot10=6\cdot5$ (F)\ \ c) $\frac37<1$ ou $-3<-7$ (V)\ \ d) $2^2=4$ e $\sqrt4\neq2$ (F)\ \ e) $(-3)^2=9$ e $\sqrt9=-3$ (F)\ \ f) $2\le5$ e $3^2>5^2$ (F)\ \ g) $(\exists x)(x>2$ e $3^x\le3^2)$ (F)\ \ h) $(\forall x)(\sqrt x\ge0)$ (V: onde $\sqrt x$ existe, isto é, para $x\ge0$, ela é $\ge0$)\ \ i) existe um inteiro primo e par (V)\ \ j) existe um triângulo isósceles e não equilátero (V)\ \ k) todo losango é quadrado (F)\ \ l) todo número tem raiz quadrada diferente de zero (F)\ \ m) existe um triângulo equiângulo e não equilátero (F)}
+\end{questao}
+
+\begin{questao}{2}{autoral}{6-U5, 6-H1}\label{u6:q9}
+\begin{enumerate}[label=\alph*)]
+  \item Um buscador recebe \texttt{NOT (lógica AND história)}. Reescreva a busca sem parênteses envolvendo o \texttt{NOT}.
+  \item Um site libera o acesso quando \texttt{idade >= 18 or vip}. Escreva, sem \texttt{not} na frente de parênteses, a condição para bloquear o acesso.
+  \item Prove, pela tabela, que ${\nao}(p\wedge q\wedge r)\Leftrightarrow{\nao}p\vee{\nao}q\vee{\nao}r$.
+\end{enumerate}
+\resp{a) \texttt{(NOT lógica) OR (NOT história)}\ \ b) \texttt{idade < 18 and not vip}\ \ c) as colunas coincidem nas 8 linhas.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{autoral}{6-U2, 6-E5, 6-U4}\label{u6:q10}
+Considere a afirmação \enquote{para todo número real $x$, $x^2-4x+3>0$}.
+\begin{enumerate}[label=\alph*)]
+  \item Escreva a sua negação.
+  \item Resolva a inequação adequada e diga para quais $x$ a negação é testemunhada. A afirmação original é verdadeira?
+\end{enumerate}
+\resp{a) existe $x$ real com $x^2-4x+3\le0$\ \ b) $1\le x\le3$; a original é falsa.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{6-H3, 6-U4, 6-U2}\label{u6:q11}
+Na Unidade 5 (questão \ref{u5:q12}), você escreveu com quantificadores a definição de função \emph{limitada superiormente}: existe um número real $M$ tal que, para todo $x$ real, $f(x)\le M$.
+\begin{enumerate}[label=\alph*)]
+  \item Escreva a definição com quantificadores e escreva sua negação.
+  \item Mostre que $f(x)=x^2$ não é limitada superiormente: para cada $M$, indique um $x$ que testemunhe a negação.
+\end{enumerate}
+\resp{a) $(\exists M)(\forall x)(f(x)\le M)$; negação: $(\forall M)(\exists x)(f(x)>M)$\ \ b) por exemplo, $x=|M|+1$, pois $(|M|+1)^2>|M|\ge M$.}
+\end{questao}
+
+\begin{questao}{2}{autoral — demonstração por absurdo}{6-U4}\label{u6:q12}
+Demonstre, por absurdo, que $\sqrt2$ é irracional. Você pode usar o resultado demonstrado na Unidade 3 (caso 5 do mapa do problema): \enquote{se $n^2$ é par, então $n$ é par}.
+\resp{Demonstração. A prova deve mostrar que supor $\sqrt2=a/b$ com $a/b$ irredutível leva a $a^2=2b^2$, logo $a$ par, logo $b$ par — contradizendo a irredutibilidade.}
+\end{questao}
+
+\begin{questao}{3}{autoral, na estrutura dos enigmas de R.~Smullyan}{6-U2, 6-H3}\label{u6:q13}
+Na ilha dos cavaleiros (sempre dizem a verdade) e dos valetes (sempre mentem), três moradores, A, B e C, conversam. A diz: \enquote{Todos nós três somos valetes.} B diz: \enquote{Exatamente um de nós três é cavaleiro.} Determine o tipo de cada um, justificando cada passo com a negação de uma frase quantificada.
+\resp{A valete, B cavaleiro, C valete.}
+\end{questao}
+
+\begin{questao}{3}{autoral — demonstração por absurdo}{6-U4, 6-H3}\label{u6:q14}
+\begin{enumerate}[label=\alph*)]
+  \item Escreva \enquote{existem infinitos números primos} como \enquote{para todo natural $n$, existe um primo maior que $n$}, com quantificadores, e escreva a sua negação.
+  \item Demonstre, por absurdo, que existem infinitos primos. (Sugestão: se a negação valesse, haveria uma lista finita com todos os primos; considere o produto deles mais 1.)
+\end{enumerate}
+\resp{a) $(\forall n\in\mathbb{N})(\exists p)(p \text{ primo}\wedge p>n)$; negação: $(\exists n\in\mathbb{N})(\forall p)(p\text{ primo}\rightarrow p\le n)$\ \ b) Demonstração. A prova deve mostrar que, se $p_1,\ldots,p_k$ fossem todos os primos, $N=p_1p_2\cdots p_k+1$ deixaria resto 1 na divisão por cada $p_i$, mas $N>1$ tem um divisor primo, que teria de ser um dos $p_i$: contradição.}
+\end{questao}
+
+\begin{sintese}
+\textbf{Ao fim desta unidade, você deveria saber:}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item negar conjunções, disjunções e condicionais (De Morgan e ${\nao}(p\rightarrow q)$);
+  \item negar frases com \enquote{todo}, \enquote{algum} e \enquote{nenhum}, e frases com dois quantificadores;
+  \item negar desigualdades trocando estrita por não estrita, e usar a negação numa prova por absurdo.
+\end{itemize}
+\smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u6}) e com a seção indicada.
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \perguntasintese{O que significa negar uma proposição composta ou quantificada? \hfill\mbox{\small\color{cinza}(→ construções 6-H1 a 6-H3)}}
+  \perguntasintese{Como as regras de De Morgan e o quadrado das oposições foram construídos? \hfill\mbox{\small\color{cinza}(→ De onde vem?)}}
+  \perguntasintese{Como você reconhece que uma questão pede uma negação, mesmo quando ela não usa essa palavra? \hfill\mbox{\small\color{cinza}(→ Onde é usado?)}}
+  \perguntasintese{Qual é o erro mais perigoso ao negar uma frase? Como você o detecta? \hfill\mbox{\small\color{cinza}(→ Erros comuns)}}
+\end{enumerate}
+\end{sintese}
+
+% ------------------------------------------------------------
+\Respostas
+{\small
+\resposta{S}{Síntese de domínio: confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u6}) e com a seção indicada em cada pergunta.}
+}

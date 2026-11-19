@@ -1,0 +1,344 @@
+% Parte B: erros, observações, exemplos, questões, respostas
+\ErrosComuns
+
+\begin{erro}{Ler o \enquote{ou} como exclusivo}{2-E1}
+\campo{O erro.} Classificar \enquote{$2+2=4$ ou $2\cdot2=4$} como falsa \enquote{porque as duas partes são verdadeiras}; achar que quem é estudante \emph{e} idoso perde o desconto \enquote{para estudantes ou idosos}.
+\campo{Por que parece plausível.} No dia a dia, \enquote{ou} costuma oferecer uma escolha (\enquote{café ou chá?}), e o exclusivo foi, por dois mil anos, o \enquote{ou} preferido dos lógicos, dos estoicos a Boole.
+\campo{Onde quebra.} Na regra do produto nulo: $ab=0$ exatamente quando $a=0$ ou $b=0$. Se esse \enquote{ou} fosse exclusivo, $0\cdot0=0$ violaria a regra, porque aí as duas partes valem.
+\campo{Como detectar.} Olhe a linha em que as duas partes são V. O enunciado diz algo sobre ela (\enquote{mas não ambos}, \enquote{apenas uma})? Se não diz, você não tem o direito de excluí-la.
+\campo{Como corrigir.} Em matemática, \enquote{ou} é inclusivo, salvo aviso explícito: V e V dá V.
+\campo{Onde aparece.} Exemplo \ref{ex:2.2}; questão \ref{u2:q3}.
+\end{erro}
+
+\begin{erro}{Exigir relação de sentido entre as partes}{2-E2}
+\campo{O erro.} Recusar-se a classificar \enquote{Natal é a capital do RN ou $2+2=5$}, ou dizer que \enquote{não é proposição, porque uma coisa não tem nada a ver com a outra}.
+\campo{Por que parece plausível.} Na conversa, só juntamos frases que têm a ver entre si; uma frase como essa soa absurda.
+\campo{Onde quebra.} \enquote{Ter a ver} depende de quem lê: um leitor vê relação entre \enquote{Natal é a capital do RN} e \enquote{$2+2=5$} (as duas falam de fatos sobre lugares e números que se aprendem na escola); outro não vê nenhuma. Se o valor dependesse disso, a mesma frase seria V para um e \enquote{sem valor} para o outro, e uma proposição tem exatamente um valor (Unidade 1).
+\campo{Como detectar.} Se você está discutindo o \emph{assunto} das partes em vez de calcular os seus \emph{valores}, saiu da lógica.
+\campo{Como corrigir.} Regra estoica: o valor da composta depende só dos valores das partes. Calcule cada parte e aplique a tabela. A frase acima é V (a primeira parte é V).
+\campo{Onde aparece.} Exemplo \ref{ex:2.1}; questões \ref{u2:q1} e \ref{u2:q3}.
+\end{erro}
+
+\begin{erro}{Não reconhecer \enquote{mas}, \enquote{nem}, \enquote{porém}}{2-E3}
+\campo{O erro.} Achar que \enquote{6 é par, mas não é primo} não é uma conjunção, por não ter a palavra \enquote{e}; traduzir \enquote{nem $p$ nem $q$} por ${\nao}(p\wedge q)$.
+\campo{Por que parece plausível.} Procura-se a \emph{palavra} do conectivo, e não a sua função. O \enquote{mas} sugere oposição e parece mudar o sentido; o \enquote{nem} parece negar \enquote{as duas juntas}.
+\campo{Onde quebra.} Com $p$: \enquote{7 é primo} (V) e $q$: \enquote{7 é par} (F), a frase \enquote{7 não é primo nem par} é claramente falsa: 7 é primo. Mas ${\nao}(p\wedge q)$ é V, porque $p\wedge q$ é F. A tradução errada dá o valor errado.
+\campo{Como detectar.} Teste a tradução numa linha em que uma parte é V e a outra é F: o valor da fórmula tem de bater com o que a frase diz.
+\campo{Como corrigir.} A frase afirma as duas partes? Então é $\wedge$, qualquer que seja a palavra (Frege: o \enquote{mas} não muda o conteúdo). \enquote{Nem $p$ nem $q$} afirma duas negações: ${\nao}p\wedge{\nao}q$.
+\campo{Onde aparece.} Exemplo \ref{ex:2.2}; questão \ref{u2:q2}.
+\end{erro}
+
+\begin{erro}{Tabela com linhas faltando}{2-E4}
+\campo{O erro.} Montar a tabela de uma expressão com três letras em 6 linhas, ou com linhas repetidas.
+\campo{Por que parece plausível.} As linhas são escritas \enquote{de cabeça}, e cada uma parece nova quando é escrita.
+\campo{Onde quebra.} Na tabela de $p\vee q\vee r$, esqueça a linha FFF: todas as linhas restantes dão V, e você chama de \enquote{sempre verdadeira} uma expressão que é falsa justamente na linha que faltou (Unidade 4).
+\campo{Como detectar.} Conte: $n$ letras pedem $2^n$ linhas. Depois, leia cada linha como um número em base 2 (V = 1, F = 0): não pode haver número repetido.
+\campo{Como corrigir.} Use o método de 2-H3: primeira coluna com metade V e metade F, a segunda em blocos de um quarto, e assim por diante.
+\campo{Onde aparece.} Exemplo \ref{ex:2.3}; questão \ref{u2:q5}.
+\end{erro}
+
+% ------------------------------------------------------------
+\Observacoes
+
+
+\begin{obs}{2-O1}
+\textbf{Crisipo contra Hiparco: dois mil anos para conferir uma conta.} Plutarco conta, em duas obras, que Crisipo afirmou que dez assertíveis bastam para formar mais de um milhão de conjunções, e que Hiparco — o maior astrônomo da Antiguidade — mostrou que ele errava feio: seriam 103\,049 do lado afirmativo e 310\,952 do negativo.\src{plutarchNum} Por séculos, os números pareceram arbitrários.
+
+Em 1994, David Hough, lendo um livro de combinatória de Richard Stanley, notou que 103\,049 é o décimo \emph{número de Schröder}: a quantidade de maneiras de agrupar dez símbolos com parênteses, uma contagem que Ernst Schröder estudou em 1870.\src{mathpages} Stanley publicou a observação em 1997, e no ano seguinte outros três matemáticos mostraram que a média entre o 10º e o 11º números de Schröder é 310\,954 — a apenas duas unidades do segundo número de Plutarco.\src{plutarchNum} Ou seja: Hiparco contava \emph{maneiras de agrupar} proposições, e fazia contas certas. A história ainda teve uma reviravolta. Em 2011, a filósofa Susanne Bobzien argumentou que, com as regras da lógica estoica, quem tinha razão era Crisipo: há de fato mais de um milhão.\src{bobzienComb}
+
+A lição para esta unidade é a diferença entre duas contagens. O número de \emph{linhas} de uma tabela com dez letras é modesto: $2^{10}=1024$. Já o número de \emph{expressões} que se podem escrever com dez letras depende das regras de formação, e é enorme. Quem conta precisa dizer, antes, o que está contando.
+\end{obs}
+
+\begin{obs}{2-O2}
+\textbf{O \enquote{ou} exclusivo, $\veebar$.} A disjunção exclusiva não é um conectivo do FME, mas aparece em problemas (\enquote{apenas uma é verdadeira}) e em computação, onde se chama XOR. Pela tabela da construção 2-H2, $p\veebar q$ é V quando $p$ e $q$ têm valores \emph{diferentes}. Daí duas formas de escrevê-la com os conectivos desta unidade:
+\[p\veebar q\ \text{ tem o mesmo valor de }\ (p\vee q)\wedge{\nao}(p\wedge q)\ \text{ e de }\ (p\wedge{\nao}q)\vee({\nao}p\wedge q).\]
+Em 0/1, $p\veebar q=p+q-2pq$, que é o resto da divisão de $p+q$ por 2: soma de bits \enquote{sem o vai-um}. Na Unidade 3 você verá o bicondicional $p\leftrightarrow q$, que é V quando $p$ e $q$ têm valores \emph{iguais}. Logo, $p\veebar q$ é exatamente a negação de $p\leftrightarrow q$: dizer \enquote{ou um, ou outro, mas não ambos} é dizer que \enquote{um não vale se, e somente se, o outro vale}.
+
+Encadeado, o $\veebar$ conta paridade: $(p\veebar q)\veebar r$ é V quando o número de partes V é ímpar, inclusive quando as três são V. Por isso \enquote{exatamente uma de três} não é o $\veebar$ encadeado.
+\end{obs}
+
+\begin{obs}{2-O3}
+\textbf{Nomes e símbolos: o mito do \emph{vel} e os \enquote{diagramas de Venn}.} Uma história repetida em livros e sites diz que o latim tinha duas palavras para \enquote{ou} — \emph{vel}, inclusiva, e \emph{aut}, exclusiva — e que o símbolo $\vee$ seria a inicial de \emph{vel}. O estudo de Landon Elkind e Richard Zach, publicado em 2023, examinou os manuscritos e mostrou outra origem: o $\vee$ nasceu nos trabalhos de Whitehead e Russell por volta de 1903, dentro da tradição de símbolos de Peano, que usava $\cup$.\src{elkindZach} A coincidência com o \emph{v} de \emph{vel} pode ter ajudado o símbolo a pegar, mas não foi a sua origem.
+
+Quanto à distinção latina, ela também é menos nítida do que a lenda sugere: na lógica, quem resolve se um \enquote{ou} é inclusivo ou exclusivo é a definição, não a palavra. Por isso este material diz sempre, com todas as letras, quando um \enquote{ou} é exclusivo.
+
+Outro nome com história: Venn não chamava seus desenhos de \enquote{diagramas de Venn}, e sim de \enquote{círculos eulerianos}, em homenagem a Euler, que já usara círculos para ilustrar silogismos.\src{vennWiki} O nome que conhecemos foi usado por C.~I.~Lewis em 1918.\src{vennSurvey}
+\end{obs}
+
+\begin{obs}{2-O4}
+\textbf{Nem todo \enquote{e} liga duas proposições.} \enquote{2 e 3 são divisores de 5} é uma conjunção abreviada: \enquote{2 é divisor de 5 \emph{e} 3 é divisor de 5} (é o 4º exemplo do FME para o $\wedge$).\src{fme} Mas \enquote{Pedro e Paulo carregaram o piano} pode significar que os dois o carregaram \emph{juntos} — e então não é \enquote{Pedro carregou o piano e Paulo carregou o piano}, porque talvez nenhum dos dois conseguisse sozinho. O mesmo vale para \enquote{João e Maria são casados} (um com o outro?) e para \enquote{3 e 5 são primos entre si}: ser primo entre si é uma propriedade do \emph{par}, não de cada número. Antes de trocar um \enquote{e} por $\wedge$, teste se a frase pode ser desmontada em duas proposições completas, cada uma com sentido sozinha.
+\end{obs}
+
+\begin{obs}{2-O5}
+\textbf{Do piano lógico ao processador.} Jevons construiu uma máquina de teclas, apelidada de \enquote{piano lógico}, que recebia premissas e eliminava mecanicamente as combinações incompatíveis com elas; apresentou-a à Royal Society de Londres em 1870.\src{jevons1870}\src{macJevons} Na dissertação de Shannon, curiosamente, o sinal $+$ indicava a ligação em \emph{série}, porque ele escrevia 1 para o interruptor \emph{aberto}; só depois se firmou a convenção de hoje, em que a série é o produto.\src{shannonConv} Hoje, as portas AND e OR de todo processador são versões eletrônicas dos interruptores em série e em paralelo.\src{shannonMIT} Em programação, a conjunção é \texttt{and} ou \texttt{\&\&}, e a disjunção, \texttt{or} ou \texttt{||}. Um detalhe prático é a \emph{avaliação em curto-circuito}: em \texttt{a and b}, se \texttt{a} é falso, o computador nem olha para \texttt{b}, porque a tabela já garante o resultado; programadores usam isso em \texttt{x != 0 and 10/x > 2}, em que a divisão só é feita quando $x\neq0$. Os buscadores de bibliotecas usam os mesmos conectivos: \texttt{lógica AND história} restringe a busca; \texttt{lógica OR história} amplia.
+\end{obs}
+
+% ------------------------------------------------------------
+\Exemplos
+
+\begin{exemplo}{2.1}{1}{adaptado do FME, itens 3 e 4}{2-H1, 2-H2, 2-U1, 2-E2}\label{ex:2.1}
+Classifique em verdadeira ou falsa cada proposição composta.
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $2$ é primo e $2$ é par.
+  \item $7<5$ ou $7$ é ímpar.
+  \item $\sqrt9=3$ e $3\mid 10$.
+  \item $(-1)^3=1$ ou $(-1)^2=-1$.
+  \item Natal é a capital do Rio Grande do Norte ou $2+2=5$.
+  \item $0{,}5=\tfrac12$ e $2^3=3^2$.
+\end{enumerate}
+\end{multicols}
+\plano Calcular o valor de cada parte; depois aplicar a tabela: na conjunção, uma parte F derruba tudo; na disjunção, uma parte V basta.
+\resolucao
+\begin{center}\small
+\begin{tabular}{lcccc}\toprule
+& 1ª parte & 2ª parte & conectivo & valor\\\midrule
+a) & V & V & $\wedge$ & \textbf{V}\\\fino
+b) & F & V & $\vee$ & \textbf{V}\\\fino
+c) & V & F ($10=3\cdot3+1$) & $\wedge$ & \textbf{F}\\\fino
+d) & F ($(-1)^3=-1$) & F ($(-1)^2=1$) & $\vee$ & \textbf{F}\\\fino
+e) & V & F & $\vee$ & \textbf{V}\\\fino
+f) & V & F ($8\neq9$) & $\wedge$ & \textbf{F}\\\bottomrule
+\end{tabular}
+\end{center}
+\comentario O item (e) junta geografia e aritmética, e muita gente hesita em classificá-lo (erro 2-E2). A tabela não pergunta pelo assunto: uma parte V basta para a disjunção. Em (a), 2 é o único primo par — a conjunção é verdadeira justamente por isso.
+\end{exemplo}
+
+\begin{exemplo}{2.2}{1}{autoral}{2-E1, 2-E3, 2-U2, 2-U5, 2-O4}\label{ex:2.2}
+Sejam $p$: \enquote{7 é primo} e $q$: \enquote{7 é par}. Traduza para símbolos e dê o valor lógico.
+\begin{enumerate}[label=\alph*)]
+  \item 7 é primo, mas não é par.
+  \item 7 não é primo nem par.
+  \item 7 é primo ou par.
+  \item 7 é primo ou ímpar.
+\end{enumerate}
+Depois, escreva com $\wedge$ ou $\vee$ as frases e) \enquote{$x\le 5$}; f) \enquote{$-1<x\le 4$}; g) \enquote{$x\in A\cup B$}; e diga se h) \enquote{Pedro e Paulo carregaram juntos o piano} é uma conjunção.
+\plano Identificar a \emph{função} de cada palavra (afirma as duas partes? basta uma?), e não a palavra em si.
+\resolucao
+a) \enquote{mas} afirma as duas partes: $p\wedge{\nao}q$. Como $p$ é V e ${\nao}q$ é V: \textbf{V}.
+\par b) \enquote{nem\ldots\ nem\ldots} afirma duas negações: ${\nao}p\wedge{\nao}q$. ${\nao}p$ é F: \textbf{F}.
+\par c) $p\vee q$: V $\vee$ F $=$ \textbf{V}.
+\par d) Com $r$: \enquote{7 é ímpar}, $p\vee r$: V $\vee$ V $=$ \textbf{V}. As duas partes são verdadeiras, e a disjunção continua verdadeira: o \enquote{ou} é inclusivo (2-E1).
+\par e) $x<5\ \vee\ x=5$. \quad f) $x>-1\ \wedge\ x\le 4$. \quad g) $x\in A\ \vee\ x\in B$.
+\par h) \textbf{Não.} Carregar \emph{juntos} é algo que só o par faz; a frase não se desmonta em \enquote{Pedro carregou o piano} e \enquote{Paulo carregou o piano} (2-O4).
+\comentario O item (d) é a linha que o erro 2-E1 tenta apagar: as duas partes V, e a disjunção V. O símbolo $\vee$ que você acabou de usar não vem do latim \emph{vel}, apesar da semelhança; vem de Whitehead e Russell (observação 2-O3). Em (b), o erro clássico é escrever ${\nao}(p\wedge q)$, que significa \enquote{não é ambos} — uma frase bem diferente, que volta na Unidade 6.
+\end{exemplo}
+
+\begin{exemplo}{2.3}{2}{autoral}{2-H3, 2-E4}\label{ex:2.3}
+Monte a tabela-verdade de $(p\wedge q)\vee{\nao}r$ e diga em quantas linhas ela é verdadeira. Quantas linhas teria a tabela de uma expressão com 4 letras? Com 5? Com 10?
+\plano Contar as letras (3), concluir que são $2^3=8$ linhas, preenchê-las pelo método de 2-H3 e calcular coluna a coluna.
+\resolucao
+\begin{tabelaverdade}{cccccc}
+$p$ & $q$ & $r$ & $p\wedge q$ & ${\nao}r$ & $(p\wedge q)\vee{\nao}r$\\\midrule
+V & V & V & V & F & \textbf{V}\\\fino
+V & V & F & V & V & \textbf{V}\\\fino
+V & F & V & F & F & F\\\fino
+V & F & F & F & V & \textbf{V}\\\fino
+F & V & V & F & F & F\\\fino
+F & V & F & F & V & \textbf{V}\\\fino
+F & F & V & F & F & F\\\fino
+F & F & F & F & V & \textbf{V}\\
+\end{tabelaverdade}
+A expressão é verdadeira em \textbf{5 linhas}. Conferência por contagem: $p\wedge q$ é V em 2 linhas, ${\nao}r$ em 4, e as duas ao mesmo tempo em 1; logo, $2+4-1=5$.
+Com 4 letras: $2^4=16$ linhas; com 5: $2^5=32$; com 10: $2^{10}=1024$.
+\comentario A conferência por contagem é a leitura 0/1 do $\vee$ ($p+q-pq$) aplicada a linhas: soma-se e desconta-se o que foi contado duas vezes. E 1024 linhas para 10 letras é pouco perto do que Crisipo e Hiparco discutiam: eles contavam \emph{expressões}, não linhas (2-O1).
+\end{exemplo}
+
+\begin{exemplo}{2.4}{2}{OBMEP 2005, 1ª fase, nível 3, q.~20}{2-U3, 2-O2}\label{ex:2.4}
+Regina, Paulo e Iracema tentam adivinhar quantas bolas estão dentro de uma caixa fechada. Eles já sabem que o número de bolas na caixa é maior que 100 e menor que 140. Eles fazem as seguintes afirmações.
+\begin{itemize}
+  \item Regina: \enquote{Na caixa há mais de 100 bolas e menos de 120 bolas.}
+  \item Paulo: \enquote{Na caixa há mais de 105 bolas e menos de 130 bolas.}
+  \item Iracema: \enquote{Na caixa há mais de 120 bolas e menos de 140 bolas.}
+\end{itemize}
+Sabe-se que apenas uma dessas afirmações é correta. Quantos são os possíveis valores para o número de bolas dentro da caixa?\quad
+(A) 16\quad (B) 13\quad (C) 11\quad (D) 5\quad (E) 1
+\plano Cada afirmação é uma conjunção (um intervalo). \enquote{Apenas uma é correta} é a disjunção estoica de três partes: exatamente uma (2-O2). Marcar os intervalos na reta e procurar onde exatamente um deles vale.
+\resolucao
+Para $n$ inteiro com $101\le n\le 139$: Regina vale para $101\le n\le119$; Paulo, para $106\le n\le129$; Iracema, para $121\le n\le139$.
+\begin{itemize}
+  \item $101\le n\le105$: só Regina. \textbf{5 valores.}
+  \item $106\le n\le119$: Regina e Paulo. Descartado.
+  \item $n=120$: Regina falha ($120$ não é menor que $120$), Iracema falha ($120$ não é maior que $120$), Paulo vale. \textbf{1 valor.}
+  \item $121\le n\le129$: Paulo e Iracema. Descartado.
+  \item $130\le n\le139$: só Iracema. \textbf{10 valores.}
+\end{itemize}
+Total: $5+1+10=16$. \textbf{Alternativa (A).}
+\comentario O caso $n=120$ é a armadilha: as desigualdades são estritas, e o 120 escapa dos intervalos de Regina e de Iracema. O texto e as alternativas acima são os da prova; o FME reproduz a questão com as alternativas em ordem inversa (lá, 16 é a letra e).\src{obmep2005}
+\end{exemplo}
+
+\begin{exemplo}{2.5}{3}{histórico-aplicado (Shannon, 1937)}{2-U4, 2-H1, 2-H2}\label{ex:2.5}
+Uma lâmpada $L$ é ligada a uma bateria por três interruptores, $a$, $b$ e $c$, como na figura: $a$ em série com o par $b$, $c$, que estão em paralelo entre si. Indique por $a$ a proposição \enquote{o interruptor $a$ está fechado}, e assim para $b$ e $c$.
+\begin{center}
+\begin{circuitikz}[scale=0.85,transform shape]
+  \draw (0,0) to[battery1] (0,2.4) to[nos,l=$a$] (2.6,2.4) -- (3.2,2.4);
+  \draw (3.2,2.4) -- (3.2,3.2) to[nos,l=$b$] (5.6,3.2) -- (5.6,2.4);
+  \draw (3.2,2.4) -- (3.2,1.6) to[nos,l_=$c$] (5.6,1.6) -- (5.6,2.4);
+  \draw (5.6,2.4) -- (6.6,2.4) to[lamp,l=$L$] (6.6,0) -- (0,0);
+\end{circuitikz}
+\end{center}
+\begin{enumerate}[label=\alph*)]
+  \item Escreva uma proposição composta que seja verdadeira exatamente quando $L$ acende.
+  \item Em quantas das combinações de posições dos interruptores a lâmpada acende?
+  \item Projete um circuito com três interruptores que acenda $L$ se, e somente se, \emph{pelo menos dois} deles estiverem fechados (um \enquote{voto de maioria}). Escreva a proposição correspondente.
+\end{enumerate}
+\plano Os itens (a) e (b) são o caso 4 do mapa; o (c) leva a ferramenta para o sentido inverso, de uma condição para um circuito que ninguém desenhou ainda. Usar o dicionário de Shannon: série $=\wedge$, paralelo $=\vee$. Para contar, montar a tabela de 8 linhas. Para projetar, fazer o caminho inverso: escrever a condição com $\wedge$ e $\vee$ e traduzi-la em fios.
+\resolucao
+a) A corrente precisa passar por $a$ \emph{e} pelo bloco $b$/$c$; no bloco, basta um dos dois: \[a\wedge(b\vee c).\]
+b) São $2^3=8$ combinações. A expressão exige $a$ V (4 linhas) e, dentro delas, $b\vee c$ V, o que falha só quando $b$ e $c$ são ambos F. Restam $4-1=$ \textbf{3 combinações}: $(a,b,c)=$ (V,V,V), (V,V,F), (V,F,V).\par
+c) \enquote{Pelo menos dois fechados} significa: $a$ e $b$, ou $a$ e $c$, ou $b$ e $c$:
+\[(a\wedge b)\vee(a\wedge c)\vee(b\wedge c).\]
+Circuito: três ramos em paralelo, cada um com dois interruptores em série ($a$–$b$, $a$–$c$, $b$–$c$). Na prática, cada interruptor físico aparece em dois ramos (interruptores de dois contatos acionados juntos). A tabela confirma: a expressão é V em 4 das 8 linhas — as três com exatamente dois V e a linha V, V, V.
+\comentario Foi esse o salto de Shannon: em vez de testar circuitos na bancada, escrever a expressão, simplificá-la com álgebra e só então montar o circuito. O circuito do item (c) é, em miniatura, o que faz um somador binário decidir o \enquote{vai-um}: há vai-um quando pelo menos dois dos três bits somados valem 1.
+\end{exemplo}
+
+% ------------------------------------------------------------
+\Questoes
+
+\begin{questao}{1}{FME, exercício 3}{2-U1}\label{u2:q1}
+Classifique em verdadeira ou falsa cada uma das seguintes proposições compostas:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $3>1$ e $4>2$
+  \item $3>1$ ou $3=1$
+  \item $2\mid 4$ ou $2\mid(4+1)$
+  \item $3(5+2)=3\cdot5+3\cdot2$ e $3\mid 7$
+  \item $\tfrac12<\tfrac34$ ou $5\mid 11$
+  \item $(-1)^6=-1$ e $2^5<(-2)^7$
+  \item $\sqrt{16}=6$ ou $\operatorname{mdc}(4,7)=2$
+\end{enumerate}
+\end{multicols}
+\resp{a) V\ \ b) V\ \ c) V\ \ d) F\ \ e) V\ \ f) F\ \ g) F}
+\end{questao}
+
+\begin{questao}{1}{autoral}{2-U1, 2-E3}\label{u2:q2}
+Sejam $p$: \enquote{6 é par} e $q$: \enquote{6 é primo}. Escreva cada frase em símbolos e dê o seu valor lógico.
+\begin{enumerate}[label=\alph*)]
+  \item 6 é par, mas não é primo.
+  \item 6 não é par nem primo.
+  \item 6 é primo, porém é par.
+  \item 6 é par ou primo.
+  \item Embora seja par, 6 não é primo.
+\end{enumerate}
+\resp{a) $p\wedge{\nao}q$ (V)\ \ b) ${\nao}p\wedge{\nao}q$ (F)\ \ c) $q\wedge p$ (F)\ \ d) $p\vee q$ (V)\ \ e) $p\wedge{\nao}q$ (V)}
+\end{questao}
+
+\begin{questao}{1}{autoral}{2-H2, 2-E1, 2-E2}\label{u2:q3}
+\begin{enumerate}[label=\alph*)]
+  \item Um cinema dá meia-entrada a quem é estudante ou tem 60 anos ou mais. Uma estudante universitária de 65 anos tem direito à meia-entrada? Justifique pela tabela de $\vee$.
+  \item Classifique em V ou F: \enquote{Brasília é a capital do Brasil ou 7 é par.}
+  \item Classifique em V ou F: \enquote{O Sol é uma estrela e 10 é primo.}
+  \item Classifique em V ou F: \enquote{$2+2=4$ ou $2\cdot2=4$.}
+\end{enumerate}
+\resp{a) Sim (V $\vee$ V $=$ V)\ \ b) V\ \ c) F\ \ d) V}
+\end{questao}
+
+\begin{questao}{1}{autoral}{2-U2, 2-U5}\label{u2:q4}
+Sejam $A=\{x\in\mathbb{R}\mid -2<x\le3\}$ e $B=\{x\in\mathbb{R}\mid x\ge1\}$.
+\begin{enumerate}[label=\alph*)]
+  \item Para cada $x\in\{-2,\ 0,\ 1,\ 3,\ 5\}$, dê o valor lógico de \enquote{$x\in A\wedge x\in B$} e de \enquote{$x\in A\vee x\in B$}.
+  \item Descreva por desigualdades os conjuntos $A\cap B$ e $A\cup B$.
+\end{enumerate}
+\resp{a) $\wedge$: F, F, V, V, F;\ \ $\vee$: F, V, V, V, V\ \ b) $A\cap B$: $1\le x\le3$;\ \ $A\cup B$: $x>-2$}
+\end{questao}
+
+\begin{questao}{2}{autoral}{2-H3, 2-E4}\label{u2:q5}
+Um estudante montou a tabela-verdade de $(p\vee q)\wedge{\nao}r$ escrevendo apenas as linhas abaixo (valores de $p$, $q$, $r$):
+\[\text{VVV},\quad \text{VVF},\quad \text{VFV},\quad \text{FVV},\quad \text{FVF},\quad \text{FFF}.\]
+\begin{enumerate}[label=\alph*)]
+  \item Quantas linhas a tabela deveria ter? Quais estão faltando?
+  \item Qual é o valor de $(p\vee q)\wedge{\nao}r$ em cada linha que falta?
+  \item Quantas linhas teria a tabela de uma expressão com as letras $p$, $q$, $r$ e $s$?
+\end{enumerate}
+\resp{a) 8 linhas; faltam (V, F, F) e (F, F, V)\ \ b) V e F, respectivamente\ \ c) 16}
+\end{questao}
+
+\begin{questao}[integradora]{2}{autoral}{2-U2}\label{u2:q6}
+Determine todos os números inteiros $x$ para os quais é verdadeira a proposição
+\[(-3<x\le2\ \wedge\ x\neq0)\ \vee\ x^2=16.\]
+\resp{$-4,\ -2,\ -1,\ 1,\ 2,\ 4$}
+\end{questao}
+
+\begin{questao}{2}{OBMEP 2009, 1ª fase, nível 3, q.~4}{2-U2}\label{u2:q7}
+Arnaldo, Beto, Celina e Dalila formam dois casais. Os quatro têm idades diferentes. Arnaldo é mais velho que Celina e mais novo que Dalila. O esposo de Celina é a pessoa mais velha. É correto afirmar que:
+\begin{enumerate}[label=(\alph*)]
+  \item Arnaldo é mais velho que Beto e sua esposa é Dalila.
+  \item Arnaldo é mais velho que sua esposa Dalila.
+  \item Celina é a mais nova de todos e seu marido é Beto.
+  \item Dalila é mais velha que Celina e seu marido é Beto.
+  \item Celina é mais velha que seu marido Arnaldo.
+\end{enumerate}
+\resp{(c)}
+\end{questao}
+
+\begin{questao}{2}{autoral}{2-U3}\label{u2:q8}
+Um número inteiro $n$, com $1\le n\le 30$, foi escolhido. Três amigos fazem afirmações sobre ele:
+\begin{itemize}
+  \item Ana: \enquote{$n$ é par e maior que 10.}
+  \item Bia: \enquote{$n$ é múltiplo de 3 ou menor que 5.}
+  \item Caio: \enquote{$n$ é múltiplo de 5 ou maior que 25.}
+\end{itemize}
+Sabe-se que apenas uma das três afirmações é verdadeira. Quantos são os valores possíveis de $n$?\quad
+(a) 10\quad (b) 12\quad (c) 14\quad (d) 16\quad (e) 18
+\resp{(c)}
+\end{questao}
+
+\begin{questao}{2}{autoral — demonstração}{2-H1, 2-H2, 2-O2}\label{u2:q9}
+Represente V por 1 e F por 0. Demonstre que, para quaisquer proposições $p$ e $q$:
+\begin{enumerate}[label=\alph*)]
+  \item o valor de $p\wedge q$ é $pq$, e o valor de $p\vee q$ é $p+q-pq$;
+  \item $p\vee q$ é falsa se, e somente se, $p$ e $q$ são ambas falsas;
+  \item o valor de $p\veebar q$ (\enquote{ou exclusivo}) é $p+q-2pq$, isto é, o valor de $p\vee q$ menos o de $p\wedge q$.
+\end{enumerate}
+\resp{Demonstração. A prova deve mostrar: a) que, nos quatro casos de $(p,q)$, $pq$ e $p+q-pq$ reproduzem as tabelas de $\wedge$ e $\vee$; b) que $p+q-pq=0$ só no caso $p=q=0$; c) que $p+q-2pq$ vale 1 exatamente quando $p\neq q$, e que é igual a $(p+q-pq)-pq$.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{2-U4, 2-U3, 2-H3}\label{u2:q10}
+Um painel tem três interruptores, $a$, $b$ e $c$. Deseja-se que uma lâmpada acenda se, e somente se, \emph{exatamente um} dos três estiver ligado.
+\begin{enumerate}[label=\alph*)]
+  \item Escreva uma proposição composta, usando apenas ${\nao}$, $\wedge$ e $\vee$, que seja verdadeira exatamente nesses casos. Justifique pela tabela-verdade.
+  \item Mostre, pela tabela, que $(a\vee b\vee c)\wedge{\nao}(a\wedge b)\wedge{\nao}(a\wedge c)\wedge{\nao}(b\wedge c)$ tem os mesmos valores que a sua resposta ao item (a).
+\end{enumerate}
+\resp{a) $(a\wedge{\nao}b\wedge{\nao}c)\vee({\nao}a\wedge b\wedge{\nao}c)\vee({\nao}a\wedge{\nao}b\wedge c)$\ \ b) as duas colunas coincidem nas 8 linhas (V só nas linhas com exatamente um V).}
+\end{questao}
+
+\begin{questao}{3}{autoral}{2-H1, 2-H2, 2-H3, 2-O1}\label{u2:q11}
+Numa tabela-verdade com as letras $p$ e $q$, a coluna final de uma expressão é a lista dos seus quatro valores, nas linhas VV, VF, FV e FF.
+\begin{enumerate}[label=\alph*)]
+  \item Quantas colunas finais diferentes são possíveis?
+  \item Escreva, usando só ${\nao}$, $\wedge$ e $\vee$, uma expressão cuja coluna final seja V, F, F, V.
+  \item Descreva um método que, para \emph{qualquer} coluna final, produza uma expressão com ${\nao}$, $\wedge$ e $\vee$ que tenha essa coluna, e explique por que ele funciona.
+\end{enumerate}
+\resp{a) $2^4=16$\ \ b) por exemplo, $(p\wedge q)\vee({\nao}p\wedge{\nao}q)$\ \ c) Demonstração. A prova deve mostrar que, para cada linha em que a coluna é V, há uma conjunção (cada letra ou sua negação) que é V só nessa linha, e que a disjunção dessas conjunções é V exatamente nas linhas escolhidas; se não houver linha V, serve $p\wedge{\nao}p$.}
+\end{questao}
+
+\begin{questao}{3}{autoral — demonstração}{2-H2, 2-H3}\label{u2:q12}
+Represente V por 1 e F por 0.
+\begin{enumerate}[label=\alph*)]
+  \item Mostre que o valor de $p\vee q$ também pode ser escrito como $1-(1-p)(1-q)$, e explique essa fórmula em palavras.
+  \item Generalize: escreva o valor de $p_1\vee p_2\vee\cdots\vee p_n$ como uma fórmula do mesmo tipo e use-a para dizer em quantas das $2^n$ linhas da tabela essa disjunção é verdadeira.
+\end{enumerate}
+\resp{Demonstração. A prova deve mostrar que $1-(1-p)(1-q)=p+q-pq$ (\enquote{não é o caso de as duas serem falsas}), que a generalização é $1-(1-p_1)(1-p_2)\cdots(1-p_n)$, e que ela vale 0 só quando todas as letras valem 0: a disjunção é V em $2^n-1$ linhas.}
+\end{questao}
+
+\begin{sintese}
+\textbf{Ao fim desta unidade, você deveria saber:}
+\begin{itemize}[leftmargin=1.4em,itemsep=1pt]
+  \item montar a tabela-verdade de qualquer composta com $\wedge$ e $\vee$, com as $2^n$ linhas;
+  \item ler \enquote{ou} como inclusivo e \enquote{mas}, \enquote{porém}, \enquote{embora} como $\wedge$;
+  \item calcular o valor de uma composta só pelos valores das partes, sem olhar o assunto.
+\end{itemize}
+\smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u2}) e com a seção indicada.
+\begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
+  \perguntasintese{O que significam $p\wedge q$ e $p\vee q$, e quando cada uma é verdadeira? \hfill\mbox{\small\color{cinza}(→ Definição)}}
+  \perguntasintese{Como o \enquote{ou} passou de exclusivo, nos estoicos e em Boole, a inclusivo na matemática? \hfill\mbox{\small\color{cinza}(→ De onde vem?)}}
+  \perguntasintese{Que palavras de um enunciado indicam um $\wedge$ ou um $\vee$, e quando o \enquote{ou} pede atenção? \hfill\mbox{\small\color{cinza}(→ Onde é usado?)}}
+  \perguntasintese{Qual é o erro mais perigoso ao montar uma tabela ou ler um conectivo? Como você o detecta? \hfill\mbox{\small\color{cinza}(→ Erros comuns)}}
+\end{enumerate}
+\end{sintese}
+
+% ------------------------------------------------------------
+\Respostas
+{\small
+\resposta{S}{Síntese de domínio: confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u2}) e com a seção indicada em cada pergunta.}
+}
