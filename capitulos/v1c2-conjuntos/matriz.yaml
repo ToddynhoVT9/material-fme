@@ -33,8 +33,8 @@ unidades:
     E2: reticências sem lei clara ({2, 4, …}) — "o padrão é óbvio"
     E3: confundir ∅ com {0} ou {∅}; achar {x | 0·x = 0} vazio — "tem um zero, então é nada"
     E4: aceitar descrição sem critério de pertinência ("os números grandes") — "todo mundo entende"
-    O1: paradoxo do barbeiro (versão popular do de Russell), se o de Russell não estiver em H3
-    O2: 'compreensão de conjuntos em programação: o universo é obrigatório'
+    O1: 'Cantor e o conjunto como objeto (ℕ é uma coisa tanto quanto o 3)'
+    O2: 'não existe o conjunto de todos os objetos (Zermelo, 1908)'
   exemplos: []
   questoes_meta:
     N1: 4
