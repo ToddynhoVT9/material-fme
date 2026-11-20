@@ -210,13 +210,164 @@ unidades:
     O1: notação ⊆ / ⊊ em outros livros
     O2: 'Galileu: parte infinita tão grande quanto o todo'
     O3: 'urelementos: no FME a não é conjunto; na teoria usual tudo é conjunto'
-  exemplos: []
+  exemplos:
+  - rotulo: ex:u2:fme17
+    nivel: 1
+    fonte: FME, exercício 17
+    tema: traduzir para ∈, ⊂, =
+    cobre:
+    - H1
+    - H2
+    - U1
+  - rotulo: ex:u2:fme18
+    nivel: 1
+    fonte: FME, exercício 18
+    tema: V/F de inclusões com justificativa
+    cobre:
+    - H2
+    - U2
+    - E3
+  - rotulo: ex:u2:chaves
+    nivel: 2
+    fonte: autoral
+    tema: ∈ × ⊂ com chaves aninhadas e ∅
+    cobre:
+    - H2
+    - U1
+    - E1
+    - E2
+  - rotulo: ex:u2:multiplos
+    nivel: 2
+    fonte: autoral
+    tema: 'dupla inclusão: múltiplos de 2 e 3 = múltiplos de 6'
+    cobre:
+    - H3
+    - U2
+    - E4
+  - rotulo: ex:u2:partes
+    nivel: 2
+    fonte: autoral
+    tema: 𝒫({a,b,c}); subconjuntos com o 1
+    cobre:
+    - H4
+    - U3
+    - E5
+  - rotulo: ex:u2:vazio
+    nivel: 3
+    fonte: autoral
+    tema: unicidade do vazio
+    cobre:
+    - H2
+    - H3
   questoes_meta:
     N1: 4
     N2: 5
     N3: 2
     integradoras: 1
-  questoes_pool: []
+  questoes_pool:
+  - rotulo: u2:completar
+    nivel: 1
+    fonte: autoral
+    cobre:
+    - H2
+    - U1
+    integradora: false
+  - rotulo: u2:fme19
+    nivel: 1
+    fonte: FME, exercício 19
+    cobre:
+    - H1
+    integradora: false
+  - rotulo: u2:fme22
+    nivel: 1
+    fonte: FME, exercício 22
+    cobre:
+    - H4
+    - E5
+    integradora: false
+  - rotulo: u2:fme21
+    nivel: 1
+    fonte: FME, exercício 21
+    cobre:
+    - H2
+    integradora: false
+  - rotulo: u2:fme20
+    nivel: 2
+    fonte: FME, exercício 20
+    cobre:
+    - H2
+    - U1
+    - E1
+    - E2
+    integradora: false
+  - rotulo: u2:fme47
+    nivel: 2
+    fonte: adaptado do FME, exercício 47
+    cobre:
+    - H2
+    - U1
+    - E1
+    - E2
+    integradora: false
+  - rotulo: u2:exemplos
+    nivel: 2
+    fonte: autoral
+    cobre:
+    - H2
+    - E3
+    integradora: false
+  - rotulo: u2:multiplos4
+    nivel: 2
+    fonte: autoral
+    cobre:
+    - H2
+    - H3
+    - U2
+    - E4
+    integradora: false
+  - rotulo: u2:fme35
+    nivel: 2
+    fonte: FME, exercício 35
+    cobre:
+    - H4
+    - U3
+    integradora: false
+  - rotulo: u2:contar
+    nivel: 2
+    fonte: autoral
+    cobre:
+    - H4
+    - U3
+    - E5
+    integradora: false
+  - rotulo: u2:divisores
+    nivel: 2
+    fonte: autoral
+    cobre:
+    - H4
+    - U3
+    integradora: true
+  - rotulo: u2:vazios3
+    nivel: 3
+    fonte: autoral
+    cobre:
+    - H4
+    - E1
+    integradora: false
+  - rotulo: u2:cadeias
+    nivel: 3
+    fonte: ITA via FME, ano não informado (adaptado)
+    cobre:
+    - H2
+    - H4
+    integradora: false
+  - rotulo: u2:paridade
+    nivel: 3
+    fonte: autoral
+    cobre:
+    - H4
+    - U3
+    integradora: false
 - n: 3
   titulo: Reunião e interseção
   pergunta: Como o "ou" e o "e" da lógica viram operações entre conjuntos?

@@ -11,13 +11,13 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Montagem da U2 (só o dossiê é entrada; enunciados do FME transcritos em `dossies/u2.md` §6). Seguir a didática v4 e D7.
+Revisão da U2 (etapa 4, revisor independente com o brief v4).
 
 ## Unidades
 | U | título | etapa | revisão | observação |
 |---|---|---|---|---|
 | 1 | Conjunto, elemento e descrição | calibrada (pronta) | R1 (revisor independente): 0 · 6 · 19, todos tratados | `verif/u1.py` 47 OK; checar 0/0 |
-| 2 | Igualdade, inclusão e conjunto das partes | dossiê pronto | — | `verif/u2.py` 20 OK |
+| 2 | Igualdade, inclusão e conjunto das partes | revisão | — | montada; `verif/u2.py` 21 OK; checar 0/0 |
 | 3 | Reunião e interseção | escopo | — | — |
 | 4 | Diferença e complementar | escopo | — | — |
 | 5 | Contando elementos: dois conjuntos | escopo | — | — |
@@ -60,3 +60,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 | 2026-11-19 | 3 · U1 | montagem: artigo (4 construções, 2 definições, 4 casos, 6 gatilhos), 4 erros, 2 obs., 6 exemplos (N1 2 · N2 3 · N3 1), 14 questões (N1 5 · N2 6 · N3 3; 2 integradoras); 7 fontes novas; autoconferência §7 feita (u1:parametro deixou de ser integradora: resolve-se só com o discriminante) | 0 FALHAS · 0 AVISOS (37 p.); folhas conferidas |
 | 2026-11-19 | 4 · U1 | revisão independente (0 bloqueante, 6 importantes, 19 menores); todos aplicados ou decididos (`revisoes/u1.md`); PDF de calibração em `saida/` | 0 FALHAS · 0 AVISOS; verif 47 OK |
 | 2026-11-20 | calibração · U1 + didática v4 + 2 · U2 | ajustes da calibração (D8); didática v4 registrada no kit; dossiê da U2: história M1–M3 (Zermelo/extensionalidade, Peano/ε, Frege/cair sob × subordinação; SEP, MacTutor, Park 2018), O2 Galileu, mapa com 3 casos, E1–E5, banco X1–X6 / P1–P14; M15 (vest. 45 com alternativa repetida) | U1: 0/0, verif 47 OK; `verif/u2.py` 20 OK |
+| 2026-11-20 | 3 · U2 | montagem: artigo (4 construções, 2 definições, 3 casos, 4 gatilhos; Zermelo, Peano, Frege em três camadas), 5 erros, 3 obs., 6 exemplos (N1 2 · N2 3 · N3 1), 14 questões (N1 4 · N2 7 · N3 3; 1 integradora); 7 fontes novas; autoconferência (a)–(g) feita | 0 FALHAS · 0 AVISOS (U1+U2, 47 p.); folhas conferidas |

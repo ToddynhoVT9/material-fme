@@ -1,68 +1,292 @@
 % ============================================================
 % Unidade 2 — Parte B: erros, observações, exemplos, questões, síntese, respostas
+% Fonte única: dossies/u2.md · respostas conferidas em verif/u2.py
 % ============================================================
 \ErrosComuns
-% Roteiro de 5 passos (função obrigatória; em erros simples, passos podem ser uma frase).
-% "Onde quebra" = contraexemplo CONCRETO. "Como detectar" = teste feito DEPOIS de escrever.
 
-\begin{erro}{«O erro, como frase curta»}{2-E1}
-\campo{O erro.} «O que o aluno escreve.»
-\campo{Por que parece plausível.} «O raciocínio que leva a ele.»
-\campo{Onde quebra.} «Contraexemplo concreto.»
-\campo{Como detectar.} «O teste depois de escrever.»
-\campo{Como corrigir.} «A regra certa, com remissão à construção.»
-\campo{Onde aparece.} \exref{ex:u2:nome}; \qref{u2:nome}.
+\begin{erro}{Trocar $\in$ por $\subset$}{2-E1}
+\campo{O erro.} Escrever $\{3\}\in\{1,3,5\}$ ou $3\subset\{1,3,5\}$.
+\campo{Por que parece plausível.} \enquote{O 3 está lá dentro}, e em português \enquote{está em} serve para as duas coisas.
+\campo{Onde quebra.} Os elementos de $\{1,3,5\}$ são 1, 3 e 5; o conjunto $\{3\}$ não é nenhum deles, logo $\{3\}\notin\{1,3,5\}$. E o número 3 não é um conjunto, então \enquote{$3\subset\ldots$} não faz sentido. O correto é $3\in\{1,3,5\}$ e $\{3\}\subset\{1,3,5\}$.
+\campo{Como detectar.} Olhe o lado esquerdo do símbolo. Se é um objeto, a pergunta é de $\in$: procure-o na lista. Se é um conjunto, a pergunta costuma ser de $\subset$: procure cada um dos seus elementos — ou de $\in$, se esse conjunto aparecer listado como elemento.
+\campo{Como corrigir.} Leia $\in$ como \enquote{é um dos elementos de} e $\subset$ como \enquote{todos os elementos de\ldots{} estão em\ldots} (construção 2-H2).
+\campo{Onde aparece.} \exref{ex:u2:chaves}; questões \ref{u2:fme20} e \ref{u2:fme47}.
+\end{erro}
+
+\begin{erro}{Inverter o papel do vazio}{2-E2}
+\campo{O erro.} Achar que $\varnothing\in A$ para todo conjunto $A$, ou que $\varnothing\subset A$ só quando $A$ \enquote{tem o vazio}.
+\campo{Por que parece plausível.} \enquote{O vazio está em todo lugar}.
+\campo{Onde quebra.} Em $A=\{7,8\}$, os elementos são 7 e 8: $\varnothing\notin A$. Mas $\varnothing\subset A$, como em qualquer conjunto (construção 2-H2). Já em $\{\varnothing,7\}$ o vazio está listado, e aí $\varnothing\in\{\varnothing,7\}$.
+\campo{Como detectar.} Para $\in$, procure \enquote{$\varnothing$} escrito entre as chaves. Para $\subset$, a resposta é sempre \enquote{sim}.
+\campo{Como corrigir.} Separe as perguntas: \enquote{o vazio está na lista?} (pertinência) e \enquote{algum elemento do vazio fica de fora?} (inclusão — nunca, porque o vazio não tem elementos).
+\campo{Onde aparece.} \exref{ex:u2:chaves}; questões \ref{u2:fme20} e \ref{u2:fme47}.
+\end{erro}
+
+\begin{erro}{Negar \enquote{$A\subset B$} como \enquote{$B\subset A$}}{2-E3}
+\campo{O erro.} De \enquote{$A$ não está contido em $B$} concluir que \enquote{então $B$ está contido em $A$}.
+\campo{Por que parece plausível.} Parece que só há duas possibilidades, como em \enquote{maior} e \enquote{menor}.
+\campo{Onde quebra.} Com $A=\{1,2\}$ e $B=\{2,3\}$: $A\not\subset B$ (1 é testemunha) e também $B\not\subset A$ (3 é testemunha).
+\campo{Como detectar.} Procure uma testemunha em cada sentido; podem existir as duas.
+\campo{Como corrigir.} $A\not\subset B$ é a negação de \enquote{para todo $x$, se $x\in A$, então $x\in B$}: existe $x\in A$ com $x\notin B$ (negação do condicional, Cap.~I). Isso não diz nada sobre $B\subset A$.
+\campo{Onde aparece.} \exref{ex:u2:fme18}; \qref{u2:exemplos}.
+\end{erro}
+
+\begin{erro}{Provar com exemplos, ou com um lado só}{2-E4}
+\campo{O erro.} Dizer \enquote{testei 6, 12 e 18 e deu certo} como prova de que dois conjuntos são iguais; ou provar só $A\subset B$ e concluir $A=B$.
+\campo{Por que parece plausível.} Os exemplos convencem, e \enquote{estar contido} parece quase \enquote{ser igual}.
+\campo{Onde quebra.} A igualdade $x^2=x$ vale para 0 e para 1 e falha para 2: exemplos não garantem o \enquote{todo}. E $\mathbb{N}\subset\mathbb{Z}$, mas $\mathbb{N}\neq\mathbb{Z}$.
+\campo{Como detectar.} Pergunte: o argumento usa um elemento \emph{qualquer}, ou números escolhidos? Os dois sentidos foram provados?
+\campo{Como corrigir.} Use o elemento genérico e a dupla inclusão (construção 2-H3).
+\campo{Onde aparece.} \exref{ex:u2:multiplos}; \qref{u2:multiplos4}.
+\end{erro}
+
+\begin{erro}{Contar subconjuntos esquecendo o vazio ou o todo}{2-E5}
+\campo{O erro.} Dizer que $\{a,b,c\}$ tem 6 subconjuntos: os três de um elemento e os três de dois elementos.
+\campo{Por que parece plausível.} \enquote{Parte} sugere um pedaço menor e não vazio.
+\campo{Onde quebra.} Pela definição, $\varnothing\subset\{a,b,c\}$ e $\{a,b,c\}\subset\{a,b,c\}$. São $8=2^3$ subconjuntos.
+\campo{Como detectar.} Compare o total com $2^n$.
+\campo{Como corrigir.} Monte a lista pela árvore \enquote{entra / não entra} (construção 2-H4): ela inclui as duas escolhas extremas, \enquote{ninguém entra} e \enquote{todos entram}.
+\campo{Onde aparece.} \exref{ex:u2:partes}; questões \ref{u2:fme22} e \ref{u2:contar}.
 \end{erro}
 
 % ------------------------------------------------------------
 \Observacoes
-% Camada opcional (selo + letra menor). Teste de pertença: quem pula TODAS as observações
-% perde algo necessário para usar o conceito? Se sim, o conteúdo vai para a seção dele (E-R3-3).
-% Uma observação não resolve nem antecipa nenhum N3 (E-R3-1).
 
 \begin{obs}{2-O1}
-\textbf{«Título.»} «Ampliação: curiosidade, generalização, caso-limite, conexão, exceção.»\src{fme}
+\textbf{Outra notação para \enquote{contido}.} Neste material, $A\subset B$ admite $A=B$. Muitos livros escrevem $A\subseteq B$ para isso e reservam $A\subset B$, ou $A\subsetneq B$, para o caso em que $A$ é um \textbf{subconjunto próprio} de $B$ (contido e diferente).\src{gardnerNotes} Ao ler outro texto, confira qual convenção ele usa.
+\end{obs}
+
+\begin{obs}{2-O2}
+\textbf{Uma parte tão grande quanto o todo.} Em 1638, no livro \emph{Duas novas ciências}, Galileu Galilei pôs seus personagens para comparar os números naturais $1,2,3,\ldots$ com os quadrados $1,4,9,\ldots$. Os quadrados são só uma parte dos números; mas cada número é raiz de exatamente um quadrado, e cada quadrado tem exatamente uma raiz, de modo que os dois se emparelham um a um.\src{galileu1638}\src{blaszczyk2021} A conclusão de Galileu foi que, no infinito, \enquote{maior}, \enquote{menor} e \enquote{igual} não funcionam como nas coleções finitas. Em conjuntos finitos, um subconjunto próprio sempre tem menos elementos; em conjuntos infinitos, não necessariamente.
+\end{obs}
+
+\begin{obs}{2-O3}
+\textbf{Elementos que não são conjuntos.} Neste material, um elemento pode ser um objeto que não é conjunto — uma letra, um número, uma pessoa. Esses objetos se chamam \emph{urelementos}. A teoria de Zermelo de 1908 os admitia; as teorias usadas hoje como fundamento da matemática dispensam esses objetos e trabalham só com conjuntos, de modo que lá todo elemento é, ele próprio, um conjunto.\src{nlabZFA}\src{zermelo1908}
 \end{obs}
 
 % ------------------------------------------------------------
 \Exemplos
-% Pelo menos um por nível; juntos cobrem todo H, U e E. Cada ID declarado é TREINADO, não só citado.
-% IDs O só se o item treina a observação (E-R3-2). Primeiro argumento vazio = número automático.
-% Plano → Resolução → Comentário. N3: situação nova, que o texto não resolveu.
 
-\begin{exemplo}{}{1}{autoral}{2-H1, 2-U1, 2-E1}
-\label{ex:u2:nome}
-«Enunciado.»
-\plano «Qual ferramenta e por quê.»
-\resolucao «Resolução.»
-\comentario «O que o exemplo ensina; o erro que ele evita.»
+\begin{exemplo}{}{1}{FME, exercício 17}{2-H1, 2-H2, 2-U1}
+\label{ex:u2:fme17}
+Dados $A=\{1,2,3,4\}$ e $B=\{2,4\}$:
+\begin{enumerate}[label=\alph*)]
+  \item escreva com os símbolos da teoria dos conjuntos as sentenças: 1ª) 3 é elemento de $A$; 2ª) 1 não está em $B$; 3ª) $B$ é parte de $A$; 4ª) $B$ é igual a $A$; 5ª) 4 pertence a $B$;
+  \item classifique as sentenças anteriores em falsas ou verdadeiras.
+\end{enumerate}
+\plano Traduzir cada expressão (\enquote{é elemento de}, \enquote{está em}, \enquote{pertence a} $\to\in$; \enquote{é parte de} $\to\subset$) e conferir na lista.
+\resolucao 1ª) $3\in A$ (V); 2ª) $1\notin B$ (V); 3ª) $B\subset A$ (V: 2 e 4 estão em $A$); 4ª) $B=A$ (F: 1 é testemunha); 5ª) $4\in B$ (V).
+\comentario Na 3ª, a verificação passa por \emph{todos} os elementos de $B$; na 4ª, um único elemento de $A$ fora de $B$ basta para a desigualdade.
+\end{exemplo}
+
+\begin{exemplo}{}{1}{FME, exercício 18}{2-H2, 2-U2, 2-E3}
+\label{ex:u2:fme18}
+Sendo $A=\{1,2\}$, $B=\{2,3\}$, $C=\{1,3,4\}$ e $D=\{1,2,3,4\}$, classifique em V ou F cada sentença abaixo e justifique.
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $A\subset D$
+  \item $A\subset B$
+  \item $B\subset C$
+  \item $D\supset B$
+  \item $C=D$
+  \item $A\not\subset C$
+\end{enumerate}
+\end{multicols}
+\plano Para uma inclusão verdadeira, conferir todos os elementos; para uma falsa, achar uma testemunha.
+\resolucao a) V, pois $1\in D$ e $2\in D$. b) F, pois $1\in A$ e $1\notin B$. c) F, pois $2\in B$ e $2\notin C$. d) V, pois $2\in D$ e $3\in D$. e) F, pois $2\in D$ e $2\notin C$. f) V, pois $2\in A$ e $2\notin C$.
+\comentario Em (b), também vale $B\not\subset A$ (3 é testemunha): uma inclusão falsa não garante a inclusão contrária (erro 2-E3).
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{2-H2, 2-U1, 2-E1, 2-E2}
+\label{ex:u2:chaves}
+Seja $E=\{1,\{1\},\{2,3\}\}$. Classifique em V ou F:
+\begin{multicols}{4}
+\begin{enumerate}[label=\alph*)]
+  \item $1\in E$
+  \item $\{1\}\in E$
+  \item $\{1\}\subset E$
+  \item $\{2\}\subset E$
+  \item $\{2,3\}\in E$
+  \item $\{2,3\}\subset E$
+  \item $\varnothing\subset E$
+  \item $\varnothing\in E$
+\end{enumerate}
+\end{multicols}
+\plano Listar primeiro os elementos de $E$: são três, o número 1, o conjunto $\{1\}$ e o conjunto $\{2,3\}$. Depois, para cada sentença, decidir se a pergunta é \enquote{está na lista?} ($\in$) ou \enquote{todos os elementos estão na lista?} ($\subset$).
+\resolucao a) V. b) V: $\{1\}$ é o segundo elemento listado. c) V: o único elemento de $\{1\}$, o 1, está em $E$. d) F: $2\notin E$ (2 está \emph{dentro} de um elemento de $E$, mas não é elemento de $E$). e) V. f) F: $2\notin E$. g) V: o vazio está contido em qualquer conjunto. h) F: o vazio não está listado.
+\comentario Em (b) e (c), $\{1\}$ é ao mesmo tempo elemento e subconjunto de $E$ — isso só acontece porque $E$ lista tanto o 1 quanto o $\{1\}$. Em (e) e (f), $\{2,3\}$ é elemento, mas não subconjunto.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{2-H3, 2-U2, 2-E4}
+\label{ex:u2:multiplos}
+Prove que $\{x\in\mathbb{Z}\mid x\text{ é múltiplo de 2 e de 3}\}=\{x\in\mathbb{Z}\mid x\text{ é múltiplo de 6}\}$.
+\plano Dupla inclusão, com um elemento genérico em cada sentido.
+\resolucao Chame os conjuntos de $A$ e $B$. \emph{$B\subset A$:} se $x\in B$, então $x=6k$ para algum inteiro $k$; logo $x=2\cdot(3k)$ e $x=3\cdot(2k)$, e $x$ é múltiplo de 2 e de 3: $x\in A$. \emph{$A\subset B$:} se $x\in A$, então $x=2a$ para algum inteiro $a$, e 3 divide $2a$. Como 3 não divide 2, e 3 é primo, 3 divide $a$: $a=3b$, e $x=6b$. Logo $x\in B$. Pelas duas inclusões, $A=B$.
+\comentario Testar $6$, $12$ e $18$ não provaria nada (erro 2-E4): a prova usou um $x$ qualquer, sem escolher qual.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{2-H4, 2-U3, 2-E5}
+\label{ex:u2:partes}
+\begin{enumerate}[label=\alph*)]
+  \item Liste os elementos de $\mathcal{P}(\{a,b,c\})$.
+  \item Quantos subconjuntos de $\{1,2,3,4,5\}$ contêm o número 1?
+\end{enumerate}
+\plano Em (a), seguir a árvore \enquote{entra / não entra}. Em (b), separar os elementos obrigatórios dos livres.
+\resolucao a) $\varnothing$, $\{a\}$, $\{b\}$, $\{c\}$, $\{a,b\}$, $\{a,c\}$, $\{b,c\}$, $\{a,b,c\}$: são $8=2^3$. b) O 1 tem de entrar; 2, 3, 4 e 5 são livres. São $2^4=16$ subconjuntos.
+\comentario Em (a), o vazio e o próprio conjunto entram na conta (erro 2-E5). Em (b), a decisão sobre o 1 já está tomada; só as decisões livres multiplicam.
+\end{exemplo}
+
+\begin{exemplo}{}{3}{autoral}{2-H2, 2-H3}
+\label{ex:u2:vazio}
+Prove que existe um único conjunto vazio: se $\varnothing_1$ e $\varnothing_2$ são conjuntos sem elementos, então $\varnothing_1=\varnothing_2$.
+\plano Usar a construção 2-H3: provar as duas inclusões. Para cada uma, usar o fato de que o vazio está contido em qualquer conjunto.
+\resolucao Como $\varnothing_1$ não tem elementos, a sentença \enquote{se $x\in\varnothing_1$, então $x\in\varnothing_2$} é verdadeira para todo $x$ (hipótese sempre falsa); logo $\varnothing_1\subset\varnothing_2$. Trocando os papéis, $\varnothing_2\subset\varnothing_1$. Pela dupla inclusão, $\varnothing_1=\varnothing_2$.
+\comentario A Unidade~1 \emph{afirmou} que todos os conjuntos sem elementos são o mesmo; aqui está a prova. A novidade é usar a vacuidade nos dois sentidos para concluir uma igualdade.
 \end{exemplo}
 
 % ------------------------------------------------------------
 \Questoes
-% Nível por função (N1 aplicação · N2 seleção/combinação · N3 transferência), da mais guiada para a
-% menos guiada DENTRO de cada nível. Integradora ([integradora]) só se o assunto da unidade for
-% necessário: tente resolvê-la sem ele. \label logo após o cabeçalho; \resp{...} com a resposta final.
-% Procedência no 2º argumento: [autoral] · [FME, exercício n] · [adaptada de concurso — BANCA/ÓRGÃO ANO] ·
-% [FUVEST 2019, 1ª fase, q.~12] (só com texto conferido) · [… via FME] · [histórico].
 
-\begin{questao}{1}{autoral}{2-U1, 2-E1}\label{u2:nome}
-«Enunciado.»
-\resp{«resposta final; em demonstração: "Demonstração. A prova deve mostrar que …"»}
+\begin{questao}{1}{autoral}{2-H2, 2-U1}\label{u2:completar}
+Seja $A=\{2,4,6\}$. Complete com $\in$, $\notin$, $\subset$, $\not\subset$ ou $=$:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $2\ \_\ A$
+  \item $\{2\}\ \_\ A$
+  \item $\{2,5\}\ \_\ A$
+  \item $\{6,4,2\}\ \_\ A$
+  \item $5\ \_\ A$
+\end{enumerate}
+\end{multicols}
+\resp{a) $\in$;\ b) $\subset$;\ c) $\not\subset$;\ d) $=$ (também vale $\subset$);\ e) $\notin$.}
 \end{questao}
 
+\begin{questao}{1}{FME, exercício 19}{2-H1}\label{u2:fme19}
+Quais das igualdades abaixo são verdadeiras?
+\begin{enumerate}[label=\alph*)]
+  \item $\{a,a,a,b,b\}=\{a,b\}$
+  \item $\{x\mid x^2=4\}=\{x\mid x\neq0\text{ e }x^3-4x=0\}$
+  \item $\{x\mid 2x+7=11\}=\{2\}$
+  \item $\{x\mid x<0\text{ e }x\ge0\}=\varnothing$
+\end{enumerate}
+\resp{Todas são verdadeiras.}
+\end{questao}
+
+\begin{questao}{1}{FME, exercício 22}{2-H4, 2-E5}\label{u2:fme22}
+Construa o conjunto das partes do conjunto $A=\{a,b,c,d\}$.
+\resp{16 elementos: $\varnothing$, $\{a\}$, $\{b\}$, $\{c\}$, $\{d\}$, $\{a,b\}$, $\{a,c\}$, $\{a,d\}$, $\{b,c\}$, $\{b,d\}$, $\{c,d\}$, $\{a,b,c\}$, $\{a,b,d\}$, $\{a,c,d\}$, $\{b,c,d\}$, $\{a,b,c,d\}$.}
+\end{questao}
+
+\begin{questao}{1}{FME, exercício 21}{2-H2}\label{u2:fme21}
+Faça um diagrama de Venn que simbolize a situação seguinte: $A$, $B$, $C$ e $D$ são conjuntos não vazios, $D\subset C\subset B\subset A$.
+\resp{Quatro regiões encaixadas: a de $D$ dentro da de $C$, a de $C$ dentro da de $B$ e a de $B$ dentro da de $A$.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 20}{2-H2, 2-U1, 2-E1, 2-E2}\label{u2:fme20}
+Diga se é verdadeira (V) ou falsa (F) cada uma das sentenças abaixo.
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $0\in\{0,1,2,3,4\}$
+  \item $\{a\}\in\{a,b\}$
+  \item $\varnothing\in\{0\}$
+  \item $0\in\varnothing$
+  \item $\{a\}\subset\varnothing$
+  \item $a\in\{a,\{a\}\}$
+  \item $\{a\}\subset\{a,\{a\}\}$
+  \item $\varnothing\subset\{\varnothing,\{a\}\}$
+  \item $\varnothing\in\{\varnothing,\{a\}\}$
+  \item $\{a,b\}\in\{a,b,c,d\}$
+\end{enumerate}
+\end{multicols}
+\resp{a) V;\ b) F;\ c) F;\ d) F;\ e) F;\ f) V;\ g) V;\ h) V;\ i) V;\ j) F.}
+\end{questao}
+
+\begin{questao}{2}{adaptado do FME, exercício 47}{2-H2, 2-U1, 2-E1, 2-E2}\label{u2:fme47}
+Seja $E=\{a,\{a\}\}$, em que $a$ é um objeto que não é conjunto. Diga quais das proposições abaixo são verdadeiras.
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $a\in E$
+  \item $\{a\}\in E$
+  \item $a\subset E$
+  \item $\{a\}\subset E$
+  \item $\varnothing\in E$
+  \item $\varnothing\subset E$
+\end{enumerate}
+\end{multicols}
+\resp{a, b, d, f.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{2-H2, 2-E3}\label{u2:exemplos}
+Dê exemplos de conjuntos $A$ e $B$ tais que:
+\begin{enumerate}[label=\alph*)]
+  \item $A\not\subset B$ e $B\subset A$;
+  \item $A\not\subset B$ e $B\not\subset A$;
+  \item $A\subset B$ e $B\subset A$.
+\end{enumerate}
+O que a condição do item (c) obriga?
+\resp{Por exemplo: a) $A=\{1,2\}$, $B=\{1\}$;\ b) $A=\{1\}$, $B=\{2\}$;\ c) $A=B=\{1\}$. A condição (c) obriga $A=B$.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{2-H2, 2-H3, 2-U2, 2-E4}\label{u2:multiplos4}
+Prove que $\{x\in\mathbb{Z}\mid x\text{ é múltiplo de 4}\}\subset\{x\in\mathbb{Z}\mid x\text{ é par}\}$ e mostre que a inclusão contrária é falsa.
+\resp{Demonstração. A prova deve mostrar que um múltiplo qualquer de 4, $x=4k$, se escreve como $x=2\cdot(2k)$, logo é par; e dar uma testemunha da inclusão contrária, como 2, que é par e não é múltiplo de 4.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 35}{2-H4, 2-U3}\label{u2:fme35}
+Determine o número de conjuntos $X$ que satisfazem a relação $\{1,2\}\subset X\subset\{1,2,3,4\}$.
+\resp{4.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{2-H4, 2-U3, 2-E5}\label{u2:contar}
+\begin{enumerate}[label=\alph*)]
+  \item Um conjunto $A$ é tal que $\mathcal{P}(A)$ tem 64 elementos. Quantos elementos tem $A$?
+  \item Quantos subconjuntos de um conjunto de 5 elementos não são nem o vazio nem o próprio conjunto?
+\end{enumerate}
+\resp{a) 6;\ b) $2^5-2=30$.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{autoral}{2-H4, 2-U3}\label{u2:divisores}
+Quantos subconjuntos do conjunto dos divisores naturais de 12 contêm o 1 e o 12?
+\resp{16 (os divisores são 1, 2, 3, 4, 6 e 12; o 1 e o 12 são obrigatórios e os outros quatro, livres: $2^4$).}
+\end{questao}
+
+\begin{questao}{3}{autoral}{2-H4, 2-E1}\label{u2:vazios3}
+Escreva $\mathcal{P}(\varnothing)$, $\mathcal{P}(\mathcal{P}(\varnothing))$ e $\mathcal{P}(\mathcal{P}(\mathcal{P}(\varnothing)))$ e diga quantos elementos tem cada um.
+\resp{$\mathcal{P}(\varnothing)=\{\varnothing\}$ (1 elemento);\ $\mathcal{P}(\mathcal{P}(\varnothing))=\{\varnothing,\{\varnothing\}\}$ (2);\ $\mathcal{P}(\mathcal{P}(\mathcal{P}(\varnothing)))=\{\varnothing,\{\varnothing\},\{\{\varnothing\}\},\{\varnothing,\{\varnothing\}\}\}$ (4).}
+\end{questao}
+
+\begin{questao}{3}{ITA via FME, ano não informado; adaptado: a alternativa e repetia a a}{2-H2, 2-H4}\label{u2:cadeias}
+Seja $U$ um conjunto não vazio com $n$ elementos, $n\ge1$. Seja $S$ um subconjunto de $\mathcal{P}(U)$ com a seguinte propriedade: se $A,B\in S$, então $A\subset B$ ou $B\subset A$. Então, o número máximo de elementos que $S$ pode ter é:
+\begin{enumerate}[label=\alph*)]
+  \item $2^{n-1}$
+  \item $\frac{n}{2}$, se $n$ for par, e $\frac{n+1}{2}$, se $n$ for ímpar
+  \item $n+1$
+  \item $2^{n-1}+1$
+  \item $2^{n}-1$
+\end{enumerate}
+\resp{c.}
+\end{questao}
+
+\begin{questao}{3}{autoral}{2-H4, 2-U3}\label{u2:paridade}
+Quantos subconjuntos de $\{1,2,\ldots,n\}$, com $n\ge1$, têm um número par de elementos? Justifique.
+\resp{$2^{n-1}$. Demonstração. A prova deve mostrar que, pondo ou tirando o 1, os subconjuntos se agrupam em pares formados por um de tamanho par e um de tamanho ímpar; logo exatamente metade dos $2^n$ tem tamanho par.}
+\end{questao}
 
 \begin{sintese}
 \textbf{Ao fim desta unidade, você deveria saber:}
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «capacidade»
+  \item decidir se dois conjuntos são iguais e justificar com os elementos;
+  \item distinguir $\in$ de $\subset$, inclusive com chaves dentro de chaves e com o vazio;
+  \item provar uma inclusão com um elemento genérico e uma igualdade com duas inclusões;
+  \item negar uma inclusão com uma testemunha;
+  \item listar e contar os subconjuntos de um conjunto finito.
 \end{itemize}
 \smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u2}) e com a seção indicada.
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
-  \perguntasintese{O que significa «conceito»? \ondever{construção 2-H1}}
-  \perguntasintese{Como «conceito» foi construído, e por quê? \ondever{De onde vem?}}
-  \perguntasintese{Como você reconhece, num enunciado, que deve usar «conceito»? \ondever{Onde é usado?}}
-  \perguntasintese{Qual é o erro mais perigoso ao aplicar «conceito»? Como você o detecta? \ondever{Erros comuns}}
+  \perguntasintese{Por que $\{a,b\}$ e $\{b,a,a\}$ são o mesmo conjunto? \ondever{construção 2-H1}}
+  \perguntasintese{Qual é a diferença entre $x\in A$ e $X\subset A$? Por que $X\in\mathcal{P}(A)$ significa o mesmo que $X\subset A$? \ondever{De onde vem?}}
+  \perguntasintese{Num enunciado, que sinais indicam que você precisa de uma prova com elemento genérico? E que sinais indicam uma contagem de subconjuntos? \ondever{Onde é usado?}}
+  \perguntasintese{Qual destes erros você comete com mais facilidade — trocar $\in$ por $\subset$, ou esquecer o vazio? Como você o detecta? \ondever{Erros comuns}}
 \end{enumerate}
 \end{sintese}
 
