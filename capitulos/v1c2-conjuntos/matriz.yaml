@@ -1011,10 +1011,221 @@ unidades:
     E4: confundir "exatamente dois" com "pelo menos dois"
     O1: 'Euler × Venn: o que um diagrama de Euler já afirma (regiões que faltam = vazias)'
     O2: Venn com quatro e cinco termos (elipses)
-  exemplos: []
+  exemplos:
+  - rotulo: ex:u6:streaming
+    nivel: 1
+    fonte: autoral
+    tema: 'três serviços: preencher as oito regiões'
+    cobre:
+    - H1
+    - H2
+    - U1
+    - E1
+    - E2
+    - E3
+  - rotulo: ex:u6:clubes
+    nivel: 2
+    fonte: autoral
+    tema: dado indireto ("não participam de M")
+    cobre:
+    - H1
+    - H2
+    - U2
+    - E1
+  - rotulo: ex:u6:linguas
+    nivel: 2
+    fonte: autoral
+    tema: exatamente k e pelo menos k
+    cobre:
+    - H3
+    - E4
+  - rotulo: ex:u6:cafe
+    nivel: 2
+    fonte: autoral
+    tema: mínimo e máximo da interseção
+    cobre:
+    - H3
+    - U3
+  - rotulo: ex:u6:elementos
+    nivel: 2
+    fonte: autoral
+    tema: A, B, C por elementos
+    cobre:
+    - H1
+    - U4
+  - rotulo: ex:u6:divisiveis
+    nivel: 3
+    fonte: autoral
+    tema: nem 2, nem 3, nem 5 de 1 a 60
+    cobre:
+    - H3
   questoes_meta:
     N1: 4
     N2: 6
     N3: 2
     integradoras: 1
-  questoes_pool: []
+  questoes_pool:
+  - rotulo: u6:fme50
+    nivel: 1
+    fonte: FME, exercício 50
+    cobre:
+    - H3
+    - E2
+    integradora: false
+  - rotulo: u6:fme56
+    nivel: 1
+    fonte: FME, exercício 56
+    cobre:
+    - H2
+    - U1
+    - E3
+    - E4
+    integradora: false
+  - rotulo: u6:ufpa24
+    nivel: 1
+    fonte: UF-PA via FME, ano não informado
+    cobre:
+    - H3
+    - U1
+    - E2
+    integradora: false
+  - rotulo: u6:fei23
+    nivel: 1
+    fonte: FEI-SP via FME, ano não informado
+    cobre:
+    - H2
+    - U1
+    integradora: false
+  - rotulo: u6:ufpe29
+    nivel: 2
+    fonte: UF-PE via FME, ano não informado
+    cobre:
+    - H3
+    - E4
+    integradora: false
+  - rotulo: u6:fme54
+    nivel: 2
+    fonte: FME, exercício 54
+    cobre:
+    - H1
+    - H2
+    integradora: false
+  - rotulo: u6:natacao
+    nivel: 2
+    fonte: autoral
+    cobre:
+    - H3
+    - U3
+    integradora: false
+  - rotulo: u6:uel20
+    nivel: 2
+    fonte: adaptado de U.E. Londrina-PR via FME, ano não informado
+    cobre:
+    - H1
+    - U2
+    - E1
+    integradora: false
+  - rotulo: u6:fgv36
+    nivel: 2
+    fonte: FGV-SP via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    integradora: false
+  - rotulo: u6:ufes28
+    nivel: 2
+    fonte: UF-ES via FME, ano não informado
+    cobre:
+    - H3
+    - U2
+    - E4
+    integradora: false
+  - rotulo: u6:ufpe34
+    nivel: 2
+    fonte: UF-PE via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    - U2
+    integradora: false
+  - rotulo: u6:fme57
+    nivel: 2
+    fonte: FME, exercício 57
+    cobre:
+    - H1
+    - U4
+    integradora: false
+  - rotulo: u6:ufmg37
+    nivel: 3
+    fonte: UF-MG via FME, ano não informado
+    cobre:
+    - H3
+    integradora: false
+  - rotulo: u6:ufes30
+    nivel: 3
+    fonte: UF-ES via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    integradora: false
+  - rotulo: u6:unicamp35
+    nivel: 3
+    fonte: Unicamp-SP via FME, ano não informado
+    cobre:
+    - H1
+    - U2
+    integradora: true
+  - rotulo: u6:uel25
+    nivel: 1
+    fonte: U.E. Londrina-PR via FME, ano não informado
+    cobre:
+    - H3
+    - U1
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u6:ufpa26
+    nivel: 2
+    fonte: UF-PA via FME, ano não informado
+    cobre:
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u6:ufpe31
+    nivel: 2
+    fonte: UF-PE via FME, ano não informado
+    cobre:
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u6:udesc22
+    nivel: 2
+    fonte: Udesc-SC via FME, ano não informado
+    cobre:
+    - H1
+    - H2
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u6:ufpi27
+    nivel: 2
+    fonte: UF-PI via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u6:ufu33
+    nivel: 2
+    fonte: adaptado de U.F. Uberlândia-MG via FME, ano não informado
+    cobre:
+    - H1
+    - U2
+    - E1
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u6:ufpe19
+    nivel: 3
+    fonte: UF-PE via FME, ano não informado
+    cobre:
+    - H1
+    integradora: false
+    bloco: mais questões de vestibular

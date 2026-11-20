@@ -1,8 +1,7 @@
 % ============================================================
-% Unidade 6 — Três conjuntos e as regiões do diagrama   (didática v3 · kit/didatica.md §2)
+% Unidade 6 — Três conjuntos e as regiões do diagrama   (didática v4 · kit/didatica.md §2)
 % Parte A, o "artigo": Prefácio, De onde vem?, Onde é usado?
-% IDs da unidade: ver matriz.yaml (H construção · U uso · E erro · O observação)
-% Rótulos: questões u6:nome · exemplos ex:u6:nome · remissões só com \ref / \qref / \exref
+% IDs: 6-H1..H3 · 6-U1..U4 · 6-E1..E4 · 6-O1, 6-O2 (matriz.yaml) · fonte única: dossies/u6.md
 % ============================================================
 \clearpage
 \section{Três conjuntos e as regiões do diagrama}
@@ -10,69 +9,139 @@
 % ------------------------------------------------------------
 \Prefacio
 \begin{prefacio}
-\gancho{«Uma pergunta ou situação curta que prende.»}
+\gancho{Quem está onde?}
 
-% Função: "por que isso merece ser estudado?" + UMA pergunta aberta explícita, que a unidade responde.
-% Em geral menos de uma página. Fora da narrativa.
-«Situação concreta que cria a pergunta.»
+Com dois grupos, havia quatro regiões, e a fórmula da Unidade~5 resolvia quase tudo. Agora imagine uma pesquisa sobre três serviços de \emph{streaming}, A, B e C. Ela informa quantas pessoas assinam cada serviço, quantas assinam cada par de serviços e quantas assinam os três. Quem assina \enquote{A e B} pode assinar também C; quem assina \enquote{A} pode estar em qualquer uma de quatro situações diferentes. Os números se sobrepõem de muitas maneiras, e uma conta feita sem ordem conta gente duas vezes, ou esquece gente.
 
-\textbf{«A pergunta aberta da unidade, em negrito.»} É a pergunta desta unidade.
+{\sloppy\textbf{Com três grupos, como organizar a contagem para não se perder nas sobreposições?} É a pergunta desta unidade.\par}
 
-\textbf{Ao final, você será capaz de:} «3–5 capacidades verificáveis».
+\textbf{Ao final, você será capaz de:} desenhar as oito regiões de três conjuntos e preenchê-las de dentro para fora; calcular $n(A\cup B\cup C)$ e as contagens \enquote{exatamente $k$} e \enquote{pelo menos $k$}; montar equações a partir de dados indiretos; achar o menor e o maior valor que os dados permitem; determinar conjuntos elemento a elemento.
 
-\textbf{Pré-requisitos:} «unidades e assuntos». O essencial está na caixa abaixo.
+\textbf{Pré-requisitos:} Unidade~5 (contagem com dois conjuntos), Unidade~3 (regiões de três conjuntos; decidir elemento a elemento) e Unidade~4 (diferença). O essencial está na caixa abaixo.
 \end{prefacio}
 
 \begin{minimo}
-% O mínimo que você precisa: só o que a unidade usa e o aluno pode ter esquecido.
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «pré-requisito 1»
+  \item \textbf{Dois conjuntos.} $n(A\cup B)=n(A)+n(B)-n(A\cap B)$; as quatro regiões somam o total (Unidade~5).
+  \item \textbf{Sentido inclusivo.} \enquote{Estudam inglês} inclui quem também estuda outra língua; \enquote{só inglês} é outra coisa (Unidade~5).
+  \item \textbf{\enquote{Mas não}.} \enquote{Estão em $A$ e em $B$, mas não em $C$} é $(A\cap B)-C$ (Unidade~4).
 \end{itemize}
 \end{minimo}
 
 % ------------------------------------------------------------
 \DeOndeVem
-% Três perguntas: (1) por que alguém precisou disso? (2) como a ideia foi construída? (3) como reconstruímos hoje?
-% Origem histórica ≠ reconstrução matemática: as duas aparecem distintas; a reconstrução se sustenta sozinha.
-% Três camadas, em texto corrido e bem demarcadas: "X formulou…" / "lido hoje…" / "a convenção atual…".
-% Filtro P5 em cada trecho: melhora a compreensão? Se só deixa interessante → Observações ou fora.
-% Todo fato com \src{chave} (bibitem em fontes.tex). Nada de frequência sem fonte.
 
-\subsubsection{«O problema que pediu a ferramenta»}
-«Narrativa com fontes.»\src{fme}
+\subsubsection{Por que alguém precisou disso}
+Com três características, um número como \enquote{quantos têm $A$ e $B$} já mistura dois tipos de pessoa: as que têm só $A$ e $B$ e as que têm as três características. Sem um lugar separado para cada combinação, as contas se repetem ou deixam gente de fora.
 
-\begin{construcao}[6-H1: título curto]{6-H1}
-% A reconstrução: passos numerados que chegam à ferramenta por raciocínio, não por autoridade.
+\subsubsection{Um lugar para cada combinação}
+No século XVIII, Leonhard Euler usou círculos para representar proposições: um círculo dentro de outro para \enquote{todo $A$ é $B$}, círculos separados para \enquote{nenhum $A$ é $B$}.\src{sepDiagrams}\src{euler1768} Nesse desenho aparecem só as relações que de fato existem entre as classes. Em 1880, John Venn criticou os círculos eulerianos justamente por isso: eles não permitem mostrar um conhecimento incompleto. A proposta de Venn foi desenhar primeiro \emph{todas} as combinações dos termos, antes de afirmar qualquer coisa. Com três círculos, ele obtinha os oito compartimentos de que precisava; cada um podia estar ocupado ou não, e a região de fora de todos os círculos também contava como compartimento. Só depois ele marcava o que cada proposição diz, sombreando os compartimentos que ela declara vazios.\src{venn1880}\src{sepDiagrams}
+
+Lidos hoje, os oito compartimentos de Venn são as oito regiões de três conjuntos, e uma região vazia é uma região com 0 elementos. A convenção atual nos problemas de contagem é a mesma: desenhar sempre os três círculos se cruzando, com as oito regiões, e escrever um número em cada uma.
+
+\begin{construcao}[as oito regiões]{6-H1}
 \begin{enumerate}[label=(\arabic*)]
-  \item «passo»
+  \item Cada elemento do universo responde a três perguntas: está em $A$? em $B$? em $C$? São $2\cdot2\cdot2=8$ combinações de respostas, logo oito regiões (é a contagem $2^n$ da Unidade~2).
+  \item As oito regiões são: só $A$, só $B$, só $C$; só $A$ e $B$ (fora de $C$), só $B$ e $C$, só $A$ e $C$; os três; nenhum.
+\begin{center}
+\begin{tikzpicture}[scale=1.1]
+\draw[thick] (-3.1,-2.75) rectangle (3.1,2.35); \node at (2.8,2.05) {$U$};
+\draw[acento,thick] (-0.85,0.45) circle (1.4); \draw[acento,thick] (0.85,0.45) circle (1.4); \draw[acento,thick] (0,-1.0) circle (1.4);
+\node at (-2.0,1.75) {$A$}; \node at (2.0,1.75) {$B$}; \node at (0,-2.6) {$C$};
+\node[font=\scriptsize] at (-1.35,0.85) {só $A$}; \node[font=\scriptsize] at (1.35,0.85) {só $B$}; \node[font=\scriptsize] at (0,-1.7) {só $C$};
+\node[font=\scriptsize,align=center] at (0,1.05) {só\\[-2pt]$A$ e $B$}; \node[font=\scriptsize,align=center] at (-0.95,-0.55) {só\\[-2pt]$A$ e $C$}; \node[font=\scriptsize,align=center] at (0.95,-0.55) {só\\[-2pt]$B$ e $C$};
+\node[font=\scriptsize] at (0,-0.05) {três};
+\node[font=\scriptsize,anchor=south west] at (-3.05,-2.7) {nenhum};
+\end{tikzpicture}
+\end{center}
+  \item Desenham-se todas as oito, mesmo as que estiverem vazias: o diagrama funciona como uma tabela de todas as combinações, e uma região vazia recebe o número 0.
+  \item Cada número do enunciado é uma soma de regiões. Por exemplo, $n(A)$ é a soma de só $A$, só $A$ e $B$, só $A$ e $C$ e três; e $n(A\cap B)$ é a soma de só $A$ e $B$ com três. Isto é, \enquote{$A$ e $B$} inclui quem está nos três, no mesmo sentido inclusivo da Unidade~5.
 \end{enumerate}
 \end{construcao}
 
-\begin{definicao}[nome]
-«Enunciado formal.»
+\begin{construcao}[preencher de dentro para fora]{6-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item Comece pelos três: a região central é $n(A\cap B\cap C)$.
+  \item Depois, cada \enquote{só dois}: só $A$ e $B$ é $n(A\cap B)-n(A\cap B\cap C)$; do mesmo modo para os outros dois pares.
+  \item Depois, cada \enquote{só um}: só $A$ é $n(A)$ menos as três regiões de $A$ já preenchidas (só $A$ e $B$, só $A$ e $C$, três).
+  \item Por último, nenhum: o total menos a soma das sete regiões.
+  \item A ordem importa porque cada passo usa só regiões já conhecidas. Começando por fora, seria preciso saber o que está dentro antes de tê-lo calculado.
+\end{enumerate}
+\end{construcao}
+
+\subsubsection{Conferir a conta: nenhuma região negativa}
+O estatístico George Udny Yule, cujo manual já apareceu na Unidade~5, discute nele um conjunto de dados de 1\,000 observações sobre três atributos, $A$, $B$ e $C$: 525 têm $A$, 312 têm $B$, 470 têm $C$; 42 têm $A$ e $B$, 147 têm $A$ e $C$, 86 têm $B$ e $C$; 25 têm os três. Ele observa que não há nada obviamente errado nos números, mas que eles implicam uma quantidade negativa, $-57$, para a classe dos que não têm nenhum dos três atributos. Como nenhuma classe pode ter um número negativo de elementos, os dados não podem ter sido observados num mesmo universo: houve erro de contagem ou de impressão.\src{yule1927} No mesmo capítulo, Yule anota a condição para dois atributos que impede essa situação: o número dos que têm $A$ e $B$ não pode ser menor que $(A)+(B)-N$, em que $N$ é o total — condição \enquote{um pouco menos óbvia} que as outras e, segundo ele, às vezes esquecida.\src{yule1927}
+
+Lida hoje, a conta de Yule é a fórmula de três conjuntos aplicada à região \enquote{nenhum}: $1\,000-(525+312+470)+(42+147+86)-25=-57$. E a condição para dois atributos é o menor valor possível de $n(A\cap B)$. A convenção atual mantém as duas ideias: depois de preencher as regiões, confira que nenhuma é negativa; e, quando os dados não determinam uma região, os limites vêm dessa exigência.
+
+\begin{construcao}[a fórmula; exatamente $k$ e pelo menos $k$; nenhuma região negativa]{6-H3}
+\begin{enumerate}[label=(\arabic*)]
+  \item Na soma $n(A)+n(B)+n(C)$, quem está em exatamente dois conjuntos foi contado duas vezes, e quem está nos três, três vezes. Tirando $n(A\cap B)+n(A\cap C)+n(B\cap C)$, quem está em exatamente dois passa a contar uma vez. Mas quem está nos três foi tirado três vezes, uma em cada par, e agora não conta nenhuma. É preciso devolvê-lo uma vez:
+\[
+n(A\cup B\cup C)=n(A)+n(B)+n(C)-n(A\cap B)-n(A\cap C)-n(B\cap C)+n(A\cap B\cap C).
+\]
+  \item Chame de $e_1$, $e_2$ e $e_3$ os números de elementos que estão em exatamente um, exatamente dois e exatamente três dos conjuntos. Então
+\[
+n(A\cup B\cup C)=e_1+e_2+e_3,\qquad n(A)+n(B)+n(C)=e_1+2e_2+3e_3.
+\]
+\enquote{Pelo menos dois} é $e_2+e_3$. E a soma dos três pares conta os que estão nos três três vezes: $n(A\cap B)+n(A\cap C)+n(B\cap C)=e_2+3e_3$.
+  \item Nenhuma região pode ser negativa. Depois de preencher o diagrama, confira: uma região negativa denuncia dados impossíveis (ou um erro na conta).
+  \item Daí saem mínimos e máximos. Com dois conjuntos num total $N$, como a região \enquote{nenhum} não é negativa, $n(A\cap B)\ge n(A)+n(B)-N$; e, como só $A$ e só $B$ não são negativas, $n(A\cap B)$ não passa do menor dos números $n(A)$ e $n(B)$. Por exemplo, com $N=10$, $n(A)=7$ e $n(B)=6$, a interseção tem entre 3 e 6 elementos.
+\end{enumerate}
+\end{construcao}
+
+\begin{definicao}[número de elementos da reunião de três conjuntos]
+Para conjuntos finitos $A$, $B$ e $C$: $n(A\cup B\cup C)=n(A)+n(B)+n(C)-n(A\cap B)-n(A\cap C)-n(B\cap C)+n(A\cap B\cap C)$.
 \end{definicao}
 
 \begin{paralembrar}\label{lembrar-u6}
-% Fecha o De onde vem?: 1 frase + até 3 passos. É o gabarito da síntese de domínio.
-«A frase.»
+\textbf{Com três conjuntos, desenhe as oito regiões e preencha de dentro para fora: os três, os \enquote{só dois}, os \enquote{só um} e, por último, os de fora.}
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em,itemsep=1pt]
-  \item «passo»
+  \item \enquote{$A$ e $B$} inclui os que estão nos três: para achar \enquote{só $A$ e $B$}, subtraia o centro.
+  \item Na fórmula, depois de tirar os pares, devolva os que estão nos três.
+  \item Nenhuma região pode ser negativa: é isso que confere a conta e dá mínimos e máximos.
 \end{enumerate}
 \end{paralembrar}
 
 % ------------------------------------------------------------
 \OndeEUsado
-% Função: reconhecimento. Ensina a ESCOLHER a ferramenta: enunciado → estrutura → ferramenta.
-% 2–4 casos no formato do mapa; depois a tabela de gatilhos como resumo.
-% E-R3-1: casos, "Treino:" e gatilhos NÃO trazem o caso concreto nem a solução de nenhum N3,
-% e apontam só para exemplos e questões N1/N2 (checar.py confere os \ref).
-«Uma frase de abertura: onde a ferramenta aparece.»
 
-\begin{caso}{1 · «nome do caso»}{6-U1}
-\mapa{«o que o enunciado diz: palavras e formatos»}{«a estrutura matemática a procurar»}{«a ferramenta»}
-\reconhecer «Como reconhecer a situação; um exemplo de enunciado real, com fonte e procedência.» Treino: \exref{ex:u6:nome}; \qref{u6:nome}.
+Os problemas com três conjuntos chegam de quatro maneiras: com os números de cada conjunto e de cada interseção, com dados indiretos, com perguntas por \enquote{no mínimo} ou \enquote{no máximo}, e com conjuntos dados por seus elementos.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · tabela de três atributos}{6-U1}
+\mapa{uma tabela ou lista com os números de \enquote{$A$}, \enquote{$B$}, \enquote{$C$}, \enquote{$A$ e $B$}, \ldots, \enquote{$A$, $B$ e $C$}\src{fme}}
+{as oito regiões}
+{6-H2: de dentro para fora}
+\reconhecer O sinal é a lista completa: cada conjunto, cada par e os três. Comece pelos três e preencha de dentro para fora; a pergunta (só um, nenhum, pelo menos dois\ldots) é então uma soma de regiões. Treino: \exref{ex:u6:streaming}; questões \ref{u6:fme56} e \ref{u6:ufpa24}.
 \end{caso}
 
+\begin{caso}{2 · dados indiretos}{6-U2}
+\mapa{\enquote{não optaram por}, \enquote{mas não}, \enquote{somente}, \enquote{exatamente dois}}
+{a que regiões cada dado se refere}
+{6-H1 (4) e 6-H3 (2): cada dado vira uma equação nas regiões}
+\reconhecer O sinal é um dado que não é o número de um conjunto nem de uma interseção. Escreva-o como soma de regiões (\enquote{não optaram por $A$} são as quatro regiões fora de $A$), chame de incógnita o que faltar e resolva. Treino: \exref{ex:u6:clubes}; questões \ref{u6:uel20} e \ref{u6:ufpe34}.
+\end{caso}
+
+\begin{caso}{3 · \enquote{no mínimo}, \enquote{no máximo}}{6-U3}
+\mapa{\enquote{pelo menos}, \enquote{no mínimo}, \enquote{no máximo}, \enquote{o maior número possível}}
+{o que os dados obrigam e o que eles apenas permitem}
+{6-H3 (3)–(4): nenhuma região negativa}
+\reconhecer O sinal é a pergunta por um extremo: os dados não determinam a resposta, só a limitam. Escreva as regiões em função da incógnita e exija que nenhuma fique negativa. Treino: \exref{ex:u6:cafe}; \qref{u6:natacao}.
+\end{caso}
+
+\begin{caso}{4 · conjuntos dados por elementos}{6-U4}
+\mapa{condições como \enquote{$A\cap B=\{\ldots\}$}, \enquote{$A\cup C=\{\ldots\}$} e \enquote{determine $A$, $B$ e $C$}}
+{em que região está cada elemento}
+{decidir elemento a elemento, nas oito regiões (Unidade~3)}
+\reconhecer O sinal são listas de elementos em vez de números. Para cada elemento, use as condições para decidir em quais dos três conjuntos ele está; isso o coloca numa das oito regiões. Treino: \exref{ex:u6:elementos}; \qref{u6:fme57}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
 \begin{gatilhos}
-«sinal no enunciado» & «ferramenta» & «raciocínio» & 6-U1 · q.~\ref{u6:nome}\\
+tabela com conjuntos, pares e os três & 6-H2 & de dentro para fora & \mbox{6-U1\,·\,q.\,\ref{u6:fme56}}\\\fino
+\enquote{não optaram}, \enquote{mas não}, \enquote{exatamente} & 6-H1, 6-H3 & dado = soma de regiões & \mbox{6-U2\,·\,q.\,\ref{u6:uel20}}\\\fino
+\enquote{no mínimo}, \enquote{no máximo} & 6-H3 & nenhuma região negativa & \mbox{6-U3\,·\,q.\,\ref{u6:natacao}}\\\fino
+conjuntos por elementos & 6-H1 & elemento a elemento & \mbox{6-U4\,·\,q.\,\ref{u6:fme57}}\\
 \end{gatilhos}
