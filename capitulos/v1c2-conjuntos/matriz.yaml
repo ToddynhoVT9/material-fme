@@ -776,8 +776,8 @@ unidades:
     E2: tomar "estudam inglês" por "só inglês"
     E3: esquecer quem não está em nenhum (ou supor que todos estão em algum)
     E4: somar porcentagens de bases diferentes
-    O1: contar por correspondência (Galileu, Cantor)
-    O2: inclusão–exclusão para n conjuntos
+    O1: a mesma conta em probabilidade (regra da adição)
+    O2: 'o nome: princípio da inclusão e exclusão (ideia geral, sem fórmula)'
   exemplos: []
   questoes_meta:
     N1: 4
