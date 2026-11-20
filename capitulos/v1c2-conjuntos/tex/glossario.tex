@@ -1,6 +1,5 @@
-% Glossário do capítulo — no FIM do capítulo, como consulta (didática v3 §5).
-% Montado no fechamento a partir dos termos que cada unidade define (dossiê §1 "termos novos").
-% Uma linha por termo + a unidade onde é construído.
+% Glossário do capítulo — no FIM do capítulo, como consulta (didática v4 §5).
+% Montado no fechamento a partir dos termos novos de cada dossiê (§1).
 \section*{Glossário do capítulo}
 \addcontentsline{toc}{section}{Glossário do capítulo}
 \markright{Glossário}
@@ -8,13 +7,48 @@
 
 \subsection*{Termos}
 \begin{glossario}
-\item[Termo] Significado em uma linha. \hfill\emph{Unid.~1}
+\item[Conjunto] Noção primitiva: fica determinado por quais objetos pertencem a ele. \hfill\emph{Unid.~1}
+\item[Elemento] Objeto que pertence a um conjunto. \hfill\emph{Unid.~1}
+\item[Pertinência] Relação entre elemento e conjunto: $x\in A$ ($x$ pertence a $A$) ou $x\notin A$. \hfill\emph{Unid.~1}
+\item[Enumeração (listagem)] Descrição de um conjunto pela lista dos seus elementos entre chaves. \hfill\emph{Unid.~1}
+\item[Propriedade característica] Condição $P(x)$ que os elementos do conjunto, e só eles, satisfazem: $\{x\mid P(x)\}$. \hfill\emph{Unid.~1}
+\item[Conjunto unitário] Conjunto com exatamente um elemento. \hfill\emph{Unid.~1}
+\item[Conjunto vazio] Conjunto sem elementos, indicado por $\varnothing$ ou $\{\ \}$. \hfill\emph{Unid.~1}
+\item[Conjunto universo] Conjunto de onde se tiram os candidatos a elemento; muda a resposta de uma equação e o complementar de um conjunto. \hfill\emph{Unid.~1 e 4}
+\item[Diagrama de Euler-Venn] Representação de um conjunto pelos pontos interiores a uma linha fechada. \hfill\emph{Unid.~1}
+\item[Conjuntos iguais] Conjuntos que têm exatamente os mesmos elementos; a ordem e a repetição não contam. \hfill\emph{Unid.~2}
+\item[Subconjunto] $A\subset B$ quando todo elemento de $A$ é elemento de $B$; lê-se \enquote{$A$ está contido em $B$} ou \enquote{$A$ é parte de $B$}. \hfill\emph{Unid.~2}
+\item[Subconjunto próprio] Subconjunto diferente do conjunto todo (em outros livros, $A\subsetneq B$). \hfill\emph{Unid.~2}
+\item[Conjunto das partes] $\mathcal{P}(A)$: o conjunto cujos elementos são todos os subconjuntos de $A$; tem $2^n$ elementos se $A$ tem $n$. \hfill\emph{Unid.~2}
+\item[Reunião] $A\cup B$: os elementos que estão em pelo menos um dos conjuntos. \hfill\emph{Unid.~3}
+\item[Interseção] $A\cap B$: os elementos que estão nos dois conjuntos. \hfill\emph{Unid.~3}
+\item[Conjuntos disjuntos] Conjuntos sem elementos comuns: $A\cap B=\varnothing$. \hfill\emph{Unid.~3}
+\item[Propriedade distributiva] $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$ e $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$. \hfill\emph{Unid.~3}
+\item[Propriedade de absorção] $A\cup(A\cap B)=A$ e $A\cap(A\cup B)=A$. \hfill\emph{Unid.~3}
+\item[Diferença] $A-B$: os elementos de $A$ que não pertencem a $B$; não é comutativa. \hfill\emph{Unid.~4}
+\item[Complementar] De $B$ em relação a $A$ ($B\subset A$): $\complement_A B=A-B$; em relação ao universo: $\overline{A}=U-A$. \hfill\emph{Unid.~4}
+\item[Leis de De Morgan] $\overline{A\cap B}=\overline{A}\cup\overline{B}$ e $\overline{A\cup B}=\overline{A}\cap\overline{B}$. \hfill\emph{Unid.~4}
+\item[Número de elementos] $n(A)$: quantos elementos tem o conjunto finito $A$. \hfill\emph{Unid.~5}
+\item[Princípio da inclusão e exclusão] Somar os conjuntos e corrigir o que foi contado a mais: $n(A\cup B)=n(A)+n(B)-n(A\cap B)$. \hfill\emph{Unid.~5 e 6}
+\item[Tabela de dupla entrada] Tabela que cruza duas classificações, com as quatro regiões nas células e os totais nas margens (tabela de contingência). \hfill\emph{Unid.~5}
+\item[Diagrama de Venn] Desenho com todas as regiões possíveis (oito, para três conjuntos), mesmo as vazias. \hfill\emph{Unid.~6}
+\item[Diagrama de Euler] Desenho que mostra só as relações que existem (um círculo dentro de outro, círculos separados). \hfill\emph{Unid.~6}
+\item[Exatamente $k$, pelo menos $k$] Os que estão em exatamente $k$ dos conjuntos; os que estão em $k$ ou mais. \hfill\emph{Unid.~6}
 \end{glossario}
 
 \subsection*{Símbolos}
 \begin{center}\small
 \begin{tabular}{clll}\toprule
 \sffamily\bfseries Símbolo & \sffamily\bfseries Leitura & \sffamily\bfseries Exemplo & \sffamily\bfseries Unid.\\\midrule
-$x$ & leitura & exemplo & 1\\\bottomrule
+$\in$,\ $\notin$ & pertence; não pertence & $3\in\{1,3,5\}$ & 1\\
+$\{x\mid P(x)\}$ & conjunto dos $x$ tais que $P(x)$ & $\{x\in\mathbb{N}\mid x<3\}=\{0,1,2\}$ & 1\\
+$\varnothing$ & conjunto vazio & $\{x\in\mathbb{R}\mid x^2=-1\}=\varnothing$ & 1\\
+$\subset$,\ $\supset$,\ $\not\subset$ & está contido; contém; não está contido & $\{1\}\subset\{1,2\}$ & 2\\
+$\mathcal{P}(A)$ & conjunto das partes de $A$ & $\mathcal{P}(\{a\})=\{\varnothing,\{a\}\}$ & 2\\
+$\cup$,\ $\cap$ & reunião; interseção & $\{1,2\}\cap\{2,3\}=\{2\}$ & 3\\
+$A-B$ & $A$ menos $B$ & $\{1,2,3\}-\{3,4\}=\{1,2\}$ & 4\\
+$\complement_A B$ & complementar de $B$ em relação a $A$ & $\complement_{\{1,2,3\}}\{3\}=\{1,2\}$ & 4\\
+$\overline{A}$,\ $A^{C}$,\ $A'$ & complementar de $A$ (no universo) & $U=\{1,2,3\}$: $\overline{\{1\}}=\{2,3\}$ & 4\\
+$n(A)$ & número de elementos de $A$ & $n(\{a,b,c\})=3$ & 5\\\bottomrule
 \end{tabular}
 \end{center}

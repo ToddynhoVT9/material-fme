@@ -11,7 +11,7 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Etapa 5 (fechamento do capítulo): abertura, glossário (termos novos de U5–U6 nos dossiês), fontes, PDF final em `saida/`.
+Capítulo entregue (`saida/v1c2-conjuntos.pdf`, 97 p.). Aguardando a leitura do usuário; correções que ele pedir entram como ajustes pontuais (sem refazer etapas). Pendência conhecida: as unidades do Cap. I foram feitas na didática v3 (afetadas pela v4; não revisadas, por decisão do usuário).
 
 ## Unidades
 | U | título | etapa | revisão | observação |
@@ -29,8 +29,8 @@ Fechamento do capítulo (depois de todas `pronta`): abertura, glossário, fontes
 
 ## Portões com o usuário
 - [x] Escopo aprovado (2026-11-19, D1–D5)
-- [ ] Calibração: U1 pronta e aprovada pelo usuário, antes de montar as demais
-- [ ] PDF final entregue — etapa 5
+- [x] Calibração: U1 pronta e aprovada pelo usuário (2026-11-20, c1–c6 → didática v4)
+- [x] PDF final entregue — etapa 5 (2026-11-20, `saida/v1c2-conjuntos.pdf`)
 
 ## Decisões do capítulo
 | # | data | decisão | origem |
@@ -77,3 +77,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 | 2026-11-20 | 2 · U6 | dossiê da U6: Euler (via SEP) × Venn 1880 (primário: oito compartimentos, sombreamento), Yule cap. II (dados inconsistentes, (AB) ≥ (A)+(B)−N); níveis ajustados (ex. 50 N1, ex. 57 N2, vest. 28 N2); vest. 20 e 33 adaptados (M9); banco X1–X6 / P1–P15 + bloco V1–V7 | `verif/u6.py` 39 OK |
 | 2026-11-20 | 3 · U6 | montagem: artigo (3 construções, 1 definição, Euler/Venn e Yule em três camadas, diagrama das oito regiões, 4 casos), 4 erros, 2 obs., 6 exemplos (N1 1 · N2 4 · N3 1), 15 questões (N1 4 · N2 8 · N3 3; 1 integradora) + bloco (7); 3 fontes novas; yule1927 inclui cap. II | 0 FALHAS · 0 AVISOS (capítulo inteiro); folhas conferidas; verif U6 51 OK |
 | 2026-11-20 | 4 · U6 | revisão independente (0 bloqueante, 1 importante, 13 menores); todos tratados (`revisoes/u6.md`): 6-O2 fiel a Venn, IDs/níveis (fme54, natacao, ufpi27), caso 3 qualificado, "diagrama de Venn" nomeado, fme56 (c) adaptado | 0 FALHAS · 0 AVISOS; verif U6 52 OK |
+| 2026-11-20 | 5 · fechamento | abertura (por que, linha do tempo com 12 marcos das unidades, mapa das unidades, notação com fontes, "Mais questões de vestibular" no Como usar), glossário (27 termos, 10 símbolos), fontes sem órfãs (32), coerência entre unidades (U6 cita o nome "Euler-Venn" da U1); PDF em `saida/` | todos os verif sem falhas (U1 47, U2 23, U3 27, U4 43, U5 46, U6 52; FME 98); checar 0/0; abertura, glossário e fontes conferidos nas folhas |

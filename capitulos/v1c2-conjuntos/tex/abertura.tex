@@ -8,9 +8,11 @@
 \markright{Abertura do capítulo}
 
 \subsection*{Por que este capítulo}
-% 2–4 parágrafos: o que o capítulo dá ao estudante, onde ele será usado nos capítulos seguintes,
-% e a pergunta que o atravessa. Sem afirmação de frequência sem fonte (E-R3-5).
-«A escrever no fechamento.»
+Quase tudo o que a matemática do ensino médio estuda é uma coleção de objetos com alguma propriedade em comum: as soluções de uma equação, os números primos, os pontos de uma reta, os valores que uma função pode assumir. Conjunto é o nome dessa coleção, e a linguagem dos conjuntos — pertencer, estar contido, reunir, intersectar, tirar, complementar — é a forma de dizer, sem ambiguidade, quais objetos estão em jogo e o que se faz com eles. Os capítulos seguintes do FME usam essa linguagem o tempo todo: o conjunto-solução de uma inequação é uma interseção ou uma reunião de intervalos; o domínio de uma função é um conjunto; \enquote{não existe solução} é \enquote{o conjunto-solução é vazio}.
+
+O capítulo continua o Capítulo I. Lá, \enquote{e}, \enquote{ou} e \enquote{não} ligavam proposições; aqui, as mesmas palavras ligam conjuntos e produzem conjuntos novos, e as leis de lá — as distributivas, as de De Morgan — reaparecem como leis das operações. A segunda metade do capítulo usa essa linguagem para contar: quantos estão em pelo menos um de dois grupos, quantos em exatamente dois de três, quanto os dados permitem e quanto obrigam.
+
+A pergunta que atravessa as seis unidades é a da primeira: como dizer, de modo que ninguém possa discordar, quem está dentro e quem está fora? Cada unidade responde a uma parte dela — o que conta como descrição, quando dois conjuntos são o mesmo, como combiná-los, o que fica de fora e como contar sem repetir ninguém. A história também é contada aqui, sempre a serviço dessa pergunta: as dificuldades que Cantor, Frege, Russell, Zermelo, Boole, De Morgan, Venn e Yule enfrentaram são, quase sempre, os erros que um estudante comete hoje.
 
 \subsection*{Linha do tempo}
 % Só marcos contados em alguma unidade (narrativa ou observação). Cada linha com \src e a unidade.
@@ -21,17 +23,72 @@ Os marcos abaixo são os que o capítulo usa; cada um é contado, com suas fonte
 \textbf{quando} & \textbf{o quê} & \textbf{unid.}\\\midrule\endfirsthead
 \toprule\textbf{quando} & \textbf{o quê} & \textbf{unid.}\\\midrule\endhead
 \bottomrule\endfoot
---- & «marco»\src{fme} & ---\\
+1638 & Galileu, nas \emph{Duas novas ciências}: os quadrados são só uma parte dos números, mas se emparelham um a um com eles; no infinito, \enquote{maior} e \enquote{igual} não funcionam como nas coleções finitas.\src{galileu1638}\src{blaszczyk2021} & 2\\\fino
+1768 & Euler representa proposições com círculos que mostram só as relações existentes.\src{sepDiagrams}\src{euler1768} & 6\\\fino
+1847 e 1854 & Boole calcula com classes: $xy$ para a parte comum; $x+y$ só para classes sem parte comum.\src{sepAlgLog}\src{boole1854} & 3\\\fino
+1847 & De Morgan: um termo e o seu contrário esgotam o \enquote{universo} daquilo de que se fala; em \emph{Formal Logic}, \enquote{o contrário de $PQ$ é $p,q$}.\src{encPhil}\src{burrisNotes}\src{demorgan1847} & 4\\\fino
+1864 & Jevons troca o \enquote{$+$} restrito de Boole pela reunião sem restrição.\src{sepAlgLog} & 3\\\fino
+1872 & Cantor, estudando séries trigonométricas, passa a operar com conjuntos de pontos como objetos.\src{sepEarly} & 1\\\fino
+1880 & Venn desenha primeiro todos os compartimentos (oito, com três círculos) e só depois sombreia os vazios.\src{venn1880}\src{sepDiagrams} & 6\\\fino
+1888--1889 & Peano usa $\cup$ e $\cap$ com o sentido atual (1888) e o épsilon de pertinência, abreviação de \emph{est} (1889).\src{millerHawaii}\src{mactutorSym}\src{peano1889} & 2, 3\\\fino
+1902--1903 & Russell escreve a Frege (16 de junho de 1902); no apêndice do volume II (1903), Frege pergunta quando é permitido passar de um conceito à sua extensão.\src{sepRussell}\src{vanH}\src{sepZermelo}\src{frege1903} & 1\\\fino
+1904 & Pearson dá o nome de \emph{tabela de contingência} à tabela que cruza duas classificações.\src{millerC}\src{pearson1904} & 5\\\fino
+1908 & Zermelo publica a primeira lista de axiomas da teoria dos conjuntos, com a regra de igualdade e o axioma de separação.\src{sepZermelo}\src{zermelo1908} & 1, 2\\\fino
+1927 (8.ª ed.) & Yule, no seu manual de estatística: classes últimas, sentido inclusivo dos símbolos, dados inconsistentes e a condição $(AB)\ge(A)+(B)-N$.\src{yule1927} & 5, 6\\
 \end{longtable}}
 
 \subsection*{Mapa das unidades}
-% Diagrama de pré-requisitos (TikZ) + tabela "a pergunta que a unidade responde" — igual à pergunta
-% aberta de cada prefácio — e "o que você leva dela".
-«Diagrama e tabela no fechamento.»
+As seis unidades formam uma escada. A Unidade 1 dá o material (conjunto, elemento, descrição, universo); a Unidade 2, as relações entre conjuntos (igualdade e inclusão) e a contagem de subconjuntos; as Unidades 3 e 4, as operações (reunião, interseção, diferença, complementar). As Unidades 5 e 6 usam tudo isso para contar elementos, primeiro com dois conjuntos, depois com três.
+\begin{center}
+\begin{tikzpicture}[
+  u/.style={draw=acento, line width=0.8pt, rounded corners=3pt, fill=acentoclaro,
+            minimum width=3.3cm, minimum height=1.05cm, align=center, font=\sffamily\small},
+  seta/.style={-{Stealth[length=2.2mm]}, line width=0.7pt, color=acento!80!black}]
+  \node[u] (u1) at (0,0)     {\textbf{1} Conjunto, elemento\\e descrição};
+  \node[u] (u2) at (4.1,0)   {\textbf{2} Igualdade, inclusão\\e partes};
+  \node[u] (u3) at (8.2,0)   {\textbf{3} Reunião e\\interseção};
+  \node[u] (u4) at (8.2,-2.2) {\textbf{4} Diferença e\\complementar};
+  \node[u] (u5) at (4.1,-2.2) {\textbf{5} Contando:\\dois conjuntos};
+  \node[u] (u6) at (0,-2.2)  {\textbf{6} Três conjuntos\\e as regiões};
+  \draw[seta] (u1) -- (u2);
+  \draw[seta] (u2) -- (u3);
+  \draw[seta] (u3) -- (u4);
+  \draw[seta] (u4) -- (u5);
+  \draw[seta] (u5) -- (u6);
+\end{tikzpicture}
+\end{center}
+{\small\noindent Cada seta se lê \enquote{é pré-requisito de}. Uma unidade usa também tudo o que vem antes dela no caminho: a Unidade 6 usa, além da 5, as regiões de três conjuntos da Unidade 3 e a contagem de subconjuntos da Unidade 2.}
+
+\begin{center}\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{c>{\raggedright\arraybackslash}p{6.4cm}>{\raggedright\arraybackslash}p{6.0cm}}\toprule
+& \textbf{a pergunta que a unidade responde} & \textbf{o que você leva dela}\\\midrule
+1 & Como descrever um conjunto de modo que ninguém possa discordar sobre quem está dentro e quem está fora? & $\in$, $\notin$, listagem e propriedade, universo, vazio e unitário, o paradoxo de Russell\\\fino
+2 & Quando dois conjuntos são o mesmo — e qual a diferença entre ser elemento de um conjunto e ser parte dele? & igualdade, $\subset$, $\in$ $\times$ $\subset$, prova de inclusão, $\mathcal{P}(A)$ e $2^n$\\\fino
+3 & Como o \enquote{ou} e o \enquote{e} da lógica viram operações entre conjuntos? & $\cup$, $\cap$, disjuntos, propriedades, elemento a elemento\\\fino
+4 & Como descrever o que fica de fora — e por que \enquote{fora} sempre depende de onde estamos? & $A-B$, complementar, De Morgan, $A-B=A\cap\overline{B}$\\\fino
+5 & Como contar quem está em pelo menos um de dois grupos sem contar ninguém duas vezes? & $n(A\cup B)$, quatro regiões, tabela de dupla entrada, porcentagens de grupos diferentes\\\fino
+6 & Com três grupos, como organizar a contagem para não se perder nas sobreposições? & oito regiões, de dentro para fora, $n(A\cup B\cup C)$, exatamente $k$ e pelo menos $k$, mínimos e máximos\\\bottomrule
+\end{tabular}
+\end{center}
 
 \subsection*{Tabela de notação}
-% Símbolos do capítulo: lê-se · quem introduziu · quando · unidade. Só com fonte; sem fonte, "---".
-«Tabela no fechamento.»
+\begin{center}\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabular}{c>{\raggedright\arraybackslash}p{4.0cm}>{\raggedright\arraybackslash}p{4.6cm}cc}\toprule
+\textbf{símbolo} & \textbf{lê-se} & \textbf{quem introduziu} & \textbf{quando} & \textbf{unid.}\\\midrule
+$\in$,\ $\notin$ & pertence; não pertence & Peano (épsilon, de \emph{est}) & 1889 & 1\\\fino
+$\{x\mid P(x)\}$ & conjunto dos $x$ tais que $P(x)$ & --- & --- & 1\\\fino
+$\varnothing$ & conjunto vazio & --- & --- & 1\\\fino
+$\subset$,\ $\supset$,\ $\not\subset$ & está contido; contém; não está contido & --- & --- & 2\\\fino
+$\mathcal{P}(A)$ & conjunto das partes de $A$ & --- & --- & 2\\\fino
+$\cup$,\ $\cap$ & reunião; interseção & Peano (com o sentido atual) & 1888 & 3\\\fino
+$A-B$ & diferença: $A$ menos $B$ & --- & --- & 4\\\fino
+$\complement_A B$,\ $\overline{A}$,\ $A^{C}$,\ $A'$ & complementar (de $B$ em $A$; de $A$ no universo) & --- & --- & 4\\\fino
+$n(A)$ & número de elementos de $A$ & --- & --- & 5\\\bottomrule
+\end{tabular}
+\end{center}
+{\small\noindent Fontes da tabela: para $\in$, Miller (MacTutor)\src{mactutorSym} e Peano\src{peano1889}; para $\cup$ e $\cap$, Miller (MacTutor)\src{millerHawaii}. As demais origens não foram documentadas nesta pesquisa; a notação é a do FME.\src{fme}}
 
 \subsection*{Como usar este material}
 \textbf{A ordem de cada unidade.} Toda unidade segue a mesma sequência, e cada seção responde a uma pergunta: o \emph{Prefácio}, \enquote{por que isso merece ser estudado?}; \emph{De onde vem?}, \enquote{por que foi necessário, como surgiu e como o reconstruímos hoje?}; \emph{Onde é usado?}, \enquote{como reconheço uma situação em que devo usar isso?}; \emph{Erros comuns}, \enquote{onde o raciocínio costuma quebrar?}; \emph{Observações}, aprofundamentos opcionais; \emph{Exemplos} resolvidos e \emph{Questões}; a \emph{Síntese de domínio}, um teste do que você entendeu; e as \emph{Respostas}. As três primeiras seções formam um texto corrido, que pode ser lido sozinho, como um artigo. O que é fixo é a função de cada seção, não o tamanho. O glossário, no fim do capítulo, reúne os termos e símbolos de todas as unidades, para consulta.
@@ -49,6 +106,8 @@ Os marcos abaixo são os que o capítulo usa; cada um é contado, com suas fonte
   \item \textbf{[histórico]}: problema ou experimento da história contada na unidade;
   \item \textbf{[autoral]}: escrita para este material.
 \end{itemize}
+
+\textbf{Mais questões de vestibular.} No fim da seção de Questões de algumas unidades há um bloco com as questões de vestibular do FME que não entraram na sequência principal, também em ordem de nível e com respostas. Nada do livro ficou de fora; a sequência principal continua curta.
 
 \textbf{As fontes.} Os números sobrescritos, como este\src{fme}, remetem à lista de \emph{Fontes} no fim do capítulo. Histórias cuja veracidade não se pode verificar trazem a marca\anedota.
 
