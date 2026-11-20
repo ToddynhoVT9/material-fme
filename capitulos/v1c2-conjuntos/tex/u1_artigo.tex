@@ -15,7 +15,7 @@ Dois colegas leem no quadro: \enquote{os números $3, 5, 7, \ldots$}. Um deles j
 
 Outra situação. \enquote{Quais números satisfazem $x^2=2$?} Se procuramos entre as frações, nenhum; se procuramos entre todos os números reais, dois: $\sqrt2$ e $-\sqrt2$. A condição é a mesma; as respostas são diferentes, porque a pergunta não disse \emph{onde} procurar.
 
-Toda a matemática deste volume fala de coleções: o conjunto das soluções de uma equação, o conjunto dos pontos de uma figura, o domínio de uma função. Se a descrição de uma coleção deixa dúvida sobre quem pertence a ela, tudo o que vem depois herda a dúvida.
+Toda a matemática deste capítulo fala de coleções: o conjunto das soluções de uma equação, o conjunto dos pontos de uma figura, os grupos de pessoas de uma pesquisa. Se a descrição de uma coleção deixa dúvida sobre quem pertence a ela, tudo o que vem depois herda a dúvida.
 
 \textbf{Como descrever um conjunto de modo que ninguém possa discordar sobre quem está dentro e quem está fora?} É a pergunta desta unidade.
 
@@ -28,7 +28,7 @@ Toda a matemática deste volume fala de coleções: o conjunto das soluções de
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
   \item \textbf{Sentença aberta.} \enquote{$x+1=4$} não é verdadeira nem falsa até que $x$ receba um valor; com $x=3$, vira uma proposição verdadeira (Cap.~I, Unidade~5).
   \item \textbf{Contradição.} Uma sentença da forma \enquote{$p$ e não $p$}, como \enquote{$x=1$ e $x\neq1$}, é falsa para todo valor de $x$ (Cap.~I, Unidade~4).
-  \item \textbf{Os conjuntos numéricos, por enquanto informalmente.} $\mathbb{N}=\{0,1,2,3,\ldots\}$ (o FME inclui o 0); $\mathbb{Z}$: os inteiros; $\mathbb{Q}$: os números que se escrevem como fração de inteiros; $\mathbb{R}$: os reais, como $\sqrt2$ e $\pi$. O Capítulo III os define com cuidado.
+  \item \textbf{Os conjuntos numéricos, por enquanto informalmente.} $\mathbb{N}=\{0,1,2,3,\ldots\}$ (neste material, o 0 é natural); $\mathbb{Z}$: os inteiros; $\mathbb{Q}$: os números que se escrevem como fração de inteiros; $\mathbb{R}$: os reais, como $\sqrt2$ e $\pi$. O Capítulo III os define com cuidado.
 \end{itemize}
 \end{minimo}
 
@@ -36,9 +36,9 @@ Toda a matemática deste volume fala de coleções: o conjunto das soluções de
 \DeOndeVem
 
 \subsubsection{Por que alguém precisou disso}
-Queremos falar de \enquote{todos os números pares} ou de \enquote{todos os pontos à mesma distância de $A$ e $B$} como de \emph{um objeto só}, sobre o qual se fazem perguntas: quantos elementos ele tem? o 8 está nele? é igual àquele outro? Para isso, o objeto precisa ficar fixado apenas por quem pertence a ele, sem discussão.
+Muitas vezes precisamos tratar uma coleção inteira — todos os números pares, todos os pontos que ficam à mesma distância de dois pontos $A$ e $B$ — como \emph{um único objeto matemático} e fazer perguntas sobre ela: quantos elementos ela tem? O 8 pertence a ela? Ela é igual a outra coleção? Para que essas perguntas tenham uma única resposta certa, a coleção precisa ficar determinada apenas por quais objetos pertencem a ela, de um modo que qualquer pessoa decida da mesma forma.
 
-Essa maneira de pensar é mais recente do que parece. Quando Georg Cantor estudava séries trigonométricas, em 1872, passou a operar com \emph{conjuntos de pontos}: definiu, para um conjunto de pontos, o conjunto dos seus pontos-limite e começou a repetir a operação, como quem repete uma conta.\src{sepEarly} O passo decisivo foi tratar o conjunto como um objeto matemático, sobre o qual se opera tanto quanto sobre o número 3.\src{sepEarly}
+Tratar uma coleção como um objeto é uma ideia mais recente do que parece. Em 1872, estudando séries trigonométricas, o matemático Georg Cantor precisou lidar com conjuntos de pontos da reta. A cada conjunto de pontos ele associou um conjunto novo — o dos seus \emph{pontos-limite}, isto é, os pontos que têm, tão perto quanto se queira, outros pontos do conjunto — e passou a repetir essa operação sobre o resultado, como se repete uma conta.\src{sepEarly} Para fazer isso, Cantor tinha de tratar cada conjunto de pontos como uma coisa só, sobre a qual se opera, do mesmo modo que se opera com o número 3. Esse é o passo que a teoria dos conjuntos tornou comum.\src{sepEarly}
 
 \begin{construcao}[conjunto e pertinência]{1-H1}
 \begin{enumerate}[label=(\arabic*)]
@@ -78,13 +78,13 @@ A propriedade parece resolver tudo: diga a condição, e o conjunto está dado. 
 \subsubsection{Quando a propriedade sozinha falha}
 O lógico alemão Gottlob Frege tentou dar à aritmética um fundamento puramente lógico.\src{sepRussell} Uma das peças do seu sistema era a possibilidade de, a partir de qualquer conceito, passar à sua \emph{extensão} — a coleção dos objetos que caem sob aquele conceito.\src{sepZermelo}\src{frege1903} Lido hoje, é o que se chama \textbf{princípio de compreensão}: para toda condição $P(x)$, existe o conjunto $\{x\mid P(x)\}$.\src{sepRussell}
 
-Em 1901, Bertrand Russell encontrou uma contradição ao pensar na classe de todas as classes que não são membros de si mesmas; em 16 de junho de 1902, escreveu a Frege mostrando que ela atingia o sistema dele.\src{sepRussell}\src{vanH} Em notação moderna, é o conjunto
+Em 1901, Bertrand Russell encontrou uma contradição ao pensar na classe de todas as classes que não são membros de si mesmas; em 16 de junho de 1902, escreveu a Frege mostrando que ela atingia o sistema de Frege.\src{sepRussell}\src{vanH} Em notação moderna, é o conjunto
 \[
 R=\{x\mid x\notin x\}.
 \]
-Pergunte se $R$ pertence a $R$. Se $R\in R$, então $R$ satisfaz a condição \enquote{$x\notin x$}, isto é, $R\notin R$. Se $R\notin R$, então $R$ satisfaz a condição, e portanto $R\in R$. As duas possibilidades levam à contrária: a condição \enquote{$x\notin x$} não define conjunto nenhum. A carta chegou quando o segundo volume da obra de Frege estava indo para a gráfica; no apêndice, o próprio Frege pergunta se é sempre permitido falar da extensão de um conceito e, se não for, como reconhecer as exceções.\src{sepZermelo}
+Pergunte se $R$ pertence a $R$. Se $R\in R$, então $R$ satisfaz a condição \enquote{$x\notin x$}, isto é, $R\notin R$. Se $R\notin R$, então $R$ satisfaz a condição, e portanto $R\in R$. Cada possibilidade leva à sua negação; portanto, a condição \enquote{$x\notin x$} não define conjunto nenhum. A carta chegou quando o segundo volume da obra de Frege estava indo para a gráfica; no apêndice, o próprio Frege pergunta se é sempre permitido falar da extensão de um conceito e, se não for, como reconhecer as exceções.\src{sepZermelo}
 
-A saída que a matemática adotou foi proposta por Zermelo em 1908. Ele escreveu que era preciso abandonar a suposição de que a toda noção logicamente definível corresponde um conjunto, e propôs, no lugar dela, um axioma de \emph{separação}: dado um conjunto já existente e uma propriedade sem ambiguidade, pode-se \emph{separar} dele o conjunto dos elementos que têm a propriedade.\src{sepZermelo}\src{zermelo1908} Lido hoje, o axioma garante os conjuntos da forma $\{x\in S\mid P(x)\}$. Com a condição \enquote{$x\notin x$}, o conjunto $\{x\in S\mid x\notin x\}$ só contém elementos de $S$; o argumento de Russell, refeito, mostra apenas que esse conjunto não é elemento de $S$ — nenhuma contradição.\src{sepRussell} A convenção que você vai usar em todo o curso é a forma escolar dessa ideia: ao descrever um conjunto por uma propriedade, fixe antes o conjunto de onde vêm os candidatos.\src{fme}
+A saída que a matemática adotou foi proposta em 1908 pelo matemático Ernst Zermelo. Ele escreveu que era preciso abandonar a suposição de que a toda noção logicamente definível corresponde um conjunto, e propôs, no lugar dela, um axioma de \emph{separação}: dado um conjunto já existente e uma propriedade sem ambiguidade, pode-se \emph{separar} dele o conjunto dos elementos que têm a propriedade.\src{sepZermelo}\src{zermelo1908} Lido hoje, o axioma garante os conjuntos da forma $\{x\in S\mid P(x)\}$. Com a condição \enquote{$x\notin x$}, o conjunto $\{x\in S\mid x\notin x\}$ só contém elementos de $S$; o argumento de Russell, refeito, mostra apenas que esse conjunto não é elemento de $S$ — nenhuma contradição.\src{sepRussell} A convenção que você vai usar em todo o curso é a forma escolar dessa ideia: ao descrever um conjunto por uma propriedade, fixe antes o conjunto de onde vêm os candidatos.\src{fme}
 
 \begin{construcao}[o conjunto universo]{1-H3}
 \begin{enumerate}[label=(\arabic*)]
@@ -143,14 +143,14 @@ A linguagem de conjuntos aparece sempre que um enunciado pede \enquote{o conjunt
 \mapa{\enquote{dê os elementos}, \enquote{escreva com símbolos}, \enquote{descreva por meio de uma propriedade}}
 {uma lista com lei visível, ou uma condição que os listados satisfazem e mais ninguém}
 {1-H2: testar candidatos (propriedade $\to$ lista) ou achar o que é comum (lista $\to$ propriedade)}
-\reconhecer O FME tem um exercício que pede exatamente isso: \enquote{Descreva por meio de uma propriedade característica dos elementos cada um dos conjuntos seguintes}.\src{fme} Pode haver mais de uma propriedade certa; o que importa é que ela pegue todos os listados e nenhum outro. Treino: \exref{ex:u1:listar}; questões \ref{u1:listar} e \ref{u1:fme13}.
+\reconhecer O verbo do enunciado pede uma tradução: de lista para condição (\enquote{descreva por meio de uma propriedade}) ou de condição para lista (\enquote{dê os elementos}). Pode haver mais de uma propriedade certa; o que importa é que ela pegue todos os listados e nenhum outro. Treino: \exref{ex:u1:listar}; questões \ref{u1:listar} e \ref{u1:fme13}.
 \end{caso}
 
 \begin{caso}{2 · \enquote{qual é o conjunto dos\ldots?}}{1-U2}
 \mapa{\enquote{qual é o conjunto dos\ldots}, \enquote{resolva}, \enquote{determine as soluções}, às vezes sem dizer onde}
 {o universo: dito no enunciado (\enquote{em $\mathbb{Z}$}, \enquote{no plano}) ou implícito no contexto}
 {1-H3: escrever $\{x\in U\mid P(x)\}$ antes de calcular}
-\reconhecer É a pergunta do FME que abriu a construção 1-H3: \enquote{Qual é o conjunto dos pontos $P$ que ficam a igual distância de dois pontos dados $A$ e $B$, sendo $A\neq B$?}\src{fme} Sem o universo, a pergunta tem três respostas. Quando o enunciado não diz o universo, procure-o no contexto: \enquote{número de alunos} está em $\mathbb{N}$; \enquote{solução real} está em $\mathbb{R}$. Treino: \exref{ex:u1:universo}; questões \ref{u1:equacao} e \ref{u1:distancia}.
+\reconhecer O sinal é uma pergunta que descreve os elementos por uma condição sem dizer onde procurá-los, como a da construção 1-H3: \enquote{qual é o conjunto dos pontos que ficam à mesma distância de $A$ e de $B$?}. Sem o universo, essa pergunta tem três respostas. Quando o enunciado não diz o universo, procure-o no contexto: \enquote{número de alunos} está em $\mathbb{N}$; \enquote{solução real} está em $\mathbb{R}$. Treino: \exref{ex:u1:universo}; questões \ref{u1:equacao} e \ref{u1:distancia}.
 \end{caso}
 
 \begin{caso}{3 · um programa que filtra uma coleção}{1-U2}
@@ -164,7 +164,7 @@ A linguagem de conjuntos aparece sempre que um enunciado pede \enquote{o conjunt
 \mapa{\enquote{quais dos conjuntos abaixo são vazios / unitários / finitos?}}
 {quantos candidatos do universo satisfazem a propriedade}
 {1-H4 junto com 1-H3: contar as soluções \emph{no universo dado}}
-\reconhecer O comando aparece assim no FME: \enquote{Quais dos conjuntos abaixo são unitários?}\src{fme} Antes de contar, verifique duas coisas: em que universo se está (o mesmo intervalo pode ser vazio entre os inteiros e infinito entre os reais) e se a propriedade é falsa para todos (\enquote{$x-x=1$}) ou verdadeira para todos (\enquote{$x-x=0$}). Treino: \exref{ex:u1:classificar}; questões \ref{u1:vazios} e \ref{u1:unitarios}.
+\reconhecer O enunciado apresenta vários conjuntos descritos por propriedades e pergunta quais são vazios, unitários ou finitos. Antes de contar, verifique duas coisas: em que universo se está (o mesmo intervalo pode ser vazio entre os inteiros e infinito entre os reais) e se a propriedade é falsa para todos (\enquote{$x-x=1$}) ou verdadeira para todos (\enquote{$x-x=0$}). Treino: \exref{ex:u1:classificar}; questões \ref{u1:vazios} e \ref{u1:unitarios}.
 \end{caso}
 
 \subsubsection{Tabela de gatilhos}

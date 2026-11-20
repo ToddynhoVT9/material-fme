@@ -11,12 +11,12 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-**Calibração da U1 com o usuário** (PDF `saida/v1c2-u1-calibracao.pdf`). Enquanto isso, só dossiês das outras unidades (próximo: dossiê da U2); nada de montagem até a aprovação.
+Dossiê da U2 (a U1 está calibrada e pronta; seguir D7 e D8 nas próximas unidades).
 
 ## Unidades
 | U | título | etapa | revisão | observação |
 |---|---|---|---|---|
-| 1 | Conjunto, elemento e descrição | revisão (aguarda calibração) | R1 (revisor independente): 0 · 6 · 19, todos tratados | `verif/u1.py` 47 OK; checar 0/0 |
+| 1 | Conjunto, elemento e descrição | calibrada (pronta) | R1 (revisor independente): 0 · 6 · 19, todos tratados | `verif/u1.py` 47 OK; checar 0/0 |
 | 2 | Igualdade, inclusão e conjunto das partes | escopo | — | — |
 | 3 | Reunião e interseção | escopo | — | — |
 | 4 | Diferença e complementar | escopo | — | — |
@@ -43,6 +43,7 @@ Fechamento do capítulo (depois de todas `pronta`): abertura, glossário, fontes
 | D4 | 2026-11-19 | resposta correta nas divergências; questões com problema de redação (13e, 14, 42b) em versão adaptada, etiqueta "[adaptado do FME, exercício n]" | usuário |
 | D6 | 2026-11-19 | usar a notação {expressão \| condição} (ex.: {2ⁿ \| n ∈ ℕ}), apresentada em 1-H2 | usuário |
 | D7 | 2026-11-19 | erro, caso do mapa ou prefácio **não** usam o mesmo caso concreto (equação, lista, conjunto) de uma questão N2 — senão a questão vira cópia (achado 5 da revisão da U1) | revisão U1 |
+| D8 | 2026-11-20 | **calibração da U1** (usuário): tom, *Onde é usado?* e dificuldade das questões aprovados. Regras daqui em diante: (a) não citar o FME no corpo do texto ("o FME tem um exercício…", "aparece assim no FME"): a procedência fica só na etiqueta e no `\src`; (b) "Como reconhecer" descreve o sinal no enunciado, não onde a questão aparece; (c) reler cada parágrafo do artigo procurando ambiguidade (referente de pronome, termo sem explicação, frase que admite duas leituras); (d) o prefácio fala do capítulo, não do volume | usuário |
 | D5 | 2026-11-19 | vestibulares do FME com etiqueta "[BANCA via FME, ano não informado]", sem procurar o ano | usuário |
 
 Decisões locais deste capítulo. Mudança na **didática** só com o usuário, como nova versão em `kit/didatica.md`.
