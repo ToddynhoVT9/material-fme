@@ -125,4 +125,9 @@ chk("ex:u4:regioes A∩B, A, B (única solução)", [(sorted(X & Y), sorted(X), 
 chk("ex:u4:calcular", ({1, 2, 3, 4} - {3, 4, 5}, {3, 4, 5} - {1, 2, 3, 4}, {1, 2} - {5, 6}, {1, 2} - {1, 2, 3}, {1, 2, 3, 4, 5, 6} - {2, 4, 6}),
     ({1, 2}, {5}, {1, 2}, set(), {1, 3, 5}))
 
+Am = set(range(1, 13)); Pm = {x for x in Am if x % 2 == 0}; Tm = {x for x in Am if x % 3 == 0}
+chk("u4:multiplos a) A−P, b) T−P, c) A−(P∪T), (A−P)∩(A−T), (A−P)∪(A−T)",
+    (Am - Pm, Tm - Pm, Am - (Pm | Tm), (Am - Pm) & (Am - Tm), (Am - Pm) | (Am - Tm)),
+    ({1, 3, 5, 7, 9, 11}, {3, 9}, {1, 5, 7, 11}, {1, 5, 7, 11}, {1, 2, 3, 4, 5, 7, 8, 9, 10, 11}))
+
 print(f"\n{ok} OK, {falhas} falha(s)")

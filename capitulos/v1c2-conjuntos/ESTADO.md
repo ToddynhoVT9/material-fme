@@ -11,7 +11,7 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Revisão da U4 (etapa 4): revisor independente com o brief v4; depois triagem em `revisoes/u4.md`.
+Dossiê da U5 (etapa 2): n(A ∪ B) como construção (D3, 5-H1).
 
 ## Unidades
 | U | título | etapa | revisão | observação |
@@ -19,7 +19,7 @@ Revisão da U4 (etapa 4): revisor independente com o brief v4; depois triagem em
 | 1 | Conjunto, elemento e descrição | calibrada (pronta) | R1 (revisor independente): 0 · 6 · 19, todos tratados | `verif/u1.py` 47 OK; checar 0/0 |
 | 2 | Igualdade, inclusão e conjunto das partes | pronta | R1 (revisor independente): 0 · 4 · 17, todos tratados | `verif/u2.py` 23 OK; checar 0/0 |
 | 3 | Reunião e interseção | pronta | R1 (revisor independente): 0 · 10 · 10, todos tratados | `verif/u3.py` 27 OK; checar 0/0 |
-| 4 | Diferença e complementar | montagem pronta | — | 0 FALHAS · 0 AVISOS; `verif/u4.py` 42 OK |
+| 4 | Diferença e complementar | pronta | R1 (revisor independente): 0 · 4 · 10, todos tratados | `verif/u4.py` 43 OK; checar 0/0 |
 | 5 | Contando elementos: dois conjuntos | escopo | — | — |
 | 6 | Três conjuntos e as regiões do diagrama | escopo | — | — |
 <!-- FIM UNIDADES -->
@@ -46,6 +46,7 @@ Fechamento do capítulo (depois de todas `pronta`): abertura, glossário, fontes
 | D8 | 2026-11-20 | **calibração da U1** (usuário): tom, *Onde é usado?* e dificuldade das questões aprovados. Regras daqui em diante: (a) não citar o FME no corpo do texto ("o FME tem um exercício…", "aparece assim no FME"): a procedência fica só na etiqueta e no `\src`; (b) "Como reconhecer" descreve o sinal no enunciado, não onde a questão aparece; (c) reler cada parágrafo do artigo procurando ambiguidade (referente de pronome, termo sem explicação, frase que admite duas leituras); (d) o prefácio fala do capítulo, não do volume. **(a)–(c) promovidas à didática v4** (2026-11-20) | usuário |
 | D9 | 2026-11-20 | D7 estendida: a **construção** (De onde vem?) também não usa o mesmo caso concreto de uma sentença de questão N2 (achado 5 da revisão da U2) | revisão U2 |
 | D10 | 2026-11-20 | vest. 38 (UF-PI) passa da U3 para a U4 (a afirmação III usa complementar); 3-O2 trocada (a antiga, reunião infinita, antecipava a ferramenta do N3 dos discos) | dossiê U3 |
+| D11 | 2026-11-20 | respostas: múltipla escolha, V/F e "determine" podem trazer a justificativa em 1–2 linhas (já era assim na U3); demonstrações, só a linha do que a prova mostra | revisão U4 |
 | D5 | 2026-11-19 | vestibulares do FME com etiqueta "[BANCA via FME, ano não informado]", sem procurar o ano | usuário |
 
 Decisões locais deste capítulo. Mudança na **didática** só com o usuário, como nova versão em `kit/didatica.md`.
@@ -69,3 +70,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 | 2026-11-20 | 4 · U3 | revisão independente (0 bloqueante, 10 importantes, 10 menores); todos tratados (`revisoes/u3.md`): regiões de três conjuntos na 3-H3, Boole corrigido (interpretação × uso), fme27 a N3, ordem do N2 | 0 FALHAS · 0 AVISOS; verif U3 27 OK |
 | 2026-11-20 | 2 · U4 | dossiê da U4: De Morgan (universo do discurso; leis como regra sobre contrários, Formal Logic p. 118), mapa com 4 casos (Python a − b), E1–E4, banco X1–X6 / P1–P13 + bloco V1–V4 (D2); O2 trocada | `verif/u4.py` 27 OK |
 | 2026-11-20 | 3 · U4 | montagem: artigo (3 construções, 1 definição, De Morgan em três camadas, 4 casos — Python a − b executado no verif), 4 erros, 2 obs., 8 exemplos (N1 3 · N2 4 · N3 1), 13 questões (N1 4 · N2 6 · N3 3; 1 integradora) + bloco "Mais questões de vestibular" (4, 2 integradoras); 5 fontes novas; ajustes da montagem anotados no dossiê §8 | 0 FALHAS · 0 AVISOS (U1–U4); folhas conferidas; verif U4 42 OK |
+| 2026-11-20 | 4 · U4 | revisão independente (0 bloqueante, 4 importantes, 10 menores); todos tratados (`revisoes/u4.md`): questão nova `u4:multiplos` (4-U1, 4-E4), IDs de fme53/fme44/ufpi38 corrigidos, "universo do discurso" na camada moderna, D11 | 0 FALHAS · 0 AVISOS; verif U4 43 OK |

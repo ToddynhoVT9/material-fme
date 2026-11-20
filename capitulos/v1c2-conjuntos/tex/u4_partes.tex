@@ -19,7 +19,7 @@
 \campo{Onde quebra.} Com $U=\{1,2,3,4\}$, $A=\{1,2\}$ e $B=\{2,3\}$: $\overline{A\cap B}=\overline{\{2\}}=\{1,3,4\}$, mas $\overline{A}\cap\overline{B}=\{3,4\}\cap\{1,4\}=\{4\}$.
 \campo{Como detectar.} Teste com conjuntos pequenos ou compare as regiões do diagrama.
 \campo{Como corrigir.} Ao complementar, $\cap$ vira $\cup$ e $\cup$ vira $\cap$ (construção 4-H3).
-\campo{Onde aparece.} \exref{ex:u4:demorgan}; questões \ref{u4:fme44} e \ref{u4:ita42}.
+\campo{Onde aparece.} \exref{ex:u4:demorgan}; questões \ref{u4:ita42} e \ref{u4:ufpi38}.
 \end{erro}
 
 \begin{erro}{Complementar sem universo}{4-E3}
@@ -37,7 +37,7 @@
 \campo{Onde quebra.} Com $A=\{1,2,3\}$, $B=\{1\}$ e $C=\{2\}$: $A-(B\cup C)=\{3\}$, mas $(A-B)\cup(A-C)=\{2,3\}\cup\{1,3\}=\{1,2,3\}$.
 \campo{Como detectar.} Tirar $B\cup C$ tira os dois: o que sobra tem de estar fora de $B$ \emph{e} fora de $C$.
 \campo{Como corrigir.} $A-(B\cup C)=(A-B)\cap(A-C)$ e $A-(B\cap C)=(A-B)\cup(A-C)$ (construção 4-H3).
-\campo{Onde aparece.} \exref{ex:u4:turma}; \qref{u4:fme38}.
+\campo{Onde aparece.} \exref{ex:u4:turma}; \qref{u4:multiplos}.
 \end{erro}
 
 % ------------------------------------------------------------
@@ -54,7 +54,7 @@
 % ------------------------------------------------------------
 \Exemplos
 
-\begin{exemplo}{}{1}{autoral}{4-H1, 4-H2, 4-U1, 4-E1}
+\begin{exemplo}{}{1}{autoral}{4-H1, 4-H2, 4-E1}
 \label{ex:u4:calcular}
 Calcule:
 \begin{multicols}{2}
@@ -155,7 +155,7 @@ Para que conjuntos $A$ e $B$ vale $A-B=B-A$?
 % ------------------------------------------------------------
 \Questoes
 
-\begin{questao}{1}{FME, exercício 38}{4-H1, 4-U1, 4-E1, 4-E4}\label{u4:fme38}
+\begin{questao}{1}{FME, exercício 38}{4-H1, 4-E1}\label{u4:fme38}
 Dados os conjuntos $A=\{a,b,c,d\}$, $B=\{c,d,e,f,g\}$ e $C=\{b,d,e,g\}$, determine:
 \begin{multicols}{3}
 \begin{enumerate}[label=\alph*)]
@@ -168,6 +168,16 @@ Dados os conjuntos $A=\{a,b,c,d\}$, $B=\{c,d,e,f,g\}$ e $C=\{b,d,e,g\}$, determi
 \end{enumerate}
 \end{multicols}
 \resp{a) $\{a,b\}$;\ b) $\{e,f,g\}$;\ c) $\{b\}$;\ d) $\{a,b\}$;\ e) $\{a,b,c\}$;\ f) $\{a,c,e,f,g\}$.}
+\end{questao}
+
+\begin{questao}{1}{autoral}{4-H1, 4-U1, 4-E4}\label{u4:multiplos}
+Seja $A=\{1,2,3,\ldots,12\}$. Indique por $P$ o conjunto dos números pares de $A$ e por $T$ o conjunto dos múltiplos de 3 de $A$.
+\begin{enumerate}[label=\alph*)]
+  \item Escreva como diferença, e calcule, o conjunto dos números de $A$ que não são pares.
+  \item Escreva como diferença, e calcule, o conjunto dos múltiplos de 3 de $A$, exceto os pares.
+  \item Liste os números de $A$ que não são pares nem múltiplos de 3 e escreva esse conjunto com as operações. Depois, calcule $(A-P)\cap(A-T)$ e $(A-P)\cup(A-T)$: qual dos dois é igual ao conjunto pedido?
+\end{enumerate}
+\resp{a) $A-P=\{1,3,5,7,9,11\}$;\ b) $T-P=\{3,9\}$;\ c) $A-(P\cup T)=\{1,5,7,11\}$; $(A-P)\cap(A-T)=\{1,5,7,11\}$, igual; $(A-P)\cup(A-T)=\{1,2,3,4,5,7,8,9,10,11\}$, diferente.}
 \end{questao}
 
 \begin{questao}{1}{FME, exercício 40}{4-H1}\label{u4:fme40}
@@ -215,12 +225,12 @@ Dados os conjuntos $A=\{1,2,3,4,5\}$, $B=\{1,2,4,6,8\}$ e $C=\{2,4,5,7\}$, obten
 \resp{$X=\{1,3,5\}$ (é o único: $B\cap C=\{2,4\}$, e $X$ tem de conter exatamente os elementos de $A$ fora de $\{2,4\}$).}
 \end{questao}
 
-\begin{questao}{2}{FME, exercício 53}{4-H3, 4-U2}\label{u4:fme53}
+\begin{questao}{2}{FME, exercício 53}{4-H2, 4-U2}\label{u4:fme53}
 Denotando por $X'$ o complementar de $X$ em relação a um universo $U$, determine $P'\cup(P\cap Q)$, quaisquer que sejam $P$ e $Q$.
 \resp{$P'\cup Q$. Pela distributiva, $P'\cup(P\cap Q)=(P'\cup P)\cap(P'\cup Q)=U\cap(P'\cup Q)=P'\cup Q$.}
 \end{questao}
 
-\begin{questao}{2}{FME, exercício 44}{4-H2, 4-H3, 4-E2}\label{u4:fme44}
+\begin{questao}{2}{FME, exercício 44}{4-H2, 4-H3}\label{u4:fme44}
 Classifique em V ou F, admitindo que $A$ e $B$ são subconjuntos de um universo $U$ e que $\complement A=U-A$:
 \begin{enumerate}[label=\alph*)]
   \item $(A-B)\cup(B-A)=(A\cup B)-(A\cap B)$
@@ -283,7 +293,7 @@ Chama-se \textbf{diferença simétrica} de $A$ e $B$ o conjunto $A\,\triangle\,B
 \begin{tikzpicture}[scale=0.55]
 \begin{scope}
 \draw[acento,thick] (-0.75,0) circle (1.25); \draw[acento,thick] (0.75,0) circle (1.25);
-\node at (-1.8,1.2) {$A$}; \node at (1.8,1.2) {$B$};
+\node at (-2.1,1.35) {$A$}; \node at (2.1,1.35) {$B$};
 \end{scope}
 \begin{scope}[xshift=6cm]
 \draw[acento,thick] (0,0) circle (1.6); \draw[acento,thick] (0.3,0) circle (0.8);
@@ -300,7 +310,7 @@ Chama-se \textbf{diferença simétrica} de $A$ e $B$ o conjunto $A\,\triangle\,B
 
 \begin{questao}{3}{ITA via FME, ano não informado}{4-H1}\label{u4:ita39}
 Analise a existência de conjuntos $A$ e $B$, ambos não vazios, tais que $(A-B)\cup(B-A)=A$.
-\resp{Não existem. Tome $x\in B$ (possível, pois $B\neq\varnothing$). Se $x\in A$, então $x\in A$, mas $x$ não está em $A-B$ nem em $B-A$, isto é, não está no lado esquerdo — contradição. Se $x\notin A$, então $x\in B-A$, logo $x$ está no lado esquerdo, que é $A$ — contradição.}
+\resp{Não existem. A prova deve mostrar que um elemento de $B$ leva a uma contradição, esteja ele em $A$ ou não.}
 \end{questao}
 
 \begin{questao}{3}{ITA via FME, ano não informado}{4-H1, 4-H3, 4-U4}\label{u4:ita47}
@@ -320,7 +330,7 @@ Sejam $X$, $Y$, $Z$ e $W$ subconjuntos de $\mathbb{N}$ tais que $(X-Y)\cap Z=\{1
 \subsubsection*{Mais questões de vestibular}
 Questões de vestibular sobre o assunto da unidade que ficaram fora da sequência acima, em ordem de nível. As respostas estão no fim da unidade, com as demais.
 
-\begin{questao}{2}{UF-PI via FME, ano não informado}{4-H2, 4-H3}\label{u4:ufpi38}
+\begin{questao}{2}{UF-PI via FME, ano não informado}{4-H2, 4-H3, 4-E2}\label{u4:ufpi38}
 Sejam $A$ e $B$ subconjuntos de $\mathbb{R}$. Considere as afirmações:
 \begin{enumerate}[label=\Roman*.]
   \item Se $A\cap B=\varnothing$, então $A=\varnothing$ ou $B=\varnothing$.
@@ -377,6 +387,7 @@ Sejam $A$ e $B$ conjuntos finitos e não vazios tais que $A\subset B$ e $n(\{C\m
   \item nenhuma
 \end{enumerate}
 \end{multicols}
+(\emph{Dupla ordenada} é o par formado por $n(A)$ e $n(B)$, nessa ordem.)
 \resp{a. $B-A$ tem $2^{7}=128$ subconjuntos, logo tem 7 elementos e, como $A\subset B$, $n(B)-n(A)=7$ (I). Mas $n(A)$ pode ser qualquer número positivo: com $n(A)=100$, $n(B)+n(A)=207$ (II falsa), e $(1,8)$ e $(2,9)$ servem (III falsa).}
 \end{questao}
 

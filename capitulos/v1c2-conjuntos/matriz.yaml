@@ -573,7 +573,6 @@ unidades:
     cobre:
     - H1
     - H2
-    - U1
     - E1
   - rotulo: ex:u4:contido
     nivel: 1
@@ -638,8 +637,14 @@ unidades:
     fonte: FME, exercício 38
     cobre:
     - H1
-    - U1
     - E1
+    integradora: false
+  - rotulo: u4:multiplos
+    nivel: 1
+    fonte: autoral
+    cobre:
+    - H1
+    - U1
     - E4
     integradora: false
   - rotulo: u4:fme40
@@ -673,7 +678,7 @@ unidades:
     nivel: 2
     fonte: FME, exercício 53
     cobre:
-    - H3
+    - H2
     - U2
     integradora: false
   - rotulo: u4:fme44
@@ -682,7 +687,6 @@ unidades:
     cobre:
     - H2
     - H3
-    - E2
     integradora: false
   - rotulo: u4:fme55
     nivel: 2
@@ -734,6 +738,7 @@ unidades:
     cobre:
     - H2
     - H3
+    - E2
     integradora: false
     bloco: mais questões de vestibular
   - rotulo: u4:ita44

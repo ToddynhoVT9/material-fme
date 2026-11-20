@@ -17,13 +17,14 @@ Todo \enquote{fora} é \enquote{fora de alguma coisa}. \textbf{Como descrever o 
 
 \textbf{Ao final, você será capaz de:} calcular diferenças e complementares; traduzir \enquote{exceto}, \enquote{não} e \enquote{fora de} em operações; usar as leis de De Morgan e a igualdade $A-B=A\cap\overline{B}$; sombrear expressões com diferença e complementar; reconstruir conjuntos a partir de diferenças e complementares.
 
-\textbf{Pré-requisitos:} Unidade~1 (universo) e Unidade~3 (reunião, interseção e regiões); do Capítulo I, a negação de \enquote{e} e de \enquote{ou}. O essencial está na caixa abaixo.
+\textbf{Pré-requisitos:} Unidades~1 a~3 (universo; inclusão e conjunto das partes; reunião, interseção e regiões); do Capítulo I, a negação de \enquote{e} e de \enquote{ou}. O essencial está na caixa abaixo.
 \end{prefacio}
 
 \begin{minimo}
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
   \item \textbf{Universo.} O conjunto universo $U$ é o conjunto de onde vêm os candidatos a elemento (Unidade~1).
   \item \textbf{Negação de \enquote{e} e de \enquote{ou}.} \enquote{não ($p$ e $q$)} equivale a \enquote{(não $p$) ou (não $q$)}; \enquote{não ($p$ ou $q$)} equivale a \enquote{(não $p$) e (não $q$)} (Cap.~I).
+  \item \textbf{Inclusão e partes.} $B\subset A$ quer dizer que todo elemento de $B$ está em $A$; um conjunto com $n$ elementos tem $2^{n}$ subconjuntos (Unidade~2).
   \item \textbf{Regiões.} Dois conjuntos dividem o universo em quatro regiões: só $A$, $A$ e $B$, só $B$, nenhum (Unidade~3).
 \end{itemize}
 \end{minimo}
@@ -48,7 +49,7 @@ A-B=\{x\mid x\in A\ \text{e}\ x\notin B\}.
 \end{construcao}
 
 \subsubsection{O complementar e o universo do discurso}
-A ideia de que \enquote{o que não é $X$} depende do assunto em discussão foi tornada explícita pelo matemático e lógico Augustus De Morgan, nas décadas de 1840. De Morgan propôs que cada termo $X$ tivesse um termo \emph{contrário}, que ele escrevia com letra minúscula, $x$, de modo que $X$ e $x$, juntos, esgotassem o \emph{universo do discurso} — o conjunto das coisas de que se está falando, escolhido conforme o assunto.\src{encPhil}\src{britLogic} Lido hoje, o contrário $x$ é o complementar de $X$ em relação a um universo. A convenção atual é a mesma: antes de falar em complementar, fixe o universo.\src{fme}
+A ideia de que \enquote{o que não é $X$} depende do assunto em discussão foi tornada explícita pelo matemático e lógico Augustus De Morgan, na década de 1840. De Morgan propôs que cada termo $X$ tivesse um termo \emph{contrário}, que ele escrevia com letra minúscula, $x$, de modo que $X$ e $x$, juntos, esgotassem o \enquote{universo} daquilo de que se fala — o conjunto das coisas em discussão, escolhido conforme o assunto, que hoje se chama \emph{universo do discurso}.\src{encPhil}\src{britLogic} Lido hoje, o contrário $x$ é o complementar de $X$ em relação a um universo. A convenção atual mantém essa exigência: antes de falar em complementar, fixe o universo.\src{fme}
 
 \begin{construcao}[complementar]{4-H2}
 \begin{enumerate}[label=(\arabic*)]
@@ -108,14 +109,14 @@ A diferença e o complementar aparecem quando o enunciado exclui alguma coisa, q
 \mapa{\enquote{exceto}, \enquote{que não}, \enquote{menos}, \enquote{fora de}}
 {de qual conjunto se tira (o primeiro) e o que se tira (o segundo)}
 {4-H1: $A-B$}
-\reconhecer O sinal é uma palavra de exclusão. Identifique primeiro o conjunto de onde se parte — é ele que fica \enquote{dentro} — e depois o que se retira. Em programação, a operação vem pronta: no Python, com \texttt{a = set('abracadabra')} e \texttt{b = set('alacazam')}, a expressão \texttt{a - b} dá as letras que estão em \texttt{a} e não estão em \texttt{b}, isto é, $\{r,d,b\}$.\src{pyTut} Treino: \exref{ex:u4:calcular} e \exref{ex:u4:turma}; \qref{u4:fme38}.
+\reconhecer O sinal é uma palavra de exclusão. Identifique primeiro o conjunto de onde se parte — é ele que fica \enquote{dentro} — e depois o que se retira. Em programação, a operação vem pronta: no Python, com \texttt{a = set('abracadabra')} e \texttt{b = set('alacazam')}, a expressão \texttt{a - b} dá as letras que estão em \texttt{a} e não estão em \texttt{b}, isto é, $\{r,d,b\}$.\src{pyTut} Treino: \exref{ex:u4:turma}; \qref{u4:multiplos}.
 \end{caso}
 
 \begin{caso}{2 · barras, expoentes $C$ e \enquote{complementar de}}{4-U2}
-\mapa{expressões com $\overline{\phantom{A}}$, $^{C}$, $'$ ou \enquote{complementar de}, combinadas com $\cup$, $\cap$ e $-$}
+\mapa{expressões com barra ($\overline{A}$), expoente $C$ ($A^{C}$), apóstrofo ($A'$) ou \enquote{complementar de}, combinadas com $\cup$, $\cap$ e~$-$}
 {complementares de reuniões ou de interseções, e diferenças que podem virar interseções}
 {4-H3: De Morgan e $A-B=A\cap\overline{B}$}
-\reconhecer O sinal é uma expressão longa com complementos. Antes de calcular ou de testar, simplifique: troque cada diferença por interseção com o complementar, aplique De Morgan e as propriedades da Unidade~3 até a expressão ficar curta. Treino: \exref{ex:u4:fme43} e \exref{ex:u4:demorgan}; \qref{u4:fme53}.
+\reconhecer O sinal é uma expressão longa com complementos. Antes de calcular ou de testar, simplifique: troque cada diferença por interseção com o complementar, aplique De Morgan e as propriedades da Unidade~3 até a expressão ficar curta. Treino: \exref{ex:u4:fme43} e \exref{ex:u4:demorgan}; questões \ref{u4:fme53} e \ref{u4:ita42}.
 \end{caso}
 
 \begin{caso}{3 · \enquote{assinale no diagrama}}{4-U3}
@@ -128,14 +129,14 @@ A diferença e o complementar aparecem quando o enunciado exclui alguma coisa, q
 \begin{caso}{4 · dados sobre diferenças e complementares}{4-U4}
 \mapa{informações como \enquote{$A-B=\ldots$}, \enquote{$\overline{A}=\ldots$}, \enquote{$A\cap B=\ldots$}, seguidas de \enquote{quantos elementos tem\ldots?} ou \enquote{determine\ldots}}
 {o que cada dado diz sobre cada região (ou sobre cada elemento)}
-{decidir região a região ou elemento a elemento, como na Unidade~3}
+{4-H1 (4) e 4-H2: traduzir cada dado para uma região (ou decidir elemento a elemento)}
 \reconhecer O sinal é uma lista de dados sobre partes dos conjuntos, e não sobre os conjuntos inteiros. Traduza cada dado para as regiões (\enquote{$A-B$} é a região \enquote{só $A$}, \enquote{$\overline{A}$} é tudo fora de $A$) e só então monte os conjuntos pedidos. Treino: \exref{ex:u4:regioes}; questões \ref{u4:fme41} e \ref{u4:fme55}.
 \end{caso}
 
 \subsubsection{Tabela de gatilhos}
 \begin{gatilhos}
-\enquote{exceto}, \enquote{que não} & 4-H1 & de onde se tira e o que se tira & \mbox{4-U1\,·\,q.\,\ref{u4:fme38}}\\\fino
-complementar de $\cup$ ou de $\cap$ & 4-H3 & De Morgan: trocar a operação & \mbox{4-U2\,·\,q.\,\ref{u4:fme53}}\\\fino
+\enquote{exceto}, \enquote{que não} & 4-H1 & de onde se tira e o que se tira & \mbox{4-U1\,·\,q.\,\ref{u4:multiplos}}\\\fino
+complementar de reunião ou de interseção & 4-H3 & De Morgan: trocar a operação & \mbox{4-U2\,·\,q.\,\ref{u4:ita42}}\\\fino
 \enquote{assinale no diagrama} & 4-H1 (4) & região por região & \mbox{4-U3\,·\,q.\,\ref{u4:fme42}}\\\fino
-dados por diferenças & 4-H1, 4-H2 & traduzir cada dado para regiões & \mbox{4-U4\,·\,q.\,\ref{u4:fme55}}\\
+dados por diferenças & 4-H1 (4), 4-H2 & traduzir cada dado para regiões & \mbox{4-U4\,·\,q.\,\ref{u4:fme55}}\\
 \end{gatilhos}
