@@ -13,7 +13,7 @@
 
 Com dois grupos, havia quatro regiões, e a fórmula da Unidade~5 resolvia quase tudo. Agora imagine uma pesquisa sobre três serviços de \emph{streaming}, A, B e C. Ela informa quantas pessoas assinam cada serviço, quantas assinam cada par de serviços e quantas assinam os três. Quem assina \enquote{A e B} pode assinar também C; quem assina \enquote{A} pode estar em qualquer uma de quatro situações diferentes. Os números se sobrepõem de muitas maneiras, e uma conta feita sem ordem conta gente duas vezes, ou esquece gente.
 
-{\sloppy\textbf{Com três grupos, como organizar a contagem para não se perder nas sobreposições?} É a pergunta desta unidade.\par}
+{\raggedright\textbf{Com três grupos, como organizar a contagem para não se perder nas sobreposições?} É a pergunta desta unidade.\par}
 
 \textbf{Ao final, você será capaz de:} desenhar as oito regiões de três conjuntos e preenchê-las de dentro para fora; calcular $n(A\cup B\cup C)$ e as contagens \enquote{exatamente $k$} e \enquote{pelo menos $k$}; montar equações a partir de dados indiretos; achar o menor e o maior valor que os dados permitem; determinar conjuntos elemento a elemento.
 
@@ -35,9 +35,9 @@ Com dois grupos, havia quatro regiões, e a fórmula da Unidade~5 resolvia quase
 Com três características, um número como \enquote{quantos têm $A$ e $B$} já mistura dois tipos de pessoa: as que têm só $A$ e $B$ e as que têm as três características. Sem um lugar separado para cada combinação, as contas se repetem ou deixam gente de fora.
 
 \subsubsection{Um lugar para cada combinação}
-No século XVIII, Leonhard Euler usou círculos para representar proposições: um círculo dentro de outro para \enquote{todo $A$ é $B$}, círculos separados para \enquote{nenhum $A$ é $B$}.\src{sepDiagrams}\src{euler1768} Nesse desenho aparecem só as relações que de fato existem entre as classes. Em 1880, John Venn criticou os círculos eulerianos justamente por isso: eles não permitem mostrar um conhecimento incompleto. A proposta de Venn foi desenhar primeiro \emph{todas} as combinações dos termos, antes de afirmar qualquer coisa. Com três círculos, ele obtinha os oito compartimentos de que precisava; cada um podia estar ocupado ou não, e a região de fora de todos os círculos também contava como compartimento. Só depois ele marcava o que cada proposição diz, sombreando os compartimentos que ela declara vazios.\src{venn1880}\src{sepDiagrams}
+No século XVIII, o matemático Leonhard Euler usou círculos para representar proposições: um círculo dentro de outro para \enquote{todo $A$ é $B$}, círculos separados para \enquote{nenhum $A$ é $B$}.\src{sepDiagrams}\src{euler1768} Nesse desenho aparecem só as relações que de fato existem entre as classes. Em 1880, John Venn, professor de ciências morais em Cambridge, criticou os círculos eulerianos justamente por isso: eles não permitem mostrar um conhecimento incompleto. A proposta de Venn foi desenhar primeiro \emph{todas} as combinações dos termos, antes de afirmar qualquer coisa. Com três círculos, ele obtinha os oito compartimentos de que precisava; cada um podia estar ocupado ou não, e a região de fora de todos os círculos também contava como compartimento. Só depois ele marcava o que cada proposição diz, sombreando os compartimentos que ela declara vazios.\src{venn1880}\src{sepDiagrams}
 
-Lidos hoje, os oito compartimentos de Venn são as oito regiões de três conjuntos, e uma região vazia é uma região com 0 elementos. A convenção atual nos problemas de contagem é a mesma: desenhar sempre os três círculos se cruzando, com as oito regiões, e escrever um número em cada uma.
+Lidos hoje, os oito compartimentos de Venn são as oito regiões de três conjuntos, e uma região vazia é uma região com 0 elementos. É por isso que o desenho com todas as regiões leva hoje o nome de \emph{diagrama de Venn} — o mesmo que, nas unidades anteriores, apareceu como diagrama de Euler-Venn.\src{sepDiagrams} A convenção atual nos problemas de contagem é a mesma: desenhar sempre os três círculos se cruzando, com as oito regiões, e escrever um número em cada uma.
 
 \begin{construcao}[as oito regiões]{6-H1}
 \begin{enumerate}[label=(\arabic*)]
@@ -45,13 +45,13 @@ Lidos hoje, os oito compartimentos de Venn são as oito regiões de três conjun
   \item As oito regiões são: só $A$, só $B$, só $C$; só $A$ e $B$ (fora de $C$), só $B$ e $C$, só $A$ e $C$; os três; nenhum.
 \begin{center}
 \begin{tikzpicture}[scale=1.1]
-\draw[thick] (-3.1,-2.75) rectangle (3.1,2.35); \node at (2.8,2.05) {$U$};
+\draw[thick] (-3.4,-2.85) rectangle (3.4,2.55); \node at (3.1,2.25) {$U$};
 \draw[acento,thick] (-0.85,0.45) circle (1.4); \draw[acento,thick] (0.85,0.45) circle (1.4); \draw[acento,thick] (0,-1.0) circle (1.4);
-\node at (-2.0,1.75) {$A$}; \node at (2.0,1.75) {$B$}; \node at (0,-2.6) {$C$};
+\node at (-2.3,1.7) {$A$}; \node at (2.3,1.7) {$B$}; \node at (1.75,-2.05) {$C$};
 \node[font=\scriptsize] at (-1.35,0.85) {só $A$}; \node[font=\scriptsize] at (1.35,0.85) {só $B$}; \node[font=\scriptsize] at (0,-1.7) {só $C$};
 \node[font=\scriptsize,align=center] at (0,1.05) {só\\[-2pt]$A$ e $B$}; \node[font=\scriptsize,align=center] at (-0.95,-0.55) {só\\[-2pt]$A$ e $C$}; \node[font=\scriptsize,align=center] at (0.95,-0.55) {só\\[-2pt]$B$ e $C$};
 \node[font=\scriptsize] at (0,-0.05) {três};
-\node[font=\scriptsize,anchor=south west] at (-3.05,-2.7) {nenhum};
+\node[font=\scriptsize,anchor=south west] at (-3.35,-2.8) {nenhum};
 \end{tikzpicture}
 \end{center}
   \item Desenham-se todas as oito, mesmo as que estiverem vazias: o diagrama funciona como uma tabela de todas as combinações, e uma região vazia recebe o número 0.
@@ -70,7 +70,7 @@ Lidos hoje, os oito compartimentos de Venn são as oito regiões de três conjun
 \end{construcao}
 
 \subsubsection{Conferir a conta: nenhuma região negativa}
-O estatístico George Udny Yule, cujo manual já apareceu na Unidade~5, discute nele um conjunto de dados de 1\,000 observações sobre três atributos, $A$, $B$ e $C$: 525 têm $A$, 312 têm $B$, 470 têm $C$; 42 têm $A$ e $B$, 147 têm $A$ e $C$, 86 têm $B$ e $C$; 25 têm os três. Ele observa que não há nada obviamente errado nos números, mas que eles implicam uma quantidade negativa, $-57$, para a classe dos que não têm nenhum dos três atributos. Como nenhuma classe pode ter um número negativo de elementos, os dados não podem ter sido observados num mesmo universo: houve erro de contagem ou de impressão.\src{yule1927} No mesmo capítulo, Yule anota a condição para dois atributos que impede essa situação: o número dos que têm $A$ e $B$ não pode ser menor que $(A)+(B)-N$, em que $N$ é o total — condição \enquote{um pouco menos óbvia} que as outras e, segundo ele, às vezes esquecida.\src{yule1927}
+O estatístico George Udny Yule, cujo manual já apareceu na Unidade~5, discute nele um conjunto de dados de 1\,000 observações sobre três atributos, $A$, $B$ e $C$: 525 têm $A$, 312 têm $B$, 470 têm $C$; 42 têm $A$ e $B$, 147 têm $A$ e $C$, 86 têm $B$ e $C$; 25 têm os três. Ele observa que não há nada obviamente errado nos números, mas que eles implicam uma quantidade negativa, $-57$, para a classe dos que não têm nenhum dos três atributos. Como nenhuma classe pode ter um número negativo de elementos, os dados não podem ter sido observados num mesmo universo: houve erro de contagem ou de impressão.\src{yule1927} No mesmo capítulo, Yule anota a condição para dois atributos que impede essa situação. Escrevendo, como ele, $(A)$ para o número dos que têm $A$, $(AB)$ para o dos que têm $A$ e $B$ e $N$ para o total: $(AB)$ não pode ser menor que $(A)+(B)-N$. Segundo Yule, essa condição é um pouco menos óbvia e às vezes é esquecida.\src{yule1927}
 
 Lida hoje, a conta de Yule é a fórmula de três conjuntos aplicada à região \enquote{nenhum}: $1\,000-(525+312+470)+(42+147+86)-25=-57$. E a condição para dois atributos é o menor valor possível de $n(A\cap B)$. A convenção atual mantém as duas ideias: depois de preencher as regiões, confira que nenhuma é negativa; e, quando os dados não determinam uma região, os limites vêm dessa exigência.
 
@@ -91,7 +91,10 @@ n(A\cup B\cup C)=e_1+e_2+e_3,\qquad n(A)+n(B)+n(C)=e_1+2e_2+3e_3.
 \end{construcao}
 
 \begin{definicao}[número de elementos da reunião de três conjuntos]
-Para conjuntos finitos $A$, $B$ e $C$: $n(A\cup B\cup C)=n(A)+n(B)+n(C)-n(A\cap B)-n(A\cap C)-n(B\cap C)+n(A\cap B\cap C)$.
+Para conjuntos finitos $A$, $B$ e $C$:
+\[
+n(A\cup B\cup C)=n(A)+n(B)+n(C)-n(A\cap B)-n(A\cap C)-n(B\cap C)+n(A\cap B\cap C).
+\]
 \end{definicao}
 
 \begin{paralembrar}\label{lembrar-u6}
@@ -125,10 +128,10 @@ Os problemas com três conjuntos chegam de quatro maneiras: com os números de c
 \end{caso}
 
 \begin{caso}{3 · \enquote{no mínimo}, \enquote{no máximo}}{6-U3}
-\mapa{\enquote{pelo menos}, \enquote{no mínimo}, \enquote{no máximo}, \enquote{o maior número possível}}
+\mapa{\enquote{no mínimo}, \enquote{no máximo}, \enquote{o maior número possível}, \enquote{é, pelo menos, de\ldots} (sobre uma quantidade que os dados não fixam)}
 {o que os dados obrigam e o que eles apenas permitem}
 {6-H3 (3)–(4): nenhuma região negativa}
-\reconhecer O sinal é a pergunta por um extremo: os dados não determinam a resposta, só a limitam. Escreva as regiões em função da incógnita e exija que nenhuma fique negativa. Treino: \exref{ex:u6:cafe}; \qref{u6:natacao}.
+\reconhecer O sinal é a pergunta por um extremo: os dados não determinam a resposta, só a limitam. (Não confundir com \enquote{pelo menos dois} quando é uma contagem de pessoas: aí é $e_2+e_3$, construção 6-H3, item 2.) Escreva as regiões em função da incógnita e exija que nenhuma fique negativa. Treino: \exref{ex:u6:cafe}; \qref{u6:natacao}.
 \end{caso}
 
 \begin{caso}{4 · conjuntos dados por elementos}{6-U4}

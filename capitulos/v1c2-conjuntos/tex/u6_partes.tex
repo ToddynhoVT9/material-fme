@@ -48,7 +48,7 @@
 \end{obs}
 
 \begin{obs}{6-O2}
-\textbf{E com mais conjuntos?} Para quatro termos, Venn desenhou quatro elipses iguais, que formam dezesseis compartimentos. Para cinco, escreveu que as elipses já não servem na forma simples e propôs uma figura mais complicada; além disso, achava que os diagramas ajudam pouco.\src{venn1880}
+\textbf{E com mais conjuntos?} Para quatro termos, Venn desenhou quatro elipses iguais, que formam dezesseis compartimentos. Para cinco, escreveu que as elipses já não servem na forma simples e propôs uma figura mais complicada. Para mais de cinco termos, achava que os diagramas já ajudam pouco.\src{venn1880}
 \end{obs}
 
 % ------------------------------------------------------------
@@ -61,12 +61,12 @@ Numa pesquisa com 100 pessoas sobre três serviços de \emph{streaming}, 50 assi
 \resolucao Três: 5. Só A e B: $15-5=10$; só B e C: $10-5=5$; só A e C: $12-5=7$. Só A: $50-10-7-5=28$; só B: $40-10-5-5=20$; só C: $30-7-5-5=13$. Pelo menos um: $28+20+13+10+5+7+5=88$. Nenhum: $100-88=12$.
 \begin{center}
 \begin{tikzpicture}[scale=0.8]
-\draw[thick] (-3.1,-2.75) rectangle (3.1,2.35); \node at (2.8,2.05) {$U$};
+\draw[thick] (-3.4,-2.85) rectangle (3.4,2.55); \node at (3.1,2.25) {$U$};
 \draw[acento,thick] (-0.85,0.45) circle (1.4); \draw[acento,thick] (0.85,0.45) circle (1.4); \draw[acento,thick] (0,-1.0) circle (1.4);
-\node at (-2.0,1.75) {A}; \node at (2.0,1.75) {B}; \node at (0,-2.6) {C};
+\node at (-2.3,1.7) {A}; \node at (2.3,1.7) {B}; \node at (1.75,-2.05) {C};
 \node at (-1.35,0.85) {28}; \node at (1.35,0.85) {20}; \node at (0,-1.7) {13};
 \node at (0,1.05) {10}; \node at (-0.95,-0.55) {7}; \node at (0.95,-0.55) {5}; \node at (0,-0.05) {5};
-\node[anchor=south west] at (-3.05,-2.7) {12};
+\node[anchor=south west] at (-3.35,-2.8) {12};
 \end{tikzpicture}
 \end{center}
 \comentario Pela fórmula: $50+40+30-15-10-12+5=88$, o mesmo resultado; sem devolver os 5 dos três, daria 83 (erro 6-E2). Escrever 15 na região só A e B (erro 6-E1), ou calcular só A como $50-15-12$ (erro 6-E3), estragaria todas as contas seguintes.
@@ -107,7 +107,7 @@ Determine os conjuntos $A$, $B$ e $C$ sabendo que $A\cup B\cup C=\{1,2,3,4,5,6,7
 \begin{exemplo}{}{3}{autoral}{6-H3}
 \label{ex:u6:divisiveis}
 Quantos números inteiros de 1 a 60 não são divisíveis por 2, nem por 3, nem por 5?
-\plano Os conjuntos são definidos por propriedades: $D_2$, $D_3$ e $D_5$. Contar cada um, descobrir quem são as interseções e usar a fórmula de três conjuntos.
+\plano Os conjuntos são definidos por propriedades: sejam $D_2$, $D_3$ e $D_5$ os conjuntos dos números de 1 a 60 divisíveis por 2, por 3 e por 5. Contar cada um, descobrir quem são as interseções e usar a fórmula de três conjuntos.
 \resolucao $n(D_2)=30$, $n(D_3)=20$, $n(D_5)=12$. Ser divisível por 2 e por 3 é ser divisível por 6 (10 números); por 2 e por 5, por 10 (6 números); por 3 e por 5, por 15 (4 números); pelos três, por 30 (2 números). Logo $n(D_2\cup D_3\cup D_5)=30+20+12-10-6-4+2=44$, e os que não são divisíveis por nenhum são $60-44=16$.
 \comentario Ninguém informa as interseções: é preciso reconhecê-las como múltiplos de 6, 10, 15 e 30, e contá-las.
 \end{exemplo}
@@ -120,7 +120,7 @@ Sendo $A$, $B$ e $C$ conjuntos finitos, estabeleça uma fórmula para calcular $
 \resp{$n(A\cup B\cup C)=n(A)+n(B)+n(C)-n(A\cap B)-n(A\cap C)-n(B\cap C)+n(A\cap B\cap C)$; a justificativa deve mostrar que cada elemento da reunião é contado exatamente uma vez.}
 \end{questao}
 
-\begin{questao}{1}{FME, exercício 56}{6-H2, 6-U1, 6-E3, 6-E4}\label{u6:fme56}
+\begin{questao}{1}{adaptado do FME, exercício 56}{6-H2, 6-U1, 6-E3, 6-E4}\label{u6:fme56}
 Uma população consome três marcas de sabão em pó: A, B e C. Feita uma pesquisa de mercado, colheram-se os resultados tabelados abaixo:
 \begin{center}
 \small
@@ -133,7 +133,7 @@ Forneça:
 \begin{enumerate}[label=\alph*)]
   \item o número de pessoas consultadas;
   \item o número de pessoas que só consomem a marca A;
-  \item o número de pessoas que não consomem as marcas A ou C;
+  \item o número de pessoas que não consomem nem a marca A nem a marca C;
   \item o número de pessoas que consomem ao menos duas marcas.
 \end{enumerate}
 \resp{a) 500;\ b) 61;\ c) 257 (só B e nenhuma: $142+115$);\ d) 84.}
@@ -167,6 +167,11 @@ Em uma comunidade, uma pesquisa a respeito do consumo dos produtos de limpeza A,
 \resp{a. A comunidade tem 340 pessoas; $340-90=250$.}
 \end{questao}
 
+\begin{questao}{1}{autoral}{6-H3, 6-U3}\label{u6:natacao}
+Numa turma de 40 alunos, 32 fazem natação e 25 fazem judô. Qual é o menor número possível de alunos que fazem os dois esportes? E o maior?
+\resp{17 e 25.}
+\end{questao}
+
 \begin{questao}{2}{UF-PE via FME, ano não informado}{6-H3, 6-E4}\label{u6:ufpe29}
 Das companhias que publicam anúncios nos jornais C, D ou F, sabemos que: 30 publicam no C; 25 publicam no D; 30 publicam no F; 10 publicam em C e D; 9 publicam em F e D; 11 publicam em C e F; e 6 publicam em C, D e F. Considerando estas informações, analise as sentenças a seguir.
 \begin{itemize}[leftmargin=2.6em,itemsep=0pt]
@@ -179,7 +184,7 @@ Das companhias que publicam anúncios nos jornais C, D ou F, sabemos que: 30 pub
 \resp{0-0) F (são 12);\ 1-1) V;\ 2-2) V;\ 3-3) V;\ 4-4) F (são 12).}
 \end{questao}
 
-\begin{questao}{2}{FME, exercício 54}{6-H1, 6-H2}\label{u6:fme54}
+\begin{questao}{2}{FME, exercício 54}{6-H1, 6-U2}\label{u6:fme54}
 Considerando os conjuntos $A$, $B$ e $C$, representados abaixo, e sabendo que $n(A\cup B)=24$, $n(A\cap B)=4$, $n(B\cup C)=16$, $n(A-C)=11$ e $n(B-C)=10$, calcule:
 \begin{multicols}{2}
 \begin{enumerate}[label=\alph*)]
@@ -199,11 +204,6 @@ Considerando os conjuntos $A$, $B$ e $C$, representados abaixo, e sabendo que $n
 \resp{a) 8;\ b) 1;\ c) 7;\ d) 3;\ e) 12.}
 \end{questao}
 
-\begin{questao}{2}{autoral}{6-H3, 6-U3}\label{u6:natacao}
-Numa turma de 40 alunos, 32 fazem natação e 25 fazem judô. Qual é o menor número possível de alunos que fazem os dois esportes? E o maior?
-\resp{17 e 25.}
-\end{questao}
-
 \begin{questao}{2}{adaptado de U.E. Londrina-PR via FME, ano não informado}{6-H1, 6-U2, 6-E1}\label{u6:uel20}
 Um grupo de estudantes resolveu fazer uma pesquisa sobre as preferências dos alunos quanto ao cardápio do Restaurante Universitário. Nove alunos optaram somente por carne de frango, 3 somente por peixes, 7 por carne bovina e frango, 9 por peixe e carne bovina (nesses dois números estão incluídos os que optaram pelos três tipos) e 4 pelos três tipos de carne. Considerando que 20 alunos manifestaram-se vegetarianos, 36 não optaram por carne bovina e 42 não optaram por peixe, assinale a alternativa que apresenta o número de alunos entrevistados.
 \begin{multicols}{5}
@@ -218,6 +218,7 @@ Um grupo de estudantes resolveu fazer uma pesquisa sobre as preferências dos al
 \resp{c. Só bovina e frango: 3; só peixe e bovina: 5. Fora da bovina: $9+3+\text{(só peixe e frango)}+20=36$, logo só peixe e frango $=4$. Fora do peixe: $9+\text{(só bovina)}+3+20=42$, logo só bovina $=10$. Total: $9+3+10+3+5+4+4+20=58$.}
 \end{questao}
 
+\needspace{12\baselineskip}
 \begin{questao}{2}{FGV-SP via FME, ano não informado}{6-H2, 6-H3}\label{u6:fgv36}
 Uma pesquisa de mercado sobre determinado eletrodoméstico mostrou que 37\% dos entrevistados preferem a marca X, 40\% preferem a marca Y, 30\% preferem a marca Z, 25\% preferem X e Y, 8\% preferem Y e Z, 3\% preferem X e Z e 1\% prefere as três marcas. Considerando que há os que não preferem nenhuma das três marcas, a porcentagem dos que não preferem nem X nem Y é:
 \begin{multicols}{5}
@@ -229,7 +230,7 @@ Uma pesquisa de mercado sobre determinado eletrodoméstico mostrou que 37\% dos 
   \item 48\%
 \end{enumerate}
 \end{multicols}
-\resp{e. $n(X\cup Y)=37\%+40\%-25\%=52\%$; nem X nem Y: 48\%.}
+\resp{e. Pelas regiões: só Z $=30-8-3+1=20\%$ e nenhuma $=100-72=28\%$, logo $20+28=48\%$. (Atalho: $100-(37+40-25)=48\%$.)}
 \end{questao}
 
 \begin{questao}{2}{UF-ES via FME, ano não informado}{6-H3, 6-U2, 6-E4}\label{u6:ufes28}
@@ -338,7 +339,7 @@ Número de espectadores & 1\,450 & 1\,150 & 900 & 350 & 400 & 300 & 100
 \end{tabular}
 \end{center}
 Quantos telespectadores entrevistados não acham agradável nenhuma das três novelas?
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}[label=\alph*)]
   \item 300 telespectadores.
   \item 370 telespectadores.
@@ -348,6 +349,26 @@ Quantos telespectadores entrevistados não acham agradável nenhuma das três no
 \end{enumerate}
 \end{multicols}
 \resp{c.}
+\end{questao}
+
+\begin{questao}{1}{UF-PI via FME, ano não informado}{6-H2, 6-H3}\label{u6:ufpi27}
+O diretor de uma tradicional escola da cidade de Teresina resolveu fazer uma pesquisa de opinião junto aos seus 590 alunos do Ensino Médio sobre as políticas públicas de acesso ao Ensino Superior. No questionário, perguntava-se sobre a aprovação de: Cotas, Bolsas e Enem, como modelo de exame vestibular. As respostas dos alunos foram sintetizadas na tabela abaixo:
+\begin{center}
+\small
+\begin{tabular}{l|ccccccc}
+Política pública & Cotas & Bolsas & Enem & \begin{tabular}[c]{@{}c@{}}Cotas e\\Bolsas\end{tabular} & \begin{tabular}[c]{@{}c@{}}Bolsas e\\Enem\end{tabular} & \begin{tabular}[c]{@{}c@{}}Cotas e\\Enem\end{tabular} & \begin{tabular}[c]{@{}c@{}}Cotas, Bolsas\\e Enem\end{tabular}\\\hline
+Número de aprovações & 226 & 147 & 418 & 53 & 85 & 116 & 44
+\end{tabular}
+\end{center}
+Sobre a pesquisa e a tabela anterior, é correto afirmar que
+\begin{enumerate}[label=\alph*)]
+  \item a quantidade de alunos que não opinaram por nenhuma das três políticas é 12.
+  \item a quantidade de alunos que aprovam apenas uma política pública é 415.
+  \item a quantidade de alunos que aprovam mais de uma política é 167.
+  \item a quantidade de alunos que aprovam as três políticas é 45.
+  \item há mais alunos que aprovam cotas do que alunos que aprovam somente o Enem.
+\end{enumerate}
+\resp{b.}
 \end{questao}
 
 \begin{questao}{2}{UF-PA via FME, ano não informado}{6-H3}\label{u6:ufpa26}
@@ -410,26 +431,6 @@ Assinale a alternativa correta.
   \item Somente a afirmativa I é verdadeira.
 \end{enumerate}
 \resp{d.}
-\end{questao}
-
-\begin{questao}{2}{UF-PI via FME, ano não informado}{6-H2, 6-H3}\label{u6:ufpi27}
-O diretor de uma tradicional escola da cidade de Teresina resolveu fazer uma pesquisa de opinião junto aos seus 590 alunos do Ensino Médio sobre as políticas públicas de acesso ao Ensino Superior. No questionário, perguntava-se sobre a aprovação de: Cotas, Bolsas e Enem, como modelo de exame vestibular. As respostas dos alunos foram sintetizadas na tabela abaixo:
-\begin{center}
-\small
-\begin{tabular}{l|ccccccc}
-Política pública & Cotas & Bolsas & Enem & \begin{tabular}[c]{@{}c@{}}Cotas e\\Bolsas\end{tabular} & \begin{tabular}[c]{@{}c@{}}Bolsas e\\Enem\end{tabular} & \begin{tabular}[c]{@{}c@{}}Cotas e\\Enem\end{tabular} & \begin{tabular}[c]{@{}c@{}}Cotas, Bolsas\\e Enem\end{tabular}\\\hline
-Número de aprovações & 226 & 147 & 418 & 53 & 85 & 116 & 44
-\end{tabular}
-\end{center}
-Sobre a pesquisa e a tabela anterior, é correto afirmar que
-\begin{enumerate}[label=\alph*)]
-  \item a quantidade de alunos que não opinaram por nenhuma das três políticas é 12.
-  \item a quantidade de alunos que aprovam apenas uma política pública é 415.
-  \item a quantidade de alunos que aprovam mais de uma política é 167.
-  \item a quantidade de alunos que aprovam as três políticas é 45.
-  \item há mais alunos que aprovam cotas do que alunos que aprovam somente o Enem.
-\end{enumerate}
-\resp{b.}
 \end{questao}
 
 \begin{questao}{2}{adaptado de U.F. Uberlândia-MG via FME, ano não informado}{6-H1, 6-U2, 6-E1}\label{u6:ufu33}

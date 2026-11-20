@@ -205,4 +205,7 @@ chk("u6:unicamp35 indecisos = 40 (só AB 0, só AC 10, só BC 20, três 10)", (t
 
 chk("ex:u6:streaming sem devolver os três: 83", 50 + 40 + 30 - 15 - 10 - 12, 83)
 
+t36 = solucoes([TOT() - 100, nA() - 37, nB() - 40, nC() - 30, AB() - 25, BC() - 8, AC() - 3, ABC() - 1])[0]
+chk("u6:fgv36 só Z 20%, nenhuma 28%, reunião 72%", (t36[(0,0,1)], t36[(0,0,0)], val(t36, UNI)), (20, 28, 72))
+
 print(f"\n{ok} OK, {falhas} falha(s)")

@@ -11,7 +11,7 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Revisão da U6 (etapa 4): revisor independente com o brief v4; depois triagem em `revisoes/u6.md`. Em seguida, etapa 5 (fechamento do capítulo).
+Etapa 5 (fechamento do capítulo): abertura, glossário (termos novos de U5–U6 nos dossiês), fontes, PDF final em `saida/`.
 
 ## Unidades
 | U | título | etapa | revisão | observação |
@@ -21,7 +21,7 @@ Revisão da U6 (etapa 4): revisor independente com o brief v4; depois triagem em
 | 3 | Reunião e interseção | pronta | R1 (revisor independente): 0 · 10 · 10, todos tratados | `verif/u3.py` 27 OK; checar 0/0 |
 | 4 | Diferença e complementar | pronta | R1 (revisor independente): 0 · 4 · 10, todos tratados | `verif/u4.py` 43 OK; checar 0/0 |
 | 5 | Contando elementos: dois conjuntos | pronta | R1 (revisor independente): 1 · 4 · 8, todos tratados | `verif/u5.py` 46 OK; checar 0/0 |
-| 6 | Três conjuntos e as regiões do diagrama | montagem pronta | — | 0 FALHAS · 0 AVISOS; `verif/u6.py` 51 OK |
+| 6 | Três conjuntos e as regiões do diagrama | pronta | R1 (revisor independente): 0 · 1 · 13, todos tratados | `verif/u6.py` 52 OK; checar 0/0 |
 <!-- FIM UNIDADES -->
 
 Etapas de uma unidade: `escopo` → `dossiê` → `montagem` → `revisão` → `pronta`.
@@ -76,3 +76,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 | 2026-11-20 | 4 · U5 | revisão independente (1 bloqueante, 4 importantes, 8 menores); todos tratados (`revisoes/u5.md`): caso 3 sem o contexto da N3, 5-H3 (4) sem o caso da N2, fme51 (b) refeita, bloco reordenado, dois exemplos a N1 | 0 FALHAS · 0 AVISOS; verif U5 46 OK |
 | 2026-11-20 | 2 · U6 | dossiê da U6: Euler (via SEP) × Venn 1880 (primário: oito compartimentos, sombreamento), Yule cap. II (dados inconsistentes, (AB) ≥ (A)+(B)−N); níveis ajustados (ex. 50 N1, ex. 57 N2, vest. 28 N2); vest. 20 e 33 adaptados (M9); banco X1–X6 / P1–P15 + bloco V1–V7 | `verif/u6.py` 39 OK |
 | 2026-11-20 | 3 · U6 | montagem: artigo (3 construções, 1 definição, Euler/Venn e Yule em três camadas, diagrama das oito regiões, 4 casos), 4 erros, 2 obs., 6 exemplos (N1 1 · N2 4 · N3 1), 15 questões (N1 4 · N2 8 · N3 3; 1 integradora) + bloco (7); 3 fontes novas; yule1927 inclui cap. II | 0 FALHAS · 0 AVISOS (capítulo inteiro); folhas conferidas; verif U6 51 OK |
+| 2026-11-20 | 4 · U6 | revisão independente (0 bloqueante, 1 importante, 13 menores); todos tratados (`revisoes/u6.md`): 6-O2 fiel a Venn, IDs/níveis (fme54, natacao, ufpi27), caso 3 qualificado, "diagrama de Venn" nomeado, fme56 (c) adaptado | 0 FALHAS · 0 AVISOS; verif U6 52 OK |

@@ -1074,7 +1074,7 @@ unidades:
     integradora: false
   - rotulo: u6:fme56
     nivel: 1
-    fonte: FME, exercício 56
+    fonte: adaptado do FME, exercício 56
     cobre:
     - H2
     - U1
@@ -1096,6 +1096,13 @@ unidades:
     - H2
     - U1
     integradora: false
+  - rotulo: u6:natacao
+    nivel: 1
+    fonte: autoral
+    cobre:
+    - H3
+    - U3
+    integradora: false
   - rotulo: u6:ufpe29
     nivel: 2
     fonte: UF-PE via FME, ano não informado
@@ -1108,14 +1115,7 @@ unidades:
     fonte: FME, exercício 54
     cobre:
     - H1
-    - H2
-    integradora: false
-  - rotulo: u6:natacao
-    nivel: 2
-    fonte: autoral
-    cobre:
-    - H3
-    - U3
+    - U2
     integradora: false
   - rotulo: u6:uel20
     nivel: 2
@@ -1183,6 +1183,14 @@ unidades:
     - U1
     integradora: false
     bloco: mais questões de vestibular
+  - rotulo: u6:ufpi27
+    nivel: 1
+    fonte: UF-PI via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
   - rotulo: u6:ufpa26
     nivel: 2
     fonte: UF-PA via FME, ano não informado
@@ -1203,14 +1211,6 @@ unidades:
     cobre:
     - H1
     - H2
-    integradora: false
-    bloco: mais questões de vestibular
-  - rotulo: u6:ufpi27
-    nivel: 2
-    fonte: UF-PI via FME, ano não informado
-    cobre:
-    - H2
-    - H3
     integradora: false
     bloco: mais questões de vestibular
   - rotulo: u6:ufu33
