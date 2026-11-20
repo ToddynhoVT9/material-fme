@@ -385,7 +385,7 @@ unidades:
     E3: 'distribuir pela metade: A ∪ (B ∩ C) = (A ∪ B) ∩ C — "como a·(b + c)"'
     E4: ler "ou" como exclusivo (tirar A ∩ B da reunião)
     O1: 'dualidade: trocar ∪ ↔ ∩ e ∅ ↔ U'
-    O2: reunião e interseção de infinitos conjuntos (geometria)
+    O2: os símbolos ∪ e ∩ (Grassmann, Peano)
   exemplos: []
   questoes_meta:
     N1: 4

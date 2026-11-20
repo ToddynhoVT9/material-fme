@@ -161,7 +161,7 @@ Problemas encontrados no material:
 | 35 | Unicamp-SP | eleição no clube + probabilidade | U6 | questão N3 integradora (probabilidade) |
 | 36 | FGV-SP | marcas X, Y, Z (ver M8) | U6 | questão N2 |
 | 37 | UF-MG | "pelo menos" (mínimo da interseção tripla) | U6 | questão N3 |
-| 38 | UF-PI | A ∩ B = ∅ ⇒ ?; De Morgan com ∈ | U3 | questão N2 |
+| 38 | UF-PI | A ∩ B = ∅ ⇒ ?; De Morgan com ∈ | **U4** (mudou no dossiê da U3: a afirmação III usa complementar) | questão N2 |
 | 39 | ITA-SP | (A − B) ∪ (B − A) = A com A, B ≠ ∅ | U4 | questão N3 |
 | 40 | ITA-SP | subconjuntos de A disjuntos de B com ≤ 6 elementos | U4 | questão N3 (resolve-se sem binomial: 2⁸ − 8 − 1) |
 | 42 | ITA-SP | três igualdades com complementar | U4 | questão N2 |

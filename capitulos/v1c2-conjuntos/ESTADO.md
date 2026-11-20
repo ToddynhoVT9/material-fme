@@ -11,14 +11,14 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Dossiê da U3 (Reunião e interseção). Seguir a didática v4 e D7 (estendida: nem a construção resolve sentença de questão N2).
+Montagem da U3 (só o dossiê é entrada). Seguir a didática v4 e D7/D9.
 
 ## Unidades
 | U | título | etapa | revisão | observação |
 |---|---|---|---|---|
 | 1 | Conjunto, elemento e descrição | calibrada (pronta) | R1 (revisor independente): 0 · 6 · 19, todos tratados | `verif/u1.py` 47 OK; checar 0/0 |
 | 2 | Igualdade, inclusão e conjunto das partes | pronta | R1 (revisor independente): 0 · 4 · 17, todos tratados | `verif/u2.py` 23 OK; checar 0/0 |
-| 3 | Reunião e interseção | escopo | — | — |
+| 3 | Reunião e interseção | dossiê pronto | — | `verif/u3.py` 24 OK |
 | 4 | Diferença e complementar | escopo | — | — |
 | 5 | Contando elementos: dois conjuntos | escopo | — | — |
 | 6 | Três conjuntos e as regiões do diagrama | escopo | — | — |
@@ -45,6 +45,7 @@ Fechamento do capítulo (depois de todas `pronta`): abertura, glossário, fontes
 | D7 | 2026-11-19 | erro, caso do mapa ou prefácio **não** usam o mesmo caso concreto (equação, lista, conjunto) de uma questão N2 — senão a questão vira cópia (achado 5 da revisão da U1) | revisão U1 |
 | D8 | 2026-11-20 | **calibração da U1** (usuário): tom, *Onde é usado?* e dificuldade das questões aprovados. Regras daqui em diante: (a) não citar o FME no corpo do texto ("o FME tem um exercício…", "aparece assim no FME"): a procedência fica só na etiqueta e no `\src`; (b) "Como reconhecer" descreve o sinal no enunciado, não onde a questão aparece; (c) reler cada parágrafo do artigo procurando ambiguidade (referente de pronome, termo sem explicação, frase que admite duas leituras); (d) o prefácio fala do capítulo, não do volume. **(a)–(c) promovidas à didática v4** (2026-11-20) | usuário |
 | D9 | 2026-11-20 | D7 estendida: a **construção** (De onde vem?) também não usa o mesmo caso concreto de uma sentença de questão N2 (achado 5 da revisão da U2) | revisão U2 |
+| D10 | 2026-11-20 | vest. 38 (UF-PI) passa da U3 para a U4 (a afirmação III usa complementar); 3-O2 trocada (a antiga, reunião infinita, antecipava a ferramenta do N3 dos discos) | dossiê U3 |
 | D5 | 2026-11-19 | vestibulares do FME com etiqueta "[BANCA via FME, ano não informado]", sem procurar o ano | usuário |
 
 Decisões locais deste capítulo. Mudança na **didática** só com o usuário, como nova versão em `kit/didatica.md`.
@@ -63,3 +64,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 | 2026-11-20 | calibração · U1 + didática v4 + 2 · U2 | ajustes da calibração (D8); didática v4 registrada no kit; dossiê da U2: história M1–M3 (Zermelo/extensionalidade, Peano/ε, Frege/cair sob × subordinação; SEP, MacTutor, Park 2018), O2 Galileu, mapa com 3 casos, E1–E5, banco X1–X6 / P1–P14; M15 (vest. 45 com alternativa repetida) | U1: 0/0, verif 47 OK; `verif/u2.py` 20 OK |
 | 2026-11-20 | 3 · U2 | montagem: artigo (4 construções, 2 definições, 3 casos, 4 gatilhos; Zermelo, Peano, Frege em três camadas), 5 erros, 3 obs., 6 exemplos (N1 2 · N2 3 · N3 1), 14 questões (N1 4 · N2 7 · N3 3; 1 integradora); 7 fontes novas; autoconferência (a)–(g) feita | 0 FALHAS · 0 AVISOS (U1+U2, 47 p.); folhas conferidas |
 | 2026-11-20 | 4 · U2 | revisão independente (0 bloqueante, 4 importantes, 17 menores); todos tratados (`revisoes/u2.md`): exemplo N3 trocado, Q1 e Q7 reescritas, ordem do N2 refeita | 0 FALHAS · 0 AVISOS; verif U2 23 OK |
+| 2026-11-20 | 2 · U3 | dossiê da U3: Boole (+ só para classes disjuntas; xy; leis) e Jevons (reunião sem restrição) — SEP Burris; O2 símbolos ∪/∩; mapa com 4 casos (um com Python a \| b, a & b), E1–E4, banco X1–X6 / P1–P15; D10 | `verif/u3.py` 24 OK |
