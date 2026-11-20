@@ -72,6 +72,8 @@ chk("u3:fme46 (FME 46) A, B, C, D, E",
 A, B, C = {1, 2}, {2, 3}, {3, 4}
 chk("u3:comparar (a) A∪(B∩C) ≠ (A∪B)∩C", (A | (B & C), (A | B) & C), ({1, 2, 3}, {3}))
 chk("u3:comparar (b) A∩B=∅ ⇒ A∩(B∩C)=∅", sempre(lambda A, B, C: bool(A & B) or not (A & (B & C)), 3), True)
+chk("u3:comparar (d) (A∩B) ∪ (A∩B∩C) = A∩B", sempre(lambda A, B, C: (A & B) | (A & B & C) == A & B, 3), True)
+chk("construção 3-H3 (5): (A∪B)∩C = (A∩C)∪(B∩C), 3 regiões", (sempre(lambda A, B, C: (A | B) & C == (A & C) | (B & C), 3), sum(1 for r in reg if (r[0] or r[1]) and r[2])), (True, 3))
 U6 = set(range(1, 7))
 ex12c = ({1, 2}, {3, 4}, {5, 6})
 chk("u3:comparar (c) exemplo-modelo: não vazios, dois a dois disjuntos, reunião {1..6}",

@@ -24,6 +24,7 @@ No Capítulo I, \enquote{ou} e \enquote{e} ligavam proposições. Aqui, as mesma
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
   \item \textbf{\enquote{Ou} inclusivo.} \enquote{$p$ ou $q$} ($p\vee q$) é verdadeira quando pelo menos uma das duas é verdadeira — inclusive quando as duas são (Cap.~I).
   \item \textbf{\enquote{E}.} \enquote{$p$ e $q$} ($p\wedge q$) é verdadeira só quando as duas são verdadeiras (Cap.~I).
+  \item \textbf{Distributivas da lógica.} \enquote{$p$ ou ($q$ e $r$)} equivale a \enquote{($p$ ou $q$) e ($p$ ou $r$)}; \enquote{$p$ e ($q$ ou $r$)} equivale a \enquote{($p$ e $q$) ou ($p$ e $r$)} (Cap.~I).
   \item \textbf{Inclusão e igualdade.} $A\subset B$: todo elemento de $A$ está em $B$; $A=B$: $A\subset B$ e $B\subset A$ (Unidade~2).
 \end{itemize}
 \end{minimo}
@@ -57,7 +58,7 @@ $A\cup B=\{x\mid x\in A\text{ ou }x\in B\}$ e $A\cap B=\{x\mid x\in A\text{ e }x
 \end{definicao}
 
 \subsubsection{Boole: o produto, a soma e a reunião}
-A ideia de calcular com classes como se calcula com números é do matemático George Boole, que publicou dois livros sobre o assunto, em 1847 e em 1854. Boole representava cada classe por uma letra e escrevia $xy$ para a classe dos objetos que são, ao mesmo tempo, $X$ e $Y$ — a interseção, em linguagem de hoje. Para \enquote{juntar} classes, usava $x+y$, mas só quando as duas classes não tinham membros em comum; sem essa condição, ele considerava a expressão sem interpretação.\src{sepAlgLog}\src{burrisTalk}\src{boole1854} Lido hoje, o \enquote{$+$} de Boole é a reunião de conjuntos disjuntos. Em 1864, o lógico William Stanley Jevons trocou essa operação restrita pela reunião sem restrição, que é o $\cup$ usado até hoje.\src{sepAlgLog}
+O matemático George Boole publicou, em 1847 e em 1854, dois livros em que calculava com classes de objetos como se calcula com números. Boole representava cada classe por uma letra e escrevia $xy$ para a classe dos objetos que são, ao mesmo tempo, $X$ e $Y$ — a interseção, em linguagem de hoje. Para \enquote{juntar} classes, escrevia $x+y$, mas só dava interpretação a essa expressão quando as duas classes não tinham membros em comum; nos outros casos, considerava-a sem interpretação — embora admitisse expressões assim no meio das contas, desde que o resultado final tivesse sentido.\src{sepAlgLog}\src{burrisTalk}\src{boole1854} Lido hoje, o \enquote{$+$} de Boole é a reunião de conjuntos disjuntos. Em 1864, o lógico William Stanley Jevons trocou essa operação restrita pela reunião sem restrição e eliminou as expressões sem interpretação.\src{sepAlgLog} É a operação que hoje se escreve com o símbolo $\cup$.
 
 Boole também já escrevia leis como $x(y+z)=xy+xz$ e $xx=x$.\src{sepAlgLog}\src{boole1854} É por isso que as propriedades de $\cup$ e $\cap$ lembram as da aritmética — e é também por isso que é preciso cuidado: elas \emph{não} são as da aritmética.
 
@@ -92,10 +93,20 @@ A\cup(B\cap C)=(A\cup B)\cap(A\cup C)\qquad\text{e}\qquad A\cap(B\cup C)=(A\cap 
 \]
 Elas vêm das distributivas do \enquote{ou} sobre o \enquote{e} e do \enquote{e} sobre o \enquote{ou}, vistas no Capítulo I.
   \item Repare que \emph{as duas} operações distribuem uma sobre a outra. Na aritmética, só a multiplicação distribui sobre a soma: em geral, $a+(b\cdot c)\neq(a+b)\cdot(a+c)$.
+  \item \textbf{Conferir pelas regiões.} Três conjuntos dividem o universo em oito regiões: cada região corresponde a uma resposta para \enquote{está em $A$? está em $B$? está em $C$?}. Para conferir uma igualdade entre expressões, pinte as regiões de cada lado; se os dois lados pintam as mesmas regiões, a igualdade vale para quaisquer conjuntos. Por exemplo, $(A\cup B)\cap C$ e $(A\cap C)\cup(B\cap C)$ pintam as mesmas três regiões: as que estão em $C$ e em pelo menos um de $A$ e $B$.
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+\fill[acentoclaro] (0,-0.9) circle (1.2);
+\begin{scope}\clip (0,-0.9) circle (1.2); \fill[acento!45] (-0.75,0.4) circle (1.2); \fill[acento!45] (0.75,0.4) circle (1.2);\end{scope}
+\draw[acento,thick] (-0.75,0.4) circle (1.2); \draw[acento,thick] (0.75,0.4) circle (1.2); \draw[acento,thick] (0,-0.9) circle (1.2);
+\node at (-2.2,1.2) {$A$}; \node at (2.2,1.2) {$B$}; \node at (0,-2.5) {$C$};
+\node[right,font=\small] at (2.9,-0.4) {$(A\cup B)\cap C$: as três regiões escuras};
+\end{tikzpicture}
+\end{center}
 \end{enumerate}
 \end{construcao}
 
-\subsubsection{Disjuntos e o diagrama de duas regiões}
+\subsubsection{Disjuntos e as quatro regiões do diagrama}
 \begin{construcao}[conjuntos disjuntos e regiões]{3-H4}
 \begin{enumerate}[label=(\arabic*)]
   \item Dois conjuntos dividem o universo em quatro regiões: os elementos só de $A$, os dos dois, os só de $B$ e os de nenhum.
@@ -134,7 +145,7 @@ A reunião e a interseção aparecem sempre que duas condições são combinadas
 \mapa{duas listas, dois critérios ou dois filtros ligados por \enquote{ou} ou por \enquote{e}}
 {quem satisfaz \emph{pelo menos um} critério (reunião) ou \emph{os dois} (interseção)}
 {3-H1: percorrer os elementos e testar cada critério}
-\reconhecer Linguagens de programação trazem as duas operações prontas. No tutorial oficial do Python, com \texttt{a = set('abracadabra')} e \texttt{b = set('alacazam')}, a expressão \texttt{a | b} dá as letras que estão em \texttt{a}, em \texttt{b} ou em ambos, e \texttt{a \& b} dá as letras que estão nos dois.\src{pyTut} Leia \texttt{|} como \enquote{ou} e \texttt{\&} como \enquote{e}: o resultado é $\{a,b,r,c,d,l,z,m\}$ e $\{a,c\}$. Treino: \exref{ex:u3:operar}; questões \ref{u3:fme23} e \ref{u3:fme28}.
+\reconhecer O sinal é a palavra (ou o símbolo) que liga os critérios: \enquote{ou} amplia a lista; \enquote{e} a restringe. Linguagens de programação trazem as duas operações prontas. No tutorial oficial do Python, com \texttt{a = set('abracadabra')} e \texttt{b = set('alacazam')}, a expressão \texttt{a | b} dá as letras que estão em \texttt{a}, em \texttt{b} ou em ambos, e \texttt{a \& b} dá as letras que estão nos dois.\src{pyTut} Leia \texttt{|} como \enquote{ou} e \texttt{\&} como \enquote{e}: o resultado é $\{a,b,r,c,d,l,z,m\}$ e $\{a,c\}$. Treino: \exref{ex:u3:operar}; questões \ref{u3:fme23} e \ref{u3:fme28}.
 \end{caso}
 
 \begin{caso}{2 · condições compostas}{3-U2}

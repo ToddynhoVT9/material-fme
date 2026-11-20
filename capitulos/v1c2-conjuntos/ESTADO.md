@@ -11,14 +11,14 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Revisão da U3 (etapa 4, revisor independente com o brief v4).
+Dossiê da U4 (Diferença e complementar). Lembrar: vest. 38 entrou na U4 (D10).
 
 ## Unidades
 | U | título | etapa | revisão | observação |
 |---|---|---|---|---|
 | 1 | Conjunto, elemento e descrição | calibrada (pronta) | R1 (revisor independente): 0 · 6 · 19, todos tratados | `verif/u1.py` 47 OK; checar 0/0 |
 | 2 | Igualdade, inclusão e conjunto das partes | pronta | R1 (revisor independente): 0 · 4 · 17, todos tratados | `verif/u2.py` 23 OK; checar 0/0 |
-| 3 | Reunião e interseção | revisão | — | montada; `verif/u3.py` 25 OK; checar 0/0 |
+| 3 | Reunião e interseção | pronta | R1 (revisor independente): 0 · 10 · 10, todos tratados | `verif/u3.py` 27 OK; checar 0/0 |
 | 4 | Diferença e complementar | escopo | — | — |
 | 5 | Contando elementos: dois conjuntos | escopo | — | — |
 | 6 | Três conjuntos e as regiões do diagrama | escopo | — | — |
@@ -66,3 +66,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 | 2026-11-20 | 4 · U2 | revisão independente (0 bloqueante, 4 importantes, 17 menores); todos tratados (`revisoes/u2.md`): exemplo N3 trocado, Q1 e Q7 reescritas, ordem do N2 refeita | 0 FALHAS · 0 AVISOS; verif U2 23 OK |
 | 2026-11-20 | 2 · U3 | dossiê da U3: Boole (+ só para classes disjuntas; xy; leis) e Jevons (reunião sem restrição) — SEP Burris; O2 símbolos ∪/∩; mapa com 4 casos (um com Python a \| b, a & b), E1–E4, banco X1–X6 / P1–P15; D10 | `verif/u3.py` 24 OK |
 | 2026-11-20 | 3 · U3 | montagem: artigo (4 construções, 1 definição, diagrama de 4 regiões, Boole/Jevons em três camadas, 4 casos — um com Python a \| b / a & b executado no verif), 4 erros, 2 obs., 6 exemplos (N1 2 · N2 3 · N3 1), 15 questões (N1 5 · N2 7 · N3 3; 2 integradoras); 3 fontes novas; autoconferência (a)–(g) | 0 FALHAS · 0 AVISOS (U1–U3, 57 p.); folhas conferidas |
+| 2026-11-20 | 4 · U3 | revisão independente (0 bloqueante, 10 importantes, 10 menores); todos tratados (`revisoes/u3.md`): regiões de três conjuntos na 3-H3, Boole corrigido (interpretação × uso), fme27 a N3, ordem do N2 | 0 FALHAS · 0 AVISOS; verif U3 27 OK |

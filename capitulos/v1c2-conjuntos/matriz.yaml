@@ -460,63 +460,22 @@ unidades:
     nivel: 1
     fonte: FME, exercício 25
     cobre:
-    - H2
+    - H1
     - U4
     integradora: false
   - rotulo: u3:fme30
     nivel: 1
     fonte: FME, exercício 30
     cobre:
-    - H2
+    - H1
     - U4
     integradora: false
   - rotulo: u3:fme36
     nivel: 1
     fonte: FME, exercício 36
     cobre:
+    - H1
     - H3
-    - H4
-    integradora: false
-  - rotulo: u3:fme33
-    nivel: 2
-    fonte: FME, exercício 33
-    cobre:
-    - H1
-    - U3
-    integradora: false
-  - rotulo: u3:fme46
-    nivel: 2
-    fonte: FME, exercício 46
-    cobre:
-    - H1
-    - U2
-    integradora: true
-  - rotulo: u3:fme31
-    nivel: 2
-    fonte: FME, exercício 31
-    cobre:
-    - H1
-    - U1
-    integradora: true
-  - rotulo: u3:fme27
-    nivel: 2
-    fonte: adaptado do FME, exercício 27
-    cobre:
-    - H1
-    - U1
-    integradora: false
-  - rotulo: u3:fme37
-    nivel: 2
-    fonte: FME, exercício 37
-    cobre:
-    - H1
-    - H2
-    integradora: false
-  - rotulo: u3:fme61
-    nivel: 2
-    fonte: FME, exercício 61
-    cobre:
-    - H4
     integradora: false
   - rotulo: u3:comparar
     nivel: 2
@@ -528,12 +487,52 @@ unidades:
     - E2
     - E3
     integradora: false
+  - rotulo: u3:fme33
+    nivel: 2
+    fonte: FME, exercício 33
+    cobre:
+    - H1
+    - U3
+    integradora: false
+  - rotulo: u3:fme46
+    nivel: 2
+    fonte: adaptado do FME, exercício 46
+    cobre:
+    - H1
+    - U2
+    integradora: true
+  - rotulo: u3:fme31
+    nivel: 2
+    fonte: FME, exercício 31
+    cobre:
+    - H1
+    - U1
+    integradora: true
+  - rotulo: u3:fme37
+    nivel: 2
+    fonte: FME, exercício 37
+    cobre:
+    - H1
+    integradora: false
+  - rotulo: u3:fme61
+    nivel: 2
+    fonte: FME, exercício 61
+    cobre:
+    - H4
+    integradora: false
   - rotulo: u3:fme34
     nivel: 3
     fonte: FME, exercício 34
     cobre:
     - H1
     - U3
+    integradora: false
+  - rotulo: u3:fme27
+    nivel: 3
+    fonte: adaptado do FME, exercício 27
+    cobre:
+    - H1
+    - U1
     integradora: false
   - rotulo: u3:discos
     nivel: 3

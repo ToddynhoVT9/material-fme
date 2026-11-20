@@ -15,7 +15,7 @@
 
 \begin{erro}{\enquote{$A\cap B=\varnothing$, então $A$ ou $B$ é vazio}}{3-E2}
 \campo{O erro.} Concluir de $A\cap B=\varnothing$ que $A=\varnothing$ ou $B=\varnothing$.
-\campo{Por que parece plausível.} Parece o produto de números: se $ab=0$, então $a=0$ ou $b=0$ — e Boole escrevia a interseção justamente como um produto, $xy$.
+\campo{Por que parece plausível.} Parece o produto de números: se $ab=0$, então $a=0$ ou $b=0$ — e Boole escrevia a classe dos objetos que são ao mesmo tempo $X$ e $Y$ justamente como um produto, $xy$.
 \campo{Onde quebra.} $\{a,b\}\cap\{c,d\}=\varnothing$, e nenhum dos dois conjuntos é vazio.
 \campo{Como detectar.} $A\cap B=\varnothing$ diz apenas que não há elementos comuns. Pergunte: dois conjuntos não vazios podem não ter elementos comuns? Podem.
 \campo{Como corrigir.} Leia $A\cap B=\varnothing$ como \enquote{$A$ e $B$ são disjuntos} (construção 3-H4), e nada mais.
@@ -33,10 +33,10 @@
 
 \begin{erro}{Ler o \enquote{ou} como exclusivo}{3-E4}
 \campo{O erro.} Escrever $\{a,b,c\}\cup\{c,d,e\}=\{a,b,d,e\}$, deixando de fora o elemento comum.
-\campo{Por que parece plausível.} Na conversa, \enquote{ou} costuma ser exclusivo: \enquote{café ou chá?} pede uma das duas coisas.
+\campo{Por que parece plausível.} Na conversa, \enquote{ou} pode ser exclusivo: \enquote{café ou chá?} pede uma das duas coisas.
 \campo{Onde quebra.} Na lógica e nos conjuntos, \enquote{ou} é inclusivo: $c$ está nos dois conjuntos, logo está na reunião.
 \campo{Como detectar.} Pergunte: \enquote{quem está nos dois entra?}. Na reunião, sempre entra.
-\campo{Como corrigir.} $A\cup B$ é \enquote{pelo menos um}. \enquote{Um ou outro, mas não os dois} é outra operação, que a Unidade~4 apresenta.
+\campo{Como corrigir.} $A\cup B$ é \enquote{pelo menos um}. \enquote{Um ou outro, mas não os dois} é outra operação, que não é a reunião.
 \campo{Onde aparece.} \exref{ex:u3:operar}; \qref{u3:fme23}.
 \end{erro}
 
@@ -48,7 +48,7 @@
 \end{obs}
 
 \begin{obs}{3-O2}
-\textbf{De onde vêm os símbolos $\cup$ e $\cap$.} Os dois desenhos já aparecem em 1844, num livro do matemático Hermann Grassmann, mas como sinais gerais de operação, ainda sem o sentido de reunião e interseção. Com esse sentido, os símbolos modernos aparecem em 1888, num livro de Giuseppe Peano.\src{mactutorSym}
+\textbf{De onde vêm os símbolos $\cup$ e $\cap$.} Os dois desenhos já aparecem em 1844, num livro do matemático Hermann Grassmann, mas como sinais gerais de operação, ainda sem o sentido de reunião e interseção. Com esse sentido, os símbolos modernos aparecem em 1888, num livro de Giuseppe Peano.\src{millerHawaii}
 \end{obs}
 
 % ------------------------------------------------------------
@@ -114,7 +114,7 @@ Determine o conjunto-solução de cada condição, no universo indicado:
 \label{ex:u3:iguais}
 Prove que, se $A\cup B=A\cap B$, então $A=B$.
 \plano Provar $A\subset B$ e $B\subset A$ (dupla inclusão), usando as inclusões do exemplo~\ref{ex:u3:inclusoes}.
-\resolucao Pelo exemplo~\ref{ex:u3:inclusoes}, $A\subset A\cup B$ e $A\cap B\subset B$. Como $A\cup B=A\cap B$, encadeando: $A\subset A\cup B=A\cap B\subset B$, logo $A\subset B$. Trocando os papéis de $A$ e $B$ (as duas operações são comutativas), $B\subset A$. Portanto, $A=B$.
+\resolucao Pelo exemplo~\ref{ex:u3:inclusoes}, $A\subset A\cup B$; pelo item (b) do mesmo exemplo, com os papéis de $A$ e $B$ trocados, $B\cap A\subset B$, e $B\cap A=A\cap B$ (comutativa). Logo $A\cap B\subset B$. Como $A\cup B=A\cap B$, encadeando: $A\subset A\cup B=A\cap B\subset B$, logo $A\subset B$. Trocando os papéis de $A$ e $B$ (as duas operações são comutativas), $B\subset A$. Portanto, $A=B$.
 \comentario A novidade é que a hipótese é uma igualdade entre operações, e a conclusão é uma relação entre os conjuntos; nenhuma conta com elementos foi feita.
 \end{exemplo}
 
@@ -131,7 +131,7 @@ Dados os conjuntos $A=\{a,b,c,d\}$, $B=\{b,c,d,e\}$ e $C=\{c,e,f\}$, descreva $A
 \resp{$A\cap B=\{b,c,d\}$;\ $A\cap C=\{c\}$;\ $B\cap C=\{c,e\}$;\ $A\cap B\cap C=\{c\}$.}
 \end{questao}
 
-\begin{questao}{1}{FME, exercício 25}{3-H2, 3-U4}\label{u3:fme25}
+\begin{questao}{1}{FME, exercício 25}{3-H1, 3-U4}\label{u3:fme25}
 Classifique em V ou F, admitindo que $A$, $B$ e $C$ são conjuntos quaisquer:
 \begin{multicols}{3}
 \begin{enumerate}[label=\alph*)]
@@ -146,7 +146,7 @@ Classifique em V ou F, admitindo que $A$, $B$ e $C$ são conjuntos quaisquer:
 \resp{a) V;\ b) F;\ c) F;\ d) V;\ e) V;\ f) V.}
 \end{questao}
 
-\begin{questao}{1}{FME, exercício 30}{3-H2, 3-U4}\label{u3:fme30}
+\begin{questao}{1}{FME, exercício 30}{3-H1, 3-U4}\label{u3:fme30}
 Classifique em V ou F, admitindo que $A$, $B$ e $C$ são conjuntos quaisquer:
 \begin{multicols}{3}
 \begin{enumerate}[label=\alph*)]
@@ -161,7 +161,7 @@ Classifique em V ou F, admitindo que $A$, $B$ e $C$ são conjuntos quaisquer:
 \resp{a) V;\ b) F;\ c) F;\ d) V;\ e) V;\ f) V.}
 \end{questao}
 
-\begin{questao}{1}{FME, exercício 36}{3-H3, 3-H4}\label{u3:fme36}
+\begin{questao}{1}{FME, exercício 36}{3-H1, 3-H3}\label{u3:fme36}
 Assinale no diagrama abaixo, um de cada vez, os seguintes conjuntos:
 \begin{multicols}{2}
 \begin{enumerate}[label=\alph*)]
@@ -180,13 +180,23 @@ Assinale no diagrama abaixo, um de cada vez, os seguintes conjuntos:
 \resp{a) só a região central, comum aos três;\ b) as partes de $A$ que estão em $B$ ou em $C$ (três regiões);\ c) todo o $A$, mais a parte comum a $B$ e $C$ fora de $A$ (cinco regiões);\ d) todas as sete regiões internas aos círculos.}
 \end{questao}
 
+\begin{questao}{2}{autoral}{3-H2, 3-H3, 3-H4, 3-E2, 3-E3}\label{u3:comparar}
+\begin{enumerate}[label=\alph*)]
+  \item Para $A=\{1,2\}$, $B=\{2,3\}$ e $C=\{3,4\}$, calcule $A\cup(B\cap C)$ e $(A\cup B)\cap C$. São iguais?
+  \item Sabendo que $A\cap B=\varnothing$, o que se pode afirmar sobre $A\cap(B\cap C)$?
+  \item Dê três conjuntos não vazios, dois a dois disjuntos, cuja reunião seja $\{1,2,3,4,5,6\}$.
+  \item Simplifique $(A\cap B)\cup(A\cap B\cap C)$.
+\end{enumerate}
+\resp{a) $A\cup(B\cap C)=\{1,2,3\}$ e $(A\cup B)\cap C=\{3\}$: não são iguais;\ b) $A\cap(B\cap C)=(A\cap B)\cap C=\varnothing$;\ c) por exemplo, $\{1,2\}$, $\{3,4\}$ e $\{5,6\}$;\ d) $A\cap B$ (absorção: $A\cap B\cap C\subset A\cap B$).}
+\end{questao}
+
 \begin{questao}{2}{FME, exercício 33}{3-H1, 3-U3}\label{u3:fme33}
 Determine o conjunto $X$ tal que $\{a,b,c,d\}\cup X=\{a,b,c,d,e\}$, $\{c,d\}\cup X=\{a,c,d,e\}$ e $\{b,c,d\}\cap X=\{c\}$.
 \resp{$X=\{a,c,e\}$.}
 \end{questao}
 
-\begin{questao}[integradora]{2}{FME, exercício 46}{3-H1, 3-U2}\label{u3:fme46}
-Descreva os elementos dos conjuntos abaixo:
+\begin{questao}[integradora]{2}{adaptado do FME, exercício 46}{3-H1, 3-U2}\label{u3:fme46}
+Descreva os elementos dos conjuntos abaixo (para $A$, $C$ e $D$, o universo é $\mathbb{R}$):
 \begin{enumerate}[label={}, leftmargin=1.2em, itemsep=1pt]
   \item $A=\{x\mid x^2-5x-6=0\}$
   \item $B=\{x\mid x\text{ é letra da palavra \emph{exercício}}\}$
@@ -212,12 +222,9 @@ Considere os conjuntos: $K$, o conjunto dos quadriláteros planos; $P=\{x\in K\m
 \resp{a) $L$;\ b) $R$;\ c) $Q$;\ d) $Q$;\ e) $Q$;\ f) $P$.}
 \end{questao}
 
-\begin{questao}{2}{adaptado do FME, exercício 27}{3-H1, 3-U1}\label{u3:fme27}
-Determine a reunião das retas de um plano $\alpha$ que são paralelas a uma dada reta $r$ de $\alpha$ (considere $r$ paralela a si mesma).
-\resp{O próprio plano $\alpha$.}
-\end{questao}
 
-\begin{questao}{2}{FME, exercício 37}{3-H1, 3-H2}\label{u3:fme37}
+
+\begin{questao}{2}{FME, exercício 37}{3-H1}\label{u3:fme37}
 Sejam os conjuntos $A$ com 2 elementos, $B$ com 3 elementos e $C$ com 4 elementos. Qual é o número máximo de elementos de $(A\cap B)\cap C$?
 \resp{2.}
 \end{questao}
@@ -227,18 +234,16 @@ Desenhe um diagrama de Venn representando quatro conjuntos, $A$, $B$, $C$ e $D$,
 \resp{$A$ e $B$ se cruzando (cada um com uma parte fora do outro), os dois dentro de $C$, e $D$ dentro da parte comum a $A$ e $B$.}
 \end{questao}
 
-\begin{questao}{2}{autoral}{3-H2, 3-H3, 3-H4, 3-E2, 3-E3}\label{u3:comparar}
-\begin{enumerate}[label=\alph*)]
-  \item Para $A=\{1,2\}$, $B=\{2,3\}$ e $C=\{3,4\}$, calcule $A\cup(B\cap C)$ e $(A\cup B)\cap C$. São iguais?
-  \item Sabendo que $A\cap B=\varnothing$, o que se pode afirmar sobre $A\cap(B\cap C)$?
-  \item Dê três conjuntos não vazios, dois a dois disjuntos, cuja reunião seja $\{1,2,3,4,5,6\}$.
-\end{enumerate}
-\resp{a) $A\cup(B\cap C)=\{1,2,3\}$ e $(A\cup B)\cap C=\{3\}$: não são iguais;\ b) $A\cap(B\cap C)=(A\cap B)\cap C=\varnothing$;\ c) por exemplo, $\{1,2\}$, $\{3,4\}$ e $\{5,6\}$.}
-\end{questao}
+
 
 \begin{questao}{3}{FME, exercício 34}{3-H1, 3-U3}\label{u3:fme34}
 Sabe-se que $A\cup B\cup C=\{n\in\mathbb{N}\mid 1\le n\le10\}$, $A\cap B=\{2,3,8\}$, $A\cap C=\{2,7\}$, $B\cap C=\{2,5,6\}$ e $A\cup B=\{n\in\mathbb{N}\mid 1\le n\le8\}$. Determine $C$.
 \resp{$C=\{2,5,6,7,9,10\}$.}
+\end{questao}
+
+\begin{questao}{3}{adaptado do FME, exercício 27}{3-H1, 3-U1}\label{u3:fme27}
+Determine a reunião das retas de um plano $\alpha$ que são paralelas a uma dada reta $r$ de $\alpha$ (considere $r$ paralela a si mesma).
+\resp{O próprio plano $\alpha$.}
 \end{questao}
 
 \begin{questao}{3}{adaptado do FME, exercício 26}{3-H1, 3-U1}\label{u3:discos}
@@ -248,7 +253,7 @@ Determine a reunião dos círculos (isto é, das regiões circulares) de raio $r
 
 \begin{questao}{3}{autoral}{3-H1, 3-U3}\label{u3:pares}
 Quantos pares $(X,Y)$ de subconjuntos de $\{1,2,3\}$ satisfazem $X\cup Y=\{1,2,3\}$? Justifique.
-\resp{27. Cada elemento de $\{1,2,3\}$ precisa estar em $X$, em $Y$ ou nos dois: são 3 possibilidades por elemento, e $3\cdot3\cdot3=27$.}
+\resp{27. Cada elemento de $\{1,2,3\}$ precisa estar só em $X$, só em $Y$ ou nos dois: são 3 possibilidades por elemento, e $3\cdot3\cdot3=27$.}
 \end{questao}
 
 \begin{sintese}
