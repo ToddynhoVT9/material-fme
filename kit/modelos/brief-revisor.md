@@ -26,6 +26,9 @@ partir do livro *Fundamentos de Matemática Elementar* (FME). Você NÃO partici
        moderna / convenção atual), sem leitura moderna na boca de um autor antigo;
    (e) dentro de cada nível, questões **da mais guiada para a menos guiada**;
    (f) o que a unidade promete (prefácio, exemplos, gatilhos) **não está só na camada opcional**.
+   (g) **nenhuma ambiguidade** (v4): pronome sem referente claro, termo técnico sem explicação na
+       primeira vez, pessoa citada sem ser apresentada, frase com duas leituras; e o FME não é citado no
+       corpo do texto ("o FME tem um exercício…") — procedência só na etiqueta e no `\src`.
 3. **Respostas:** resolva você mesmo CADA questão e CADA exemplo (use Python: força bruta, tabelas,
    sympy, enumeração). Compare com `\resp{…}` e com as resoluções. Liste toda divergência com o seu cálculo.
 4. **Fatos e fontes:** cada afirmação histórica ou factual tem `\src` pertinente e bate com o dossiê.

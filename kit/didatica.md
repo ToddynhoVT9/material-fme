@@ -1,12 +1,13 @@
-# Didática v3 — texto consolidado (normativo)
+# Didática v4 — texto consolidado (normativo)
 
 Material de estudo de matemática a partir dos capítulos do *Fundamentos de Matemática Elementar* (FME).
 Este arquivo é a regra. Ele junta a didática v3 (2026-11-18), as decisões do piloto que continuam
-valendo e as emendas do R3 (E-R3-1 a E-R3-5), já incorporadas no lugar de cada regra.
+valendo, as emendas do R3 (E-R3-1 a E-R3-5) e as regras da v4 (2026-11-20), já incorporadas no lugar
+de cada regra. Mudanças de versão: §12.
 Histórico completo: `capitulos/v1c1-nocoes-de-logica/registro-piloto/`.
 
 **P1 — a didática muda só por decisão explícita do usuário**, registrada aqui como nova versão
-(v3 → v4), com data e motivo. Ajustes locais de um capítulo vão para o `ESTADO.md` dele.
+(v4 → v5), com data e motivo, e anotada no §12. Ajustes locais de um capítulo vão para o `ESTADO.md` dele.
 
 ---
 
@@ -82,6 +83,8 @@ sob o filtro P5.
   ferramenta específica nem a resposta de um item N3; "Treino:" e a coluna "ID · treino" apontam só
   para exemplos e questões **N1/N2**. O sinal do gatilho é genérico ("premissas encadeáveis", não
   "bebês, crocodilos").
+- **"Como reconhecer" descreve o sinal no enunciado** — palavras, estrutura ou contexto que indicam a
+  ferramenta —, não onde a questão aparece nem de que livro ela vem (v4).
 - **Aceitação:** há casos enunciado → estrutura → ferramenta; cada linha de gatilho aponta para ≥ 1
   item N1/N2.
 
@@ -165,6 +168,9 @@ texto de uma prova é caro — só vale quando a função do item é mostrar a a
 - `[histórico]` — problema ou experimento contado na unidade;
 - `[autoral]` (pode dizer "estrutura de…").
 Fatos históricos: documentados, com `\src`; histórias não verificáveis levam `\anedota`.
+- **O FME não é citado no corpo do texto** ("o FME tem um exercício que…", "o comando aparece assim no
+  FME"): a procedência fica só na etiqueta e no `\src` (v4). Uma pergunta do FME pode ser usada no
+  texto; o que não se faz é apresentá-la como "do FME".
 
 ---
 
@@ -182,7 +188,11 @@ Fatos históricos: documentados, com `\src`; histórias não verificáveis levam
 
 (a) o item treina cada ID declarado · (b) nenhum N3 resolvido ou antecipado fora das questões; cada
 nível cumpre a função · (c) integradora precisa do conteúdo da unidade · (d) filtro P5 e três camadas
-· (e) ordem por grau de guia dentro do nível · (f) o prometido não está só na camada opcional.
+· (e) ordem por grau de guia dentro do nível · (f) o prometido não está só na camada opcional
+· (g) **nenhuma ambiguidade** (v4): todo pronome tem referente claro ("o sistema dele" → "de quem?"),
+todo termo técnico é explicado na primeira vez que aparece, toda pessoa é apresentada antes de ser
+citada, e nenhuma frase admite duas leituras; o prefácio e o artigo falam do assunto da unidade e do
+capítulo, sem promessas sobre "o volume".
 O `checar.py` automatiza parte de (b) (remissões de "Treino:" e gatilhos para N3) e os ponteiros da
 síntese; o resto é leitura.
 
@@ -228,3 +238,16 @@ síntese; o resto é leitura.
 - **Leitura visual das páginas é a autoridade**; a camada de texto do PDF só serve de índice (perde ∧, ∨,
   ~, ≠, ∈ e pode trazer respostas de outros capítulos).
 - O gabarito do FME é conferido por programa antes de ser usado.
+
+---
+
+## 12. Histórico de versões
+
+| versão | data | motivo | o que mudou |
+|---|---|---|---|
+| v3 | 2026-11-18 | lições do piloto (Cap. I) | texto consolidado; emendas E-R3-1 a E-R3-5 |
+| v4 | 2026-11-20 | calibração da U1 do Cap. II (decisão do usuário) | §2.3: "Como reconhecer" descreve o sinal no enunciado · §5: o FME não é citado no corpo do texto · §7: conferência (g), nenhuma ambiguidade |
+
+Unidades prontas afetadas pela v4: Cap. I (todas as unidades; não revistas — revisar só se o usuário pedir);
+Cap. II, U1 (já ajustada na calibração).
+

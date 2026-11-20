@@ -7,7 +7,7 @@
 - número: {{NUMERO}}
 - título: {{TITULO_CAPITULO}}
 - criado: {{HOJE}}
-- didática: v3 (`kit/didatica.md`)
+- didática: v4 (`kit/didatica.md`)
 - material de entrada: [onde estão as páginas do FME e as questões entregues pelo usuário]
 
 ## Próxima ação

@@ -7,7 +7,7 @@
 - número: 2
 - título: Conjuntos
 - criado: 2026-11-19
-- didática: v3 (`kit/didatica.md`)
+- didática: v4 (desde 2026-11-20; a U1 já atende) (`kit/didatica.md`)
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
@@ -43,7 +43,7 @@ Fechamento do capítulo (depois de todas `pronta`): abertura, glossário, fontes
 | D4 | 2026-11-19 | resposta correta nas divergências; questões com problema de redação (13e, 14, 42b) em versão adaptada, etiqueta "[adaptado do FME, exercício n]" | usuário |
 | D6 | 2026-11-19 | usar a notação {expressão \| condição} (ex.: {2ⁿ \| n ∈ ℕ}), apresentada em 1-H2 | usuário |
 | D7 | 2026-11-19 | erro, caso do mapa ou prefácio **não** usam o mesmo caso concreto (equação, lista, conjunto) de uma questão N2 — senão a questão vira cópia (achado 5 da revisão da U1) | revisão U1 |
-| D8 | 2026-11-20 | **calibração da U1** (usuário): tom, *Onde é usado?* e dificuldade das questões aprovados. Regras daqui em diante: (a) não citar o FME no corpo do texto ("o FME tem um exercício…", "aparece assim no FME"): a procedência fica só na etiqueta e no `\src`; (b) "Como reconhecer" descreve o sinal no enunciado, não onde a questão aparece; (c) reler cada parágrafo do artigo procurando ambiguidade (referente de pronome, termo sem explicação, frase que admite duas leituras); (d) o prefácio fala do capítulo, não do volume | usuário |
+| D8 | 2026-11-20 | **calibração da U1** (usuário): tom, *Onde é usado?* e dificuldade das questões aprovados. Regras daqui em diante: (a) não citar o FME no corpo do texto ("o FME tem um exercício…", "aparece assim no FME"): a procedência fica só na etiqueta e no `\src`; (b) "Como reconhecer" descreve o sinal no enunciado, não onde a questão aparece; (c) reler cada parágrafo do artigo procurando ambiguidade (referente de pronome, termo sem explicação, frase que admite duas leituras); (d) o prefácio fala do capítulo, não do volume. **(a)–(c) promovidas à didática v4** (2026-11-20) | usuário |
 | D5 | 2026-11-19 | vestibulares do FME com etiqueta "[BANCA via FME, ano não informado]", sem procurar o ano | usuário |
 
 Decisões locais deste capítulo. Mudança na **didática** só com o usuário, como nova versão em `kit/didatica.md`.

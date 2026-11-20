@@ -1,6 +1,6 @@
 # kit — ferramentas da skill material-didatico-fme
 
-Versão do kit: **1.0** (2026-11-19) · didática v3 consolidada.
+Versão do kit: **1.0** (2026-11-19) · didática v4 consolidada.
 
 | Arquivo | Para quê | Quando ler |
 |---|---|---|
