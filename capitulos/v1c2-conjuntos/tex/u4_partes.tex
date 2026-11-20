@@ -1,68 +1,414 @@
 % ============================================================
 % Unidade 4 — Parte B: erros, observações, exemplos, questões, síntese, respostas
+% Fonte única: dossies/u4.md · respostas conferidas em verif/u4.py
 % ============================================================
 \ErrosComuns
-% Roteiro de 5 passos (função obrigatória; em erros simples, passos podem ser uma frase).
-% "Onde quebra" = contraexemplo CONCRETO. "Como detectar" = teste feito DEPOIS de escrever.
 
-\begin{erro}{«O erro, como frase curta»}{4-E1}
-\campo{O erro.} «O que o aluno escreve.»
-\campo{Por que parece plausível.} «O raciocínio que leva a ele.»
-\campo{Onde quebra.} «Contraexemplo concreto.»
-\campo{Como detectar.} «O teste depois de escrever.»
-\campo{Como corrigir.} «A regra certa, com remissão à construção.»
-\campo{Onde aparece.} \exref{ex:u4:nome}; \qref{u4:nome}.
+\begin{erro}{Comutar a diferença}{4-E1}
+\campo{O erro.} Tratar $A-B$ e $B-A$ como o mesmo conjunto, como se fosse \enquote{a diferença entre os dois}.
+\campo{Por que parece plausível.} Na conversa, \enquote{a diferença entre 7 e 3} é 4, não importa a ordem em que os números são ditos.
+\campo{Onde quebra.} $\{1,2,3\}-\{3,4\}=\{1,2\}$, mas $\{3,4\}-\{1,2,3\}=\{4\}$.
+\campo{Como detectar.} Pergunte: \enquote{de qual conjunto estou tirando?}. O resultado tem de estar dentro dele.
+\campo{Como corrigir.} $A-B$ fica dentro de $A$ (região \enquote{só $A$}); $B-A$ fica dentro de $B$ (região \enquote{só $B$}) — construção 4-H1.
+\campo{Onde aparece.} \exref{ex:u4:calcular}; \qref{u4:fme38}.
+\end{erro}
+
+\begin{erro}{Complementar que \enquote{distribui}}{4-E2}
+\campo{O erro.} Escrever $\overline{A\cap B}=\overline{A}\cap\overline{B}$ (ou $\overline{A\cup B}=\overline{A}\cup\overline{B}$).
+\campo{Por que parece plausível.} Parece a regra $-(a+b)=-a-b$, em que o sinal passa para dentro dos parênteses e a operação fica a mesma.
+\campo{Onde quebra.} Com $U=\{1,2,3,4\}$, $A=\{1,2\}$ e $B=\{2,3\}$: $\overline{A\cap B}=\overline{\{2\}}=\{1,3,4\}$, mas $\overline{A}\cap\overline{B}=\{3,4\}\cap\{1,4\}=\{4\}$.
+\campo{Como detectar.} Teste com conjuntos pequenos ou compare as regiões do diagrama.
+\campo{Como corrigir.} Ao complementar, $\cap$ vira $\cup$ e $\cup$ vira $\cap$ (construção 4-H3).
+\campo{Onde aparece.} \exref{ex:u4:demorgan}; questões \ref{u4:fme44} e \ref{u4:ita42}.
+\end{erro}
+
+\begin{erro}{Complementar sem universo}{4-E3}
+\campo{O erro.} Falar em \enquote{o complementar de $A$} sem dizer em relação a quê; ou escrever $\complement_A B$ quando $B$ não está contido em $A$.
+\campo{Por que parece plausível.} Parece óbvio o que está \enquote{de fora}.
+\campo{Onde quebra.} O complementar de $\{x\mid x>0\}$ é $\{0\}$ se o universo é $\mathbb{N}$, e é $\{0,-1,-2,\ldots\}$ se o universo é $\mathbb{Z}$. E $\complement_{\{a,b\}}\{b,c\}$ nem é definido, porque $c\notin\{a,b\}$.
+\campo{Como detectar.} Pergunte: \enquote{fora de quê?}. Se não houver resposta, falta o universo.
+\campo{Como corrigir.} Fixe o universo $U$ (ou o conjunto que contém $B$) antes de complementar — construção 4-H2.
+\campo{Onde aparece.} \exref{ex:u4:turma}; questões \ref{u4:fme45} e \ref{u4:fme55}.
+\end{erro}
+
+\begin{erro}{Tirar uma reunião sem trocar a operação}{4-E4}
+\campo{O erro.} Escrever $A-(B\cup C)=(A-B)\cup(A-C)$.
+\campo{Por que parece plausível.} \enquote{Tirar $B$ ou $C$} soa como \enquote{tirar $B$, ou tirar $C$}.
+\campo{Onde quebra.} Com $A=\{1,2,3\}$, $B=\{1\}$ e $C=\{2\}$: $A-(B\cup C)=\{3\}$, mas $(A-B)\cup(A-C)=\{2,3\}\cup\{1,3\}=\{1,2,3\}$.
+\campo{Como detectar.} Tirar $B\cup C$ tira os dois: o que sobra tem de estar fora de $B$ \emph{e} fora de $C$.
+\campo{Como corrigir.} $A-(B\cup C)=(A-B)\cap(A-C)$ e $A-(B\cap C)=(A-B)\cup(A-C)$ (construção 4-H3).
+\campo{Onde aparece.} \exref{ex:u4:turma}; \qref{u4:fme38}.
 \end{erro}
 
 % ------------------------------------------------------------
 \Observacoes
-% Camada opcional (selo + letra menor). Teste de pertença: quem pula TODAS as observações
-% perde algo necessário para usar o conceito? Se sim, o conteúdo vai para a seção dele (E-R3-3).
-% Uma observação não resolve nem antecipa nenhum N3 (E-R3-1).
 
 \begin{obs}{4-O1}
-\textbf{«Título.»} «Ampliação: curiosidade, generalização, caso-limite, conexão, exceção.»\src{fme}
+\textbf{Notações.} O complementar de $A$ aparece em textos diferentes como $\overline{A}$, $A^{C}$, $A'$ ou $\complement A$; quando se quer deixar o universo à vista, $\complement_U A$. A diferença aparece como $A-B$ ou como $A\setminus B$. As questões desta unidade mantêm a notação de cada enunciado: leia a convenção de cada texto antes de calcular.
+\end{obs}
+
+\begin{obs}{4-O2}
+\textbf{Antes de De Morgan.} As regras que levam o nome de De Morgan já eram conhecidas, em palavras, pelo filósofo Guilherme de Ockham, no século XIV. O que De Morgan fez foi escrevê-las na notação da sua lógica.\src{britDeMorgan}
 \end{obs}
 
 % ------------------------------------------------------------
 \Exemplos
-% Pelo menos um por nível; juntos cobrem todo H, U e E. Cada ID declarado é TREINADO, não só citado.
-% IDs O só se o item treina a observação (E-R3-2). Primeiro argumento vazio = número automático.
-% Plano → Resolução → Comentário. N3: situação nova, que o texto não resolveu.
 
-\begin{exemplo}{}{1}{autoral}{4-H1, 4-U1, 4-E1}
-\label{ex:u4:nome}
-«Enunciado.»
-\plano «Qual ferramenta e por quê.»
-\resolucao «Resolução.»
-\comentario «O que o exemplo ensina; o erro que ele evita.»
+\begin{exemplo}{}{1}{autoral}{4-H1, 4-H2, 4-U1, 4-E1}
+\label{ex:u4:calcular}
+Calcule:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $\{1,2,3,4\}-\{3,4,5\}$
+  \item $\{3,4,5\}-\{1,2,3,4\}$
+  \item $\{1,2\}-\{5,6\}$
+  \item $\{1,2\}-\{1,2,3\}$
+\end{enumerate}
+\end{multicols}
+\begin{enumerate}[label=\alph*),start=5]
+  \item $\complement_A B$, para $A=\{1,2,3,4,5,6\}$ e $B=\{2,4,6\}$.
+\end{enumerate}
+\plano Para cada elemento do primeiro conjunto, perguntar: ele está no segundo? Se não está, fica.
+\resolucao a) $\{1,2\}$. b) $\{5\}$. c) $\{1,2\}$. d) $\varnothing$. e) Como $B\subset A$, o complementar existe: $\complement_A B=A-B=\{1,3,5\}$.
+\comentario (a) e (b) usam os mesmos dois conjuntos em ordens trocadas e dão resultados diferentes (erro 4-E1). Em (c), nada é tirado, porque os conjuntos não têm elementos comuns; em (d), tudo é tirado.
+\end{exemplo}
+
+\begin{exemplo}{}{1}{FME, exercício 39}{4-H1}
+\label{ex:u4:contido}
+Prove que $(A-B)\subset A$, quaisquer que sejam os conjuntos $A$ e $B$.
+\plano Elemento genérico (Unidade~2): tomar um elemento qualquer de $A-B$ e mostrar que ele está em $A$.
+\resolucao Se $x\in A-B$, então $x\in A$ e $x\notin B$; em particular, $x\in A$. Logo $(A-B)\subset A$.
+\comentario É a forma precisa de dizer que \enquote{$A-B$ fica dentro de $A$}, a ideia que evita o erro 4-E1.
+\end{exemplo}
+
+\begin{exemplo}{}{1}{autoral}{4-H1, 4-U3}
+\label{ex:u4:sombrear}
+No diagrama de três conjuntos, assinale, um de cada vez: a) $A-(B\cup C)$; b) $(A\cap B)-C$.
+\plano Região por região: para cada uma das oito regiões, perguntar se ela está no primeiro conjunto da diferença e fora do segundo.
+\resolucao a) Ficam os elementos de $A$ que não estão nem em $B$ nem em $C$: só a parte de $A$ fora dos outros dois círculos. b) Ficam os elementos comuns a $A$ e $B$ que não estão em $C$: a parte comum a $A$ e $B$, sem a região central.
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\begin{scope}
+\begin{scope}\clip (0,0.8) circle (1.2); \fill[acento!45] (0,0.8) circle (1.2); \fill[white] (-0.75,-0.45) circle (1.2); \fill[white] (0.75,-0.45) circle (1.2);\end{scope}
+\draw[acento,thick] (0,0.8) circle (1.2); \draw[acento,thick] (-0.75,-0.45) circle (1.2); \draw[acento,thick] (0.75,-0.45) circle (1.2);
+\node at (0,2.3) {$A$}; \node at (-2.2,-1.1) {$B$}; \node at (2.2,-1.1) {$C$}; \node[font=\small] at (0,-2.4) {a) $A-(B\cup C)$};
+\end{scope}
+\begin{scope}[xshift=7cm]
+\begin{scope}\clip (0,0.8) circle (1.2); \clip (-0.75,-0.45) circle (1.2); \fill[acento!45] (0,0.8) circle (1.2); \fill[white] (0.75,-0.45) circle (1.2);\end{scope}
+\draw[acento,thick] (0,0.8) circle (1.2); \draw[acento,thick] (-0.75,-0.45) circle (1.2); \draw[acento,thick] (0.75,-0.45) circle (1.2);
+\node at (0,2.3) {$A$}; \node at (-2.2,-1.1) {$B$}; \node at (2.2,-1.1) {$C$}; \node[font=\small] at (0,-2.4) {b) $(A\cap B)-C$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\comentario A diferença sempre fica dentro do primeiro conjunto: em (a), dentro de $A$; em (b), dentro de $A\cap B$. O segundo conjunto só diz o que apagar.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{FME, exercício 43}{4-H3, 4-U2}
+\label{ex:u4:fme43}
+Prove que $A-\overline{B}=A\cap B$.
+\plano Traduzir a diferença para \enquote{estar em $A$ e não estar em $\overline{B}$} e usar que o complementar do complementar é o próprio conjunto.
+\resolucao $x\in A-\overline{B}$ $\iff$ ($x\in A$ e $x\notin\overline{B}$) $\iff$ ($x\in A$ e $x\in B$) $\iff$ $x\in A\cap B$.
+\comentario Outra forma: $A-\overline{B}=A\cap\overline{\overline{B}}=A\cap B$, trocando a diferença por interseção com o complementar.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{4-H3, 4-U2, 4-E2}
+\label{ex:u4:demorgan}
+Sejam $U=\{1,2,3,4,5,6\}$, $A=\{1,2,3\}$ e $B=\{3,4\}$.
+\begin{enumerate}[label=\alph*)]
+  \item Calcule $\overline{A\cap B}$, $\overline{A}\cap\overline{B}$ e $\overline{A}\cup\overline{B}$.
+  \item Prove que $\overline{A\cap B}=\overline{A}\cup\overline{B}$ para conjuntos quaisquer.
+\end{enumerate}
+\plano Em (a), calcular cada conjunto e comparar. Em (b), traduzir \enquote{não pertencer a $A\cap B$} pela negação do \enquote{e}.
+\resolucao a) $A\cap B=\{3\}$, logo $\overline{A\cap B}=\{1,2,4,5,6\}$. Como $\overline{A}=\{4,5,6\}$ e $\overline{B}=\{1,2,5,6\}$, temos $\overline{A}\cap\overline{B}=\{5,6\}$ e $\overline{A}\cup\overline{B}=\{1,2,4,5,6\}$. b) $x\in\overline{A\cap B}$ $\iff$ não ($x\in A$ e $x\in B$) $\iff$ ($x\notin A$ ou $x\notin B$) $\iff$ $x\in\overline{A}\cup\overline{B}$.
+\comentario Em (a), $\overline{A}\cap\overline{B}$ deu outro conjunto: é o erro 4-E2. A prova de (b) é a negação do \enquote{e} do Capítulo I, aplicada a cada elemento.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{4-H1, 4-H2, 4-U4}
+\label{ex:u4:regioes}
+Sejam $U=\{1,2,3,4,5,6,7,8\}$ e $A$, $B$ subconjuntos de $U$ tais que $A-B=\{1,2\}$, $B-A=\{5,6\}$ e $\overline{A\cup B}=\{7,8\}$. Determine $A\cap B$, $A$ e $B$.
+\plano Traduzir cada dado para uma das quatro regiões do diagrama e usar que as quatro regiões, juntas, formam o universo.
+\resolucao $A-B$ é a região \enquote{só $A$}; $B-A$, a região \enquote{só $B$}; $\overline{A\cup B}$, a região \enquote{nenhum}. A região que falta, $A\cap B$, tem os elementos de $U$ que não apareceram: $A\cap B=\{3,4\}$. Logo $A=\{1,2\}\cup\{3,4\}=\{1,2,3,4\}$ e $B=\{3,4\}\cup\{5,6\}=\{3,4,5,6\}$.
+\comentario Cada dado ocupou uma região inteira, e o universo fechou a conta. Quando os dados não correspondem a regiões inteiras, o caminho é o mesmo, mas elemento a elemento.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{4-H1, 4-H2, 4-U1, 4-E3, 4-E4}
+\label{ex:u4:turma}
+Numa turma $T=\{\text{Ana},\text{Bia},\text{Caio},\text{Davi},\text{Eva}\}$, jogam futebol $F=\{\text{Bia},\text{Caio}\}$ e jogam vôlei $V=\{\text{Caio},\text{Eva}\}$.
+\begin{enumerate}[label=\alph*)]
+  \item Quem da turma não joga futebol?
+  \item A escola tem os alunos da turma e mais Gil e Hugo, de outra turma. Calcule o complementar de $F$ tomando como universo a turma e tomando como universo a escola.
+  \item Quem da turma não joga nem futebol nem vôlei? Compare com $(T-F)\cap(T-V)$ e com $(T-F)\cup(T-V)$.
+\end{enumerate}
+\plano Traduzir cada \enquote{não} em diferença, identificando de qual conjunto se tira.
+\resolucao a) $T-F=\{\text{Ana},\text{Davi},\text{Eva}\}$. b) No universo $T$, $\overline{F}=\{\text{Ana},\text{Davi},\text{Eva}\}$; no universo da escola, $\overline{F}=\{\text{Ana},\text{Davi},\text{Eva},\text{Gil},\text{Hugo}\}$. c) Não jogar nem um nem outro é estar fora de $F\cup V=\{\text{Bia},\text{Caio},\text{Eva}\}$: $T-(F\cup V)=\{\text{Ana},\text{Davi}\}$. Como $T-F=\{\text{Ana},\text{Davi},\text{Eva}\}$ e $T-V=\{\text{Ana},\text{Bia},\text{Davi}\}$, temos $(T-F)\cap(T-V)=\{\text{Ana},\text{Davi}\}$, igual ao resultado; e $(T-F)\cup(T-V)=\{\text{Ana},\text{Bia},\text{Davi},\text{Eva}\}$, diferente.
+\comentario Em (b), o mesmo $F$ tem dois complementares, um para cada universo (erro 4-E3). Em (c), tirar uma reunião deu uma interseção de diferenças, e não uma reunião (erro 4-E4).
+\end{exemplo}
+
+\begin{exemplo}{}{3}{autoral}{4-H1}
+\label{ex:u4:iguais}
+Para que conjuntos $A$ e $B$ vale $A-B=B-A$?
+\plano Supor a igualdade e procurar uma contradição para qualquer elemento de $A-B$.
+\resolucao Se $A=B$, os dois lados são vazios, e a igualdade vale. Reciprocamente, suponha $A-B=B-A$ e tome $x\in A-B$. Então $x\notin B$; mas $x$ também está em $B-A$, logo $x\in B$ — contradição. Assim, $A-B=\varnothing$, isto é, todo elemento de $A$ está em $B$: $A\subset B$. Do mesmo modo, $B-A=\varnothing$ dá $B\subset A$. Portanto, a igualdade vale só quando $A=B$.
+\comentario A novidade é transformar uma igualdade entre diferenças numa relação entre os conjuntos, por contradição. As duas diferenças só podem coincidir sendo vazias, porque uma fica dentro de $A$ e fora de $B$, e a outra, dentro de $B$.
 \end{exemplo}
 
 % ------------------------------------------------------------
 \Questoes
-% Nível por função (N1 aplicação · N2 seleção/combinação · N3 transferência), da mais guiada para a
-% menos guiada DENTRO de cada nível. Integradora ([integradora]) só se o assunto da unidade for
-% necessário: tente resolvê-la sem ele. \label logo após o cabeçalho; \resp{...} com a resposta final.
-% Procedência no 2º argumento: [autoral] · [FME, exercício n] · [adaptada de concurso — BANCA/ÓRGÃO ANO] ·
-% [FUVEST 2019, 1ª fase, q.~12] (só com texto conferido) · [… via FME] · [histórico].
 
-\begin{questao}{1}{autoral}{4-U1, 4-E1}\label{u4:nome}
-«Enunciado.»
-\resp{«resposta final; em demonstração: "Demonstração. A prova deve mostrar que …"»}
+\begin{questao}{1}{FME, exercício 38}{4-H1, 4-U1, 4-E1, 4-E4}\label{u4:fme38}
+Dados os conjuntos $A=\{a,b,c,d\}$, $B=\{c,d,e,f,g\}$ e $C=\{b,d,e,g\}$, determine:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $A-B$
+  \item $B-A$
+  \item $C-B$
+  \item $(A\cup C)-B$
+  \item $A-(B\cap C)$
+  \item $(A\cup B)-(A\cap C)$
+\end{enumerate}
+\end{multicols}
+\resp{a) $\{a,b\}$;\ b) $\{e,f,g\}$;\ c) $\{b\}$;\ d) $\{a,b\}$;\ e) $\{a,b,c\}$;\ f) $\{a,c,e,f,g\}$.}
 \end{questao}
 
+\begin{questao}{1}{FME, exercício 40}{4-H1}\label{u4:fme40}
+Classifique em V ou F, admitindo que $A$ e $B$ são conjuntos quaisquer:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $(A-B)\supset\varnothing$
+  \item $(A-B)\cup(A\cap B)=A$
+  \item $(A-B)\subset B$
+  \item $(A-B)\subset(A\cup B)$
+\end{enumerate}
+\end{multicols}
+\resp{a) V;\ b) V;\ c) F;\ d) V.}
+\end{questao}
+
+\begin{questao}{1}{adaptado do FME, exercício 42}{4-H2, 4-U3}\label{u4:fme42}
+Assinale no diagrama abaixo, um de cada vez, os seguintes conjuntos:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $\overline{A}-B$
+  \item $\overline{A}-(A\cup B)$
+  \item $\overline{B}\cup A$
+  \item $\overline{A\cup B}$
+  \item $\overline{A\cap B}$
+  \item $\overline{B}\cap A$
+\end{enumerate}
+\end{multicols}
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+\draw[thick] (-3.2,-1.7) rectangle (3.2,1.7); \node at (2.9,1.4) {$U$};
+\draw[acento,thick] (-0.75,0) circle (1.25); \draw[acento,thick] (0.75,0) circle (1.25);
+\node at (-1.75,1.15) {$A$}; \node at (1.75,1.15) {$B$};
+\end{tikzpicture}
+\end{center}
+\resp{a) a região fora dos dois conjuntos;\ b) a região fora dos dois conjuntos;\ c) tudo, exceto a região \enquote{só $B$};\ d) a região fora dos dois conjuntos;\ e) tudo, exceto a parte comum a $A$ e $B$;\ f) a região \enquote{só $A$}.}
+\end{questao}
+
+\begin{questao}[integradora]{1}{FME, exercício 45}{4-H2, 4-E3}\label{u4:fme45}
+Sejam $E=\{1,2,3,4,5,6,7,8\}$, a sentença aberta $p(y)\colon y+1\le 6$ e $F=\{y\in E\mid y \text{ satisfaz } p(y)\}$. Determine $\overline{F}$, o complementar de $F$ em relação a $E$.
+\resp{$F=\{1,2,3,4,5\}$, logo $\overline{F}=\{6,7,8\}$.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 41}{4-H1, 4-U4}\label{u4:fme41}
+Dados os conjuntos $A=\{1,2,3,4,5\}$, $B=\{1,2,4,6,8\}$ e $C=\{2,4,5,7\}$, obtenha um conjunto $X$ tal que $X\subset A$ e $A-X=B\cap C$.
+\resp{$X=\{1,3,5\}$ (é o único: $B\cap C=\{2,4\}$, e $X$ tem de conter exatamente os elementos de $A$ fora de $\{2,4\}$).}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 53}{4-H3, 4-U2}\label{u4:fme53}
+Denotando por $X'$ o complementar de $X$ em relação a um universo $U$, determine $P'\cup(P\cap Q)$, quaisquer que sejam $P$ e $Q$.
+\resp{$P'\cup Q$. Pela distributiva, $P'\cup(P\cap Q)=(P'\cup P)\cap(P'\cup Q)=U\cap(P'\cup Q)=P'\cup Q$.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 44}{4-H2, 4-H3, 4-E2}\label{u4:fme44}
+Classifique em V ou F, admitindo que $A$ e $B$ são subconjuntos de um universo $U$ e que $\complement A=U-A$:
+\begin{enumerate}[label=\alph*)]
+  \item $(A-B)\cup(B-A)=(A\cup B)-(A\cap B)$
+  \item $A\subset B\Rightarrow(\complement B)\subset(\complement A)$
+  \item $(A-B)\subset(\complement A)$
+  \item $(A-B)\subset(\complement B)$
+\end{enumerate}
+\resp{a) V;\ b) V;\ c) F;\ d) V.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 55}{4-H2, 4-U4, 4-E3}\label{u4:fme55}
+Sejam $A$ e $B$ subconjuntos de um universo $U$, com $\overline{A}=\{e,f,g,h,i\}$ (o complementar de $A$ em relação a $U$), $A\cap B=\{c,d\}$ e $A\cup B=\{a,b,c,d,e,f\}$. Quantos elementos têm $A$ e $B$?
+\resp{4 e 4: $A=\{a,b,c,d\}$ e $B=\{c,d,e,f\}$.}
+\end{questao}
+
+\begin{questao}{2}{ITA via FME, ano não informado}{4-H3, 4-U2, 4-E2}\label{u4:ita42}
+Sejam $A$, $B$ e $C$ subconjuntos de um universo $U$, e considere as afirmações:
+\begin{enumerate}[label=\Roman*.]
+  \item $(A-B^{C})-C^{C}=A\cap(B\cup C)$
+  \item $(A-B^{C})-C=A\cup(B\cap C^{C})^{C}$
+  \item $B^{C}\cup C^{C}=(B\cap C)^{C}$
+\end{enumerate}
+É (são) sempre verdadeira(s) apenas:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item I
+  \item II
+  \item III
+  \item I e III
+  \item II e III
+\end{enumerate}
+\end{multicols}
+\resp{c. I é falsa: o lado esquerdo é $A\cap B\cap C$. II é falsa: o lado esquerdo é $A\cap B\cap C^{C}$. III é De Morgan.}
+\end{questao}
+
+\begin{questao}{2}{ITA via FME, ano não informado}{4-H2, 4-H3, 4-U4}\label{u4:ita43}
+Sejam $U=\{a,b,c,d,e,f,g,h\}$ e $A$, $B$ subconjuntos de $U$ tais que $(B^{C}\cup A)^{C}=\{f,g,h\}$, $B^{C}\cap A=\{a,b\}$ e $A^{C}-B=\{d,e\}$. Então, $n(\mathcal{P}(A\cap B))$ é igual a:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item 0
+  \item 1
+  \item 2
+  \item 4
+  \item 8
+\end{enumerate}
+\end{multicols}
+\resp{c. Os dados dão $A=\{a,b,c\}$ e $B=\{c,f,g,h\}$; logo $A\cap B=\{c\}$, que tem 2 subconjuntos.}
+\end{questao}
+
+\begin{questao}{3}{FME, exercício 60}{4-H1}\label{u4:fme60}
+Chama-se \textbf{diferença simétrica} de $A$ e $B$ o conjunto $A\,\triangle\,B=(A-B)\cup(B-A)$.
+\begin{enumerate}[label=\alph*)]
+  \item Calcule $\{a,b,c,d\}\,\triangle\,\{c,d,e,f,g\}$.
+  \item Prove que $A\,\triangle\,\varnothing=A$, para todo $A$.
+  \item Prove que $A\,\triangle\,A=\varnothing$, para todo $A$.
+  \item Prove que $A\,\triangle\,B=B\,\triangle\,A$, para quaisquer $A$ e $B$.
+  \item Assinale $A\,\triangle\,B$ em cada diagrama:
+\end{enumerate}
+\begin{center}
+\begin{tikzpicture}[scale=0.55]
+\begin{scope}
+\draw[acento,thick] (-0.75,0) circle (1.25); \draw[acento,thick] (0.75,0) circle (1.25);
+\node at (-1.8,1.2) {$A$}; \node at (1.8,1.2) {$B$};
+\end{scope}
+\begin{scope}[xshift=6cm]
+\draw[acento,thick] (0,0) circle (1.6); \draw[acento,thick] (0.3,0) circle (0.8);
+\node at (-1.5,1.4) {$A$}; \node at (0.3,0) {$B$};
+\end{scope}
+\begin{scope}[xshift=12cm]
+\draw[acento,thick] (-1.3,0) circle (1); \draw[acento,thick] (1.3,0) circle (1);
+\node at (-2.3,1.1) {$A$}; \node at (2.3,1.1) {$B$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\resp{a) $\{a,b,e,f,g\}$;\ b) $A-\varnothing=A$ e $\varnothing-A=\varnothing$, logo $A\,\triangle\,\varnothing=A\cup\varnothing=A$;\ c) $A-A=\varnothing$, logo $A\,\triangle\,A=\varnothing\cup\varnothing=\varnothing$;\ d) $B\,\triangle\,A=(B-A)\cup(A-B)$, que é $(A-B)\cup(B-A)$ pela comutativa da reunião;\ e) as regiões \enquote{só $A$} e \enquote{só $B$}: no primeiro diagrama, as duas partes não comuns; no segundo, a parte de $A$ fora de $B$; no terceiro, os dois conjuntos inteiros.}
+\end{questao}
+
+\begin{questao}{3}{ITA via FME, ano não informado}{4-H1}\label{u4:ita39}
+Analise a existência de conjuntos $A$ e $B$, ambos não vazios, tais que $(A-B)\cup(B-A)=A$.
+\resp{Não existem. Tome $x\in B$ (possível, pois $B\neq\varnothing$). Se $x\in A$, então $x\in A$, mas $x$ não está em $A-B$ nem em $B-A$, isto é, não está no lado esquerdo — contradição. Se $x\notin A$, então $x\in B-A$, logo $x$ está no lado esquerdo, que é $A$ — contradição.}
+\end{questao}
+
+\begin{questao}{3}{ITA via FME, ano não informado}{4-H1, 4-H3, 4-U4}\label{u4:ita47}
+Sejam $X$, $Y$, $Z$ e $W$ subconjuntos de $\mathbb{N}$ tais que $(X-Y)\cap Z=\{1,2,3,4\}$, $Y=\{5,6\}$, $Z\cap Y=\varnothing$, $W\cap(X-Z)=\{7,8\}$ e $X\cap W\cap Z=\{2,4\}$. Então, o conjunto $[X\cap(Z\cup W)]-[W\cap(Y\cup Z)]$ é igual a:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $\{1,2,3,4,5\}$
+  \item $\{1,2,3,4,7\}$
+  \item $\{1,3,7,8\}$
+  \item $\{1,3\}$
+  \item $\{7,8\}$
+\end{enumerate}
+\end{multicols}
+\resp{c. Como $Z\cap Y=\varnothing$, $X\cap Z=(X-Y)\cap Z=\{1,2,3,4\}$; e $X\cap W=(X\cap W\cap Z)\cup[W\cap(X-Z)]=\{2,4,7,8\}$. Logo $X\cap(Z\cup W)=\{1,2,3,4,7,8\}$. Desses, só 2 e 4 estão em $W\cap(Y\cup Z)$ (estão em $W\cap Z$; nenhum está em $Y$). Resta $\{1,3,7,8\}$.}
+\end{questao}
+
+\subsubsection*{Mais questões de vestibular}
+Questões de vestibular sobre o assunto da unidade que ficaram fora da sequência acima, em ordem de nível. As respostas estão no fim da unidade, com as demais.
+
+\begin{questao}{2}{UF-PI via FME, ano não informado}{4-H2, 4-H3}\label{u4:ufpi38}
+Sejam $A$ e $B$ subconjuntos de $\mathbb{R}$. Considere as afirmações:
+\begin{enumerate}[label=\Roman*.]
+  \item Se $A\cap B=\varnothing$, então $A=\varnothing$ ou $B=\varnothing$.
+  \item Se $x\in A\cup B$, então $x\in A$ ou $x\in B$.
+  \item Se $x\in(A\cup B)^{C}$, então $x\in A^{C}$ e $x\in B^{C}$.
+\end{enumerate}
+É (são) verdadeira(s):
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item somente I
+  \item somente I e II
+  \item somente II
+  \item somente II e III
+  \item todas
+\end{enumerate}
+\end{multicols}
+\resp{d. I é falsa: $\{1\}\cap\{2\}=\varnothing$. II é a definição de reunião. III é De Morgan.}
+\end{questao}
+
+\begin{questao}{2}{ITA via FME, ano não informado}{4-H3}\label{u4:ita44}
+Considere as afirmações, em que $A$, $B$ e $C$ são conjuntos quaisquer:
+\begin{enumerate}[label=\Roman*.]
+  \item A negação de $x\in A\cap B$ é: $x\notin A$ ou $x\notin B$.
+  \item $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$.
+  \item $(A-B)\cup(B-A)=(A\cup B)-(A\cap B)$.
+\end{enumerate}
+Destas, é (são) falsa(s):
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item apenas I
+  \item apenas II
+  \item apenas III
+  \item apenas I e III
+  \item nenhuma
+\end{enumerate}
+\end{multicols}
+\resp{e. As três são verdadeiras: I é a negação do \enquote{e}; II é a distributiva (Unidade~3); III: os dois lados são as regiões \enquote{só $A$} e \enquote{só $B$}.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{ITA via FME, ano não informado}{4-H1}\label{u4:ita46}
+Sejam $A$ e $B$ conjuntos finitos e não vazios tais que $A\subset B$ e $n(\{C\mid C\subset B-A\})=128$. Das afirmações abaixo:
+\begin{enumerate}[label=\Roman*.]
+  \item $n(B)-n(A)$ é único;
+  \item $n(B)+n(A)\le 128$;
+  \item a dupla ordenada $(n(A),n(B))$ é única;
+\end{enumerate}
+é (são) verdadeira(s):
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item apenas I
+  \item apenas II
+  \item apenas III
+  \item apenas I e II
+  \item nenhuma
+\end{enumerate}
+\end{multicols}
+\resp{a. $B-A$ tem $2^{7}=128$ subconjuntos, logo tem 7 elementos e, como $A\subset B$, $n(B)-n(A)=7$ (I). Mas $n(A)$ pode ser qualquer número positivo: com $n(A)=100$, $n(B)+n(A)=207$ (II falsa), e $(1,8)$ e $(2,9)$ servem (III falsa).}
+\end{questao}
+
+\begin{questao}[integradora]{3}{ITA via FME, ano não informado}{4-H1}\label{u4:ita40}
+Seja $A$ um conjunto com 14 elementos e $B$ um subconjunto de $A$ com 6 elementos. O número de subconjuntos de $A$ com um número de elementos menor ou igual a 6 e disjuntos de $B$ é:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item $2^{8}-9$
+  \item $2^{8}-1$
+  \item $2^{8}-2^{6}$
+  \item $2^{14}-2^{8}$
+  \item $2^{8}$
+\end{enumerate}
+\end{multicols}
+\resp{a. Ser disjunto de $B$ é estar contido em $A-B$, que tem 8 elementos e, portanto, $2^{8}$ subconjuntos. Desses, saem os 8 subconjuntos de 7 elementos e o de 8 elementos: $2^{8}-9$.}
+\end{questao}
 
 \begin{sintese}
 \textbf{Ao fim desta unidade, você deveria saber:}
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «capacidade»
+  \item calcular diferenças e complementares, sem trocar a ordem da diferença;
+  \item traduzir \enquote{exceto}, \enquote{não} e \enquote{fora de} em operações, dizendo sempre em relação a qual universo;
+  \item simplificar expressões com complementares usando De Morgan e $A-B=A\cap\overline{B}$;
+  \item sombrear no diagrama expressões com diferença e complementar, região por região;
+  \item reconstruir conjuntos a partir de dados sobre diferenças e complementares.
 \end{itemize}
 \smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u4}) e com a seção indicada.
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
-  \perguntasintese{O que significa «conceito»? \ondever{construção 4-H1}}
-  \perguntasintese{Como «conceito» foi construído, e por quê? \ondever{De onde vem?}}
-  \perguntasintese{Como você reconhece, num enunciado, que deve usar «conceito»? \ondever{Onde é usado?}}
-  \perguntasintese{Qual é o erro mais perigoso ao aplicar «conceito»? Como você o detecta? \ondever{Erros comuns}}
+  \perguntasintese{Por que o complementar de um conjunto só faz sentido depois de fixado o universo? \ondever{construção 4-H2}}
+  \perguntasintese{Por que, ao complementar uma interseção, aparece uma reunião? \ondever{construção 4-H3}}
+  \perguntasintese{Num enunciado, que palavras indicam uma diferença, e como você decide qual conjunto vem primeiro? \ondever{Onde é usado?}}
+  \perguntasintese{Qual erro você cometeria ao calcular $A-(B\cup C)$? Como evitá-lo? \ondever{Erros comuns}}
 \end{enumerate}
 \end{sintese}
 

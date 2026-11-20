@@ -1,8 +1,7 @@
 % ============================================================
-% Unidade 4 — Diferença e complementar   (didática v3 · kit/didatica.md §2)
+% Unidade 4 — Diferença e complementar   (didática v4 · kit/didatica.md §2)
 % Parte A, o "artigo": Prefácio, De onde vem?, Onde é usado?
-% IDs da unidade: ver matriz.yaml (H construção · U uso · E erro · O observação)
-% Rótulos: questões u4:nome · exemplos ex:u4:nome · remissões só com \ref / \qref / \exref
+% IDs: 4-H1..H3 · 4-U1..U4 · 4-E1..E4 · 4-O1, 4-O2 (matriz.yaml) · fonte única: dossies/u4.md
 % ============================================================
 \clearpage
 \section{Diferença e complementar}
@@ -10,69 +9,133 @@
 % ------------------------------------------------------------
 \Prefacio
 \begin{prefacio}
-\gancho{«Uma pergunta ou situação curta que prende.»}
+\gancho{Fora de quê?}
 
-% Função: "por que isso merece ser estudado?" + UMA pergunta aberta explícita, que a unidade responde.
-% Em geral menos de uma página. Fora da narrativa.
-«Situação concreta que cria a pergunta.»
+Um cartaz anuncia: \enquote{desconto em todos os produtos, exceto eletrônicos}. Para saber o que tem desconto, não basta saber o que são eletrônicos: é preciso saber de \emph{quais} produtos o cartaz fala — os da loja inteira? os de um setor? Uma pesquisa informa quantas pessoas \enquote{não responderam}. Não responderam entre quem? Entre os entrevistados, entre os moradores do bairro, entre todos os brasileiros?
 
-\textbf{«A pergunta aberta da unidade, em negrito.»} É a pergunta desta unidade.
+Todo \enquote{fora} é \enquote{fora de alguma coisa}. \textbf{Como descrever o que fica de fora — e por que \enquote{fora} sempre depende de onde estamos?} É a pergunta desta unidade.
 
-\textbf{Ao final, você será capaz de:} «3–5 capacidades verificáveis».
+\textbf{Ao final, você será capaz de:} calcular diferenças e complementares; traduzir \enquote{exceto}, \enquote{não} e \enquote{fora de} em operações; usar as leis de De Morgan e a igualdade $A-B=A\cap\overline{B}$; sombrear expressões com diferença e complementar; reconstruir conjuntos a partir de diferenças e complementares.
 
-\textbf{Pré-requisitos:} «unidades e assuntos». O essencial está na caixa abaixo.
+\textbf{Pré-requisitos:} Unidade~1 (universo) e Unidade~3 (reunião, interseção e regiões); do Capítulo I, a negação de \enquote{e} e de \enquote{ou}. O essencial está na caixa abaixo.
 \end{prefacio}
 
 \begin{minimo}
-% O mínimo que você precisa: só o que a unidade usa e o aluno pode ter esquecido.
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «pré-requisito 1»
+  \item \textbf{Universo.} O conjunto universo $U$ é o conjunto de onde vêm os candidatos a elemento (Unidade~1).
+  \item \textbf{Negação de \enquote{e} e de \enquote{ou}.} \enquote{não ($p$ e $q$)} equivale a \enquote{(não $p$) ou (não $q$)}; \enquote{não ($p$ ou $q$)} equivale a \enquote{(não $p$) e (não $q$)} (Cap.~I).
+  \item \textbf{Regiões.} Dois conjuntos dividem o universo em quatro regiões: só $A$, $A$ e $B$, só $B$, nenhum (Unidade~3).
 \end{itemize}
 \end{minimo}
 
 % ------------------------------------------------------------
 \DeOndeVem
-% Três perguntas: (1) por que alguém precisou disso? (2) como a ideia foi construída? (3) como reconstruímos hoje?
-% Origem histórica ≠ reconstrução matemática: as duas aparecem distintas; a reconstrução se sustenta sozinha.
-% Três camadas, em texto corrido e bem demarcadas: "X formulou…" / "lido hoje…" / "a convenção atual…".
-% Filtro P5 em cada trecho: melhora a compreensão? Se só deixa interessante → Observações ou fora.
-% Todo fato com \src{chave} (bibitem em fontes.tex). Nada de frequência sem fonte.
 
-\subsubsection{«O problema que pediu a ferramenta»}
-«Narrativa com fontes.»\src{fme}
+\subsubsection{Por que alguém precisou disso}
+Muitas descrições são feitas por exclusão: \enquote{os alunos que não fizeram a prova}, \enquote{os números que não são primos}, \enquote{tudo, menos os eletrônicos}. Precisamos de uma operação que tire de um conjunto os elementos de outro. E precisamos perceber que \enquote{o que não está em $A$} só vira um conjunto quando sabemos dentro de quê estamos falando.
 
-\begin{construcao}[4-H1: título curto]{4-H1}
-% A reconstrução: passos numerados que chegam à ferramenta por raciocínio, não por autoridade.
+\subsubsection{A diferença}
+\begin{construcao}[diferença]{4-H1}
 \begin{enumerate}[label=(\arabic*)]
-  \item «passo»
+  \item A \textbf{diferença} entre $A$ e $B$ é o conjunto dos elementos de $A$ que não pertencem a $B$:\src{fme}
+\[
+A-B=\{x\mid x\in A\ \text{e}\ x\notin B\}.
+\]
+  \item Exemplos: $\{a,b,c\}-\{b,c,d,e\}=\{a\}$; $\{a,b,c\}-\{b,c\}=\{a\}$; $\{a,b\}-\{c,d,e,f\}=\{a,b\}$; $\{a,b\}-\{a,b,c,d,e\}=\varnothing$.\src{fme}
+  \item A diferença não é comutativa: $\{b,c,d,e\}-\{a,b,c\}=\{d,e\}$, que não é $\{a\}$. Quem manda é o primeiro conjunto: $A-B$ fica sempre dentro de $A$.
+  \item Nas quatro regiões de dois conjuntos (Unidade~3), $A-B$ é a região \enquote{só $A$}, e $B-A$ é a região \enquote{só $B$}.
 \end{enumerate}
 \end{construcao}
 
-\begin{definicao}[nome]
-«Enunciado formal.»
+\subsubsection{O complementar e o universo do discurso}
+A ideia de que \enquote{o que não é $X$} depende do assunto em discussão foi tornada explícita pelo matemático e lógico Augustus De Morgan, nas décadas de 1840. De Morgan propôs que cada termo $X$ tivesse um termo \emph{contrário}, que ele escrevia com letra minúscula, $x$, de modo que $X$ e $x$, juntos, esgotassem o \emph{universo do discurso} — o conjunto das coisas de que se está falando, escolhido conforme o assunto.\src{encPhil}\src{britLogic} Lido hoje, o contrário $x$ é o complementar de $X$ em relação a um universo. A convenção atual é a mesma: antes de falar em complementar, fixe o universo.\src{fme}
+
+\begin{construcao}[complementar]{4-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item Quando $B\subset A$, a diferença $A-B$ chama-se \textbf{complementar de $B$ em relação a $A$}, indicado por $\complement_A B$. Ele só é definido quando $B\subset A$.\src{fme} Por exemplo, para $A=\{a,b,c,d,e\}$ e $B=\{c,d,e\}$, temos $\complement_A B=\{a,b\}$; e $\complement_A A=\varnothing$, $\complement_A\varnothing=A$.\src{fme}
+  \item Com um universo $U$ fixado, o complementar de um conjunto $A$ em relação a $U$ é escrito $\overline{A}$ (também $A^{C}$, $A'$ ou $\complement A$):\src{fme}
+\[
+\overline{A}=U-A=\{x\in U\mid x\notin A\}.
+\]
+  \item O universo é obrigatório. O complementar do conjunto dos números pares é $\{1,3,5,\ldots\}$ se o universo é $\mathbb{N}$, mas é $\{\ldots,-3,-1,1,3,\ldots\}$ se o universo é $\mathbb{Z}$; e, se o universo é $\mathbb{R}$, inclui também números como $\frac12$ e $\sqrt2$.
+  \item Propriedades:\src{fme} $B\cap\overline{B}=\varnothing$ e $B\cup\overline{B}=U$; $\overline{U}=\varnothing$ e $\overline{\varnothing}=U$; o complementar do complementar é o próprio conjunto, $\overline{\overline{B}}=B$.
+\end{enumerate}
+\end{construcao}
+
+\begin{definicao}[diferença e complementar]
+$A-B=\{x\mid x\in A\text{ e }x\notin B\}$. Se $B\subset A$, $\complement_A B=A-B$. Fixado um universo $U$, $\overline{A}=U-A$.
 \end{definicao}
 
+\subsubsection{De Morgan: o complementar troca \enquote{e} por \enquote{ou}}
+O próprio De Morgan escreveu, em 1847, as regras que hoje levam o seu nome, na forma de uma regra sobre contrários. Na notação dele, $PQ$ quer dizer \enquote{$P$ e $Q$}, $P,Q$ quer dizer \enquote{$P$ ou $Q$}, e as letras minúsculas indicam os contrários. A regra diz: o contrário de $PQ$ é $p,q$; o de $P,Q$ é $pq$.\src{burrisNotes}\src{demorgan1847} Lida hoje: o complementar de \enquote{$P$ e $Q$} é \enquote{não $P$ ou não $Q$}, e o complementar de \enquote{$P$ ou $Q$} é \enquote{não $P$ e não $Q$}.
+
+\begin{construcao}[leis de De Morgan e a diferença como interseção]{4-H3}
+\begin{enumerate}[label=(\arabic*)]
+  \item Pela negação do Capítulo I, $x\notin A\cap B$ equivale a \enquote{$x\notin A$ ou $x\notin B$}. Logo
+\[
+\overline{A\cap B}=\overline{A}\cup\overline{B}\qquad\text{e, do mesmo modo,}\qquad \overline{A\cup B}=\overline{A}\cap\overline{B}.
+\]
+São as \textbf{leis de De Morgan}.\src{fme} Ao complementar, $\cap$ vira $\cup$, e $\cup$ vira $\cap$.
+  \item \enquote{Estar em $A$ e não estar em $B$} é o mesmo que \enquote{estar em $A$ e estar em $\overline{B}$}. Portanto,
+\[
+A-B=A\cap\overline{B}.
+\]
+  \item Juntando os dois itens, a diferença também troca as operações: para conjuntos quaisquer,
+\[
+A-(B\cup C)=(A-B)\cap(A-C)\qquad\text{e}\qquad A-(B\cap C)=(A-B)\cup(A-C).
+\]
+Por exemplo, $A-(B\cup C)=A\cap\overline{B\cup C}=A\cap\overline{B}\cap\overline{C}=(A\cap\overline{B})\cap(A\cap\overline{C})$.
+\end{enumerate}
+\end{construcao}
+
 \begin{paralembrar}\label{lembrar-u4}
-% Fecha o De onde vem?: 1 frase + até 3 passos. É o gabarito da síntese de domínio.
-«A frase.»
+\textbf{A diferença tira de $A$ o que está em $B$; o complementar tira do universo — e por isso exige saber qual é o universo. Ao complementar, $\cup$ e $\cap$ trocam de lugar.}
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em,itemsep=1pt]
-  \item «passo»
+  \item Antes de complementar, fixe o universo $U$.
+  \item Quando ajudar, troque a diferença por interseção: $A-B=A\cap\overline{B}$.
+  \item De Morgan: $\overline{A\cap B}=\overline{A}\cup\overline{B}$ e $\overline{A\cup B}=\overline{A}\cap\overline{B}$.
 \end{enumerate}
 \end{paralembrar}
 
 % ------------------------------------------------------------
 \OndeEUsado
-% Função: reconhecimento. Ensina a ESCOLHER a ferramenta: enunciado → estrutura → ferramenta.
-% 2–4 casos no formato do mapa; depois a tabela de gatilhos como resumo.
-% E-R3-1: casos, "Treino:" e gatilhos NÃO trazem o caso concreto nem a solução de nenhum N3,
-% e apontam só para exemplos e questões N1/N2 (checar.py confere os \ref).
-«Uma frase de abertura: onde a ferramenta aparece.»
 
-\begin{caso}{1 · «nome do caso»}{4-U1}
-\mapa{«o que o enunciado diz: palavras e formatos»}{«a estrutura matemática a procurar»}{«a ferramenta»}
-\reconhecer «Como reconhecer a situação; um exemplo de enunciado real, com fonte e procedência.» Treino: \exref{ex:u4:nome}; \qref{u4:nome}.
+A diferença e o complementar aparecem quando o enunciado exclui alguma coisa, quando as expressões trazem barras ou \enquote{complementar de}, quando se pede para sombrear regiões e quando os dados chegam na forma de diferenças. São quatro situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · \enquote{exceto}, \enquote{que não}, \enquote{menos}}{4-U1}
+\mapa{\enquote{exceto}, \enquote{que não}, \enquote{menos}, \enquote{fora de}}
+{de qual conjunto se tira (o primeiro) e o que se tira (o segundo)}
+{4-H1: $A-B$}
+\reconhecer O sinal é uma palavra de exclusão. Identifique primeiro o conjunto de onde se parte — é ele que fica \enquote{dentro} — e depois o que se retira. Em programação, a operação vem pronta: no Python, com \texttt{a = set('abracadabra')} e \texttt{b = set('alacazam')}, a expressão \texttt{a - b} dá as letras que estão em \texttt{a} e não estão em \texttt{b}, isto é, $\{r,d,b\}$.\src{pyTut} Treino: \exref{ex:u4:calcular} e \exref{ex:u4:turma}; \qref{u4:fme38}.
 \end{caso}
 
+\begin{caso}{2 · barras, expoentes $C$ e \enquote{complementar de}}{4-U2}
+\mapa{expressões com $\overline{\phantom{A}}$, $^{C}$, $'$ ou \enquote{complementar de}, combinadas com $\cup$, $\cap$ e $-$}
+{complementares de reuniões ou de interseções, e diferenças que podem virar interseções}
+{4-H3: De Morgan e $A-B=A\cap\overline{B}$}
+\reconhecer O sinal é uma expressão longa com complementos. Antes de calcular ou de testar, simplifique: troque cada diferença por interseção com o complementar, aplique De Morgan e as propriedades da Unidade~3 até a expressão ficar curta. Treino: \exref{ex:u4:fme43} e \exref{ex:u4:demorgan}; \qref{u4:fme53}.
+\end{caso}
+
+\begin{caso}{3 · \enquote{assinale no diagrama}}{4-U3}
+\mapa{\enquote{assinale no diagrama, um de cada vez, os seguintes conjuntos}\src{fme}}
+{quais regiões cada parte da expressão ocupa}
+{4-H1 (4) e as regiões da Unidade~3}
+\reconhecer O sinal é o pedido de sombrear. Decida região por região: para cada uma das quatro (ou oito) regiões, a expressão inclui ou não aquela região? Pinte só as que incluem. Treino: \exref{ex:u4:sombrear}; \qref{u4:fme42}.
+\end{caso}
+
+\begin{caso}{4 · dados sobre diferenças e complementares}{4-U4}
+\mapa{informações como \enquote{$A-B=\ldots$}, \enquote{$\overline{A}=\ldots$}, \enquote{$A\cap B=\ldots$}, seguidas de \enquote{quantos elementos tem\ldots?} ou \enquote{determine\ldots}}
+{o que cada dado diz sobre cada região (ou sobre cada elemento)}
+{decidir região a região ou elemento a elemento, como na Unidade~3}
+\reconhecer O sinal é uma lista de dados sobre partes dos conjuntos, e não sobre os conjuntos inteiros. Traduza cada dado para as regiões (\enquote{$A-B$} é a região \enquote{só $A$}, \enquote{$\overline{A}$} é tudo fora de $A$) e só então monte os conjuntos pedidos. Treino: \exref{ex:u4:regioes}; questões \ref{u4:fme41} e \ref{u4:fme55}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
 \begin{gatilhos}
-«sinal no enunciado» & «ferramenta» & «raciocínio» & 4-U1 · q.~\ref{u4:nome}\\
+\enquote{exceto}, \enquote{que não} & 4-H1 & de onde se tira e o que se tira & \mbox{4-U1\,·\,q.\,\ref{u4:fme38}}\\\fino
+complementar de $\cup$ ou de $\cap$ & 4-H3 & De Morgan: trocar a operação & \mbox{4-U2\,·\,q.\,\ref{u4:fme53}}\\\fino
+\enquote{assinale no diagrama} & 4-H1 (4) & região por região & \mbox{4-U3\,·\,q.\,\ref{u4:fme42}}\\\fino
+dados por diferenças & 4-H1, 4-H2 & traduzir cada dado para regiões & \mbox{4-U4\,·\,q.\,\ref{u4:fme55}}\\
 \end{gatilhos}

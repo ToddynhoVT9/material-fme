@@ -11,7 +11,7 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Montagem da U4 (só o dossiê é entrada). Bloco "Mais questões de vestibular" (D2): V1–V4.
+Revisão da U4 (etapa 4): revisor independente com o brief v4; depois triagem em `revisoes/u4.md`.
 
 ## Unidades
 | U | título | etapa | revisão | observação |
@@ -19,7 +19,7 @@ Montagem da U4 (só o dossiê é entrada). Bloco "Mais questões de vestibular" 
 | 1 | Conjunto, elemento e descrição | calibrada (pronta) | R1 (revisor independente): 0 · 6 · 19, todos tratados | `verif/u1.py` 47 OK; checar 0/0 |
 | 2 | Igualdade, inclusão e conjunto das partes | pronta | R1 (revisor independente): 0 · 4 · 17, todos tratados | `verif/u2.py` 23 OK; checar 0/0 |
 | 3 | Reunião e interseção | pronta | R1 (revisor independente): 0 · 10 · 10, todos tratados | `verif/u3.py` 27 OK; checar 0/0 |
-| 4 | Diferença e complementar | dossiê pronto | — | `verif/u4.py` 27 OK |
+| 4 | Diferença e complementar | montagem pronta | — | 0 FALHAS · 0 AVISOS; `verif/u4.py` 42 OK |
 | 5 | Contando elementos: dois conjuntos | escopo | — | — |
 | 6 | Três conjuntos e as regiões do diagrama | escopo | — | — |
 <!-- FIM UNIDADES -->
@@ -68,3 +68,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 | 2026-11-20 | 3 · U3 | montagem: artigo (4 construções, 1 definição, diagrama de 4 regiões, Boole/Jevons em três camadas, 4 casos — um com Python a \| b / a & b executado no verif), 4 erros, 2 obs., 6 exemplos (N1 2 · N2 3 · N3 1), 15 questões (N1 5 · N2 7 · N3 3; 2 integradoras); 3 fontes novas; autoconferência (a)–(g) | 0 FALHAS · 0 AVISOS (U1–U3, 57 p.); folhas conferidas |
 | 2026-11-20 | 4 · U3 | revisão independente (0 bloqueante, 10 importantes, 10 menores); todos tratados (`revisoes/u3.md`): regiões de três conjuntos na 3-H3, Boole corrigido (interpretação × uso), fme27 a N3, ordem do N2 | 0 FALHAS · 0 AVISOS; verif U3 27 OK |
 | 2026-11-20 | 2 · U4 | dossiê da U4: De Morgan (universo do discurso; leis como regra sobre contrários, Formal Logic p. 118), mapa com 4 casos (Python a − b), E1–E4, banco X1–X6 / P1–P13 + bloco V1–V4 (D2); O2 trocada | `verif/u4.py` 27 OK |
+| 2026-11-20 | 3 · U4 | montagem: artigo (3 construções, 1 definição, De Morgan em três camadas, 4 casos — Python a − b executado no verif), 4 erros, 2 obs., 8 exemplos (N1 3 · N2 4 · N3 1), 13 questões (N1 4 · N2 6 · N3 3; 1 integradora) + bloco "Mais questões de vestibular" (4, 2 integradoras); 5 fontes novas; ajustes da montagem anotados no dossiê §8 | 0 FALHAS · 0 AVISOS (U1–U4); folhas conferidas; verif U4 42 OK |

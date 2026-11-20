@@ -565,13 +565,198 @@ unidades:
     E4: A − (B ∪ C) = (A − B) ∪ (A − C)
     O1: notações do complementar e da diferença (A \ B, Bᶜ, ∁)
     O2: as leis de De Morgan na lógica medieval (Ockham)
-  exemplos: []
+  exemplos:
+  - rotulo: ex:u4:calcular
+    nivel: 1
+    fonte: autoral
+    tema: diferenças e complementar relativo
+    cobre:
+    - H1
+    - H2
+    - U1
+    - E1
+  - rotulo: ex:u4:contido
+    nivel: 1
+    fonte: FME, exercício 39
+    tema: A − B ⊂ A
+    cobre:
+    - H1
+  - rotulo: ex:u4:sombrear
+    nivel: 1
+    fonte: autoral
+    tema: sombrear A − (B ∪ C) e (A ∩ B) − C
+    cobre:
+    - H1
+    - U3
+  - rotulo: ex:u4:fme43
+    nivel: 2
+    fonte: FME, exercício 43
+    tema: A − B̄ = A ∩ B
+    cobre:
+    - H3
+    - U2
+  - rotulo: ex:u4:demorgan
+    nivel: 2
+    fonte: autoral
+    tema: 'De Morgan: cálculo e prova'
+    cobre:
+    - H3
+    - U2
+    - E2
+  - rotulo: ex:u4:regioes
+    nivel: 2
+    fonte: autoral
+    tema: reconstruir A e B a partir das regiões
+    cobre:
+    - H1
+    - H2
+    - U4
+  - rotulo: ex:u4:turma
+    nivel: 2
+    fonte: autoral
+    tema: 'turma: não joga, universo, nem um nem outro'
+    cobre:
+    - H1
+    - H2
+    - U1
+    - E3
+    - E4
+  - rotulo: ex:u4:iguais
+    nivel: 3
+    fonte: autoral
+    tema: A − B = B − A ⇔ A = B
+    cobre:
+    - H1
   questoes_meta:
     N1: 4
     N2: 5
     N3: 2
     integradoras: 1
-  questoes_pool: []
+  questoes_pool:
+  - rotulo: u4:fme38
+    nivel: 1
+    fonte: FME, exercício 38
+    cobre:
+    - H1
+    - U1
+    - E1
+    - E4
+    integradora: false
+  - rotulo: u4:fme40
+    nivel: 1
+    fonte: FME, exercício 40
+    cobre:
+    - H1
+    integradora: false
+  - rotulo: u4:fme42
+    nivel: 1
+    fonte: adaptado do FME, exercício 42
+    cobre:
+    - H2
+    - U3
+    integradora: false
+  - rotulo: u4:fme45
+    nivel: 1
+    fonte: FME, exercício 45
+    cobre:
+    - H2
+    - E3
+    integradora: true
+  - rotulo: u4:fme41
+    nivel: 2
+    fonte: FME, exercício 41
+    cobre:
+    - H1
+    - U4
+    integradora: false
+  - rotulo: u4:fme53
+    nivel: 2
+    fonte: FME, exercício 53
+    cobre:
+    - H3
+    - U2
+    integradora: false
+  - rotulo: u4:fme44
+    nivel: 2
+    fonte: FME, exercício 44
+    cobre:
+    - H2
+    - H3
+    - E2
+    integradora: false
+  - rotulo: u4:fme55
+    nivel: 2
+    fonte: FME, exercício 55
+    cobre:
+    - H2
+    - U4
+    - E3
+    integradora: false
+  - rotulo: u4:ita42
+    nivel: 2
+    fonte: ITA via FME, ano não informado
+    cobre:
+    - H3
+    - U2
+    - E2
+    integradora: false
+  - rotulo: u4:ita43
+    nivel: 2
+    fonte: ITA via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    - U4
+    integradora: false
+  - rotulo: u4:fme60
+    nivel: 3
+    fonte: FME, exercício 60
+    cobre:
+    - H1
+    integradora: false
+  - rotulo: u4:ita39
+    nivel: 3
+    fonte: ITA via FME, ano não informado
+    cobre:
+    - H1
+    integradora: false
+  - rotulo: u4:ita47
+    nivel: 3
+    fonte: ITA via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    - U4
+    integradora: false
+  - rotulo: u4:ufpi38
+    nivel: 2
+    fonte: UF-PI via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u4:ita44
+    nivel: 2
+    fonte: ITA via FME, ano não informado
+    cobre:
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u4:ita46
+    nivel: 2
+    fonte: ITA via FME, ano não informado
+    cobre:
+    - H1
+    integradora: true
+    bloco: mais questões de vestibular
+  - rotulo: u4:ita40
+    nivel: 3
+    fonte: ITA via FME, ano não informado
+    cobre:
+    - H1
+    integradora: true
+    bloco: mais questões de vestibular
 - n: 5
   titulo: 'Contando elementos: dois conjuntos'
   pergunta: Como contar quem está em pelo menos um de dois grupos sem contar ninguém duas vezes?
