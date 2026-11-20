@@ -39,6 +39,7 @@ Problemas encontrados no material:
 | M11 | ex. 47 | "a ⊂ E" é F porque *a* não é conjunto (o FME admite elementos que não são conjuntos) | U2: observação sobre urelementos × teoria em que tudo é conjunto |
 | M12 | todas as vestibulares | sem ano (só a banca) | procedência "[BANCA via FME, ano não informado]"; procurar ano só se a função for "aplicação real" |
 | M13 | Leitura | atribui a Arquimedes a distinção infinito potencial/atual (é de Aristóteles, *Física* III); data a definição de Dedekind de 1872 (publicada em 1888, *Was sind und was sollen die Zahlen?*) | a Leitura não é reproduzida; serve de pista. Conferir no dossiê (A5) antes de usar qualquer fato dela |
+| M15 | vest. 45 (ITA) | alternativas (a) e (e) impressas iguais (2ⁿ⁻¹) — zoom de 200 dpi, PDF p. 34 (achado no dossiê da U2) | adaptar (e) para 2ⁿ − 1; a resposta (c) não muda (D4) |
 | M14 | lacunas da teoria | o FME usa sem definir no texto: complementar em relação a U (Ā, A^C, X′, ∁A — só em exercícios), n(A ∪ B) e n(A ∪ B ∪ C) (só exercícios 48 e 50), n(𝒫(A)) = 2ⁿ (usado nos ex. 22, 49 e vest. 40, 43, 46), diferença simétrica (ex. 60) | §8, decisão D3 |
 
 ## 2. Inventário do FME — nada pode faltar
