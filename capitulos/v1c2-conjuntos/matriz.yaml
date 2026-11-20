@@ -1003,14 +1003,14 @@ unidades:
     H3: n(A ∪ B ∪ C) e as contagens "exatamente k" e "pelo menos k"
     U1: pesquisa com três atributos e dados das interseções
     U2: dados indiretos ("não optaram por", "exatamente dois") → equações nas regiões
-    U3: 'máximo e mínimo: o que os dados obrigam'
+    U3: 'máximo e mínimo: o que os dados obrigam (nenhuma região negativa)'
     U4: regiões com elementos em vez de números
     E1: tomar "A e B" por "só A e B" (ou o contrário)
     E2: esquecer de somar de volta n(A ∩ B ∩ C)
     E3: preencher de fora para dentro
     E4: confundir "exatamente dois" com "pelo menos dois"
-    O1: círculos de Euler × diagrama de Venn
-    O2: Venn para quatro ou mais conjuntos
+    O1: 'Euler × Venn: o que um diagrama de Euler já afirma (regiões que faltam = vazias)'
+    O2: Venn com quatro e cinco termos (elipses)
   exemplos: []
   questoes_meta:
     N1: 4
