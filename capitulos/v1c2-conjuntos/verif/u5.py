@@ -136,4 +136,9 @@ chk("u5:uel7 rejeitam algum = 800", 1000 - 200, 800)
 chk("u5:espm10 35% de 140 = 49", Fr(35, 100) * 140, 49)
 chk("u5:ufrn21 3º ano 1200, não francês 1800, os dois 600", (sum(1 for s_, sx, l in alunos if s_ == 3), sum(1 for s_, sx, l in alunos if l != "fr"), sum(1 for s_, sx, l in alunos if s_ == 3 and l != "fr")), (1200, 1800, 600))
 
+chk("u5:fme51 (b) de 1 a 120: divisores de 120 ou múltiplos de 3 → 48",
+    len({x for x in range(1, 121) if 120 % x == 0} | {x for x in range(1, 121) if x % 3 == 0}), 48)
+chk("u5:fme51 (b) parcelas 16, 40, 8", (len(B51), len({x for x in range(1, 121) if x % 3 == 0}), len(A51 & B51)), (16, 40, 8))
+chk("5-E1 quebra: turma de 45; 30 + 20 = 50 > 45", 30 + 20 > 45, True)
+
 print(f"\n{ok} OK, {falhas} falha(s)")

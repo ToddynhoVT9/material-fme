@@ -11,7 +11,7 @@
 - material de entrada: PDF `02 - Cap II - Conjuntos.pdf` (35 p.: teoria itens 19–40, exercícios 11–61, Leitura, respostas, vestibulares 7–47 e respostas), entregue pelo usuário em 2026-11-19. **Não versionado** (texto do livro; o repositório é público): anexar de novo nas sessões de montagem. Mapa das páginas: `escopo.md` §1.
 
 ## Próxima ação
-Revisão da U5 (etapa 4): revisor independente com o brief v4; depois triagem em `revisoes/u5.md`.
+Dossiê da U6 (etapa 2): n(A ∪ B ∪ C) como construção (D3, 6-H3); Venn × Euler; M9 (leitura inclusiva × exclusiva); pista: condições de consistência de Yule (cap. II) para máximos e mínimos.
 
 ## Unidades
 | U | título | etapa | revisão | observação |
@@ -20,7 +20,7 @@ Revisão da U5 (etapa 4): revisor independente com o brief v4; depois triagem em
 | 2 | Igualdade, inclusão e conjunto das partes | pronta | R1 (revisor independente): 0 · 4 · 17, todos tratados | `verif/u2.py` 23 OK; checar 0/0 |
 | 3 | Reunião e interseção | pronta | R1 (revisor independente): 0 · 10 · 10, todos tratados | `verif/u3.py` 27 OK; checar 0/0 |
 | 4 | Diferença e complementar | pronta | R1 (revisor independente): 0 · 4 · 10, todos tratados | `verif/u4.py` 43 OK; checar 0/0 |
-| 5 | Contando elementos: dois conjuntos | montagem pronta | — | 0 FALHAS · 0 AVISOS; `verif/u5.py` 43 OK |
+| 5 | Contando elementos: dois conjuntos | pronta | R1 (revisor independente): 1 · 4 · 8, todos tratados | `verif/u5.py` 46 OK; checar 0/0 |
 | 6 | Três conjuntos e as regiões do diagrama | escopo | — | — |
 <!-- FIM UNIDADES -->
 
@@ -73,3 +73,4 @@ Decisões locais deste capítulo. Mudança na **didática** só com o usuário, 
 | 2026-11-20 | 4 · U4 | revisão independente (0 bloqueante, 4 importantes, 10 menores); todos tratados (`revisoes/u4.md`): questão nova `u4:multiplos` (4-U1, 4-E4), IDs de fme53/fme44/ufpi38 corrigidos, "universo do discurso" na camada moderna, D11 | 0 FALHAS · 0 AVISOS; verif U4 43 OK |
 | 2026-11-20 | 2 · U5 | dossiê da U5: Yule (atributos, classes últimas, sentido inclusivo — 8ª ed. 1927, econbiz) e Pearson (tabela de contingência, via Miller); inclusão–exclusão histórica fora (P5); O1/O2 trocadas; mapa com 3 casos, E1–E4, banco X1–X6 / P1–P13 + bloco V1–V8 (D2) | `verif/u5.py` 36 OK |
 | 2026-11-20 | 3 · U5 | montagem: artigo (3 construções, 1 definição, Yule/Pearson em três camadas, diagrama a/b/c/d e tabela 2×2, 3 casos), 4 erros, 2 obs., 6 exemplos (N1 1 · N2 4 · N3 1), 13 questões (N1 5 · N2 6 · N3 2; 3 integradoras) + bloco "Mais questões de vestibular" (8); 5 fontes novas | 0 FALHAS · 0 AVISOS (U1–U5); folhas conferidas; verif U5 43 OK |
+| 2026-11-20 | 4 · U5 | revisão independente (1 bloqueante, 4 importantes, 8 menores); todos tratados (`revisoes/u5.md`): caso 3 sem o contexto da N3, 5-H3 (4) sem o caso da N2, fme51 (b) refeita, bloco reordenado, dois exemplos a N1 | 0 FALHAS · 0 AVISOS; verif U5 46 OK |

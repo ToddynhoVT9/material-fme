@@ -789,8 +789,15 @@ unidades:
     - H3
     - U1
     - E1
+  - rotulo: ex:u5:teatro
+    nivel: 1
+    fonte: autoral
+    tema: dados por regiões ("só")
+    cobre:
+    - H2
+    - E2
   - rotulo: ex:u5:predio
-    nivel: 2
+    nivel: 1
     fonte: autoral
     tema: isolar a interseção pelo "nenhum"
     cobre:
@@ -798,13 +805,6 @@ unidades:
     - H3
     - U2
     - E3
-  - rotulo: ex:u5:teatro
-    nivel: 2
-    fonte: autoral
-    tema: dados por regiões ("só")
-    cobre:
-    - H2
-    - E2
   - rotulo: ex:u5:turnos
     nivel: 2
     fonte: autoral
@@ -931,9 +931,40 @@ unidades:
     cobre:
     - H1
     integradora: true
-  - rotulo: u5:uff9
+  - rotulo: u5:ufrn21
+    nivel: 2
+    fonte: UF-RN via FME, ano não informado
+    cobre:
+    - H1
+    - H2
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:pucmg32
+    nivel: 2
+    fonte: PUC-MG via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:ufrn17
     nivel: 1
-    fonte: UFF-RJ via FME, ano não informado
+    fonte: UF-RN via FME, ano não informado
+    cobre:
+    - H1
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:fei15
+    nivel: 1
+    fonte: FEI-SP via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:pucmg16
+    nivel: 1
+    fonte: PUC-MG via FME, ano não informado
     cobre:
     - H1
     - H3
@@ -955,42 +986,11 @@ unidades:
     - H3
     integradora: false
     bloco: mais questões de vestibular
-  - rotulo: u5:fei15
+  - rotulo: u5:uff9
     nivel: 1
-    fonte: FEI-SP via FME, ano não informado
+    fonte: UFF-RJ via FME, ano não informado
     cobre:
     - H1
-    - H3
-    integradora: false
-    bloco: mais questões de vestibular
-  - rotulo: u5:pucmg16
-    nivel: 1
-    fonte: PUC-MG via FME, ano não informado
-    cobre:
-    - H1
-    - H3
-    integradora: false
-    bloco: mais questões de vestibular
-  - rotulo: u5:ufrn17
-    nivel: 1
-    fonte: UF-RN via FME, ano não informado
-    cobre:
-    - H1
-    integradora: false
-    bloco: mais questões de vestibular
-  - rotulo: u5:ufrn21
-    nivel: 2
-    fonte: UF-RN via FME, ano não informado
-    cobre:
-    - H1
-    - H2
-    integradora: false
-    bloco: mais questões de vestibular
-  - rotulo: u5:pucmg32
-    nivel: 2
-    fonte: PUC-MG via FME, ano não informado
-    cobre:
-    - H2
     - H3
     integradora: false
     bloco: mais questões de vestibular

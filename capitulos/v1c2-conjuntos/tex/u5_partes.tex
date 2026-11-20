@@ -7,7 +7,7 @@
 \begin{erro}{Somar sem descontar}{5-E1}
 \campo{O erro.} Calcular $n(A\cup B)$ como $n(A)+n(B)$.
 \campo{Por que parece plausível.} \enquote{Juntar dois grupos} lembra somar; e a soma está certa quando os grupos não têm ninguém em comum.
-\campo{Onde quebra.} Numa turma, 30 alunos jogam futebol, 20 jogam vôlei e 8 jogam os dois. Os que jogam algum dos dois são $30+20-8=42$, e não 50.
+\campo{Onde quebra.} Numa turma de 45 alunos, 30 jogam futebol, 20 jogam vôlei e 8 jogam os dois. A soma $30+20=50$ passa até do total da turma; os que jogam algum dos dois são $30+20-8=42$.
 \campo{Como detectar.} A soma passou do total? Então há uma interseção que não foi descontada.
 \campo{Como corrigir.} Tire uma vez a interseção (construção 5-H1).
 \campo{Onde aparece.} \exref{ex:u5:apps}; \qref{u5:fme52}.
@@ -16,7 +16,7 @@
 \begin{erro}{Ler \enquote{estudam inglês} como \enquote{só inglês}}{5-E2}
 \campo{O erro.} Tomar $n(A)$ pelo número da região \enquote{só $A$}.
 \campo{Por que parece plausível.} Na conversa, \enquote{os que nadam} e \enquote{os que fazem os dois} parecem grupos separados.
-\campo{Onde quebra.} Num clube de 50 sócios, 25 nadam, 15 correm e 5 fazem os dois. Quem toma os 25 por \enquote{só natação} conta $25+15+5=45$ sócios que fazem algum esporte e 5 que não fazem nenhum. O certo é $25+15-5=35$ que fazem algum e 15 que não fazem nenhum.
+\campo{Onde quebra.} Num clube de 50 sócios, 25 nadam, 15 correm e 5 fazem os dois. Quem toma os 25 e os 15 por \enquote{só natação} e \enquote{só corrida} conta $25+15+5=45$ sócios que fazem algum esporte e 5 que não fazem nenhum. O certo é $25+15-5=35$ que fazem algum e 15 que não fazem nenhum.
 \campo{Como detectar.} O enunciado diz \enquote{só}, \enquote{apenas} ou \enquote{somente}? Se não diz, o número inclui a interseção.
 \campo{Como corrigir.} Só $A$ é $n(A)-n(A\cap B)$ (construção 5-H2).
 \campo{Onde aparece.} \exref{ex:u5:teatro}; questões \ref{u5:pucpr11} e \ref{u5:uff12}.
@@ -62,15 +62,7 @@ Numa pesquisa com 120 pessoas sobre dois aplicativos de mensagens, 80 usam o apl
 \comentario Somar $80+50=130$ passaria do total de 120 — sinal de interseção não descontada (erro 5-E1).
 \end{exemplo}
 
-\begin{exemplo}{}{2}{autoral}{5-H1, 5-H3, 5-U2, 5-E3}
-\label{ex:u5:predio}
-Num prédio de 60 apartamentos, 35 têm cachorro, 20 têm gato e 15 não têm nenhum dos dois animais. Quantos apartamentos têm cachorro e gato?
-\plano O número que falta é o da interseção. Primeiro, achar $n(C\cup G)$ pelos que não têm nenhum; depois, isolar $n(C\cap G)$ na fórmula.
-\resolucao Os que têm algum animal são $60-15=45$. Pela fórmula, $45=35+20-n(C\cap G)$, logo $n(C\cap G)=10$.
-\comentario Quem usasse 60 no lugar de 45 acharia $35+20-60<0$: o erro 5-E3 aparece logo, porque um número de elementos não pode ser negativo.
-\end{exemplo}
-
-\begin{exemplo}{}{2}{autoral}{5-H2, 5-E2}
+\begin{exemplo}{}{1}{autoral}{5-H2, 5-E2}
 \label{ex:u5:teatro}
 Numa escola, 40 alunos fazem só teatro, 25 fazem só música, 10 fazem as duas atividades e 15 não fazem nenhuma. Quantos alunos fazem teatro? Quantos alunos tem a escola?
 \plano Os dados já são regiões; os grupos pedidos são somas de regiões.
@@ -78,6 +70,15 @@ Numa escola, 40 alunos fazem só teatro, 25 fazem só música, 10 fazem as duas 
 \comentario Aqui a palavra \enquote{só} está no enunciado. Sem ela, os 40 já incluiriam os 10 (erro 5-E2).
 \end{exemplo}
 
+\begin{exemplo}{}{1}{autoral}{5-H1, 5-H3, 5-U2, 5-E3}
+\label{ex:u5:predio}
+Num prédio de 60 apartamentos, 35 têm cachorro, 20 têm gato e 15 não têm nenhum dos dois animais. Quantos apartamentos têm cachorro e gato?
+\plano O número que falta é o da interseção. Primeiro, achar $n(C\cup G)$ pelos que não têm nenhum; depois, isolar $n(C\cap G)$ na fórmula.
+\resolucao Os que têm algum animal são $60-15=45$. Pela fórmula, $45=35+20-n(C\cap G)$, logo $n(C\cap G)=10$.
+\comentario Quem usasse 60 no lugar de 45 acharia $35+20-60<0$: o erro 5-E3 aparece logo, porque um número de elementos não pode ser negativo.
+\end{exemplo}
+
+\needspace{18\baselineskip}
 \begin{exemplo}{}{2}{autoral}{5-H3, 5-U3, 5-E4}
 \label{ex:u5:turnos}
 Uma empresa tem 120 funcionários no turno do dia e 180 no turno da noite. Fazem um curso de capacitação 25\% dos funcionários do dia e 40\% dos da noite. Quantos funcionários fazem o curso? Que porcentagem do total isso representa? Por que a resposta não é 65\%, nem 32,5\%?
@@ -167,9 +168,9 @@ Um instituto de pesquisas entrevistou 1\,000 indivíduos, perguntando sobre sua 
 Sejam $A=\{3n\mid n\in\mathbb{N}\}$ e $B=\{n\in\mathbb{N}\mid n\text{ é divisor de }120\}$.
 \begin{enumerate}[label=\alph*)]
   \item Qual é o número de elementos de $A\cap B$?
-  \item Quantos divisores naturais de 120 não são múltiplos de 3?
+  \item Quantos números de 1 a 120 são divisores de 120 ou múltiplos de 3?
 \end{enumerate}
-\resp{a) 8: $A\cap B=\{3,6,12,15,24,30,60,120\}$;\ b) $n(B)=16$, logo $16-8=8$.}
+\resp{a) 8: $A\cap B=\{3,6,12,15,24,30,60,120\}$;\ b) 120 tem 16 divisores e há 40 múltiplos de 3 de 1 a 120; $16+40-8=48$.}
 \end{questao}
 
 \begin{questao}{2}{UFF-RJ via FME, ano não informado}{5-H2, 5-U2, 5-E2}\label{u5:uff12}
@@ -262,15 +263,41 @@ Sejam $A$ e $B$ dois conjuntos disjuntos, ambos finitos e não vazios, tais que 
 \subsubsection*{Mais questões de vestibular}
 Questões de vestibular sobre o assunto da unidade que ficaram fora da sequência acima, em ordem de nível. As respostas estão no fim da unidade, com as demais.
 
-\begin{questao}{1}{UFF-RJ via FME, ano não informado}{5-H1, 5-H3}\label{u5:uff9}
-Foram enviadas para dois testes em um laboratório 150 caixas de leite de uma determinada marca. No teste de qualidade, 40 caixas foram reprovadas por conterem elevada taxa de concentração de formol. No teste de medida, 60 caixas foram reprovadas por terem volume inferior a 1 litro. Sabendo-se que apenas 65 caixas foram aprovadas nos dois testes, pode-se concluir que o número de caixas que foram reprovadas em ambos os testes é igual a:
+\begin{questao}{1}{UF-RN via FME, ano não informado}{5-H1}\label{u5:ufrn17}
+Num grupo de amigos quatorze pessoas estudam Espanhol e oito estudam Inglês, sendo que três dessas pessoas estudam ambas as línguas. Sabendo que todos do grupo estudam pelo menos uma dessas línguas, o total de pessoas do grupo é
+\begin{multicols}{4}
+\begin{enumerate}[label=\alph*)]
+  \item 17.
+  \item 19.
+  \item 22.
+  \item 25.
+\end{enumerate}
+\end{multicols}
+\resp{b.}
+\end{questao}
+
+\begin{questao}{1}{FEI-SP via FME, ano não informado}{5-H1, 5-H3}\label{u5:fei15}
+Uma pesquisa realizada com 800 adolescentes a respeito da utilização de dois aparelhos eletrônicos revelou que 220 utilizam o aparelho A, 380 utilizam o aparelho B e 120 utilizam os dois. Nestas condições, pode-se afirmar que, do total de entrevistados, $X$ adolescentes não utilizam qualquer um dos dois aparelhos. Dessa forma:
 \begin{multicols}{5}
 \begin{enumerate}[label=\alph*)]
-  \item 15
-  \item 20
-  \item 35
-  \item 85
-  \item 100
+  \item $X=80$
+  \item $X=320$
+  \item $X=100$
+  \item $X=720$
+  \item $X=480$
+\end{enumerate}
+\end{multicols}
+\resp{b.}
+\end{questao}
+
+\begin{questao}{1}{PUC-MG via FME, ano não informado}{5-H1, 5-H3}\label{u5:pucmg16}
+Em um grupo de 60 pessoas residentes em certo município, há 28 que trabalham por conta própria, 26 que trabalham com carteira assinada e 15 que têm esses dois tipos de trabalho. O número de pessoas desse grupo que não trabalham por conta própria e nem trabalham com carteira assinada é:
+\begin{multicols}{4}
+\begin{enumerate}[label=\alph*)]
+  \item 21
+  \item 23
+  \item 25
+  \item 27
 \end{enumerate}
 \end{multicols}
 \resp{a.}
@@ -304,44 +331,18 @@ Em uma turma de 50 alunos, 30 gostam de azul, 10 gostam igualmente de azul e ama
 \resp{a. (\enquote{Gostam igualmente de azul e amarelo} = gostam das duas cores.)}
 \end{questao}
 
-\begin{questao}{1}{FEI-SP via FME, ano não informado}{5-H1, 5-H3}\label{u5:fei15}
-Uma pesquisa realizada com 800 adolescentes a respeito da utilização de dois aparelhos eletrônicos revelou que 220 utilizam o aparelho A, 380 utilizam o aparelho B e 120 utilizam os dois. Nestas condições, pode-se afirmar que, do total de entrevistados, $X$ adolescentes não utilizam qualquer um dos dois aparelhos. Dessa forma:
+\begin{questao}{1}{UFF-RJ via FME, ano não informado}{5-H1, 5-H3}\label{u5:uff9}
+Foram enviadas para dois testes em um laboratório 150 caixas de leite de uma determinada marca. No teste de qualidade, 40 caixas foram reprovadas por conterem elevada taxa de concentração de formol. No teste de medida, 60 caixas foram reprovadas por terem volume inferior a 1 litro. Sabendo-se que apenas 65 caixas foram aprovadas nos dois testes, pode-se concluir que o número de caixas que foram reprovadas em ambos os testes é igual a:
 \begin{multicols}{5}
 \begin{enumerate}[label=\alph*)]
-  \item $X=80$
-  \item $X=320$
-  \item $X=100$
-  \item $X=720$
-  \item $X=480$
-\end{enumerate}
-\end{multicols}
-\resp{b.}
-\end{questao}
-
-\begin{questao}{1}{PUC-MG via FME, ano não informado}{5-H1, 5-H3}\label{u5:pucmg16}
-Em um grupo de 60 pessoas residentes em certo município, há 28 que trabalham por conta própria, 26 que trabalham com carteira assinada e 15 que têm esses dois tipos de trabalho. O número de pessoas desse grupo que não trabalham por conta própria e nem trabalham com carteira assinada é:
-\begin{multicols}{4}
-\begin{enumerate}[label=\alph*)]
-  \item 21
-  \item 23
-  \item 25
-  \item 27
+  \item 15
+  \item 20
+  \item 35
+  \item 85
+  \item 100
 \end{enumerate}
 \end{multicols}
 \resp{a.}
-\end{questao}
-
-\begin{questao}{1}{UF-RN via FME, ano não informado}{5-H1}\label{u5:ufrn17}
-Num grupo de amigos quatorze pessoas estudam Espanhol e oito estudam Inglês, sendo que três dessas pessoas estudam ambas as línguas. Sabendo que todos do grupo estudam pelo menos uma dessas línguas, o total de pessoas do grupo é
-\begin{multicols}{4}
-\begin{enumerate}[label=\alph*)]
-  \item 17.
-  \item 19.
-  \item 22.
-  \item 25.
-\end{enumerate}
-\end{multicols}
-\resp{b.}
 \end{questao}
 
 \begin{questao}{2}{UF-RN via FME, ano não informado}{5-H1, 5-H2}\label{u5:ufrn21}
