@@ -1,68 +1,271 @@
 % ============================================================
 % Unidade 3 — Parte B: erros, observações, exemplos, questões, síntese, respostas
+% Fonte única: dossies/u3.md · respostas conferidas em verif/u3.py
 % ============================================================
 \ErrosComuns
-% Roteiro de 5 passos (função obrigatória; em erros simples, passos podem ser uma frase).
-% "Onde quebra" = contraexemplo CONCRETO. "Como detectar" = teste feito DEPOIS de escrever.
 
-\begin{erro}{«O erro, como frase curta»}{3-E1}
-\campo{O erro.} «O que o aluno escreve.»
-\campo{Por que parece plausível.} «O raciocínio que leva a ele.»
-\campo{Onde quebra.} «Contraexemplo concreto.»
-\campo{Como detectar.} «O teste depois de escrever.»
-\campo{Como corrigir.} «A regra certa, com remissão à construção.»
-\campo{Onde aparece.} \exref{ex:u3:nome}; \qref{u3:nome}.
+\begin{erro}{Tratar a reunião como soma}{3-E1}
+\campo{O erro.} Escrever $\{1,2\}\cup\{2,5\}=\{1,2,2,5\}$; ou dizer que, se $A$ tem 3 elementos e $B$ tem 4, então $A\cup B$ tem 7.
+\campo{Por que parece plausível.} \enquote{Juntar} lembra \enquote{somar}, e as propriedades da reunião se parecem com as da soma (construção 3-H2).
+\campo{Onde quebra.} $\{1,2\}\cup\{2,5\}=\{1,2,5\}$: o 2 entra uma vez. Com $A=\{1,2,3\}$ e $B=\{3,4,5,6\}$, $A\cup B=\{1,2,3,4,5,6\}$ tem 6 elementos, não 7.
+\campo{Como detectar.} Antes de juntar, procure os elementos comuns aos dois conjuntos.
+\campo{Como corrigir.} Somar só funciona para conjuntos disjuntos (construção 3-H4); nos outros casos, quem está na região do meio não pode ser contado duas vezes (Unidade~5).
+\campo{Onde aparece.} \exref{ex:u3:operar}; \qref{u3:fme23}.
+\end{erro}
+
+\begin{erro}{\enquote{$A\cap B=\varnothing$, então $A$ ou $B$ é vazio}}{3-E2}
+\campo{O erro.} Concluir de $A\cap B=\varnothing$ que $A=\varnothing$ ou $B=\varnothing$.
+\campo{Por que parece plausível.} Parece o produto de números: se $ab=0$, então $a=0$ ou $b=0$ — e Boole escrevia a interseção justamente como um produto, $xy$.
+\campo{Onde quebra.} $\{a,b\}\cap\{c,d\}=\varnothing$, e nenhum dos dois conjuntos é vazio.
+\campo{Como detectar.} $A\cap B=\varnothing$ diz apenas que não há elementos comuns. Pergunte: dois conjuntos não vazios podem não ter elementos comuns? Podem.
+\campo{Como corrigir.} Leia $A\cap B=\varnothing$ como \enquote{$A$ e $B$ são disjuntos} (construção 3-H4), e nada mais.
+\campo{Onde aparece.} \exref{ex:u3:operar}; \qref{u3:comparar}.
+\end{erro}
+
+\begin{erro}{Distribuir pela metade}{3-E3}
+\campo{O erro.} Escrever $A\cup(B\cap C)=(A\cup B)\cap C$.
+\campo{Por que parece plausível.} Parece a conta $a\cdot(b+c)$: distribui-se uma vez e pronto — e o $A$ fica só no primeiro parêntese.
+\campo{Onde quebra.} Com $A=\{1\}$, $B=\{2\}$ e $C=\{3\}$: $A\cup(B\cap C)=\{1\}\cup\varnothing=\{1\}$, mas $(A\cup B)\cap C=\{1,2\}\cap\{3\}=\varnothing$.
+\campo{Como detectar.} Teste a igualdade com conjuntos pequenos ou compare as regiões do diagrama.
+\campo{Como corrigir.} $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$: o $A$ vai para os dois parênteses (construção 3-H3).
+\campo{Onde aparece.} \exref{ex:u3:distributiva}; \qref{u3:comparar}.
+\end{erro}
+
+\begin{erro}{Ler o \enquote{ou} como exclusivo}{3-E4}
+\campo{O erro.} Escrever $\{a,b,c\}\cup\{c,d,e\}=\{a,b,d,e\}$, deixando de fora o elemento comum.
+\campo{Por que parece plausível.} Na conversa, \enquote{ou} costuma ser exclusivo: \enquote{café ou chá?} pede uma das duas coisas.
+\campo{Onde quebra.} Na lógica e nos conjuntos, \enquote{ou} é inclusivo: $c$ está nos dois conjuntos, logo está na reunião.
+\campo{Como detectar.} Pergunte: \enquote{quem está nos dois entra?}. Na reunião, sempre entra.
+\campo{Como corrigir.} $A\cup B$ é \enquote{pelo menos um}. \enquote{Um ou outro, mas não os dois} é outra operação, que a Unidade~4 apresenta.
+\campo{Onde aparece.} \exref{ex:u3:operar}; \qref{u3:fme23}.
 \end{erro}
 
 % ------------------------------------------------------------
 \Observacoes
-% Camada opcional (selo + letra menor). Teste de pertença: quem pula TODAS as observações
-% perde algo necessário para usar o conceito? Se sim, o conteúdo vai para a seção dele (E-R3-3).
-% Uma observação não resolve nem antecipa nenhum N3 (E-R3-1).
 
 \begin{obs}{3-O1}
-\textbf{«Título.»} «Ampliação: curiosidade, generalização, caso-limite, conexão, exceção.»\src{fme}
+\textbf{Propriedades aos pares.} Na tabela da construção 3-H2 e na 3-H3, as propriedades vêm em pares: trocando $\cup$ por $\cap$ (e $\varnothing$ por $U$) numa propriedade verdadeira, obtém-se outra propriedade verdadeira. Por exemplo, $A\cup(A\cap B)=A$ vira $A\cap(A\cup B)=A$. Esse fenômeno se chama \emph{dualidade} e vem do par \enquote{ou} / \enquote{e} da lógica.
+\end{obs}
+
+\begin{obs}{3-O2}
+\textbf{De onde vêm os símbolos $\cup$ e $\cap$.} Os dois desenhos já aparecem em 1844, num livro do matemático Hermann Grassmann, mas como sinais gerais de operação, ainda sem o sentido de reunião e interseção. Com esse sentido, os símbolos modernos aparecem em 1888, num livro de Giuseppe Peano.\src{mactutorSym}
 \end{obs}
 
 % ------------------------------------------------------------
 \Exemplos
-% Pelo menos um por nível; juntos cobrem todo H, U e E. Cada ID declarado é TREINADO, não só citado.
-% IDs O só se o item treina a observação (E-R3-2). Primeiro argumento vazio = número automático.
-% Plano → Resolução → Comentário. N3: situação nova, que o texto não resolveu.
 
-\begin{exemplo}{}{1}{autoral}{3-H1, 3-U1, 3-E1}
-\label{ex:u3:nome}
-«Enunciado.»
-\plano «Qual ferramenta e por quê.»
-\resolucao «Resolução.»
-\comentario «O que o exemplo ensina; o erro que ele evita.»
+\begin{exemplo}{}{1}{adaptado do FME, itens 32 e 34}{3-H1, 3-H4, 3-U1, 3-E1, 3-E2, 3-E4}
+\label{ex:u3:operar}
+Calcule:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $\{a,b,c\}\cup\{c,d,e\}$
+  \item $\{a,b,c\}\cap\{b,c,d,e\}$
+  \item $\{a,b\}\cap\{c,d\}$
+  \item $\{a,b\}\cup\varnothing$
+\end{enumerate}
+\end{multicols}
+\plano Percorrer os elementos dos dois conjuntos e perguntar, para cada um: está em pelo menos um? (reunião) Está nos dois? (interseção)
+\resolucao a) $\{a,b,c,d,e\}$. b) $\{b,c\}$. c) $\varnothing$. d) $\{a,b\}$.
+\comentario Em (a), $c$ está nos dois conjuntos: entra na reunião (o \enquote{ou} é inclusivo, erro 3-E4) e entra uma vez só (erro 3-E1). Em (c), os conjuntos são disjuntos, e nenhum dos dois é vazio (erro 3-E2).
+\end{exemplo}
+
+\begin{exemplo}{}{1}{FME, exercícios 24 e 29}{3-H1, 3-U4}
+\label{ex:u3:inclusoes}
+Prove que, para quaisquer conjuntos $A$ e $B$: a) $A\subset(A\cup B)$; b) $(A\cap B)\subset A$.
+\plano Elemento genérico (Unidade~2): tomar um elemento qualquer do conjunto da esquerda e mostrar que ele está no da direita.
+\resolucao a) Se $x\in A$, então \enquote{$x\in A$ ou $x\in B$} é verdadeira; logo $x\in A\cup B$. b) Se $x\in A\cap B$, então $x\in A$ e $x\in B$; em particular, $x\in A$.
+\comentario A ressalva \enquote{quaisquer} pede uma prova que sirva para todos os conjuntos, e não um teste com conjuntos escolhidos (caso 4 do mapa).
+\end{exemplo}
+
+\begin{exemplo}{}{2}{FME, exercício 32}{3-H1, 3-U3}
+\label{ex:u3:fme32}
+Dados os conjuntos $A=\{1,2,3\}$, $B=\{3,4\}$ e $C=\{1,2,4\}$, determine o conjunto $X$ tal que $X\cup B=A\cup C$ e $X\cap B=\varnothing$.
+\plano Calcular $A\cup C$ para saber quais são os candidatos; depois decidir, para cada candidato, se ele entra em $X$.
+\resolucao $A\cup C=\{1,2,3,4\}$, então $X\cup B=\{1,2,3,4\}$, e os possíveis elementos de $X$ são 1, 2, 3 e 4. Como $X\cap B=\varnothing$, temos $3\notin X$ e $4\notin X$. Como 1 e 2 estão em $X\cup B$ e não estão em $B$, eles estão em $X$. Logo, $X=\{1,2\}$.
+\comentario Cada condição foi lida elemento a elemento: a primeira obriga 1 e 2 a entrarem; a segunda proíbe 3 e 4.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{3-H1, 3-U2}
+\label{ex:u3:solucoes}
+Determine o conjunto-solução de cada condição, no universo indicado:
+\begin{enumerate}[label=\alph*)]
+  \item $(x-1)(x+2)=0$, em $\mathbb{R}$;
+  \item $x^2=4$ e $x>0$, em $\mathbb{R}$;
+  \item $1<x$ e $x<4$, em $\mathbb{Z}$.
+\end{enumerate}
+\plano Resolver cada parte separadamente e juntar com $\cup$ (se as partes estão ligadas por \enquote{ou}) ou com $\cap$ (se estão ligadas por \enquote{e}).
+\resolucao a) Um produto é zero quando $x-1=0$ ou $x+2=0$: o conjunto-solução é $\{1\}\cup\{-2\}=\{-2,1\}$. b) $\{-2,2\}\cap\{x\in\mathbb{R}\mid x>0\}=\{2\}$. c) $\{x\in\mathbb{Z}\mid x>1\}\cap\{x\in\mathbb{Z}\mid x<4\}=\{2,3\}$.
+\comentario Em (a), o \enquote{ou} está escondido no produto igual a zero. Em (b) e (c), o \enquote{e} pede que as duas condições valham ao mesmo tempo.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{3-H3, 3-U4, 3-E3}
+\label{ex:u3:distributiva}
+\begin{enumerate}[label=\alph*)]
+  \item Mostre que a igualdade $A\cup(B\cap C)=(A\cup B)\cap C$ não vale para conjuntos quaisquer.
+  \item Prove que $A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$ para conjuntos quaisquer.
+\end{enumerate}
+\plano Em (a), um contraexemplo. Em (b), traduzir os conjuntos para propriedades e usar uma equivalência do Capítulo I.
+\resolucao a) Com $A=\{1\}$, $B=\{2\}$ e $C=\{3\}$: o lado esquerdo é $\{1\}$ e o direito é $\varnothing$. b) Sejam $A=\{x\mid p(x)\}$, $B=\{x\mid q(x)\}$ e $C=\{x\mid r(x)\}$. O lado esquerdo é $\{x\mid p(x)\vee(q(x)\wedge r(x))\}$, e o direito, $\{x\mid (p(x)\vee q(x))\wedge(p(x)\vee r(x))\}$. As duas propriedades são equivalentes pela distributiva do \enquote{ou} sobre o \enquote{e} (Cap.~I); logo os conjuntos são iguais.
+\comentario A igualdade de (a) é o erro 3-E3. A de (b) é a forma correta: o $A$ entra nos dois parênteses.
+\end{exemplo}
+
+\begin{exemplo}{}{3}{autoral}{3-H1, 3-H2}
+\label{ex:u3:iguais}
+Prove que, se $A\cup B=A\cap B$, então $A=B$.
+\plano Provar $A\subset B$ e $B\subset A$ (dupla inclusão), usando as inclusões do exemplo~\ref{ex:u3:inclusoes}.
+\resolucao Pelo exemplo~\ref{ex:u3:inclusoes}, $A\subset A\cup B$ e $A\cap B\subset B$. Como $A\cup B=A\cap B$, encadeando: $A\subset A\cup B=A\cap B\subset B$, logo $A\subset B$. Trocando os papéis de $A$ e $B$ (as duas operações são comutativas), $B\subset A$. Portanto, $A=B$.
+\comentario A novidade é que a hipótese é uma igualdade entre operações, e a conclusão é uma relação entre os conjuntos; nenhuma conta com elementos foi feita.
 \end{exemplo}
 
 % ------------------------------------------------------------
 \Questoes
-% Nível por função (N1 aplicação · N2 seleção/combinação · N3 transferência), da mais guiada para a
-% menos guiada DENTRO de cada nível. Integradora ([integradora]) só se o assunto da unidade for
-% necessário: tente resolvê-la sem ele. \label logo após o cabeçalho; \resp{...} com a resposta final.
-% Procedência no 2º argumento: [autoral] · [FME, exercício n] · [adaptada de concurso — BANCA/ÓRGÃO ANO] ·
-% [FUVEST 2019, 1ª fase, q.~12] (só com texto conferido) · [… via FME] · [histórico].
 
-\begin{questao}{1}{autoral}{3-U1, 3-E1}\label{u3:nome}
-«Enunciado.»
-\resp{«resposta final; em demonstração: "Demonstração. A prova deve mostrar que …"»}
+\begin{questao}{1}{FME, exercício 23}{3-H1, 3-U1, 3-E1, 3-E4}\label{u3:fme23}
+Dados os conjuntos $A=\{a,b,c\}$, $B=\{c,d\}$ e $C=\{c,e\}$, determine $A\cup B$, $A\cup C$, $B\cup C$ e $A\cup B\cup C$.
+\resp{$A\cup B=\{a,b,c,d\}$;\ $A\cup C=\{a,b,c,e\}$;\ $B\cup C=\{c,d,e\}$;\ $A\cup B\cup C=\{a,b,c,d,e\}$.}
 \end{questao}
 
+\begin{questao}{1}{FME, exercício 28}{3-H1, 3-U1}\label{u3:fme28}
+Dados os conjuntos $A=\{a,b,c,d\}$, $B=\{b,c,d,e\}$ e $C=\{c,e,f\}$, descreva $A\cap B$, $A\cap C$, $B\cap C$ e $A\cap B\cap C$.
+\resp{$A\cap B=\{b,c,d\}$;\ $A\cap C=\{c\}$;\ $B\cap C=\{c,e\}$;\ $A\cap B\cap C=\{c\}$.}
+\end{questao}
+
+\begin{questao}{1}{FME, exercício 25}{3-H2, 3-U4}\label{u3:fme25}
+Classifique em V ou F, admitindo que $A$, $B$ e $C$ são conjuntos quaisquer:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $\varnothing\subset(A\cup B)$
+  \item $(A\cup B)\subset A$
+  \item $A\in(A\cup B)$
+  \item $(A\cup B)\subset(A\cup B)$
+  \item $B\subset(A\cup B)$
+  \item $(A\cup B)\subset(A\cup B\cup C)$
+\end{enumerate}
+\end{multicols}
+\resp{a) V;\ b) F;\ c) F;\ d) V;\ e) V;\ f) V.}
+\end{questao}
+
+\begin{questao}{1}{FME, exercício 30}{3-H2, 3-U4}\label{u3:fme30}
+Classifique em V ou F, admitindo que $A$, $B$ e $C$ são conjuntos quaisquer:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $\varnothing\subset(A\cap B)$
+  \item $A\subset(A\cap B)$
+  \item $A\in(A\cap B)$
+  \item $(A\cap B)\subset(A\cap B)$
+  \item $(A\cap B)\subset B$
+  \item $(A\cap B)\supset(A\cap B\cap C)$
+\end{enumerate}
+\end{multicols}
+\resp{a) V;\ b) F;\ c) F;\ d) V;\ e) V;\ f) V.}
+\end{questao}
+
+\begin{questao}{1}{FME, exercício 36}{3-H3, 3-H4}\label{u3:fme36}
+Assinale no diagrama abaixo, um de cada vez, os seguintes conjuntos:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+  \item $A\cap B\cap C$
+  \item $A\cap(B\cup C)$
+  \item $A\cup(B\cap C)$
+  \item $A\cup B\cup C$
+\end{enumerate}
+\end{multicols}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw[acento,thick] (0,0.8) circle (1.2); \draw[acento,thick] (-0.75,-0.45) circle (1.2); \draw[acento,thick] (0.75,-0.45) circle (1.2);
+\node at (0,2.25) {$A$}; \node at (-2.2,-1.1) {$B$}; \node at (2.2,-1.1) {$C$};
+\end{tikzpicture}
+\end{center}
+\resp{a) só a região central, comum aos três;\ b) as partes de $A$ que estão em $B$ ou em $C$ (três regiões);\ c) todo o $A$, mais a parte comum a $B$ e $C$ fora de $A$ (cinco regiões);\ d) todas as sete regiões internas aos círculos.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 33}{3-H1, 3-U3}\label{u3:fme33}
+Determine o conjunto $X$ tal que $\{a,b,c,d\}\cup X=\{a,b,c,d,e\}$, $\{c,d\}\cup X=\{a,c,d,e\}$ e $\{b,c,d\}\cap X=\{c\}$.
+\resp{$X=\{a,c,e\}$.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{FME, exercício 46}{3-H1, 3-U2}\label{u3:fme46}
+Descreva os elementos dos conjuntos abaixo:
+\begin{enumerate}[label={}, leftmargin=1.2em, itemsep=1pt]
+  \item $A=\{x\mid x^2-5x-6=0\}$
+  \item $B=\{x\mid x\text{ é letra da palavra \emph{exercício}}\}$
+  \item $C=\{x\mid x^2-9=0\ \text{ou}\ 2x-1=9\}$
+  \item $D=\{x\mid 2x+1=0\ \text{e}\ 2x^2-x-1=0\}$
+  \item $E=\{x\mid x\text{ é algarismo do número }234\,543\}$
+\end{enumerate}
+\resp{$A=\{-1,6\}$;\ $B=\{e,x,r,c,i,o\}$;\ $C=\{-3,3,5\}$;\ $D=\{-\frac12\}$;\ $E=\{2,3,4,5\}$.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{FME, exercício 31}{3-H1, 3-U1}\label{u3:fme31}
+Considere os conjuntos: $K$, o conjunto dos quadriláteros planos; $P=\{x\in K\mid x$ tem lados 2 a 2 paralelos$\}$; $L=\{x\in K\mid x$ tem 4 lados congruentes$\}$; $R=\{x\in K\mid x$ tem 4 ângulos retos$\}$; $Q=\{x\in K\mid x$ tem 4 lados congruentes e 2 ângulos retos$\}$. Determine os conjuntos:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item $L\cap P$
+  \item $R\cap P$
+  \item $L\cap R$
+  \item $Q\cap R$
+  \item $L\cap Q$
+  \item $P\cup Q$
+\end{enumerate}
+\end{multicols}
+\resp{a) $L$;\ b) $R$;\ c) $Q$;\ d) $Q$;\ e) $Q$;\ f) $P$.}
+\end{questao}
+
+\begin{questao}{2}{adaptado do FME, exercício 27}{3-H1, 3-U1}\label{u3:fme27}
+Determine a reunião das retas de um plano $\alpha$ que são paralelas a uma dada reta $r$ de $\alpha$ (considere $r$ paralela a si mesma).
+\resp{O próprio plano $\alpha$.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 37}{3-H1, 3-H2}\label{u3:fme37}
+Sejam os conjuntos $A$ com 2 elementos, $B$ com 3 elementos e $C$ com 4 elementos. Qual é o número máximo de elementos de $(A\cap B)\cap C$?
+\resp{2.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 61}{3-H4}\label{u3:fme61}
+Desenhe um diagrama de Venn representando quatro conjuntos, $A$, $B$, $C$ e $D$, não vazios, de modo que se tenha $A\not\subset B$, $B\not\subset A$, $C\supset(A\cup B)$ e $D\subset(A\cap B)$.
+\resp{$A$ e $B$ se cruzando (cada um com uma parte fora do outro), os dois dentro de $C$, e $D$ dentro da parte comum a $A$ e $B$.}
+\end{questao}
+
+\begin{questao}{2}{autoral}{3-H2, 3-H3, 3-H4, 3-E2, 3-E3}\label{u3:comparar}
+\begin{enumerate}[label=\alph*)]
+  \item Para $A=\{1,2\}$, $B=\{2,3\}$ e $C=\{3,4\}$, calcule $A\cup(B\cap C)$ e $(A\cup B)\cap C$. São iguais?
+  \item Sabendo que $A\cap B=\varnothing$, o que se pode afirmar sobre $A\cap(B\cap C)$?
+  \item Dê três conjuntos não vazios, dois a dois disjuntos, cuja reunião seja $\{1,2,3,4,5,6\}$.
+\end{enumerate}
+\resp{a) $A\cup(B\cap C)=\{1,2,3\}$ e $(A\cup B)\cap C=\{3\}$: não são iguais;\ b) $A\cap(B\cap C)=(A\cap B)\cap C=\varnothing$;\ c) por exemplo, $\{1,2\}$, $\{3,4\}$ e $\{5,6\}$.}
+\end{questao}
+
+\begin{questao}{3}{FME, exercício 34}{3-H1, 3-U3}\label{u3:fme34}
+Sabe-se que $A\cup B\cup C=\{n\in\mathbb{N}\mid 1\le n\le10\}$, $A\cap B=\{2,3,8\}$, $A\cap C=\{2,7\}$, $B\cap C=\{2,5,6\}$ e $A\cup B=\{n\in\mathbb{N}\mid 1\le n\le8\}$. Determine $C$.
+\resp{$C=\{2,5,6,7,9,10\}$.}
+\end{questao}
+
+\begin{questao}{3}{adaptado do FME, exercício 26}{3-H1, 3-U1}\label{u3:discos}
+Determine a reunião dos círculos (isto é, das regiões circulares) de raio $r$, contidos num plano $\alpha$, que têm um ponto comum $O\in\alpha$.
+\resp{O círculo (região circular) de centro $O$ e raio $2r$.}
+\end{questao}
+
+\begin{questao}{3}{autoral}{3-H1, 3-U3}\label{u3:pares}
+Quantos pares $(X,Y)$ de subconjuntos de $\{1,2,3\}$ satisfazem $X\cup Y=\{1,2,3\}$? Justifique.
+\resp{27. Cada elemento de $\{1,2,3\}$ precisa estar em $X$, em $Y$ ou nos dois: são 3 possibilidades por elemento, e $3\cdot3\cdot3=27$.}
+\end{questao}
 
 \begin{sintese}
 \textbf{Ao fim desta unidade, você deveria saber:}
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «capacidade»
+  \item calcular reuniões e interseções, sem repetir nem perder elementos comuns;
+  \item transformar o \enquote{ou} e o \enquote{e} de uma condição em reunião e interseção de conjuntos-solução;
+  \item usar as propriedades das operações, inclusive absorção e distributivas;
+  \item descobrir um conjunto desconhecido a partir de condições, elemento a elemento;
+  \item provar uma propriedade para conjuntos quaisquer ou derrubá-la com um contraexemplo.
 \end{itemize}
 \smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u3}) e com a seção indicada.
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
-  \perguntasintese{O que significa «conceito»? \ondever{construção 3-H1}}
-  \perguntasintese{Como «conceito» foi construído, e por quê? \ondever{De onde vem?}}
-  \perguntasintese{Como você reconhece, num enunciado, que deve usar «conceito»? \ondever{Onde é usado?}}
-  \perguntasintese{Qual é o erro mais perigoso ao aplicar «conceito»? Como você o detecta? \ondever{Erros comuns}}
+  \perguntasintese{Por que as propriedades da reunião e da interseção são as mesmas do \enquote{ou} e do \enquote{e} da lógica? \ondever{construção 3-H2}}
+  \perguntasintese{Por que a reunião não é uma soma? Em que caso ela se comporta como soma? \ondever{De onde vem?}}
+  \perguntasintese{Num enunciado, como você reconhece que precisa decidir elemento a elemento? \ondever{Onde é usado?}}
+  \perguntasintese{Qual erro você cometeria ao simplificar $A\cup(B\cap C)$? Como evitá-lo? \ondever{Erros comuns}}
 \end{enumerate}
 \end{sintese}
 

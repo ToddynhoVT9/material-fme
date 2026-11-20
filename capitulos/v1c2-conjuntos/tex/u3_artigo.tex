@@ -1,8 +1,7 @@
 % ============================================================
-% Unidade 3 — Reunião e interseção   (didática v3 · kit/didatica.md §2)
+% Unidade 3 — Reunião e interseção   (didática v4 · kit/didatica.md §2)
 % Parte A, o "artigo": Prefácio, De onde vem?, Onde é usado?
-% IDs da unidade: ver matriz.yaml (H construção · U uso · E erro · O observação)
-% Rótulos: questões u3:nome · exemplos ex:u3:nome · remissões só com \ref / \qref / \exref
+% IDs: 3-H1..H4 · 3-U1..U4 · 3-E1..E4 · 3-O1, 3-O2 (matriz.yaml) · fonte única: dossies/u3.md
 % ============================================================
 \clearpage
 \section{Reunião e interseção}
@@ -10,69 +9,159 @@
 % ------------------------------------------------------------
 \Prefacio
 \begin{prefacio}
-\gancho{«Uma pergunta ou situação curta que prende.»}
+\gancho{\enquote{Ou} amplia, \enquote{e} restringe}
 
-% Função: "por que isso merece ser estudado?" + UMA pergunta aberta explícita, que a unidade responde.
-% Em geral menos de uma página. Fora da narrativa.
-«Situação concreta que cria a pergunta.»
+Um site de vagas permite filtrar candidatos por dois critérios. Com o filtro \enquote{fala inglês \textbf{ou} usa planilhas}, a lista cresce: entra quem tem pelo menos uma das duas habilidades. Com \enquote{fala inglês \textbf{e} usa planilhas}, a lista encolhe: só fica quem tem as duas. Quem tem as duas aparece nas duas buscas — e, na primeira, aparece uma vez só, não duas.
 
-\textbf{«A pergunta aberta da unidade, em negrito.»} É a pergunta desta unidade.
+No Capítulo I, \enquote{ou} e \enquote{e} ligavam proposições. Aqui, as mesmas palavras ligam conjuntos e produzem conjuntos novos. \textbf{Como o \enquote{ou} e o \enquote{e} da lógica viram operações entre conjuntos?}
 
-\textbf{Ao final, você será capaz de:} «3–5 capacidades verificáveis».
+\textbf{Ao final, você será capaz de:} calcular reuniões e interseções; transformar o \enquote{ou} e o \enquote{e} de uma condição em reunião e interseção de conjuntos-solução; usar as propriedades das operações, inclusive as distributivas; descobrir um conjunto desconhecido a partir de condições, elemento a elemento; decidir se uma propriedade vale para quaisquer conjuntos.
 
-\textbf{Pré-requisitos:} «unidades e assuntos». O essencial está na caixa abaixo.
+\textbf{Pré-requisitos:} Unidades 1 e 2; do Capítulo I, os conectivos \enquote{ou} e \enquote{e}, as tabelas-verdade e as propriedades desses conectivos. O essencial está na caixa abaixo.
 \end{prefacio}
 
 \begin{minimo}
-% O mínimo que você precisa: só o que a unidade usa e o aluno pode ter esquecido.
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «pré-requisito 1»
+  \item \textbf{\enquote{Ou} inclusivo.} \enquote{$p$ ou $q$} ($p\vee q$) é verdadeira quando pelo menos uma das duas é verdadeira — inclusive quando as duas são (Cap.~I).
+  \item \textbf{\enquote{E}.} \enquote{$p$ e $q$} ($p\wedge q$) é verdadeira só quando as duas são verdadeiras (Cap.~I).
+  \item \textbf{Inclusão e igualdade.} $A\subset B$: todo elemento de $A$ está em $B$; $A=B$: $A\subset B$ e $B\subset A$ (Unidade~2).
 \end{itemize}
 \end{minimo}
 
 % ------------------------------------------------------------
 \DeOndeVem
-% Três perguntas: (1) por que alguém precisou disso? (2) como a ideia foi construída? (3) como reconstruímos hoje?
-% Origem histórica ≠ reconstrução matemática: as duas aparecem distintas; a reconstrução se sustenta sozinha.
-% Três camadas, em texto corrido e bem demarcadas: "X formulou…" / "lido hoje…" / "a convenção atual…".
-% Filtro P5 em cada trecho: melhora a compreensão? Se só deixa interessante → Observações ou fora.
-% Todo fato com \src{chave} (bibitem em fontes.tex). Nada de frequência sem fonte.
 
-\subsubsection{«O problema que pediu a ferramenta»}
-«Narrativa com fontes.»\src{fme}
+\subsubsection{Por que alguém precisou disso}
+Conjuntos raramente aparecem sozinhos. Juntamos duas listas (quem fala inglês ou espanhol), cruzamos dois critérios (quem fala inglês e espanhol), exigimos duas condições ao mesmo tempo (um sistema de equações). Precisamos de operações que, a partir de dois conjuntos, produzam um terceiro — e de regras para calcular com elas sem precisar voltar, toda vez, aos elementos.
 
-\begin{construcao}[3-H1: título curto]{3-H1}
-% A reconstrução: passos numerados que chegam à ferramenta por raciocínio, não por autoridade.
+\subsubsection{A reunião e a interseção}
+\begin{construcao}[reunião e interseção]{3-H1}
 \begin{enumerate}[label=(\arabic*)]
-  \item «passo»
+  \item A \textbf{reunião} de $A$ e $B$ é o conjunto dos elementos que pertencem a $A$ \emph{ou} a $B$:\src{fme}
+\[
+A\cup B=\{x\mid x\in A\ \text{ou}\ x\in B\}.
+\]
+Lê-se \enquote{$A$ reunião $B$}. São os elementos que pertencem a \emph{pelo menos um} dos dois conjuntos.
+  \item A \textbf{interseção} de $A$ e $B$ é o conjunto dos elementos que pertencem a $A$ \emph{e} a $B$:\src{fme}
+\[
+A\cap B=\{x\mid x\in A\ \text{e}\ x\in B\}.
+\]
+Lê-se \enquote{$A$ inter $B$}. São os elementos que pertencem aos dois ao mesmo tempo.
+  \item O \enquote{ou} da reunião é o da lógica, \emph{inclusivo}: quem está nos dois conjuntos está na reunião — e entra uma vez só, porque um conjunto não registra repetições (Unidade~2).
+  \item Exemplos: $\{a,b\}\cup\{c,d\}=\{a,b,c,d\}$; $\{a,b,c\}\cup\{c,d,e\}=\{a,b,c,d,e\}$; $\{a,b,c\}\cap\{b,c,d,e\}=\{b,c\}$; $\{a,b\}\cap\{c,d\}=\varnothing$; $\{a,b\}\cup\varnothing=\{a,b\}$; $\{a,b\}\cap\varnothing=\varnothing$.\src{fme}
 \end{enumerate}
 \end{construcao}
 
-\begin{definicao}[nome]
-«Enunciado formal.»
+\begin{definicao}[reunião, interseção, conjuntos disjuntos]
+$A\cup B=\{x\mid x\in A\text{ ou }x\in B\}$ e $A\cap B=\{x\mid x\in A\text{ e }x\in B\}$. Quando $A\cap B=\varnothing$, isto é, quando $A$ e $B$ não têm elemento comum, $A$ e $B$ são chamados \textbf{disjuntos}.\src{fme}
 \end{definicao}
 
+\subsubsection{Boole: o produto, a soma e a reunião}
+A ideia de calcular com classes como se calcula com números é do matemático George Boole, que publicou dois livros sobre o assunto, em 1847 e em 1854. Boole representava cada classe por uma letra e escrevia $xy$ para a classe dos objetos que são, ao mesmo tempo, $X$ e $Y$ — a interseção, em linguagem de hoje. Para \enquote{juntar} classes, usava $x+y$, mas só quando as duas classes não tinham membros em comum; sem essa condição, ele considerava a expressão sem interpretação.\src{sepAlgLog}\src{burrisTalk}\src{boole1854} Lido hoje, o \enquote{$+$} de Boole é a reunião de conjuntos disjuntos. Em 1864, o lógico William Stanley Jevons trocou essa operação restrita pela reunião sem restrição, que é o $\cup$ usado até hoje.\src{sepAlgLog}
+
+Boole também já escrevia leis como $x(y+z)=xy+xz$ e $xx=x$.\src{sepAlgLog}\src{boole1854} É por isso que as propriedades de $\cup$ e $\cap$ lembram as da aritmética — e é também por isso que é preciso cuidado: elas \emph{não} são as da aritmética.
+
+\subsubsection{As propriedades vêm da lógica}
+\begin{construcao}[propriedades da reunião e da interseção]{3-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item Escreva $A=\{x\mid p(x)\}$ e $B=\{x\mid q(x)\}$. Pela construção 3-H1,
+\[
+A\cup B=\{x\mid p(x)\vee q(x)\}\qquad\text{e}\qquad A\cap B=\{x\mid p(x)\wedge q(x)\}.
+\]
+  \item Toda equivalência entre proposições vira uma igualdade entre conjuntos. Como \enquote{$p$ ou $p$} equivale a $p$, temos $A\cup A=A$; como \enquote{$p$ ou $q$} equivale a \enquote{$q$ ou $p$}, temos $A\cup B=B\cup A$. Do mesmo modo, para conjuntos quaisquer $A$, $B$ e $C$:\src{fme}
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+ & reunião & interseção\\\midrule
+idempotente & $A\cup A=A$ & $A\cap A=A$\\
+comutativa & $A\cup B=B\cup A$ & $A\cap B=B\cap A$\\
+associativa & $(A\cup B)\cup C=A\cup(B\cup C)$ & $(A\cap B)\cap C=A\cap(B\cap C)$\\
+elemento neutro & $A\cup\varnothing=A$ & $A\cap U=A$\\
+\end{tabular}
+\end{center}
+  \item Os elementos neutros também vêm da lógica: $\varnothing$ é descrito por uma propriedade sempre falsa, e \enquote{$p$ ou (falsa)} equivale a $p$; o universo $U$ é descrito por uma propriedade sempre verdadeira, e \enquote{$p$ e (verdadeira)} equivale a $p$.
+  \item As propriedades lembram as da soma e da multiplicação, mas não são as mesmas: $A\cup A=A$, enquanto $2+2\neq2$.
+\end{enumerate}
+\end{construcao}
+
+\begin{construcao}[absorção e distributivas]{3-H3}
+\begin{enumerate}[label=(\arabic*)]
+  \item \textbf{Absorção:} $A\cup(A\cap B)=A$ e $A\cap(A\cup B)=A$.\src{fme} Os elementos de $A\cap B$ já estão em $A$; juntá-los a $A$ não acrescenta nada.
+  \item \textbf{Distributivas:}\src{fme}
+\[
+A\cup(B\cap C)=(A\cup B)\cap(A\cup C)\qquad\text{e}\qquad A\cap(B\cup C)=(A\cap B)\cup(A\cap C).
+\]
+Elas vêm das distributivas do \enquote{ou} sobre o \enquote{e} e do \enquote{e} sobre o \enquote{ou}, vistas no Capítulo I.
+  \item Repare que \emph{as duas} operações distribuem uma sobre a outra. Na aritmética, só a multiplicação distribui sobre a soma: em geral, $a+(b\cdot c)\neq(a+b)\cdot(a+c)$.
+\end{enumerate}
+\end{construcao}
+
+\subsubsection{Disjuntos e o diagrama de duas regiões}
+\begin{construcao}[conjuntos disjuntos e regiões]{3-H4}
+\begin{enumerate}[label=(\arabic*)]
+  \item Dois conjuntos dividem o universo em quatro regiões: os elementos só de $A$, os dos dois, os só de $B$ e os de nenhum.
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+\draw[thick] (-3.6,-1.9) rectangle (3.6,1.9); \node at (3.3,1.6) {$U$};
+\draw[acento,thick] (-0.85,0) circle (1.45); \draw[acento,thick] (0.85,0) circle (1.45);
+\node[font=\scriptsize] at (-1.45,0) {só $A$}; \node[font=\scriptsize] at (0,0) {$A$ e $B$}; \node[font=\scriptsize] at (1.45,0) {só $B$};
+\node[font=\scriptsize,anchor=south west] at (-3.55,-1.85) {nenhum};
+\node at (-1.95,1.3) {$A$}; \node at (1.95,1.3) {$B$};
+\end{tikzpicture}
+\end{center}
+$A\cup B$ ocupa três regiões (só $A$, $A$ e $B$, só $B$); $A\cap B$, uma.
+  \item $A$ e $B$ são \textbf{disjuntos} quando a região \enquote{$A$ e $B$} está vazia: $A\cap B=\varnothing$.\src{fme} Disjuntos não quer dizer vazios: $\{1,2\}$ e $\{7,8\}$ são disjuntos, e nenhum dos dois é vazio.
+  \item Quando $A$ e $B$ são disjuntos, contar os elementos de $A\cup B$ é somar — é a situação do \enquote{$+$} de Boole. Quando não são, somar conta duas vezes quem está na região do meio. A Unidade~5 resolve essa contagem.
+\end{enumerate}
+\end{construcao}
+
 \begin{paralembrar}\label{lembrar-u3}
-% Fecha o De onde vem?: 1 frase + até 3 passos. É o gabarito da síntese de domínio.
-«A frase.»
+\textbf{Reunião é \enquote{ou} (pelo menos um); interseção é \enquote{e} (os dois). As propriedades das operações são as propriedades do \enquote{ou} e do \enquote{e}.}
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em,itemsep=1pt]
-  \item «passo»
+  \item Para calcular, percorra os elementos e pergunte: está em $A$? está em $B$?
+  \item Para provar uma igualdade entre expressões, traduza para a lógica ou compare as regiões do diagrama.
+  \item Para achar um conjunto desconhecido, decida elemento a elemento.
 \end{enumerate}
 \end{paralembrar}
 
 % ------------------------------------------------------------
 \OndeEUsado
-% Função: reconhecimento. Ensina a ESCOLHER a ferramenta: enunciado → estrutura → ferramenta.
-% 2–4 casos no formato do mapa; depois a tabela de gatilhos como resumo.
-% E-R3-1: casos, "Treino:" e gatilhos NÃO trazem o caso concreto nem a solução de nenhum N3,
-% e apontam só para exemplos e questões N1/N2 (checar.py confere os \ref).
-«Uma frase de abertura: onde a ferramenta aparece.»
 
-\begin{caso}{1 · «nome do caso»}{3-U1}
-\mapa{«o que o enunciado diz: palavras e formatos»}{«a estrutura matemática a procurar»}{«a ferramenta»}
-\reconhecer «Como reconhecer a situação; um exemplo de enunciado real, com fonte e procedência.» Treino: \exref{ex:u3:nome}; \qref{u3:nome}.
+A reunião e a interseção aparecem sempre que duas condições são combinadas — em buscas, em sistemas, em problemas que pedem um conjunto desconhecido e em sentenças sobre conjuntos quaisquer. São quatro situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · filtros e listas com \enquote{ou} e \enquote{e}}{3-U1}
+\mapa{duas listas, dois critérios ou dois filtros ligados por \enquote{ou} ou por \enquote{e}}
+{quem satisfaz \emph{pelo menos um} critério (reunião) ou \emph{os dois} (interseção)}
+{3-H1: percorrer os elementos e testar cada critério}
+\reconhecer Linguagens de programação trazem as duas operações prontas. No tutorial oficial do Python, com \texttt{a = set('abracadabra')} e \texttt{b = set('alacazam')}, a expressão \texttt{a | b} dá as letras que estão em \texttt{a}, em \texttt{b} ou em ambos, e \texttt{a \& b} dá as letras que estão nos dois.\src{pyTut} Leia \texttt{|} como \enquote{ou} e \texttt{\&} como \enquote{e}: o resultado é $\{a,b,r,c,d,l,z,m\}$ e $\{a,c\}$. Treino: \exref{ex:u3:operar}; questões \ref{u3:fme23} e \ref{u3:fme28}.
 \end{caso}
 
+\begin{caso}{2 · condições compostas}{3-U2}
+\mapa{uma condição com \enquote{ou} (\enquote{$x=\ldots$ ou $x=\ldots$}, um produto igual a zero) ou com \enquote{e} (um sistema, duas desigualdades)}
+{o conjunto-solução de cada parte separadamente}
+{3-H1: \enquote{ou} entre condições $\to$ reunião dos conjuntos-solução; \enquote{e} $\to$ interseção}
+\reconhecer O sinal é a palavra que liga as condições. Resolva cada parte sozinha, no mesmo universo, e só depois junte: com \enquote{ou}, fica tudo o que resolve pelo menos uma parte; com \enquote{e}, só o que resolve todas. Treino: \exref{ex:u3:solucoes}; \qref{u3:fme46}.
+\end{caso}
+
+\begin{caso}{3 · \enquote{determine o conjunto $X$ tal que\ldots}}{3-U3}
+\mapa{\enquote{determine $X$ tal que $X\cup\ldots=\ldots$ e $X\cap\ldots=\ldots$}}
+{o que cada condição diz sobre \emph{cada elemento} candidato}
+{decidir elemento a elemento: cada candidato entra ou não entra em $X$, conforme as condições}
+\reconhecer O enunciado dá equações entre conjuntos com uma incógnita, como em \enquote{determine o conjunto $X$ tal que $X\cup B=A\cup C$ e $X\cap B=\varnothing$}.\src{fme} Não tente adivinhar $X$ inteiro: liste os candidatos e, para cada um, veja o que as condições obrigam. Treino: \exref{ex:u3:fme32}; \qref{u3:fme33}.
+\end{caso}
+
+\begin{caso}{4 · \enquote{admitindo que $A$, $B$ e $C$ são conjuntos quaisquer}}{3-U4}
+\mapa{\enquote{classifique em V ou F}, com a ressalva \enquote{admitindo que $A$, $B$ e $C$ são conjuntos quaisquer}\src{fme}}
+{se a sentença vale para \emph{todos} os conjuntos possíveis}
+{verdadeira: provar (elemento genérico, lógica ou regiões); falsa: um contraexemplo basta}
+\reconhecer A palavra \enquote{quaisquer} transforma a sentença numa afirmação sobre todos os conjuntos. Antes de responder, tente um caso pequeno; se ele derrubar a sentença, ela é falsa; se não derrubar, procure a razão geral. Treino: \exref{ex:u3:inclusoes}; questões \ref{u3:fme25} e \ref{u3:fme30}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
 \begin{gatilhos}
-«sinal no enunciado» & «ferramenta» & «raciocínio» & 3-U1 · q.~\ref{u3:nome}\\
+\enquote{ou} / \enquote{e} numa busca ou lista & 3-H1 & pelo menos um / os dois & \mbox{3-U1\,·\,q.\,\ref{u3:fme23}}\\\fino
+condição composta & 3-H1 & resolver cada parte; juntar com $\cup$ ou $\cap$ & \mbox{3-U2\,·\,q.\,\ref{u3:fme46}}\\\fino
+\enquote{determine $X$ tal que} & 3-H1 & elemento a elemento & \mbox{3-U3\,·\,q.\,\ref{u3:fme33}}\\\fino
+\enquote{conjuntos quaisquer} & 3-H2, 3-H3 & provar ou dar um contraexemplo & \mbox{3-U4\,·\,q.\,\ref{u3:fme25}}\\
 \end{gatilhos}

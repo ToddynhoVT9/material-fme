@@ -386,13 +386,169 @@ unidades:
     E4: ler "ou" como exclusivo (tirar A ∩ B da reunião)
     O1: 'dualidade: trocar ∪ ↔ ∩ e ∅ ↔ U'
     O2: os símbolos ∪ e ∩ (Grassmann, Peano)
-  exemplos: []
+  exemplos:
+  - rotulo: ex:u3:operar
+    nivel: 1
+    fonte: adaptado do FME, itens 32 e 34
+    tema: calcular ∪ e ∩
+    cobre:
+    - H1
+    - H4
+    - U1
+    - E1
+    - E2
+    - E4
+  - rotulo: ex:u3:inclusoes
+    nivel: 1
+    fonte: FME, exercícios 24 e 29
+    tema: A ⊂ A∪B; A∩B ⊂ A
+    cobre:
+    - H1
+    - U4
+  - rotulo: ex:u3:fme32
+    nivel: 2
+    fonte: FME, exercício 32
+    tema: X ∪ B = A ∪ C, X ∩ B = ∅
+    cobre:
+    - H1
+    - U3
+  - rotulo: ex:u3:solucoes
+    nivel: 2
+    fonte: autoral
+    tema: ou/e → ∪/∩ de conjuntos-solução
+    cobre:
+    - H1
+    - U2
+  - rotulo: ex:u3:distributiva
+    nivel: 2
+    fonte: autoral
+    tema: contraexemplo e distributiva pela lógica
+    cobre:
+    - H3
+    - U4
+    - E3
+  - rotulo: ex:u3:iguais
+    nivel: 3
+    fonte: autoral
+    tema: A∪B = A∩B ⇒ A = B
+    cobre:
+    - H1
+    - H2
   questoes_meta:
     N1: 4
     N2: 5
     N3: 2
     integradoras: 1
-  questoes_pool: []
+  questoes_pool:
+  - rotulo: u3:fme23
+    nivel: 1
+    fonte: FME, exercício 23
+    cobre:
+    - H1
+    - U1
+    - E1
+    - E4
+    integradora: false
+  - rotulo: u3:fme28
+    nivel: 1
+    fonte: FME, exercício 28
+    cobre:
+    - H1
+    - U1
+    integradora: false
+  - rotulo: u3:fme25
+    nivel: 1
+    fonte: FME, exercício 25
+    cobre:
+    - H2
+    - U4
+    integradora: false
+  - rotulo: u3:fme30
+    nivel: 1
+    fonte: FME, exercício 30
+    cobre:
+    - H2
+    - U4
+    integradora: false
+  - rotulo: u3:fme36
+    nivel: 1
+    fonte: FME, exercício 36
+    cobre:
+    - H3
+    - H4
+    integradora: false
+  - rotulo: u3:fme33
+    nivel: 2
+    fonte: FME, exercício 33
+    cobre:
+    - H1
+    - U3
+    integradora: false
+  - rotulo: u3:fme46
+    nivel: 2
+    fonte: FME, exercício 46
+    cobre:
+    - H1
+    - U2
+    integradora: true
+  - rotulo: u3:fme31
+    nivel: 2
+    fonte: FME, exercício 31
+    cobre:
+    - H1
+    - U1
+    integradora: true
+  - rotulo: u3:fme27
+    nivel: 2
+    fonte: adaptado do FME, exercício 27
+    cobre:
+    - H1
+    - U1
+    integradora: false
+  - rotulo: u3:fme37
+    nivel: 2
+    fonte: FME, exercício 37
+    cobre:
+    - H1
+    - H2
+    integradora: false
+  - rotulo: u3:fme61
+    nivel: 2
+    fonte: FME, exercício 61
+    cobre:
+    - H4
+    integradora: false
+  - rotulo: u3:comparar
+    nivel: 2
+    fonte: autoral
+    cobre:
+    - H2
+    - H3
+    - H4
+    - E2
+    - E3
+    integradora: false
+  - rotulo: u3:fme34
+    nivel: 3
+    fonte: FME, exercício 34
+    cobre:
+    - H1
+    - U3
+    integradora: false
+  - rotulo: u3:discos
+    nivel: 3
+    fonte: adaptado do FME, exercício 26
+    cobre:
+    - H1
+    - U1
+    integradora: false
+  - rotulo: u3:pares
+    nivel: 3
+    fonte: autoral
+    cobre:
+    - H1
+    - U3
+    integradora: false
 - n: 4
   titulo: Diferença e complementar
   pergunta: Como descrever o que fica de fora — e por que "fora" sempre depende de onde estamos?
