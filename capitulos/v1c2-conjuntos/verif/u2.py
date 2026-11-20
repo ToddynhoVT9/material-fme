@@ -1,7 +1,7 @@
 """Verificação independente das respostas da Unidade 2 — Igualdade, inclusão e conjunto das partes.
 
 Regra (w5): toda resposta que pode ser obtida por cálculo, enumeração ou tabela é RECALCULADA aqui,
-sem copiar o raciocínio do texto. Rótulos finais da montagem (dossiê: X1–X6 = exemplos, P1–P14 = questões).
+sem copiar o raciocínio do texto. Rótulos finais da montagem (dossiê: X1–X5 + ex:u2:partesAB = exemplos, P1–P14 = questões; revisão R1 trocou X6, P9 e P10).
 
 Rodar:  python3 verif/u2.py      (saída "N OK, 0 falha(s)" é a condição de pronto)
 """
@@ -36,11 +36,12 @@ chk("ex:u2:chaves 1∈E, {1}∈E, {1}⊂E, {2}⊂E, {2,3}∈E, {2,3}⊂E, ∅⊂
     (True, True, True, False, True, False, True, False))
 chk("ex:u2:multiplos múltiplos de 2 e de 3 = múltiplos de 6 (amostra)", {x for x in Z if x % 2 == 0 and x % 3 == 0}, {x for x in Z if x % 6 == 0})
 chk("ex:u2:partes n(𝒫({a,b,c})) e subconjuntos de {1..5} com o 1", (len(partes("abc")), sum(1 for X in partes(range(1, 6)) if 1 in X)), (8, 16))
-# X6 (unicidade do vazio): argumento por dupla inclusão — por leitura
+P4_ = partes(range(4))
+chk("ex:u2:partesAB A⊂B ⇒ 𝒫(A)⊂𝒫(B) (todos os pares em 𝒫({0,1,2,3}))", all(partes(X) <= partes(Y) for X in P4_ for Y in P4_ if X <= Y), True)
 
 # ---- questões -------------------------------------------------------------------
 A = {2, 4, 6}
-chk("u2:completar 2∈A, {2}⊂A, {2,5}⊄A, {6,4,2}=A, 5∉A", (2 in A, sub({2}, A), not sub({2, 5}, A), {6, 4, 2} == A, 5 not in A), (True,) * 5)
+chk("u2:completar 2∈A, {2}⊂A, {2,5}⊄A, {6,4,2}⊂A (e =A), 5∉A", (2 in A, sub({2}, A), not sub({2, 5}, A), sub({6, 4, 2}, A) and {6, 4, 2} == A, 5 not in A), (True,) * 5)
 R = range(-50, 51)
 chk("u2:fme19 (FME 19) a,b,c,d todas V",
     ({"a", "a", "a", "b", "b"} == {"a", "b"},
@@ -61,14 +62,13 @@ chk("u2:fme35 (FME 35) nº de X com {1,2} ⊂ X ⊂ {1,2,3,4}", sum(1 for X in p
 chk("u2:multiplos4 múltiplos de 4 ⊂ pares; pares ⊄ múltiplos de 4 (testemunha 2)",
     (all(x % 2 == 0 for x in Z if x % 4 == 0), 2 % 2 == 0 and 2 % 4 != 0), (True, True))
 # P9 exemplos: (a) A⊄B e B⊂A; (b) A⊄B e B⊄A; (c) A⊂B e B⊂A
-ex9 = {"a": ({1, 2}, {1}), "b": ({1}, {2}), "c": ({1}, {1})}
-chk("u2:exemplos exemplos-modelo", (not sub(*ex9["a"]) and sub(ex9["a"][1], ex9["a"][0]),
-                           not sub(*ex9["b"]) and not sub(ex9["b"][1], ex9["b"][0]),
-                           sub(*ex9["c"]) and sub(ex9["c"][1], ex9["c"][0]) and ex9["c"][0] == ex9["c"][1]), (True, True, True))
-chk("u2:exemplos (c) obriga A = B (todos os pares em 𝒫({0,1,2}))",
-    all(X == Y for X in partes(range(3)) for Y in partes(range(3)) if X <= Y and Y <= X), True)
-chk("u2:contar n(𝒫(A)) = 64 → n(A); subconjuntos de 5 elementos sem ∅ e sem o todo",
-    ([n for n in range(20) if 2**n == 64], len(partes(range(5))) - 2), ([6], 30))
+A9, B9 = {1, 2, 3}, {2, 3, 4}
+chk("u2:exemplos (a) A⊄B, B⊄A, dois em comum, 3 elementos cada", (not sub(A9, B9), not sub(B9, A9), len(A9 & B9), len(A9), len(B9)), (True, True, 2, 3, 3))
+P3 = partes(range(3))
+chk("u2:exemplos (b) A⊂B e B⊄A ⇒ A≠B (todos os pares em 𝒫({0,1,2}))", all(X != Y for X in P3 for Y in P3 if X <= Y and not Y <= X), True)
+chk("u2:exemplos (c) A⊂B⊂C⊂A ⇒ A=B=C", all(X == Y == W for X in P3 for Y in P3 for W in P3 if X <= Y and Y <= W and W <= X), True)
+chk("u2:contar (a) razão n(𝒫(A))/n(𝒫(B)) com n(A) = n(B) + 3; (b) 2^5 − 2",
+    ({len(partes(range(k + 3))) // len(partes(range(k))) for k in range(0, 6)}, len(partes(range(5))) - 2), ({8}, 30))
 D12 = {d for d in range(1, 13) if 12 % d == 0}
 chk("u2:divisores (integradora) subconjuntos dos divisores de 12 que contêm 1 e 12", sum(1 for X in partes(D12) if {1, 12} <= X), 16)
 # P12 (ITA, vest. 45): maior cadeia em 𝒫(U) tem n + 1 elementos
@@ -91,7 +91,7 @@ chk("u2:vazios3 𝒫(∅), 𝒫(𝒫(∅)), 𝒫(𝒫(𝒫(∅))): tamanhos", (l
 chk("u2:vazios3 elementos de 𝒫(𝒫(𝒫(∅)))", P2, {V, fs({V}), fs({fs({V})}), fs({V, fs({V})})})
 
 # ---- não verificável por programa -----------------------------------------------
-# ex:u2:vazio (unicidade de ∅) e u2:paridade (argumento de pareamento): provas — conferidas por leitura.
+# ex:u2:partesAB e u2:paridade (provas): provas — conferidas por leitura.
 # u2:fme21 (diagrama) — conferido por leitura.
 
 print(f"\n{ok} OK, {falhas} falha(s)")

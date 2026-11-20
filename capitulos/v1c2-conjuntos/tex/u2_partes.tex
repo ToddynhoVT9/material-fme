@@ -7,7 +7,7 @@
 \begin{erro}{Trocar $\in$ por $\subset$}{2-E1}
 \campo{O erro.} Escrever $\{3\}\in\{1,3,5\}$ ou $3\subset\{1,3,5\}$.
 \campo{Por que parece plausível.} \enquote{O 3 está lá dentro}, e em português \enquote{está em} serve para as duas coisas.
-\campo{Onde quebra.} Os elementos de $\{1,3,5\}$ são 1, 3 e 5; o conjunto $\{3\}$ não é nenhum deles, logo $\{3\}\notin\{1,3,5\}$. E o número 3 não é um conjunto, então \enquote{$3\subset\ldots$} não faz sentido. O correto é $3\in\{1,3,5\}$ e $\{3\}\subset\{1,3,5\}$.
+\campo{Onde quebra.} Os elementos de $\{1,3,5\}$ são 1, 3 e 5; o conjunto $\{3\}$ não é nenhum deles, logo $\{3\}\notin\{1,3,5\}$. E o número 3 não é um conjunto, então a relação $\subset$ não se aplica a ele: neste material, uma sentença como \enquote{$3\subset\{1,3,5\}$} é considerada falsa. O correto é $3\in\{1,3,5\}$ e $\{3\}\subset\{1,3,5\}$.
 \campo{Como detectar.} Olhe o lado esquerdo do símbolo. Se é um objeto, a pergunta é de $\in$: procure-o na lista. Se é um conjunto, a pergunta costuma ser de $\subset$: procure cada um dos seus elementos — ou de $\in$, se esse conjunto aparecer listado como elemento.
 \campo{Como corrigir.} Leia $\in$ como \enquote{é um dos elementos de} e $\subset$ como \enquote{todos os elementos de\ldots{} estão em\ldots} (construção 2-H2).
 \campo{Onde aparece.} \exref{ex:u2:chaves}; questões \ref{u2:fme20} e \ref{u2:fme47}.
@@ -53,11 +53,11 @@
 \Observacoes
 
 \begin{obs}{2-O1}
-\textbf{Outra notação para \enquote{contido}.} Neste material, $A\subset B$ admite $A=B$. Muitos livros escrevem $A\subseteq B$ para isso e reservam $A\subset B$, ou $A\subsetneq B$, para o caso em que $A$ é um \textbf{subconjunto próprio} de $B$ (contido e diferente).\src{gardnerNotes} Ao ler outro texto, confira qual convenção ele usa.
+\textbf{Outra notação para \enquote{contido}.} Neste material, $A\subset B$ admite $A=B$. Outros livros escrevem $A\subseteq B$ para isso e reservam $A\subset B$, ou $A\subsetneq B$, para o caso em que $A$ é um \textbf{subconjunto próprio} de $B$ (contido e diferente).\src{gardnerNotes} Ao ler outro texto, confira qual convenção ele usa.
 \end{obs}
 
 \begin{obs}{2-O2}
-\textbf{Uma parte tão grande quanto o todo.} Em 1638, no livro \emph{Duas novas ciências}, Galileu Galilei pôs seus personagens para comparar os números naturais $1,2,3,\ldots$ com os quadrados $1,4,9,\ldots$. Os quadrados são só uma parte dos números; mas cada número é raiz de exatamente um quadrado, e cada quadrado tem exatamente uma raiz, de modo que os dois se emparelham um a um.\src{galileu1638}\src{blaszczyk2021} A conclusão de Galileu foi que, no infinito, \enquote{maior}, \enquote{menor} e \enquote{igual} não funcionam como nas coleções finitas. Em conjuntos finitos, um subconjunto próprio sempre tem menos elementos; em conjuntos infinitos, não necessariamente.
+\textbf{Uma parte tão grande quanto o todo.} Em 1638, no livro \emph{Duas novas ciências}, escrito como um diálogo entre personagens, o cientista Galileu Galilei pôs esses personagens para comparar os números inteiros positivos $1,2,3,\ldots$ com os quadrados $1,4,9,\ldots$. Os quadrados são só uma parte dos números; mas cada número é raiz de exatamente um quadrado, e cada quadrado tem exatamente uma raiz, de modo que os dois se emparelham um a um.\src{galileu1638}\src{blaszczyk2021} A conclusão de Galileu foi que, no infinito, \enquote{maior}, \enquote{menor} e \enquote{igual} não funcionam como nas coleções finitas. Em conjuntos finitos, um subconjunto próprio sempre tem menos elementos; em conjuntos infinitos, não necessariamente.
 \end{obs}
 
 \begin{obs}{2-O3}
@@ -74,12 +74,12 @@ Dados $A=\{1,2,3,4\}$ e $B=\{2,4\}$:
   \item escreva com os símbolos da teoria dos conjuntos as sentenças: 1ª) 3 é elemento de $A$; 2ª) 1 não está em $B$; 3ª) $B$ é parte de $A$; 4ª) $B$ é igual a $A$; 5ª) 4 pertence a $B$;
   \item classifique as sentenças anteriores em falsas ou verdadeiras.
 \end{enumerate}
-\plano Traduzir cada expressão (\enquote{é elemento de}, \enquote{está em}, \enquote{pertence a} $\to\in$; \enquote{é parte de} $\to\subset$) e conferir na lista.
+\plano Traduzir cada expressão (\enquote{é elemento de}, \enquote{pertence a} e, com um objeto à esquerda, \enquote{está em} $\to\in$; \enquote{é parte de} $\to\subset$) e conferir na lista.
 \resolucao 1ª) $3\in A$ (V); 2ª) $1\notin B$ (V); 3ª) $B\subset A$ (V: 2 e 4 estão em $A$); 4ª) $B=A$ (F: 1 é testemunha); 5ª) $4\in B$ (V).
 \comentario Na 3ª, a verificação passa por \emph{todos} os elementos de $B$; na 4ª, um único elemento de $A$ fora de $B$ basta para a desigualdade.
 \end{exemplo}
 
-\begin{exemplo}{}{1}{FME, exercício 18}{2-H2, 2-U2, 2-E3}
+\begin{exemplo}{}{1}{FME, exercício 18}{2-H2, 2-E3}
 \label{ex:u2:fme18}
 Sendo $A=\{1,2\}$, $B=\{2,3\}$, $C=\{1,3,4\}$ e $D=\{1,2,3,4\}$, classifique em V ou F cada sentença abaixo e justifique.
 \begin{multicols}{3}
@@ -136,29 +136,29 @@ Prove que $\{x\in\mathbb{Z}\mid x\text{ é múltiplo de 2 e de 3}\}=\{x\in\mathb
 \comentario Em (a), o vazio e o próprio conjunto entram na conta (erro 2-E5). Em (b), a decisão sobre o 1 já está tomada; só as decisões livres multiplicam.
 \end{exemplo}
 
-\begin{exemplo}{}{3}{autoral}{2-H2, 2-H3}
-\label{ex:u2:vazio}
-Prove que existe um único conjunto vazio: se $\varnothing_1$ e $\varnothing_2$ são conjuntos sem elementos, então $\varnothing_1=\varnothing_2$.
-\plano Usar a construção 2-H3: provar as duas inclusões. Para cada uma, usar o fato de que o vazio está contido em qualquer conjunto.
-\resolucao Como $\varnothing_1$ não tem elementos, a sentença \enquote{se $x\in\varnothing_1$, então $x\in\varnothing_2$} é verdadeira para todo $x$ (hipótese sempre falsa); logo $\varnothing_1\subset\varnothing_2$. Trocando os papéis, $\varnothing_2\subset\varnothing_1$. Pela dupla inclusão, $\varnothing_1=\varnothing_2$.
-\comentario A Unidade~1 \emph{afirmou} que todos os conjuntos sem elementos são o mesmo; aqui está a prova. A novidade é usar a vacuidade nos dois sentidos para concluir uma igualdade.
+\begin{exemplo}{}{3}{autoral}{2-H2, 2-H4}
+\label{ex:u2:partesAB}
+Prove que, se $A\subset B$, então $\mathcal{P}(A)\subset\mathcal{P}(B)$.
+\plano Os elementos de $\mathcal{P}(A)$ são conjuntos. Tomar um elemento genérico de $\mathcal{P}(A)$ — que será um conjunto $X$ — e mostrar que ele pertence a $\mathcal{P}(B)$, traduzindo cada pertinência a um conjunto das partes por uma inclusão.
+\resolucao Seja $X\in\mathcal{P}(A)$. Pela construção 2-H4 (4), isso significa $X\subset A$. Como $A\subset B$, a propriedade transitiva dá $X\subset B$. De novo pela 2-H4 (4), $X\in\mathcal{P}(B)$. Como $X$ era um elemento qualquer de $\mathcal{P}(A)$, concluímos $\mathcal{P}(A)\subset\mathcal{P}(B)$.
+\comentario A novidade é que o elemento genérico agora é ele próprio um conjunto, e a prova passa duas vezes de $\in$ para $\subset$ e de volta. Para conferir num caso pequeno: com $A=\{1\}$ e $B=\{1,2\}$, $\mathcal{P}(A)=\{\varnothing,\{1\}\}$ e os dois elementos estão em $\mathcal{P}(B)=\{\varnothing,\{1\},\{2\},\{1,2\}\}$.
 \end{exemplo}
 
 % ------------------------------------------------------------
 \Questoes
 
 \begin{questao}{1}{autoral}{2-H2, 2-U1}\label{u2:completar}
-Seja $A=\{2,4,6\}$. Complete com $\in$, $\notin$, $\subset$, $\not\subset$ ou $=$:
+Seja $A=\{2,4,6\}$. Complete cada lacuna com $\in$ ou $\notin$, quando o lado esquerdo for um número, e com $\subset$ ou $\not\subset$, quando for um conjunto:
 \begin{multicols}{3}
 \begin{enumerate}[label=\alph*)]
-  \item $2\ \_\ A$
-  \item $\{2\}\ \_\ A$
-  \item $\{2,5\}\ \_\ A$
-  \item $\{6,4,2\}\ \_\ A$
-  \item $5\ \_\ A$
+  \item $2\;\square\;A$
+  \item $\{2\}\;\square\;A$
+  \item $\{2,5\}\;\square\;A$
+  \item $\{6,4,2\}\;\square\;A$
+  \item $5\;\square\;A$
 \end{enumerate}
 \end{multicols}
-\resp{a) $\in$;\ b) $\subset$;\ c) $\not\subset$;\ d) $=$ (também vale $\subset$);\ e) $\notin$.}
+\resp{a) $\in$;\ b) $\subset$;\ c) $\not\subset$;\ d) $\subset$ (na verdade, $\{6,4,2\}=A$);\ e) $\notin$.}
 \end{questao}
 
 \begin{questao}{1}{FME, exercício 19}{2-H1}\label{u2:fme19}
@@ -213,24 +213,12 @@ Seja $E=\{a,\{a\}\}$, em que $a$ é um objeto que não é conjunto. Diga quais d
   \item $\varnothing\subset E$
 \end{enumerate}
 \end{multicols}
-\resp{a, b, d, f.}
+\resp{a, b, d, f. (Em c, $a$ não é conjunto, e a relação $\subset$ não se aplica a ele: a sentença é falsa.)}
 \end{questao}
 
-\begin{questao}{2}{autoral}{2-H2, 2-E3}\label{u2:exemplos}
-Dê exemplos de conjuntos $A$ e $B$ tais que:
-\begin{enumerate}[label=\alph*)]
-  \item $A\not\subset B$ e $B\subset A$;
-  \item $A\not\subset B$ e $B\not\subset A$;
-  \item $A\subset B$ e $B\subset A$.
-\end{enumerate}
-O que a condição do item (c) obriga?
-\resp{Por exemplo: a) $A=\{1,2\}$, $B=\{1\}$;\ b) $A=\{1\}$, $B=\{2\}$;\ c) $A=B=\{1\}$. A condição (c) obriga $A=B$.}
-\end{questao}
 
-\begin{questao}{2}{autoral}{2-H2, 2-H3, 2-U2, 2-E4}\label{u2:multiplos4}
-Prove que $\{x\in\mathbb{Z}\mid x\text{ é múltiplo de 4}\}\subset\{x\in\mathbb{Z}\mid x\text{ é par}\}$ e mostre que a inclusão contrária é falsa.
-\resp{Demonstração. A prova deve mostrar que um múltiplo qualquer de 4, $x=4k$, se escreve como $x=2\cdot(2k)$, logo é par; e dar uma testemunha da inclusão contrária, como 2, que é par e não é múltiplo de 4.}
-\end{questao}
+
+
 
 \begin{questao}{2}{FME, exercício 35}{2-H4, 2-U3}\label{u2:fme35}
 Determine o número de conjuntos $X$ que satisfazem a relação $\{1,2\}\subset X\subset\{1,2,3,4\}$.
@@ -239,10 +227,10 @@ Determine o número de conjuntos $X$ que satisfazem a relação $\{1,2\}\subset 
 
 \begin{questao}{2}{autoral}{2-H4, 2-U3, 2-E5}\label{u2:contar}
 \begin{enumerate}[label=\alph*)]
-  \item Um conjunto $A$ é tal que $\mathcal{P}(A)$ tem 64 elementos. Quantos elementos tem $A$?
+  \item Um conjunto $A$ tem três elementos a mais que um conjunto $B$. Quantas vezes $n(\mathcal{P}(A))$ é maior que $n(\mathcal{P}(B))$?
   \item Quantos subconjuntos de um conjunto de 5 elementos não são nem o vazio nem o próprio conjunto?
 \end{enumerate}
-\resp{a) 6;\ b) $2^5-2=30$.}
+\resp{a) 8 vezes ($2^{k+3}=8\cdot2^k$);\ b) $2^5-2=30$.}
 \end{questao}
 
 \begin{questao}[integradora]{2}{autoral}{2-H4, 2-U3}\label{u2:divisores}
@@ -250,12 +238,26 @@ Quantos subconjuntos do conjunto dos divisores naturais de 12 contêm o 1 e o 12
 \resp{16 (os divisores são 1, 2, 3, 4, 6 e 12; o 1 e o 12 são obrigatórios e os outros quatro, livres: $2^4$).}
 \end{questao}
 
+\begin{questao}{2}{autoral}{2-H2, 2-H3, 2-E3}\label{u2:exemplos}
+\begin{enumerate}[label=\alph*)]
+  \item Dê exemplos de conjuntos $A$ e $B$, cada um com três elementos, tais que $A\not\subset B$, $B\not\subset A$ e exatamente dois elementos estão nos dois conjuntos.
+  \item Se $A\subset B$ e $B\not\subset A$, o que se pode concluir sobre a igualdade $A=B$? Por quê?
+  \item Se $A\subset B$, $B\subset C$ e $C\subset A$, o que se pode concluir sobre $A$, $B$ e $C$?
+\end{enumerate}
+\resp{a) Por exemplo, $A=\{1,2,3\}$ e $B=\{2,3,4\}$;\ b) $A\neq B$: há um elemento de $B$ fora de $A$, que é testemunha da desigualdade;\ c) $A=B=C$ (pela transitiva, $B\subset A$ e $C\subset B$; com as inclusões dadas, as duplas inclusões dão as igualdades).}
+\end{questao}
+
+\begin{questao}{2}{autoral}{2-H2, 2-H3, 2-U2, 2-E4}\label{u2:multiplos4}
+Prove que $\{x\in\mathbb{Z}\mid x\text{ é múltiplo de 4}\}\subset\{x\in\mathbb{Z}\mid x\text{ é par}\}$ e mostre que a inclusão contrária é falsa.
+\resp{Demonstração. A prova deve mostrar que um múltiplo qualquer de 4, $x=4k$, se escreve como $x=2\cdot(2k)$, logo é par; e dar uma testemunha da inclusão contrária, como 2, que é par e não é múltiplo de 4.}
+\end{questao}
+
 \begin{questao}{3}{autoral}{2-H4, 2-E1}\label{u2:vazios3}
 Escreva $\mathcal{P}(\varnothing)$, $\mathcal{P}(\mathcal{P}(\varnothing))$ e $\mathcal{P}(\mathcal{P}(\mathcal{P}(\varnothing)))$ e diga quantos elementos tem cada um.
 \resp{$\mathcal{P}(\varnothing)=\{\varnothing\}$ (1 elemento);\ $\mathcal{P}(\mathcal{P}(\varnothing))=\{\varnothing,\{\varnothing\}\}$ (2);\ $\mathcal{P}(\mathcal{P}(\mathcal{P}(\varnothing)))=\{\varnothing,\{\varnothing\},\{\{\varnothing\}\},\{\varnothing,\{\varnothing\}\}\}$ (4).}
 \end{questao}
 
-\begin{questao}{3}{ITA via FME, ano não informado; adaptado: a alternativa e repetia a a}{2-H2, 2-H4}\label{u2:cadeias}
+\begin{questao}{3}{ITA via FME, ano não informado; adaptado: a alternativa (e) repetia a (a)}{2-H2, 2-H4}\label{u2:cadeias}
 Seja $U$ um conjunto não vazio com $n$ elementos, $n\ge1$. Seja $S$ um subconjunto de $\mathcal{P}(U)$ com a seguinte propriedade: se $A,B\in S$, então $A\subset B$ ou $B\subset A$. Então, o número máximo de elementos que $S$ pode ter é:
 \begin{enumerate}[label=\alph*)]
   \item $2^{n-1}$

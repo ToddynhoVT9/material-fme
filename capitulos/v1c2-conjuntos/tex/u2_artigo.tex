@@ -13,9 +13,9 @@
 
 O grêmio de uma escola tem uma comissão de cinco alunos, e dentro dela há uma subcomissão de dois alunos que cuida da festa junina. A subcomissão é \emph{membro} da comissão? Não: membros da comissão são os cinco alunos. A subcomissão é um grupo formado por alguns desses membros — é uma \emph{parte} da comissão. Quem confunde as duas coisas acaba contando seis membros onde há cinco.
 
-Uma segunda pergunta, parecida. A lista de convidados \enquote{Ana, Bia, Caio} e a lista \enquote{Caio, Ana, Bia, Ana} convidam as mesmas pessoas? Sim: a ordem mudou e um nome apareceu duas vezes, mas quem está convidado é o mesmo.
+Agora outra situação. A lista de convidados \enquote{Ana, Bia, Caio} e a lista \enquote{Caio, Ana, Bia, Ana} convidam as mesmas pessoas? Sim: a ordem mudou e um nome apareceu duas vezes, mas quem está convidado é o mesmo.
 
-As duas situações fazem a mesma pergunta em linguagem de conjuntos. \textbf{Quando dois conjuntos são o mesmo — e qual a diferença entre \emph{ser elemento} de um conjunto e \emph{ser parte} dele?} É o que esta unidade responde.
+Cada situação ilustra uma metade da pergunta desta unidade — a lista de convidados, a igualdade; a comissão, a diferença entre elemento e parte. \textbf{Quando dois conjuntos são o mesmo — e qual a diferença entre \emph{ser elemento} de um conjunto e \emph{ser parte} dele?} 
 
 \textbf{Ao final, você será capaz de:} decidir se dois conjuntos são iguais; distinguir $\in$ de $\subset$, inclusive quando há chaves dentro de chaves; provar uma inclusão ou uma igualdade; listar e contar os subconjuntos de um conjunto.
 
@@ -49,7 +49,7 @@ Em 1908, quando apresentou a primeira lista de axiomas da teoria dos conjuntos, 
 \end{construcao}
 
 \subsubsection{Ser elemento e ser parte}
-Os símbolos que separam essas duas relações têm história. Em 1889, Giuseppe Peano usou um épsilon como sinal de pertinência e explicou que ele abreviava a palavra latina \emph{est}, \enquote{é}.\src{mactutorSym}\src{peano1889} Uma boa maneira de ler $a\in b$, até hoje, é \enquote{$a$ é \emph{um} dos $b$}: o 3 é um dos elementos de $\{1,3,5\}$. Na mesma época, o lógico Gottlob Frege, que já aparecia na Unidade~1, insistia numa distinção que, segundo ele, muitos lógicos e matemáticos não faziam: uma coisa é um objeto \emph{cair sob} um conceito (por exemplo, um certo animal ser um cavalo); outra é um conceito estar \emph{subordinado} a outro (por exemplo, todo cavalo ser um mamífero).\src{park2018} Lida hoje, é a diferença entre pertencer ($\in$) e estar contido ($\subset$).\src{park2018}
+Os símbolos que separam essas duas relações têm história. Em 1889, o matemático Giuseppe Peano usou um épsilon como sinal de pertinência e explicou que ele abreviava a palavra latina \emph{est}, \enquote{é}.\src{mactutorSym}\src{peano1889} Uma boa maneira de ler $a\in b$, até hoje, é \enquote{$a$ é \emph{um} dos $b$}: o 3 é um dos elementos de $\{1,3,5\}$. Na mesma época, o lógico Gottlob Frege, que já aparecia na Unidade~1, insistia numa distinção que, segundo ele, muitos lógicos e matemáticos não faziam: uma coisa é um objeto \emph{cair sob} um conceito; outra é um conceito estar \emph{subordinado} a outro.\src{park2018} Para dar exemplos nossos: um certo animal ser um cavalo é do primeiro tipo; todo cavalo ser um mamífero é do segundo. Lida hoje, é a diferença entre pertencer ($\in$) e estar contido ($\subset$).\src{park2018}
 
 \begin{construcao}[subconjunto]{2-H2}
 \begin{enumerate}[label=(\arabic*)]
@@ -69,8 +69,8 @@ Lê-se \enquote{$A$ está contido em $B$} ou \enquote{$A$ é parte de $B$}; tamb
 \end{center}
   \item A negação de $A\subset B$ é $A\not\subset B$ (\enquote{$A$ não está contido em $B$}): existe pelo menos um elemento de $A$ que não pertence a $B$. Assim como na igualdade, basta uma testemunha.\src{fme}
   \item Neste material, $A\subset B$ admite $A=B$: todo conjunto está contido em si mesmo ($A\subset A$).\src{fme}
-  \item O vazio está contido em qualquer conjunto: a sentença \enquote{se $x\in\varnothing$, então $x\in A$} tem a hipótese sempre falsa e, por isso, é sempre verdadeira (condicional do Cap.~I). Logo $\varnothing\subset A$, para todo $A$.\src{fme}
-  \item \textbf{$\in$ ou $\subset$?} O símbolo $\in$ liga um objeto a um conjunto; $\subset$ liga dois conjuntos. Em $\{a,b\}$, temos $a\in\{a,b\}$ e $\{a\}\subset\{a,b\}$, mas $\{a\}\notin\{a,b\}$, porque $\{a\}$ não é um dos elementos listados.
+  \item O vazio está contido em qualquer conjunto: a sentença \enquote{se $x\in\varnothing$, então $x\in A$} tem a hipótese sempre falsa e, por isso, é sempre verdadeira (condicional do Cap.~I). Diz-se que ela é verdadeira \textbf{por vacuidade}. Logo $\varnothing\subset A$, para todo $A$.\src{fme}
+  \item \textbf{$\in$ ou $\subset$?} O símbolo $\in$ liga um objeto a um conjunto; $\subset$ liga dois conjuntos. Em $\{p,q\}$, temos $p\in\{p,q\}$ e $\{p\}\subset\{p,q\}$, mas $\{p\}\notin\{p,q\}$, porque $\{p\}$ não é um dos elementos listados.
 \end{enumerate}
 Valem ainda três propriedades (para conjuntos quaisquer): $A\subset A$; se $A\subset B$ e $B\subset A$, então $A=B$; se $A\subset B$ e $B\subset C$, então $A\subset C$.\src{fme}
 \end{construcao}
@@ -86,7 +86,7 @@ $A$ é \textbf{subconjunto} de $B$ ($A\subset B$) quando todo elemento de $A$ pe
 \[
 A=B\iff (A\subset B\ \text{e}\ B\subset A).
 \]
-  \item Daí um método de prova. Para mostrar $A\subset B$, tome um elemento \emph{qualquer} de $A$ — sem escolher qual — e mostre que ele pertence a $B$. Para mostrar $A=B$, faça isso nos dois sentidos.
+  \item Daí um método de prova. Para mostrar $A\subset B$, tome um elemento \emph{qualquer} de $A$ — sem escolher qual; é o que se chama um \textbf{elemento genérico} — e mostre que ele pertence a $B$. Para mostrar $A=B$, faça isso nos dois sentidos.
   \item Testar alguns elementos não prova uma inclusão: o \enquote{todo} da definição exige um argumento que sirva para qualquer elemento. Já para \emph{derrubar} uma inclusão, um único contraexemplo basta.
 \end{enumerate}
 \end{construcao}
@@ -99,11 +99,11 @@ A=B\iff (A\subset B\ \text{e}\ B\subset A).
 \begin{center}
 \begin{tikzpicture}[level distance=1.0cm, level 1/.style={sibling distance=3.2cm}, level 2/.style={sibling distance=1.6cm}, every node/.style={font=\small}]
 \node {$a$?}
-  child {node {$b$?} child {node {$\{a,b\}$} edge from parent node[left]{\scriptsize entra}} child {node {$\{a\}$} edge from parent node[right]{\scriptsize não}} edge from parent node[left]{\scriptsize entra}}
-  child {node {$b$?} child {node {$\{b\}$} edge from parent node[left]{\scriptsize entra}} child {node {$\varnothing$} edge from parent node[right]{\scriptsize não}} edge from parent node[right]{\scriptsize não}};
+  child {node {$b$?} child {node {$\{a,b\}$} edge from parent node[left,xshift=-3pt]{\scriptsize entra}} child {node {$\{a\}$} edge from parent node[right,xshift=3pt]{\scriptsize não}} edge from parent node[left,xshift=-3pt]{\scriptsize entra}}
+  child {node {$b$?} child {node {$\{b\}$} edge from parent node[left,xshift=-3pt]{\scriptsize entra}} child {node {$\varnothing$} edge from parent node[right,xshift=3pt]{\scriptsize não}} edge from parent node[right,xshift=3pt]{\scriptsize não}};
 \end{tikzpicture}
 \end{center}
-  \item Com $n$ elementos, são $n$ decisões de duas opções cada, e cada sequência de decisões dá um subconjunto diferente. Portanto,
+  \item Com $n$ elementos, são $n$ decisões de duas opções cada, e cada sequência de decisões dá um subconjunto diferente. Indicando por $n(X)$ o número de elementos de um conjunto finito $X$, temos
 \[
 n\bigl(\mathcal{P}(A)\bigr)=\underbrace{2\cdot2\cdots2}_{n}=2^{n}.
 \]
@@ -133,16 +133,16 @@ As ideias desta unidade aparecem em três tipos de enunciado: os que pedem para 
 
 \begin{caso}{1 · \enquote{classifique em V ou F} com $\in$ e $\subset$}{2-U1}
 \mapa{sentenças com $\in$, $\notin$, $\subset$, $\not\subset$, muitas vezes com chaves dentro de chaves}
-{o que está do lado esquerdo do símbolo: um objeto (pergunta de $\in$) ou um conjunto (pergunta de $\subset$)}
+{o que a sentença pergunta: se o lado esquerdo é \emph{um dos elementos listados} (pergunta de $\in$) ou se \emph{todos os seus elementos} estão listados (pergunta de $\subset$)}
 {2-H2 (5): $\in$ procura na lista de elementos; $\subset$ testa cada elemento}
-\reconhecer O comando costuma ser seco: \enquote{Diga se é verdadeira (V) ou falsa (F) cada uma das sentenças abaixo}.\src{fme} O sinal é a mistura de símbolos e de chaves: $\{a\}$ pode ser elemento de um conjunto (se estiver listado) e também subconjunto (se $a$ estiver listado). Leia cada sentença em voz alta — \enquote{é um dos elementos?} ou \enquote{todos os elementos estão lá?} — antes de responder. Treino: \exref{ex:u2:chaves}; questões \ref{u2:fme20} e \ref{u2:fme47}.
+\reconhecer O comando pode ser seco, como em \enquote{Diga se é verdadeira (V) ou falsa (F) cada uma das sentenças abaixo}.\src{fme} O sinal é a mistura de símbolos e de chaves: $\{a\}$ pode ser elemento de um conjunto (se estiver listado) e também subconjunto (se $a$ estiver listado). Leia cada sentença em voz alta — \enquote{é um dos elementos?} ou \enquote{todos os elementos estão lá?} — antes de responder. Treino: \exref{ex:u2:chaves}; questões \ref{u2:fme20} e \ref{u2:fme47}.
 \end{caso}
 
 \begin{caso}{2 · \enquote{prove}, \enquote{mostre}, \enquote{justifique}}{2-U2}
 \mapa{\enquote{mostre que $A\subset B$}, \enquote{prove que $A=B$}, \enquote{classifique e justifique}}
 {o \enquote{todo} escondido na definição de $\subset$ e um elemento genérico}
 {2-H3: elemento qualquer, ida e volta; testemunha para $\not\subset$}
-\reconhecer O verbo pede um argumento, não uma conta. Se a sentença é de inclusão e você acha que é verdadeira, a justificativa precisa valer para \emph{todo} elemento; se acha que é falsa, uma testemunha basta. Treino: \exref{ex:u2:fme18} e \exref{ex:u2:multiplos}; \qref{u2:multiplos4}.
+\reconhecer O verbo pede um argumento, não uma conta: \enquote{classifique em V ou F cada sentença abaixo e justifique}.\src{fme} Se a sentença é de inclusão e você acha que é verdadeira, a justificativa precisa valer para \emph{todo} elemento; se acha que é falsa, uma testemunha basta. Treino: \exref{ex:u2:fme18} e \exref{ex:u2:multiplos}; \qref{u2:multiplos4}.
 \end{caso}
 
 \begin{caso}{3 · \enquote{quantos subconjuntos\ldots?}}{2-U3}
