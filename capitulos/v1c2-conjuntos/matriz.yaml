@@ -564,7 +564,7 @@ unidades:
     E3: complementar sem universo (ou ∁_A B com B ⊄ A) — "o de fora é óbvio"
     E4: A − (B ∪ C) = (A − B) ∪ (A − C)
     O1: notações do complementar e da diferença (A \ B, Bᶜ, ∁)
-    O2: complemento em computação (NOT, máscaras de bits) — só se ajudar
+    O2: as leis de De Morgan na lógica medieval (Ockham)
   exemplos: []
   questoes_meta:
     N1: 4
