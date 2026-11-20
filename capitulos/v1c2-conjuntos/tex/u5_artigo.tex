@@ -1,8 +1,7 @@
 % ============================================================
-% Unidade 5 — Contando elementos: dois conjuntos   (didática v3 · kit/didatica.md §2)
+% Unidade 5 — Contando elementos: dois conjuntos   (didática v4 · kit/didatica.md §2)
 % Parte A, o "artigo": Prefácio, De onde vem?, Onde é usado?
-% IDs da unidade: ver matriz.yaml (H construção · U uso · E erro · O observação)
-% Rótulos: questões u5:nome · exemplos ex:u5:nome · remissões só com \ref / \qref / \exref
+% IDs: 5-H1..H3 · 5-U1..U3 · 5-E1..E4 · 5-O1, 5-O2 (matriz.yaml) · fonte única: dossies/u5.md
 % ============================================================
 \clearpage
 \section{Contando elementos: dois conjuntos}
@@ -10,69 +9,134 @@
 % ------------------------------------------------------------
 \Prefacio
 \begin{prefacio}
-\gancho{«Uma pergunta ou situação curta que prende.»}
+\gancho{Cento e dez de cem}
 
-% Função: "por que isso merece ser estudado?" + UMA pergunta aberta explícita, que a unidade responde.
-% Em geral menos de uma página. Fora da narrativa.
-«Situação concreta que cria a pergunta.»
+Uma pesquisa pergunta a 100 pessoas se elas usam ônibus e se usam bicicleta. Sessenta respondem que usam ônibus; cinquenta, que usam bicicleta. Somando: 110 pessoas usam algum dos dois meios de transporte — num grupo de 100 pessoas. A conta não pode estar certa. O que aconteceu foi que quem usa os dois entrou duas vezes na soma, uma em cada grupo. E, como a soma passou do total em 10, pelo menos 10 pessoas usam os dois.
 
-\textbf{«A pergunta aberta da unidade, em negrito.»} É a pergunta desta unidade.
+\textbf{Como contar quem está em pelo menos um de dois grupos sem contar ninguém duas vezes?} É a pergunta desta unidade.
 
-\textbf{Ao final, você será capaz de:} «3–5 capacidades verificáveis».
+\textbf{Ao final, você será capaz de:} calcular o número de elementos de uma reunião e de cada uma das quatro regiões a partir dos dados; descobrir o dado que falta (o total, os que estão nos dois grupos, os que não estão em nenhum); montar uma tabela de dupla entrada; trabalhar com porcentagens, inclusive de grupos de tamanhos diferentes.
 
-\textbf{Pré-requisitos:} «unidades e assuntos». O essencial está na caixa abaixo.
+\textbf{Pré-requisitos:} Unidade~3 (reunião, interseção e as quatro regiões) e Unidade~4 (diferença e complementar); para uma das questões, Unidade~2 (número de subconjuntos). O essencial está na caixa abaixo.
 \end{prefacio}
 
 \begin{minimo}
-% O mínimo que você precisa: só o que a unidade usa e o aluno pode ter esquecido.
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «pré-requisito 1»
+  \item \textbf{Reunião e interseção.} $A\cup B$ reúne os que estão em pelo menos um dos conjuntos; $A\cap B$, os que estão nos dois (Unidade~3).
+  \item \textbf{Quatro regiões.} Dois conjuntos dividem o universo em quatro regiões: só $A$ (que é $A-B$), $A$ e $B$, só $B$ (que é $B-A$) e nenhum (Unidades~3 e~4).
+  \item \textbf{Os de fora.} A região \enquote{nenhum} é o complementar de $A\cup B$ no universo (Unidade~4).
+  \item \textbf{Porcentagem.} $p\%$ de $N$ é $\dfrac{p}{100}\cdot N$.
 \end{itemize}
 \end{minimo}
 
 % ------------------------------------------------------------
 \DeOndeVem
-% Três perguntas: (1) por que alguém precisou disso? (2) como a ideia foi construída? (3) como reconstruímos hoje?
-% Origem histórica ≠ reconstrução matemática: as duas aparecem distintas; a reconstrução se sustenta sozinha.
-% Três camadas, em texto corrido e bem demarcadas: "X formulou…" / "lido hoje…" / "a convenção atual…".
-% Filtro P5 em cada trecho: melhora a compreensão? Se só deixa interessante → Observações ou fora.
-% Todo fato com \src{chave} (bibitem em fontes.tex). Nada de frequência sem fonte.
 
-\subsubsection{«O problema que pediu a ferramenta»}
-«Narrativa com fontes.»\src{fme}
+\subsubsection{Por que alguém precisou disso}
+Pesquisas, censos e cadastros classificam pessoas, ou objetos, por características do tipo \enquote{tem ou não tem}: usa ônibus? usa bicicleta? Os números que se divulgam costumam ser os de cada característica separada. Mas a pergunta que interessa muitas vezes é outra: quantos têm pelo menos uma das características? quantos não têm nenhuma? Somar os grupos não responde, porque quem tem as duas características aparece nos dois.
 
-\begin{construcao}[5-H1: título curto]{5-H1}
-% A reconstrução: passos numerados que chegam à ferramenta por raciocínio, não por autoridade.
+\subsubsection{Contar sem repetir}
+Para um conjunto finito $X$, escrevemos $n(X)$ para o número de elementos de $X$. Por exemplo, $n(\{a,b,c\})=3$ e $n(\varnothing)=0$.
+
+\begin{construcao}[o número de elementos da reunião]{5-H1}
 \begin{enumerate}[label=(\arabic*)]
-  \item «passo»
+  \item Some $n(A)$ e $n(B)$. Quem está só em $A$ ou só em $B$ foi contado uma vez. Quem está em $A\cap B$ foi contado duas vezes: uma por estar em $A$, outra por estar em $B$.
+  \item Para que cada elemento de $A\cup B$ conte exatamente uma vez, basta tirar uma vez os da interseção:
+\[
+n(A\cup B)=n(A)+n(B)-n(A\cap B).
+\]
+  \item Caso particular: se $A$ e $B$ são disjuntos ($A\cap B=\varnothing$), não há nada a descontar, e $n(A\cup B)=n(A)+n(B)$.
+  \item Conferindo num exemplo: para $A=\{1,2,3,4\}$ e $B=\{3,4,5\}$, temos $4+3-2=5$, e de fato $A\cup B=\{1,2,3,4,5\}$ tem 5 elementos.
 \end{enumerate}
 \end{construcao}
 
-\begin{definicao}[nome]
-«Enunciado formal.»
+\subsubsection{Contar por classes que não se misturam}
+O estatístico britânico George Udny Yule tratou desse tipo de contagem num manual de estatística que teve várias edições na primeira metade do século XX (a 8.ª é de 1927). Ele chamava de \emph{atributos} as características observadas, indicava cada atributo por uma letra maiúscula, $A$ ou $B$, e a ausência dele pela letra grega correspondente, $\alpha$ ou $\beta$. Com dois atributos, as classes mais detalhadas são quatro: $AB$, $A\beta$, $\alpha B$ e $\alpha\beta$; Yule as chamava de \emph{classes últimas}. E observava que nunca é preciso contar mais do que os indivíduos de cada classe última: todos os outros números se obtêm deles por simples adição.\src{yule1927} Yule também avisava que os seus símbolos eram usados em sentido inclusivo: $A$ indica quem tem o atributo $A$, \enquote{com ou sem outros}.\src{yule1927}
+
+Lidas hoje, as classes últimas de Yule são as quatro regiões do diagrama: $A\beta$ é a região \enquote{só $A$}, isto é, $A-B$; $AB$ é $A\cap B$; e o número dos que têm $A$ é a soma dos de $AB$ com os de $A\beta$. O sentido inclusivo explica a construção 5-H1: $n(A)$ conta também quem está em $B$. Na convenção atual, organiza-se a contagem pelas quatro regiões, desenhadas num diagrama ou numa tabela de dupla entrada. Esse tipo de tabela, que cruza duas classificações, ficou conhecido como \emph{tabela de contingência}, nome introduzido pelo estatístico Karl Pearson em 1904.\src{millerC}\src{pearson1904}
+
+\begin{construcao}[as quatro regiões e a tabela de dupla entrada]{5-H2}
+\begin{enumerate}[label=(\arabic*)]
+  \item Chame de $a$, $b$, $c$ e $d$ os números de elementos das regiões só $A$, só $B$, $A$ e $B$, e nenhum:
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+\draw[thick] (-3.6,-1.9) rectangle (3.6,1.9); \node at (3.3,1.6) {$U$};
+\draw[acento,thick] (-0.85,0) circle (1.45); \draw[acento,thick] (0.85,0) circle (1.45);
+\node at (-1.45,0) {$a$}; \node at (0,0) {$c$}; \node at (1.45,0) {$b$};
+\node at (-3.1,-1.5) {$d$};
+\node at (-1.95,1.3) {$A$}; \node at (1.95,1.3) {$B$};
+\end{tikzpicture}
+\end{center}
+Então $n(A)=a+c$, $n(B)=b+c$, $n(A\cup B)=a+b+c$ e o total é $N=a+b+c+d$.
+  \item Somar regiões nunca repete ninguém: as quatro regiões não têm elementos em comum, e cada elemento está em exatamente uma delas. Em particular, $a+b+c=(a+c)+(b+c)-c$, que é a construção 5-H1 de novo.
+  \item A \textbf{tabela de dupla entrada} põe as mesmas quatro regiões em linhas e colunas, com os totais nas margens:
+\begin{center}
+\begin{tabular}{l|cc|c}
+ & em $B$ & fora de $B$ & total\\\hline
+em $A$ & $c$ & $a$ & $n(A)$\\
+fora de $A$ & $b$ & $d$ & $n(\overline{A})$\\\hline
+total & $n(B)$ & $n(\overline{B})$ & $N$
+\end{tabular}
+\end{center}
+Cada linha e cada coluna somam o total da margem.
+  \item Estratégia: comece pela interseção (a célula $c$) e complete as outras regiões por subtração.
+\end{enumerate}
+\end{construcao}
+
+\subsubsection{Quem fica de fora e as porcentagens}
+\begin{construcao}[o complemento na contagem; porcentagens]{5-H3}
+\begin{enumerate}[label=(\arabic*)]
+  \item Os que não estão em nenhum dos grupos formam o complementar de $A\cup B$: o número deles é $N-n(A\cup B)$.
+  \item Entre os cinco números $N$, $n(A)$, $n(B)$, $n(A\cap B)$ e \enquote{nenhum}, a fórmula de 5-H1 e o item (1) ligam todos. Se só um deles faltar, isole-o. Por exemplo, $n(A\cap B)=n(A)+n(B)-(N-\text{nenhum})$.
+  \item Porcentagens são contagens sobre o mesmo total: tudo funciona igual tomando $N=100\%$.
+  \item Porcentagens de \emph{grupos diferentes} não se somam. Se 20\% de um grupo de $H$ pessoas e 15\% de um grupo de $M$ pessoas têm uma característica, quem a tem são $0{,}20\,H+0{,}15\,M$ pessoas. Converta cada porcentagem em contagem antes de somar. A tabela de dupla entrada organiza a conta: as linhas são os grupos; as colunas, ter ou não a característica.
+\end{enumerate}
+\end{construcao}
+
+\begin{definicao}[número de elementos da reunião]
+Para conjuntos finitos $A$ e $B$, $n(A\cup B)=n(A)+n(B)-n(A\cap B)$. Se $A\cap B=\varnothing$, $n(A\cup B)=n(A)+n(B)$.
 \end{definicao}
 
 \begin{paralembrar}\label{lembrar-u5}
-% Fecha o De onde vem?: 1 frase + até 3 passos. É o gabarito da síntese de domínio.
-«A frase.»
+\textbf{Para contar a reunião, some as partes sem repetir ninguém: $n(A\cup B)=n(A)+n(B)-n(A\cap B)$.}
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em,itemsep=1pt]
-  \item «passo»
+  \item Desenhe as quatro regiões (ou a tabela) e comece pela interseção.
+  \item Cada dado é uma soma de regiões: $n(A)$ é \enquote{só $A$} mais \enquote{os dois}; o total inclui quem não está em nenhum.
+  \item Porcentagens de grupos diferentes viram contagens antes de serem somadas.
 \end{enumerate}
 \end{paralembrar}
 
 % ------------------------------------------------------------
 \OndeEUsado
-% Função: reconhecimento. Ensina a ESCOLHER a ferramenta: enunciado → estrutura → ferramenta.
-% 2–4 casos no formato do mapa; depois a tabela de gatilhos como resumo.
-% E-R3-1: casos, "Treino:" e gatilhos NÃO trazem o caso concreto nem a solução de nenhum N3,
-% e apontam só para exemplos e questões N1/N2 (checar.py confere os \ref).
-«Uma frase de abertura: onde a ferramenta aparece.»
 
-\begin{caso}{1 · «nome do caso»}{5-U1}
-\mapa{«o que o enunciado diz: palavras e formatos»}{«a estrutura matemática a procurar»}{«a ferramenta»}
-\reconhecer «Como reconhecer a situação; um exemplo de enunciado real, com fonte e procedência.» Treino: \exref{ex:u5:nome}; \qref{u5:nome}.
+A contagem com dois conjuntos aparece quando um enunciado descreve duas características e pergunta por uma combinação delas. São três situações.
+
+\subsubsection{Mapa do problema}
+
+\begin{caso}{1 · pesquisa com duas perguntas de \enquote{sim ou não}}{5-U1}
+\mapa{\enquote{entrevistou \ldots\ perguntando sobre \ldots}\src{fme}, \enquote{ambos}, \enquote{os dois}, \enquote{tanto \ldots\ quanto \ldots}}
+{as quatro regiões e qual delas cada número descreve}
+{5-H2: as quatro regiões (e 5-H1)}
+\reconhecer O sinal são duas características do tipo \enquote{tem ou não tem} e números sobre cada uma. Antes de calcular, decida a que regiões cada número se refere: \enquote{estudam inglês} inclui quem estuda as duas línguas; \enquote{só inglês}, \enquote{apenas} ou \enquote{somente} indicam uma região. Treino: \exref{ex:u5:apps}; questões \ref{u5:fme52} e \ref{u5:pucpr11}.
 \end{caso}
 
+\begin{caso}{2 · falta um dos números}{5-U2}
+\mapa{três dos números (total, cada grupo, os dois, nenhum) e a pergunta pelo outro}
+{qual número falta}
+{5-H1 e 5-H3 (2): isolar o que falta}
+\reconhecer O sinal é a pergunta por um número que entra na fórmula: \enquote{quantos fazem os dois?}, \enquote{quantos não fazem nenhum?}, \enquote{quantos foram entrevistados?}. Escreva a fórmula com os números dados e isole o que falta. Treino: \exref{ex:u5:predio} e \exref{ex:u5:internet}; questões \ref{u5:uel7} e \ref{u5:espm10}.
+\end{caso}
+
+\begin{caso}{3 · porcentagens de grupos diferentes}{5-U3}
+\mapa{porcentagens \enquote{dos homens} e \enquote{das mulheres}, \enquote{da matriz} e \enquote{da filial}, \enquote{de cada turno}}
+{grupos de tamanhos diferentes: cada porcentagem tem a sua base}
+{5-H3 (4): converter em contagens; tabela de dupla entrada}
+\reconhecer O sinal é a expressão \enquote{dos} ou \enquote{das} depois da porcentagem: ela diz de que grupo é a porcentagem. Se os grupos são diferentes, monte a tabela com os grupos nas linhas e converta cada porcentagem em contagem antes de somar. Treino: \exref{ex:u5:turnos}; \qref{u5:fei8}.
+\end{caso}
+
+\subsubsection{Tabela de gatilhos}
 \begin{gatilhos}
-«sinal no enunciado» & «ferramenta» & «raciocínio» & 5-U1 · q.~\ref{u5:nome}\\
+duas perguntas \enquote{sim ou não} & 5-H2 & a que regiões cada número se refere & \mbox{5-U1\,·\,q.\,\ref{u5:fme52}}\\\fino
+falta um dos números & 5-H1, 5-H3 & escrever a fórmula e isolar & \mbox{5-U2\,·\,q.\,\ref{u5:uel7}}\\\fino
+porcentagens \enquote{dos} grupos & 5-H3 (4) & converter em contagens & \mbox{5-U3\,·\,q.\,\ref{u5:fei8}}\\
 \end{gatilhos}

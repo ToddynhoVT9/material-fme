@@ -1,68 +1,396 @@
 % ============================================================
 % Unidade 5 — Parte B: erros, observações, exemplos, questões, síntese, respostas
+% Fonte única: dossies/u5.md · respostas conferidas em verif/u5.py
 % ============================================================
 \ErrosComuns
-% Roteiro de 5 passos (função obrigatória; em erros simples, passos podem ser uma frase).
-% "Onde quebra" = contraexemplo CONCRETO. "Como detectar" = teste feito DEPOIS de escrever.
 
-\begin{erro}{«O erro, como frase curta»}{5-E1}
-\campo{O erro.} «O que o aluno escreve.»
-\campo{Por que parece plausível.} «O raciocínio que leva a ele.»
-\campo{Onde quebra.} «Contraexemplo concreto.»
-\campo{Como detectar.} «O teste depois de escrever.»
-\campo{Como corrigir.} «A regra certa, com remissão à construção.»
-\campo{Onde aparece.} \exref{ex:u5:nome}; \qref{u5:nome}.
+\begin{erro}{Somar sem descontar}{5-E1}
+\campo{O erro.} Calcular $n(A\cup B)$ como $n(A)+n(B)$.
+\campo{Por que parece plausível.} \enquote{Juntar dois grupos} lembra somar; e a soma está certa quando os grupos não têm ninguém em comum.
+\campo{Onde quebra.} Numa turma, 30 alunos jogam futebol, 20 jogam vôlei e 8 jogam os dois. Os que jogam algum dos dois são $30+20-8=42$, e não 50.
+\campo{Como detectar.} A soma passou do total? Então há uma interseção que não foi descontada.
+\campo{Como corrigir.} Tire uma vez a interseção (construção 5-H1).
+\campo{Onde aparece.} \exref{ex:u5:apps}; \qref{u5:fme52}.
+\end{erro}
+
+\begin{erro}{Ler \enquote{estudam inglês} como \enquote{só inglês}}{5-E2}
+\campo{O erro.} Tomar $n(A)$ pelo número da região \enquote{só $A$}.
+\campo{Por que parece plausível.} Na conversa, \enquote{os que nadam} e \enquote{os que fazem os dois} parecem grupos separados.
+\campo{Onde quebra.} Num clube de 50 sócios, 25 nadam, 15 correm e 5 fazem os dois. Quem toma os 25 por \enquote{só natação} conta $25+15+5=45$ sócios que fazem algum esporte e 5 que não fazem nenhum. O certo é $25+15-5=35$ que fazem algum e 15 que não fazem nenhum.
+\campo{Como detectar.} O enunciado diz \enquote{só}, \enquote{apenas} ou \enquote{somente}? Se não diz, o número inclui a interseção.
+\campo{Como corrigir.} Só $A$ é $n(A)-n(A\cap B)$ (construção 5-H2).
+\campo{Onde aparece.} \exref{ex:u5:teatro}; questões \ref{u5:pucpr11} e \ref{u5:uff12}.
+\end{erro}
+
+\begin{erro}{Esquecer quem não está em nenhum}{5-E3}
+\campo{O erro.} Usar o total $N$ no lugar de $n(A\cup B)$, como se todos estivessem em algum dos grupos (ou o contrário: ignorar os de fora que o enunciado informa).
+\campo{Por que parece plausível.} \enquote{Foram entrevistados 40 alunos} parece dizer que os 40 responderam \enquote{sim} a alguma coisa.
+\campo{Onde quebra.} Numa turma de 40 alunos, 25 leem jornal e 20 leem revista. Supondo que todos leiam algo, os que leem os dois seriam $25+20-40=5$. Mas, se 5 alunos não leem nada, os que leem algo são 35, e os que leem os dois são $25+20-35=10$.
+\campo{Como detectar.} O enunciado diz quantos não estão em nenhum grupo, ou que todos estão em algum?
+\campo{Como corrigir.} $n(A\cup B)=N-\text{nenhum}$ (construção 5-H3).
+\campo{Onde aparece.} \exref{ex:u5:predio}; \qref{u5:uel7}.
+\end{erro}
+
+\begin{erro}{Somar porcentagens de grupos diferentes}{5-E4}
+\campo{O erro.} Concluir que \enquote{30\% de um grupo e 10\% de outro} dão 40\% do total, ou a média, 20\%.
+\campo{Por que parece plausível.} Porcentagens parecem números do mesmo tipo, prontos para somar.
+\campo{Onde quebra.} Uma escola tem 200 alunos de manhã e 600 à tarde; 30\% dos da manhã e 10\% dos da tarde usam ônibus. Usam ônibus $60+60=120$ alunos de 800, isto é, 15\% — nem 40\% nem 20\%.
+\campo{Como detectar.} Pergunte de que grupo é cada porcentagem. Se os grupos são diferentes, as bases são diferentes.
+\campo{Como corrigir.} Converta cada porcentagem em contagem antes de somar (construção 5-H3, item 4).
+\campo{Onde aparece.} \exref{ex:u5:turnos}; questões \ref{u5:fei8} e \ref{u5:ufscar18}.
 \end{erro}
 
 % ------------------------------------------------------------
 \Observacoes
-% Camada opcional (selo + letra menor). Teste de pertença: quem pula TODAS as observações
-% perde algo necessário para usar o conceito? Se sim, o conteúdo vai para a seção dele (E-R3-3).
-% Uma observação não resolve nem antecipa nenhum N3 (E-R3-1).
 
 \begin{obs}{5-O1}
-\textbf{«Título.»} «Ampliação: curiosidade, generalização, caso-limite, conexão, exceção.»\src{fme}
+\textbf{A mesma conta em probabilidade.} Dividindo os números de elementos pelo total, a construção 5-H1 vira a regra da adição das probabilidades: $P(A\cup B)=P(A)+P(B)-P(A\cap B)$.\src{eomIEprob}
+\end{obs}
+
+\begin{obs}{5-O2}
+\textbf{O nome.} O raciocínio desta unidade é o caso mais simples do \emph{princípio da inclusão e exclusão}: inclui-se (somam-se os conjuntos) e exclui-se (tira-se o que foi contado a mais). Com mais conjuntos, as correções continuam, e o princípio vale para qualquer número deles.\src{eomIE}
 \end{obs}
 
 % ------------------------------------------------------------
 \Exemplos
-% Pelo menos um por nível; juntos cobrem todo H, U e E. Cada ID declarado é TREINADO, não só citado.
-% IDs O só se o item treina a observação (E-R3-2). Primeiro argumento vazio = número automático.
-% Plano → Resolução → Comentário. N3: situação nova, que o texto não resolveu.
 
-\begin{exemplo}{}{1}{autoral}{5-H1, 5-U1, 5-E1}
-\label{ex:u5:nome}
-«Enunciado.»
-\plano «Qual ferramenta e por quê.»
-\resolucao «Resolução.»
-\comentario «O que o exemplo ensina; o erro que ele evita.»
+\begin{exemplo}{}{1}{autoral}{5-H1, 5-H2, 5-H3, 5-U1, 5-E1}
+\label{ex:u5:apps}
+Numa pesquisa com 120 pessoas sobre dois aplicativos de mensagens, 80 usam o aplicativo A, 50 usam o B e 30 usam os dois. Quantas pessoas usam pelo menos um dos aplicativos? Quantas não usam nenhum? Quantas usam só o A?
+\plano Começar pela interseção e completar as quatro regiões.
+\resolucao Pelo menos um: $80+50-30=100$. Nenhum: $120-100=20$. Só o A: $80-30=50$. Conferindo pelas regiões: só A, 50; os dois, 30; só B, $50-30=20$; nenhum, 20; e $50+30+20+20=120$.
+\comentario Somar $80+50=130$ passaria do total de 120 — sinal de interseção não descontada (erro 5-E1).
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{5-H1, 5-H3, 5-U2, 5-E3}
+\label{ex:u5:predio}
+Num prédio de 60 apartamentos, 35 têm cachorro, 20 têm gato e 15 não têm nenhum dos dois animais. Quantos apartamentos têm cachorro e gato?
+\plano O número que falta é o da interseção. Primeiro, achar $n(C\cup G)$ pelos que não têm nenhum; depois, isolar $n(C\cap G)$ na fórmula.
+\resolucao Os que têm algum animal são $60-15=45$. Pela fórmula, $45=35+20-n(C\cap G)$, logo $n(C\cap G)=10$.
+\comentario Quem usasse 60 no lugar de 45 acharia $35+20-60<0$: o erro 5-E3 aparece logo, porque um número de elementos não pode ser negativo.
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{5-H2, 5-E2}
+\label{ex:u5:teatro}
+Numa escola, 40 alunos fazem só teatro, 25 fazem só música, 10 fazem as duas atividades e 15 não fazem nenhuma. Quantos alunos fazem teatro? Quantos alunos tem a escola?
+\plano Os dados já são regiões; os grupos pedidos são somas de regiões.
+\resolucao Fazem teatro os de \enquote{só teatro} e os de \enquote{os dois}: $40+10=50$. A escola tem $40+25+10+15=90$ alunos.
+\comentario Aqui a palavra \enquote{só} está no enunciado. Sem ela, os 40 já incluiriam os 10 (erro 5-E2).
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{5-H3, 5-U3, 5-E4}
+\label{ex:u5:turnos}
+Uma empresa tem 120 funcionários no turno do dia e 180 no turno da noite. Fazem um curso de capacitação 25\% dos funcionários do dia e 40\% dos da noite. Quantos funcionários fazem o curso? Que porcentagem do total isso representa? Por que a resposta não é 65\%, nem 32,5\%?
+\plano Montar a tabela com os turnos nas linhas e converter cada porcentagem em contagem.
+\resolucao
+\begin{center}
+\begin{tabular}{l|cc|c}
+ & fazem o curso & não fazem & total\\\hline
+dia & $0{,}25\cdot120=30$ & 90 & 120\\
+noite & $0{,}40\cdot180=72$ & 108 & 180\\\hline
+total & 102 & 198 & 300
+\end{tabular}
+\end{center}
+Fazem o curso 102 funcionários, isto é, $\frac{102}{300}=34\%$ do total. Somar $25\%+40\%$ mistura bases diferentes; a média 32,5\% trataria os dois turnos como se tivessem o mesmo tamanho.
+\comentario O resultado (34\%) fica entre 25\% e 40\%, mais perto de 40\%, porque o turno da noite é maior (erro 5-E4).
+\end{exemplo}
+
+\begin{exemplo}{}{2}{autoral}{5-H1, 5-H3, 5-U2}
+\label{ex:u5:internet}
+Numa cidade, 70\% dos domicílios têm internet pelo celular, 40\% têm banda larga fixa e 20\% têm os dois tipos de acesso.
+\begin{enumerate}[label=\alph*)]
+  \item Que porcentagem dos domicílios não tem nenhum dos dois?
+  \item Se 1\,500 domicílios têm só banda larga fixa, quantos domicílios há na cidade?
+\end{enumerate}
+\plano Trabalhar com $N=100\%$ e, no fim, converter a porcentagem de uma região em contagem.
+\resolucao a) Têm algum acesso $70\%+40\%-20\%=90\%$; não têm nenhum, $10\%$. b) Só banda larga fixa: $40\%-20\%=20\%$ dos domicílios. Se 20\% são 1\,500, o total é $1\,500\div0{,}20=7\,500$.
+\comentario Em (b), o dado absoluto se refere a uma região, e não a um grupo inteiro: é preciso achar a porcentagem dessa região antes.
+\end{exemplo}
+
+\begin{exemplo}{}{3}{autoral}{5-H1, 5-H3}
+\label{ex:u5:divisiveis}
+Quantos números inteiros de 1 a 100 não são divisíveis nem por 2 nem por 3?
+\plano Os grupos agora são definidos por propriedades. Chamar de $D_2$ e $D_3$ os conjuntos dos divisíveis por 2 e por 3, contar cada um e descobrir quem é $D_2\cap D_3$.
+\resolucao De 1 a 100, $n(D_2)=50$ e $n(D_3)=33$ (pois $3\cdot33=99$). Um número é divisível por 2 e por 3 exatamente quando é divisível por 6, e há 16 múltiplos de 6 até 100 ($6\cdot16=96$). Logo $n(D_2\cup D_3)=50+33-16=67$, e os que não são divisíveis nem por 2 nem por 3 são $100-67=33$.
+\comentario A novidade é que ninguém informa a interseção: é preciso reconhecê-la (os múltiplos de 6) e contá-la.
 \end{exemplo}
 
 % ------------------------------------------------------------
 \Questoes
-% Nível por função (N1 aplicação · N2 seleção/combinação · N3 transferência), da mais guiada para a
-% menos guiada DENTRO de cada nível. Integradora ([integradora]) só se o assunto da unidade for
-% necessário: tente resolvê-la sem ele. \label logo após o cabeçalho; \resp{...} com a resposta final.
-% Procedência no 2º argumento: [autoral] · [FME, exercício n] · [adaptada de concurso — BANCA/ÓRGÃO ANO] ·
-% [FUVEST 2019, 1ª fase, q.~12] (só com texto conferido) · [… via FME] · [histórico].
 
-\begin{questao}{1}{autoral}{5-U1, 5-E1}\label{u5:nome}
-«Enunciado.»
-\resp{«resposta final; em demonstração: "Demonstração. A prova deve mostrar que …"»}
+\begin{questao}{1}{FME, exercício 48}{5-H1}\label{u5:fme48}
+Sejam $A$ e $B$ dois conjuntos finitos. Prove que $n(A\cup B)=n(A)+n(B)-n(A\cap B)$.
+\resp{A prova deve mostrar que cada elemento de $A\cup B$ é contado exatamente uma vez no lado direito.}
 \end{questao}
 
+\begin{questao}{1}{FME, exercício 52}{5-H1, 5-H3, 5-U1, 5-E1}\label{u5:fme52}
+Em uma escola que tem 415 alunos, 221 estudam inglês, 163 estudam francês e 52 estudam ambas as línguas. Quantos alunos estudam inglês ou francês? Quantos alunos não estudam nenhuma das duas?
+\resp{332; 83.}
+\end{questao}
+
+\begin{questao}{1}{PUC-PR via FME, ano não informado}{5-H2, 5-U1, 5-E2}\label{u5:pucpr11}
+Com o objetivo de melhorar a produtividade das lavouras, um grupo de 600 produtores de uma determinada região resolveu investir no aumento da produção de alimentos nos próximos anos: 350 deles investiram em avanços na área de biotecnologia; 210 em uso correto de produtos para a proteção de plantas e 90 em ambos (avanços na área de biotecnologia e uso correto de produtos para a proteção de plantas). Com base nas informações acima, considere as seguintes afirmativas:
+\begin{enumerate}[label=\Roman*.]
+  \item 260 produtores investiram apenas em avanços na área de biotecnologia.
+  \item 120 produtores investiram apenas em uso correto de produtos para a proteção de plantas.
+  \item 470 produtores investiram em avanços na área de biotecnologia ou uso correto de produtos para a proteção de plantas.
+  \item 130 produtores não fizeram nenhum dos dois investimentos.
+\end{enumerate}
+Está(ão) correta(s) a(s) afirmativa(s):
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item I, II e III, apenas.
+  \item II e IV, apenas.
+  \item I e II, apenas.
+  \item I, II, III e IV.
+  \item I e III, apenas.
+\end{enumerate}
+\end{multicols}
+\resp{d.}
+\end{questao}
+
+\begin{questao}{1}{U.E. Londrina-PR via FME, ano não informado}{5-H1, 5-H3, 5-U2, 5-E3}\label{u5:uel7}
+Um instituto de pesquisas entrevistou 1\,000 indivíduos, perguntando sobre sua rejeição aos partidos A e B. Verificou-se que 600 pessoas rejeitavam o partido A; que 500 pessoas rejeitavam o partido B e que 200 não têm rejeição alguma. O número de indivíduos que rejeitam os dois partidos é:
+\begin{multicols}{3}
+\begin{enumerate}[label=\alph*)]
+  \item 120 pessoas.
+  \item 200 pessoas.
+  \item 250 pessoas.
+  \item 300 pessoas.
+  \item 800 pessoas.
+\end{enumerate}
+\end{multicols}
+\resp{d. Rejeitam algum partido $1\,000-200=800$; os dois, $600+500-800=300$.}
+\end{questao}
+
+\begin{questao}[integradora]{1}{adaptado do FME, exercício 51}{5-H2}\label{u5:fme51}
+Sejam $A=\{3n\mid n\in\mathbb{N}\}$ e $B=\{n\in\mathbb{N}\mid n\text{ é divisor de }120\}$.
+\begin{enumerate}[label=\alph*)]
+  \item Qual é o número de elementos de $A\cap B$?
+  \item Quantos divisores naturais de 120 não são múltiplos de 3?
+\end{enumerate}
+\resp{a) 8: $A\cap B=\{3,6,12,15,24,30,60,120\}$;\ b) $n(B)=16$, logo $16-8=8$.}
+\end{questao}
+
+\begin{questao}{2}{UFF-RJ via FME, ano não informado}{5-H2, 5-U2, 5-E2}\label{u5:uff12}
+Dentre as espécies ameaçadas de extinção na fauna brasileira, há algumas que vivem somente na Mata Atlântica, outras que vivem somente fora da Mata Atlântica e, há ainda, aquelas que vivem tanto na Mata Atlântica como fora dela. Em 2003, a revista \emph{Terra} publicou alguns dados sobre espécies em extinção na fauna brasileira: havia 160 espécies de aves, 16 de anfíbios, 20 de répteis e 69 de mamíferos, todas ameaçadas de extinção. Dessas espécies, 175 viviam somente na Mata Atlântica e 75 viviam somente fora da Mata Atlântica. Conclui-se que, em 2003, o número de espécies ameaçadas de extinção na fauna brasileira, citadas pela revista \emph{Terra}, que viviam tanto na Mata Atlântica como fora dela, corresponde a:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item 0
+  \item 5
+  \item 10
+  \item 15
+  \item 20
+\end{enumerate}
+\end{multicols}
+\resp{d. São $160+16+20+69=265$ espécies, todas em alguma das três regiões; $265-175-75=15$.}
+\end{questao}
+
+\begin{questao}{2}{ESPM-SP via FME, ano não informado}{5-H1, 5-H3, 5-U2}\label{u5:espm10}
+Numa empresa multinacional, sabe-se que 60\% dos funcionários falam inglês, 45\% falam espanhol e 30\% deles não falam nenhuma daquelas línguas. Se exatamente 49 funcionários falam inglês e espanhol, podemos concluir que o número de funcionários dessa empresa é igual a:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item 180
+  \item 140
+  \item 210
+  \item 165
+  \item 127
+\end{enumerate}
+\end{multicols}
+\resp{b. Falam alguma das línguas 70\%; os dois, $60\%+45\%-70\%=35\%$. Se 35\% são 49, o total é 140.}
+\end{questao}
+
+\begin{questao}{2}{FME, exercício 58}{5-H3, 5-U2}\label{u5:fme58}
+Em certa comunidade há indivíduos de três etnias: branca, negra e amarela. Sabendo que 70 são brancos, 350 são não negros e 50\% são amarelos, responda:
+\begin{enumerate}[label=\alph*)]
+  \item quantos indivíduos tem a comunidade?
+  \item quantos são os indivíduos amarelos?
+\end{enumerate}
+\resp{a) 560;\ b) 280. Os não negros são os brancos e os amarelos: amarelos $=350-70=280$, que são 50\% do total.}
+\end{questao}
+
+\begin{questao}{2}{FEI-SP via FME, ano não informado}{5-H2, 5-H3, 5-U3, 5-E4}\label{u5:fei8}
+Uma escola de línguas oferece somente dois cursos: Inglês e Francês. Sabe-se que ela conta com 500 estudantes e que nenhum deles faz os dois cursos simultaneamente. Destes estudantes, 60\% são mulheres e, destas, 10\% cursam Francês. Sabe-se que 30\% dos estudantes homens também cursam Francês. Neste caso, o número de estudantes homens que cursam Inglês é:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item 60
+  \item 410
+  \item 140
+  \item 320
+  \item 270
+\end{enumerate}
+\end{multicols}
+\resp{c. Há 200 homens; 30\% deles (60) cursam Francês, e os outros 140, Inglês.}
+\end{questao}
+
+\begin{questao}{2}{U.F. São Carlos-SP via FME, ano não informado}{5-H3, 5-U3, 5-E4}\label{u5:ufscar18}
+Um levantamento realizado pelo departamento de Recursos Humanos de uma empresa mostrou que 18\% dos seus funcionários são fumantes. Sabendo-se que 20\% dos homens e 15\% das mulheres que trabalham nessa empresa fumam, pode-se concluir que, do total de funcionários dessa empresa, os funcionários do sexo masculino representam
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item 30\%.
+  \item 35\%.
+  \item 40\%.
+  \item 45\%.
+  \item 60\%.
+\end{enumerate}
+\end{multicols}
+\resp{e. Com $h$ = fração de homens: $0{,}20\,h+0{,}15\,(1-h)=0{,}18$, logo $h=0{,}6$.}
+\end{questao}
+
+\begin{questao}[integradora]{2}{FME, exercício 49}{5-H1}\label{u5:fme49}
+Dados $A$ e $B$ conjuntos tais que $n(A)=4$, $n(B)=5$ e $n(A\cap B)=3$, determine o número de subconjuntos de $A\cup B$.
+\resp{$n(A\cup B)=6$, logo $2^{6}=64$ subconjuntos.}
+\end{questao}
+
+\begin{questao}{3}{FME, exercício 59}{5-H3, 5-U3}\label{u5:fme59}
+De todos os empregados de uma firma, 30\% optaram por um plano de assistência médica. A firma tem a matriz na capital de São Paulo e somente duas filiais, uma em Santos e outra em Campinas. 45\% dos empregados trabalham na matriz e 20\% dos empregados trabalham na filial de Santos. Sabendo que 20\% dos empregados da capital optaram pelo plano de assistência médica e que 35\% dos empregados da filial de Santos o fizeram, qual a porcentagem dos empregados da filial de Campinas que optaram pelo plano?
+\resp{40\%.}
+\end{questao}
+
+\begin{questao}[integradora]{3}{ITA via FME, ano não informado}{5-H1}\label{u5:ita41}
+Sejam $A$ e $B$ dois conjuntos disjuntos, ambos finitos e não vazios, tais que $n(\mathcal{P}(A)\cup\mathcal{P}(B))+1=n(\mathcal{P}(A\cup B))$. Então, a diferença $n(A)-n(B)$ pode assumir
+\begin{enumerate}[label=\alph*)]
+  \item um único valor.
+  \item apenas dois valores distintos.
+  \item apenas três valores distintos.
+  \item apenas quatro valores distintos.
+  \item mais do que quatro valores distintos.
+\end{enumerate}
+\resp{a. Só o valor 0 (com $n(A)=n(B)=1$).}
+\end{questao}
+
+\subsubsection*{Mais questões de vestibular}
+Questões de vestibular sobre o assunto da unidade que ficaram fora da sequência acima, em ordem de nível. As respostas estão no fim da unidade, com as demais.
+
+\begin{questao}{1}{UFF-RJ via FME, ano não informado}{5-H1, 5-H3}\label{u5:uff9}
+Foram enviadas para dois testes em um laboratório 150 caixas de leite de uma determinada marca. No teste de qualidade, 40 caixas foram reprovadas por conterem elevada taxa de concentração de formol. No teste de medida, 60 caixas foram reprovadas por terem volume inferior a 1 litro. Sabendo-se que apenas 65 caixas foram aprovadas nos dois testes, pode-se concluir que o número de caixas que foram reprovadas em ambos os testes é igual a:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item 15
+  \item 20
+  \item 35
+  \item 85
+  \item 100
+\end{enumerate}
+\end{multicols}
+\resp{a.}
+\end{questao}
+
+\begin{questao}{1}{UF-CE via FME, ano não informado}{5-H1, 5-H3}\label{u5:ufce13}
+Dos 1\,150 alunos de uma escola, 654 gostam de português, 564 gostam de matemática e 176 não gostam de português nem de matemática. Sendo assim, a quantidade de alunos que gostam de português e de matemática é:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item 300
+  \item 250
+  \item 244
+  \item 201
+  \item 122
+\end{enumerate}
+\end{multicols}
+\resp{c.}
+\end{questao}
+
+\begin{questao}{1}{UE-CE via FME, ano não informado}{5-H2, 5-H3}\label{u5:uece14}
+Em uma turma de 50 alunos, 30 gostam de azul, 10 gostam igualmente de azul e amarelo, 5 não gostam de azul nem de amarelo. Os alunos que gostam de amarelo são:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item 25
+  \item 20
+  \item 18
+  \item 15
+  \item 10
+\end{enumerate}
+\end{multicols}
+\resp{a. (\enquote{Gostam igualmente de azul e amarelo} = gostam das duas cores.)}
+\end{questao}
+
+\begin{questao}{1}{FEI-SP via FME, ano não informado}{5-H1, 5-H3}\label{u5:fei15}
+Uma pesquisa realizada com 800 adolescentes a respeito da utilização de dois aparelhos eletrônicos revelou que 220 utilizam o aparelho A, 380 utilizam o aparelho B e 120 utilizam os dois. Nestas condições, pode-se afirmar que, do total de entrevistados, $X$ adolescentes não utilizam qualquer um dos dois aparelhos. Dessa forma:
+\begin{multicols}{5}
+\begin{enumerate}[label=\alph*)]
+  \item $X=80$
+  \item $X=320$
+  \item $X=100$
+  \item $X=720$
+  \item $X=480$
+\end{enumerate}
+\end{multicols}
+\resp{b.}
+\end{questao}
+
+\begin{questao}{1}{PUC-MG via FME, ano não informado}{5-H1, 5-H3}\label{u5:pucmg16}
+Em um grupo de 60 pessoas residentes em certo município, há 28 que trabalham por conta própria, 26 que trabalham com carteira assinada e 15 que têm esses dois tipos de trabalho. O número de pessoas desse grupo que não trabalham por conta própria e nem trabalham com carteira assinada é:
+\begin{multicols}{4}
+\begin{enumerate}[label=\alph*)]
+  \item 21
+  \item 23
+  \item 25
+  \item 27
+\end{enumerate}
+\end{multicols}
+\resp{a.}
+\end{questao}
+
+\begin{questao}{1}{UF-RN via FME, ano não informado}{5-H1}\label{u5:ufrn17}
+Num grupo de amigos quatorze pessoas estudam Espanhol e oito estudam Inglês, sendo que três dessas pessoas estudam ambas as línguas. Sabendo que todos do grupo estudam pelo menos uma dessas línguas, o total de pessoas do grupo é
+\begin{multicols}{4}
+\begin{enumerate}[label=\alph*)]
+  \item 17.
+  \item 19.
+  \item 22.
+  \item 25.
+\end{enumerate}
+\end{multicols}
+\resp{b.}
+\end{questao}
+
+\begin{questao}{2}{UF-RN via FME, ano não informado}{5-H1, 5-H2}\label{u5:ufrn21}
+Uma escola de ensino médio tem 3\,600 estudantes, assim distribuídos:
+\begin{itemize}[leftmargin=1.4em,itemsep=0pt]
+  \item 1\,200 cursam o 1º ano, 1\,200 cursam o 2º ano, e 1\,200 cursam o 3º ano;
+  \item de cada série, metade dos estudantes é do sexo masculino e metade do sexo feminino;
+  \item de cada sexo, metade dos estudantes estuda Inglês e metade estuda Francês.
+\end{itemize}
+Considere que, em cada série, a quantidade de alunos de Inglês e de Francês é a mesma. O número de estudantes dessa escola que estão cursando o 3º ano ou que não estudam Francês é:
+\begin{multicols}{4}
+\begin{enumerate}[label=\alph*)]
+  \item 3\,000
+  \item 600
+  \item 1\,200
+  \item 2\,400
+\end{enumerate}
+\end{multicols}
+\resp{d. 3º ano: 1\,200; não estudam Francês: 1\,800; os dois: 600. $1\,200+1\,800-600=2\,400$.}
+\end{questao}
+
+\begin{questao}{2}{PUC-MG via FME, ano não informado}{5-H2, 5-H3}\label{u5:pucmg32}
+Certa rede comercial fez uma pesquisa para saber quais os tipos de calçado mais usados pela população da cidade em que pretendia instalar uma nova loja. Das pessoas ouvidas, um terço usa mais sandália, um quarto usa mais tênis, um quinto usa mais sapato e as 65 restantes usam mais outros tipos de calçado. Com base nesses dados, pode-se afirmar que o número de pessoas ouvidas nessa pesquisa foi:
+\begin{multicols}{4}
+\begin{enumerate}[label=\alph*)]
+  \item 240
+  \item 300
+  \item 360
+  \item 420
+\end{enumerate}
+\end{multicols}
+\resp{b. Os quatro grupos não se misturam: $\frac{N}{3}+\frac{N}{4}+\frac{N}{5}+65=N$, logo $N=300$.}
+\end{questao}
 
 \begin{sintese}
 \textbf{Ao fim desta unidade, você deveria saber:}
 \begin{itemize}[leftmargin=1.4em,itemsep=1pt]
-  \item «capacidade»
+  \item calcular $n(A\cup B)$ e explicar por que se subtrai $n(A\cap B)$;
+  \item preencher as quatro regiões (ou a tabela de dupla entrada) a partir dos dados;
+  \item descobrir o número que falta entre o total, cada grupo, os que estão nos dois e os que não estão em nenhum;
+  \item distinguir \enquote{estudam inglês} de \enquote{só inglês};
+  \item somar porcentagens só depois de convertê-las para a mesma base.
 \end{itemize}
 \smallskip\noindent\textbf{Responda com suas palavras, sem consultar.} Depois, confira com a caixa \emph{Para lembrar} (p.~\pageref{lembrar-u5}) e com a seção indicada.
 \begin{enumerate}[label=\arabic*.,leftmargin=1.4em]
-  \perguntasintese{O que significa «conceito»? \ondever{construção 5-H1}}
-  \perguntasintese{Como «conceito» foi construído, e por quê? \ondever{De onde vem?}}
-  \perguntasintese{Como você reconhece, num enunciado, que deve usar «conceito»? \ondever{Onde é usado?}}
-  \perguntasintese{Qual é o erro mais perigoso ao aplicar «conceito»? Como você o detecta? \ondever{Erros comuns}}
+  \perguntasintese{Por que $n(A)+n(B)$ pode passar do número de elementos de $A\cup B$? \ondever{construção 5-H1}}
+  \perguntasintese{Por que contar pelas quatro regiões nunca repete ninguém? \ondever{construção 5-H2}}
+  \perguntasintese{Num enunciado com porcentagens, como você percebe que elas têm bases diferentes, e o que faz então? \ondever{Onde é usado?}}
+  \perguntasintese{Qual erro você cometeria ao ler \enquote{25 nadam} como \enquote{25 só nadam}? Como evitá-lo? \ondever{Erros comuns}}
 \end{enumerate}
 \end{sintese}
 

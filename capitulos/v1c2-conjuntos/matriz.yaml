@@ -778,13 +778,222 @@ unidades:
     E4: somar porcentagens de bases diferentes
     O1: a mesma conta em probabilidade (regra da adição)
     O2: 'o nome: princípio da inclusão e exclusão (ideia geral, sem fórmula)'
-  exemplos: []
+  exemplos:
+  - rotulo: ex:u5:apps
+    nivel: 1
+    fonte: autoral
+    tema: 'pesquisa: dois aplicativos'
+    cobre:
+    - H1
+    - H2
+    - H3
+    - U1
+    - E1
+  - rotulo: ex:u5:predio
+    nivel: 2
+    fonte: autoral
+    tema: isolar a interseção pelo "nenhum"
+    cobre:
+    - H1
+    - H3
+    - U2
+    - E3
+  - rotulo: ex:u5:teatro
+    nivel: 2
+    fonte: autoral
+    tema: dados por regiões ("só")
+    cobre:
+    - H2
+    - E2
+  - rotulo: ex:u5:turnos
+    nivel: 2
+    fonte: autoral
+    tema: porcentagens de turnos de tamanhos diferentes
+    cobre:
+    - H3
+    - U3
+    - E4
+  - rotulo: ex:u5:internet
+    nivel: 2
+    fonte: autoral
+    tema: porcentagens; total a partir de uma região
+    cobre:
+    - H1
+    - H3
+    - U2
+  - rotulo: ex:u5:divisiveis
+    nivel: 3
+    fonte: autoral
+    tema: nem por 2 nem por 3, de 1 a 100
+    cobre:
+    - H1
+    - H3
   questoes_meta:
     N1: 4
     N2: 6
     N3: 2
     integradoras: 1
-  questoes_pool: []
+  questoes_pool:
+  - rotulo: u5:fme48
+    nivel: 1
+    fonte: FME, exercício 48
+    cobre:
+    - H1
+    integradora: false
+  - rotulo: u5:fme52
+    nivel: 1
+    fonte: FME, exercício 52
+    cobre:
+    - H1
+    - H3
+    - U1
+    - E1
+    integradora: false
+  - rotulo: u5:pucpr11
+    nivel: 1
+    fonte: PUC-PR via FME, ano não informado
+    cobre:
+    - H2
+    - U1
+    - E2
+    integradora: false
+  - rotulo: u5:uel7
+    nivel: 1
+    fonte: U.E. Londrina-PR via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    - U2
+    - E3
+    integradora: false
+  - rotulo: u5:fme51
+    nivel: 1
+    fonte: adaptado do FME, exercício 51
+    cobre:
+    - H2
+    integradora: true
+  - rotulo: u5:uff12
+    nivel: 2
+    fonte: UFF-RJ via FME, ano não informado
+    cobre:
+    - H2
+    - U2
+    - E2
+    integradora: false
+  - rotulo: u5:espm10
+    nivel: 2
+    fonte: ESPM-SP via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    - U2
+    integradora: false
+  - rotulo: u5:fme58
+    nivel: 2
+    fonte: FME, exercício 58
+    cobre:
+    - H3
+    - U2
+    integradora: false
+  - rotulo: u5:fei8
+    nivel: 2
+    fonte: FEI-SP via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    - U3
+    - E4
+    integradora: false
+  - rotulo: u5:ufscar18
+    nivel: 2
+    fonte: U.F. São Carlos-SP via FME, ano não informado
+    cobre:
+    - H3
+    - U3
+    - E4
+    integradora: false
+  - rotulo: u5:fme49
+    nivel: 2
+    fonte: FME, exercício 49
+    cobre:
+    - H1
+    integradora: true
+  - rotulo: u5:fme59
+    nivel: 3
+    fonte: FME, exercício 59
+    cobre:
+    - H3
+    - U3
+    integradora: false
+  - rotulo: u5:ita41
+    nivel: 3
+    fonte: ITA via FME, ano não informado
+    cobre:
+    - H1
+    integradora: true
+  - rotulo: u5:uff9
+    nivel: 1
+    fonte: UFF-RJ via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:ufce13
+    nivel: 1
+    fonte: UF-CE via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:uece14
+    nivel: 1
+    fonte: UE-CE via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:fei15
+    nivel: 1
+    fonte: FEI-SP via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:pucmg16
+    nivel: 1
+    fonte: PUC-MG via FME, ano não informado
+    cobre:
+    - H1
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:ufrn17
+    nivel: 1
+    fonte: UF-RN via FME, ano não informado
+    cobre:
+    - H1
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:ufrn21
+    nivel: 2
+    fonte: UF-RN via FME, ano não informado
+    cobre:
+    - H1
+    - H2
+    integradora: false
+    bloco: mais questões de vestibular
+  - rotulo: u5:pucmg32
+    nivel: 2
+    fonte: PUC-MG via FME, ano não informado
+    cobre:
+    - H2
+    - H3
+    integradora: false
+    bloco: mais questões de vestibular
 - n: 6
   titulo: Três conjuntos e as regiões do diagrama
   pergunta: Com três grupos, como organizar a contagem para não se perder nas sobreposições?
